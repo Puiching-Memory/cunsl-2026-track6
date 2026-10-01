@@ -36,9 +36,11 @@
   "license_obligations": [
     "Retain DINOv3 License when redistributing weights or derivatives.",
     "Acknowledge DINOv3 in published research.",
-    "Comply with the stated permitted use restrictions."
+    "Comply with the stated permitted use restrictions, including section 1.b.v on ITAR and end uses prohibited by Trade Controls.",
+    "Recheck applicable terms before redistribution; the Meta website license also requires a prominent Built with DINOv3 attribution."
   ],
   "conversion_notes": "Maintainer removes zero QKV bias and computes RoPE periods in float32; use default timm numerical behavior and record it. Not byte-identical to Meta's native checkpoint.",
   "verification_evidence": "../docs/evidence/2026-10-01-dinov3-resources.json",
+  "eligibility_scope": "Public-date and source review for public algorithm competition research; not a specific organizer approval or authorization for controlled military or espionage end uses. See docs/09-modern-models.md for the archived and website license differences.",
   "scope": "Exact safetensors SHA matches initial 2025-09-17 release; Windows download and compute-host transfer both verified on 2026-10-01. Loader continues to verify each local file. Generic web pretraining does not establish SAR applicability."
 }

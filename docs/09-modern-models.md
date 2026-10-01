@@ -17,6 +17,12 @@ Meta在2025年8月发布[DINOv3](https://github.com/facebookresearch/dinov3)。�
 
 精确来源、权重摘要与许可分别记录在[通用版资源清单](../resources/dinov3-vitb16-timm.json)和[卫星版资源清单](../resources/dinov3-vitl16-sat-timm.json)。timm代码固定1.0.20/tag 234907e，2025-09-21公开，代码Apache-2.0；已核验PyPI原始wheel摘要及EVA实现文件。权重继续受[DINOv3 License](https://github.com/facebookresearch/dinov3/blob/main/LICENSE.md)约束，不能随代码称为Apache-2.0。发布研究需致谢；分发权重或衍生权重需随附该许可并遵守其中用途限制。
 
+适用边界：按2026-10-01已核对的赛题规则，这两份具体权重满足2026-09-01之前公开与资源登记条件；这是资源条件审查，不是主办方对DINOv3的专项审核结论。当前只用于公开算法竞赛研究，在自有环境上使用正式训练标签优化、测试图像推理，未导入AIS、位置、时间等未公开辅助信息。
+
+许可还必须单独满足。[Meta官网许可](https://ai.meta.com/resources/models-and-libraries/dinov3-license/)第1.b.v限制受ITAR约束的活动及贸易管制禁止的最终用途，列举了军事/战争、核工业、间谍等用途。不能把“舰船”题名自动等同于军用，也不能由公开下载推断任何最终用途均获授权；如果涉及这类交付用途，需另核对，当前没有此类用途的授权结论。timm转换版本继续受这些条款约束。
+
+2026-10-01再次读取Meta官网许可发现：官网标记日期为2025-08-14，并包含第三方分发时显著展示“Built with DINOv3”的要求；timm仓库内已存档的LICENSE标记2025-08-19，文字有所不同。两份来源分别保留，不将版本视为完全相同。实际发布或交付时复核适用许可，并准备随附许可、明确致谢和DINOv3使用标识。本次重新访问授权赛题页面的浏览器连接超时，竞赛条款依据当天已有核对记录；权重初始提交日期与官网许可已重新读取。
+
 timm转换去掉原权重中的零QKV偏置，使用FP32生成RoPE周期；模型卡明确描述这种数值差异。采用timm默认行为，记录实现与具体checkpoint，不声称与Meta原生权重逐字节或输出完全相同。卫星版归一化均值/标准差也不同于通用版，读取固定版本的模型配置，写入每次报告。
 
 环境准备中算力机直接访问Hugging Face返回Network is unreachable，run_job保留失败记录。随后在本地下载并上传，两个端点均通过发布方完整SHA-256。依赖通过--no-deps安装到local/dinov3-deps，现有PyTorch/CUDA环境保留。
