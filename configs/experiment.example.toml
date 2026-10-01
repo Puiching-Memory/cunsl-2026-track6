@@ -1,0 +1,21 @@
+# Template only; no model experiment has been run.
+[experiment]
+track = "track6"
+seed = 20261001
+status = "awaiting_dataset_audit"
+
+[data]
+root = "/root/autodl-tmp/cunsl-2026/track6/data"
+archive_sha256 = ""
+split_sha256 = ""
+validation_protocol = "to_be_confirmed"
+
+[model]
+framework = "to_be_selected"
+initialization = "to_be_reviewed"
+pretrained_url = ""
+pretrained_sha256 = ""
+resource_rules_reviewed = false
+
+[results]
+metrics_validated = false
