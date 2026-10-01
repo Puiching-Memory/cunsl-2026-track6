@@ -39,5 +39,6 @@
     "Comply with the stated permitted use restrictions."
   ],
   "conversion_notes": "Maintainer removes zero QKV bias and computes RoPE periods in float32; use default timm numerical behavior and record it. Not byte-identical to Meta's native checkpoint.",
-  "scope": "Exact safetensors SHA matches initial 2025-09-17 release. Download completion and local SHA verification still required. Generic web pretraining does not establish SAR applicability."
+  "verification_evidence": "../docs/evidence/2026-10-01-dinov3-resources.json",
+  "scope": "Exact safetensors SHA matches initial 2025-09-17 release; Windows download and compute-host transfer both verified on 2026-10-01. Loader continues to verify each local file. Generic web pretraining does not establish SAR applicability."
 }

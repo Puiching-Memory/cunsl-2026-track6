@@ -1,0 +1,1851 @@
+{
+  "passed": true,
+  "scorer_file_sha256": "a04cebcf9758fe846f923afd127dd50293958d61f4b21d8f80791fc959a15b78",
+  "official_scorer_confirmed": false,
+  "verifications": {
+    "dinov3-b16-frozen/avg": {
+      "passed": true,
+      "model": "dinov3",
+      "code_commit": "4c2394bdc35b340ab6f53de25acbb8a5a2e82990",
+      "report_sha256": "ea2c6c29cb553d0f1e732716c862037657ca42bf35114f4a2a4fc8f62fa0ea64",
+      "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "validation_rankings_sha256": "256c4e0ac2bc6dff0ad816606db3c923052e42a5b32b0592be0f02282a6e1466",
+      "independent_method": "scalar rank loop with math.fsum; does not call track6.metrics",
+      "metric_tolerance": 1e-12,
+      "metrics": {
+        "min_relevant_k": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.02483660130718954,
+              "mAP@10": 0.03896695715323167,
+              "score": 0.031901779230210606,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.012605042016806723,
+              "mAP@10": 0.02149081854964208,
+              "score": 0.0170479302832244,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.6363636363636364,
+              "mAP@10": 0.6924467893217893,
+              "score": 0.6644052128427128,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.08846789056531704,
+          "ap_denominator": "min_relevant_k",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        },
+        "all_relevant": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.02483660130718954,
+              "mAP@10": 0.03896695715323167,
+              "score": 0.031901779230210606,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.012605042016806723,
+              "mAP@10": 0.02149081854964208,
+              "score": 0.0170479302832244,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.6363636363636364,
+              "mAP@10": 0.6924467893217893,
+              "score": 0.6644052128427128,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.08846789056531704,
+          "ap_denominator": "all_relevant",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        }
+      },
+      "artifacts": {
+        "features.npz": "d6af5a3008a60908a5d0bac5dbd8d93cb607d144340c97c762a9d79b96eb6188",
+        "prediction.json": "3413f5805604a8e3d728c2d0e54788b06f15bcc2d19dbfba0a70d86bfb60178d"
+      },
+      "submission_validation": {
+        "passed": true,
+        "queries": 267,
+        "gallery": 1800,
+        "directions": {
+          "O2S": 120,
+          "S2O": 120,
+          "O2O": 27
+        },
+        "candidates_per_query": 10,
+        "metrics_validated": false,
+        "scope": "structure only; hidden identities are unavailable"
+      },
+      "official_scorer_confirmed": false,
+      "leaderboard_submitted": false
+    },
+    "dinov3-b16-frozen/cls": {
+      "passed": true,
+      "model": "dinov3",
+      "code_commit": "4c2394bdc35b340ab6f53de25acbb8a5a2e82990",
+      "report_sha256": "62168e4ff5da82aa43c79052116ce9564f394877ddbd9eb8cacaa33500be4123",
+      "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "validation_rankings_sha256": "68428b5a1fabff1ce8d13737299e2b1078650ed713daaf48856c7fc06a0599c9",
+      "independent_method": "scalar rank loop with math.fsum; does not call track6.metrics",
+      "metric_tolerance": 1e-12,
+      "metrics": {
+        "min_relevant_k": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.013071895424836602,
+              "mAP@10": 0.030212418300653597,
+              "score": 0.0216421568627451,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.0070028011204481795,
+              "mAP@10": 0.01378273531634876,
+              "score": 0.01039276821839847,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.6818181818181818,
+              "mAP@10": 0.7534361471861473,
+              "score": 0.7176271645021646,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.08617843273673108,
+          "ap_denominator": "min_relevant_k",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        },
+        "all_relevant": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.013071895424836602,
+              "mAP@10": 0.030212418300653597,
+              "score": 0.0216421568627451,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.0070028011204481795,
+              "mAP@10": 0.01378273531634876,
+              "score": 0.01039276821839847,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.6818181818181818,
+              "mAP@10": 0.7534361471861473,
+              "score": 0.7176271645021646,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.08617843273673108,
+          "ap_denominator": "all_relevant",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        }
+      },
+      "artifacts": {
+        "features.npz": "efcc2142522fe5d879a6603520a0a4d8e367c0e969efbd252f4db8745c5b0979",
+        "prediction.json": "8bf7e073dc88cca4b42e1478d30283d1e265a1f77eb65c34da6804e3e0e5631a"
+      },
+      "submission_validation": {
+        "passed": true,
+        "queries": 267,
+        "gallery": 1800,
+        "directions": {
+          "O2S": 120,
+          "S2O": 120,
+          "O2O": 27
+        },
+        "candidates_per_query": 10,
+        "metrics_validated": false,
+        "scope": "structure only; hidden identities are unavailable"
+      },
+      "official_scorer_confirmed": false,
+      "leaderboard_submitted": false
+    },
+    "dinov3-b16-frozen/cls_foreground": {
+      "passed": true,
+      "model": "dinov3",
+      "code_commit": "4c2394bdc35b340ab6f53de25acbb8a5a2e82990",
+      "report_sha256": "fa72f8ed0cf3d8af8c5a9e46bd4e5aa39d7b1e118443613750cafda765b34594",
+      "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "validation_rankings_sha256": "9c8f2e34918639a206842bc2b85138b97012d70602d0b5032454e1428a3b5e49",
+      "independent_method": "scalar rank loop with math.fsum; does not call track6.metrics",
+      "metric_tolerance": 1e-12,
+      "metrics": {
+        "min_relevant_k": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.018300653594771243,
+              "mAP@10": 0.032969187675070025,
+              "score": 0.025634920634920635,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.0070028011204481795,
+              "mAP@10": 0.013054944199902182,
+              "score": 0.010028872660175181,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.6363636363636364,
+              "mAP@10": 0.7124368686868686,
+              "score": 0.6744002525252525,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.08348873223531837,
+          "ap_denominator": "min_relevant_k",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        },
+        "all_relevant": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.018300653594771243,
+              "mAP@10": 0.032969187675070025,
+              "score": 0.025634920634920635,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.0070028011204481795,
+              "mAP@10": 0.013054944199902182,
+              "score": 0.010028872660175181,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.6363636363636364,
+              "mAP@10": 0.7124368686868686,
+              "score": 0.6744002525252525,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.08348873223531837,
+          "ap_denominator": "all_relevant",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        }
+      },
+      "artifacts": {
+        "features.npz": "ba8a8e4b41706db8642c2ed22447fee11f4b03ca89eaf7166f1a1524e6a90290",
+        "prediction.json": "6c6c4bc66d606808b70c38c6617ed5e038429786e703fde3af325b415055b078"
+      },
+      "submission_validation": {
+        "passed": true,
+        "queries": 267,
+        "gallery": 1800,
+        "directions": {
+          "O2S": 120,
+          "S2O": 120,
+          "O2O": 27
+        },
+        "candidates_per_query": 10,
+        "metrics_validated": false,
+        "scope": "structure only; hidden identities are unavailable"
+      },
+      "official_scorer_confirmed": false,
+      "leaderboard_submitted": false
+    },
+    "dinov3-b16-linear20/avg": {
+      "passed": true,
+      "model": "frozen-dinov3-two-linear-contrastive-adapters",
+      "code_commit": "4c2394bdc35b340ab6f53de25acbb8a5a2e82990",
+      "report_sha256": "4b96d77e9efab044c50159dd1744b6acfaf201bcf00f58b9048848089362033b",
+      "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "validation_rankings_sha256": "2a3faaba2124e727312bdef5d02f88ed3cce26598f7614bc52ef4c576cabe9e0",
+      "independent_method": "scalar rank loop with math.fsum; does not call track6.metrics",
+      "metric_tolerance": 1e-12,
+      "metrics": {
+        "min_relevant_k": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.16339869281045752,
+              "mAP@10": 0.285532731611163,
+              "score": 0.22446571221081024,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.17787114845938376,
+              "mAP@10": 0.28282312925170067,
+              "score": 0.2303471388555422,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.75,
+              "mAP@10": 0.8101010101010101,
+              "score": 0.7800505050505051,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.2826708334849091,
+          "ap_denominator": "min_relevant_k",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        },
+        "all_relevant": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.16339869281045752,
+              "mAP@10": 0.285532731611163,
+              "score": 0.22446571221081024,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.17787114845938376,
+              "mAP@10": 0.28282312925170067,
+              "score": 0.2303471388555422,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.75,
+              "mAP@10": 0.8101010101010101,
+              "score": 0.7800505050505051,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.2826708334849091,
+          "ap_denominator": "all_relevant",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        }
+      },
+      "artifacts": {
+        "features.npz": "4b6d4056cb095aecb70787f78d75b013f603cff8fb7c8ace6e39b4a818c5c399",
+        "adapter.pt": "9b330b2950db9b08521b0f6372b582d0f379969197887c1beb77b4faf2ef9a5f",
+        "prediction.json": "00cacac3c665832d9dbce9a16632aeb3646eb7c0608ab21af95bcf2fcddc569f"
+      },
+      "submission_validation": {
+        "passed": true,
+        "queries": 267,
+        "gallery": 1800,
+        "directions": {
+          "O2S": 120,
+          "S2O": 120,
+          "O2O": 27
+        },
+        "candidates_per_query": 10,
+        "metrics_validated": false,
+        "scope": "structure only; hidden identities are unavailable"
+      },
+      "official_scorer_confirmed": false,
+      "leaderboard_submitted": false
+    },
+    "dinov3-b16-linear20/cls": {
+      "passed": true,
+      "model": "frozen-dinov3-two-linear-contrastive-adapters",
+      "code_commit": "4c2394bdc35b340ab6f53de25acbb8a5a2e82990",
+      "report_sha256": "5bf11ff547b0f8cc3c8558f1853beec65857a777a02c14e7b7bead96f54ae75b",
+      "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "validation_rankings_sha256": "436d67c29c5c81034b57c242aa688433205f91515986a0f5eefb679642d25c2f",
+      "independent_method": "scalar rank loop with math.fsum; does not call track6.metrics",
+      "metric_tolerance": 1e-12,
+      "metrics": {
+        "min_relevant_k": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.16339869281045752,
+              "mAP@10": 0.2648109243697479,
+              "score": 0.21410480859010272,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.16246498599439776,
+              "mAP@10": 0.24797696856520385,
+              "score": 0.20522097727980082,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.7727272727272727,
+              "mAP@10": 0.8651515151515152,
+              "score": 0.818939393939394,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.270590543035396,
+          "ap_denominator": "min_relevant_k",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        },
+        "all_relevant": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.16339869281045752,
+              "mAP@10": 0.2648109243697479,
+              "score": 0.21410480859010272,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.16246498599439776,
+              "mAP@10": 0.24797696856520385,
+              "score": 0.20522097727980082,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.7727272727272727,
+              "mAP@10": 0.8651515151515152,
+              "score": 0.818939393939394,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.270590543035396,
+          "ap_denominator": "all_relevant",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        }
+      },
+      "artifacts": {
+        "features.npz": "ee3be1dc81427a99da98373be4bb54912ca436f3da55b504589726e5f6b3ec79",
+        "adapter.pt": "ced31bd37ca90f32df0713713edb43dd65af4c99373ca39c48026b9831cad120",
+        "prediction.json": "9d8d61ddc4bc633b273215cad1c3d4ecb50e0f77012863f0ca80305b9c911eca"
+      },
+      "submission_validation": {
+        "passed": true,
+        "queries": 267,
+        "gallery": 1800,
+        "directions": {
+          "O2S": 120,
+          "S2O": 120,
+          "O2O": 27
+        },
+        "candidates_per_query": 10,
+        "metrics_validated": false,
+        "scope": "structure only; hidden identities are unavailable"
+      },
+      "official_scorer_confirmed": false,
+      "leaderboard_submitted": false
+    },
+    "dinov3-b16-linear20/cls_foreground": {
+      "passed": true,
+      "model": "frozen-dinov3-two-linear-contrastive-adapters",
+      "code_commit": "4c2394bdc35b340ab6f53de25acbb8a5a2e82990",
+      "report_sha256": "9d8196c015d593baaf246fe7b25b6e835da6979f46ca8cd497b64d1d3f6cec1e",
+      "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "validation_rankings_sha256": "eedda14c1c06cfd87aa78e884b327179a005eabc874d948a24d56c7254be398c",
+      "independent_method": "scalar rank loop with math.fsum; does not call track6.metrics",
+      "metric_tolerance": 1e-12,
+      "metrics": {
+        "min_relevant_k": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.17777777777777778,
+              "mAP@10": 0.2911671335200747,
+              "score": 0.23447245564892621,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.17647058823529413,
+              "mAP@10": 0.27694892771923585,
+              "score": 0.226709757977265,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.7954545454545454,
+              "mAP@10": 0.8608225108225107,
+              "score": 0.8281385281385281,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.29034584894563886,
+          "ap_denominator": "min_relevant_k",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        },
+        "all_relevant": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.17777777777777778,
+              "mAP@10": 0.2911671335200747,
+              "score": 0.23447245564892621,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.17647058823529413,
+              "mAP@10": 0.27694892771923585,
+              "score": 0.226709757977265,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.7954545454545454,
+              "mAP@10": 0.8608225108225107,
+              "score": 0.8281385281385281,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.29034584894563886,
+          "ap_denominator": "all_relevant",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        }
+      },
+      "artifacts": {
+        "features.npz": "07d26a3ced0bcdd791bd6bc17b5d2975cb282363fdef4c296659b71cf5b88407",
+        "adapter.pt": "1eca6c7f89c58d6317dcfa07bbb5567335a39b8547384f9c38472f22710015a3",
+        "prediction.json": "397a706daf1c65af3a2f0cf98ef29262255bcdd1bff07025e638067ff5310baa"
+      },
+      "submission_validation": {
+        "passed": true,
+        "queries": 267,
+        "gallery": 1800,
+        "directions": {
+          "O2S": 120,
+          "S2O": 120,
+          "O2O": 27
+        },
+        "candidates_per_query": 10,
+        "metrics_validated": false,
+        "scope": "structure only; hidden identities are unavailable"
+      },
+      "official_scorer_confirmed": false,
+      "leaderboard_submitted": false
+    },
+    "dinov3-b16-reid12": {
+      "passed": true,
+      "model": "image-level-dinov3-cross-modal-reid",
+      "code_commit": "4c2394bdc35b340ab6f53de25acbb8a5a2e82990",
+      "report_sha256": "498d9c398505919a6b5afdbde8f7b22da6e7d8c2ca08e68dd72f4862f8f0d74b",
+      "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "validation_rankings_sha256": "f649432e97391b21aba11c4ddc64c6357692f25ff7e57ad06b8b5729bdfdf0f0",
+      "independent_method": "scalar rank loop with math.fsum; does not call track6.metrics",
+      "metric_tolerance": 1e-12,
+      "metrics": {
+        "min_relevant_k": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.20784313725490197,
+              "mAP@10": 0.3460584604212055,
+              "score": 0.27695079883805374,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.21568627450980393,
+              "mAP@10": 0.32992057934284824,
+              "score": 0.2728034269263261,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.8636363636363636,
+              "mAP@10": 0.9204545454545454,
+              "score": 0.8920454545454546,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.3365939470485164,
+          "ap_denominator": "min_relevant_k",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        },
+        "all_relevant": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.20784313725490197,
+              "mAP@10": 0.3460584604212055,
+              "score": 0.27695079883805374,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.21568627450980393,
+              "mAP@10": 0.32992057934284824,
+              "score": 0.2728034269263261,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.8636363636363636,
+              "mAP@10": 0.9204545454545454,
+              "score": 0.8920454545454546,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.3365939470485164,
+          "ap_denominator": "all_relevant",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        }
+      },
+      "artifacts": {
+        "features.npz": "4c02797e973de682b5b71b7ca275d3ab953eaf08570d46ace728c7787a9ec83d",
+        "prediction.json": "af6a07a6f7a4db5139499177ddf4bb0b288f56f4a0f24e890db726746311f9cf"
+      },
+      "submission_validation": {
+        "passed": true,
+        "queries": 267,
+        "gallery": 1800,
+        "directions": {
+          "O2S": 120,
+          "S2O": 120,
+          "O2O": 27
+        },
+        "candidates_per_query": 10,
+        "metrics_validated": false,
+        "scope": "structure only; hidden identities are unavailable"
+      },
+      "official_scorer_confirmed": false,
+      "leaderboard_submitted": false
+    },
+    "dinov3-b16-reid12-replay": {
+      "passed": true,
+      "model": "saved-dinov3-reid-replay",
+      "code_commit": "4c2394bdc35b340ab6f53de25acbb8a5a2e82990",
+      "report_sha256": "3b742622fb75e579875a33552a75780445802b1ea7e93b5734c6adc6c592c792",
+      "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "validation_rankings_sha256": "f649432e97391b21aba11c4ddc64c6357692f25ff7e57ad06b8b5729bdfdf0f0",
+      "independent_method": "scalar rank loop with math.fsum; does not call track6.metrics",
+      "metric_tolerance": 1e-12,
+      "metrics": {
+        "min_relevant_k": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.20784313725490197,
+              "mAP@10": 0.3460584604212055,
+              "score": 0.27695079883805374,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.21568627450980393,
+              "mAP@10": 0.32992057934284824,
+              "score": 0.2728034269263261,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.8636363636363636,
+              "mAP@10": 0.9204545454545454,
+              "score": 0.8920454545454546,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.3365939470485164,
+          "ap_denominator": "min_relevant_k",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        },
+        "all_relevant": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.20784313725490197,
+              "mAP@10": 0.3460584604212055,
+              "score": 0.27695079883805374,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.21568627450980393,
+              "mAP@10": 0.32992057934284824,
+              "score": 0.2728034269263261,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.8636363636363636,
+              "mAP@10": 0.9204545454545454,
+              "score": 0.8920454545454546,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.3365939470485164,
+          "ap_denominator": "all_relevant",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        }
+      },
+      "artifacts": {
+        "features.npz": "4c02797e973de682b5b71b7ca275d3ab953eaf08570d46ace728c7787a9ec83d",
+        "prediction.json": "af6a07a6f7a4db5139499177ddf4bb0b288f56f4a0f24e890db726746311f9cf"
+      },
+      "submission_validation": {
+        "passed": true,
+        "queries": 267,
+        "gallery": 1800,
+        "directions": {
+          "O2S": 120,
+          "S2O": 120,
+          "O2O": 27
+        },
+        "candidates_per_query": 10,
+        "metrics_validated": false,
+        "scope": "structure only; hidden identities are unavailable"
+      },
+      "official_scorer_confirmed": false,
+      "leaderboard_submitted": false
+    },
+    "dinov3-satl16-frozen/avg": {
+      "passed": true,
+      "model": "dinov3",
+      "code_commit": "4c2394bdc35b340ab6f53de25acbb8a5a2e82990",
+      "report_sha256": "82d17de4a8e968f2ac208bb58abfc0650d0f6668c77eb333a9135f8d7a2b75c2",
+      "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "validation_rankings_sha256": "a6cf7344d9baf694f6387921d8e0aa4c750fc8ee3460b1f3ee765ef240c4b9ab",
+      "independent_method": "scalar rank loop with math.fsum; does not call track6.metrics",
+      "metric_tolerance": 1e-12,
+      "metrics": {
+        "min_relevant_k": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.00261437908496732,
+              "mAP@10": 0.01156084656084656,
+              "score": 0.00708761282290694,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.0028011204481792717,
+              "mAP@10": 0.010896580854564047,
+              "score": 0.00684885065137166,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.45454545454545453,
+              "mAP@10": 0.48806367243867244,
+              "score": 0.4713045634920635,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.05340186491263172,
+          "ap_denominator": "min_relevant_k",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        },
+        "all_relevant": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.00261437908496732,
+              "mAP@10": 0.01156084656084656,
+              "score": 0.00708761282290694,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.0028011204481792717,
+              "mAP@10": 0.010896580854564047,
+              "score": 0.00684885065137166,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.45454545454545453,
+              "mAP@10": 0.48806367243867244,
+              "score": 0.4713045634920635,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.05340186491263172,
+          "ap_denominator": "all_relevant",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        }
+      },
+      "artifacts": {
+        "features.npz": "3a5a5a901e6e136cd86be8455324814663921a4892c494eef8e81d87b1abaf6a",
+        "prediction.json": "b6e5e6a40369cad888080e3a824017061cc6c3b5e5b679e84d26f25ac27bae0e"
+      },
+      "submission_validation": {
+        "passed": true,
+        "queries": 267,
+        "gallery": 1800,
+        "directions": {
+          "O2S": 120,
+          "S2O": 120,
+          "O2O": 27
+        },
+        "candidates_per_query": 10,
+        "metrics_validated": false,
+        "scope": "structure only; hidden identities are unavailable"
+      },
+      "official_scorer_confirmed": false,
+      "leaderboard_submitted": false
+    },
+    "dinov3-satl16-frozen/cls": {
+      "passed": true,
+      "model": "dinov3",
+      "code_commit": "4c2394bdc35b340ab6f53de25acbb8a5a2e82990",
+      "report_sha256": "450adf999802f1c6bcca87e000a5b0a7d0679be9493ed6c840e14f098ba4afa5",
+      "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "validation_rankings_sha256": "1f1bbf226bed0121da86d310e862f3f0dfbc4dd6c17f9abef6cecf34c97be485",
+      "independent_method": "scalar rank loop with math.fsum; does not call track6.metrics",
+      "metric_tolerance": 1e-12,
+      "metrics": {
+        "min_relevant_k": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.006535947712418301,
+              "mAP@10": 0.014952017844174706,
+              "score": 0.010743982778296503,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.0028011204481792717,
+              "mAP@10": 0.011998966253167934,
+              "score": 0.007400043350673603,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.4318181818181818,
+              "mAP@10": 0.46657647907647903,
+              "score": 0.44919733044733046,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.0530845448027696,
+          "ap_denominator": "min_relevant_k",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        },
+        "all_relevant": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.006535947712418301,
+              "mAP@10": 0.014952017844174706,
+              "score": 0.010743982778296503,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.0028011204481792717,
+              "mAP@10": 0.011998966253167934,
+              "score": 0.007400043350673603,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.4318181818181818,
+              "mAP@10": 0.46657647907647903,
+              "score": 0.44919733044733046,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.0530845448027696,
+          "ap_denominator": "all_relevant",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        }
+      },
+      "artifacts": {
+        "features.npz": "3e5092a48909443d35de009dc7260b337beda52e4f859df6771ab4b50d3e9b75",
+        "prediction.json": "02e653c05daddfbb271df19175907158a2b2f00e2a701ea414ee9f8cab55b674"
+      },
+      "submission_validation": {
+        "passed": true,
+        "queries": 267,
+        "gallery": 1800,
+        "directions": {
+          "O2S": 120,
+          "S2O": 120,
+          "O2O": 27
+        },
+        "candidates_per_query": 10,
+        "metrics_validated": false,
+        "scope": "structure only; hidden identities are unavailable"
+      },
+      "official_scorer_confirmed": false,
+      "leaderboard_submitted": false
+    },
+    "dinov3-satl16-frozen/cls_foreground": {
+      "passed": true,
+      "model": "dinov3",
+      "code_commit": "4c2394bdc35b340ab6f53de25acbb8a5a2e82990",
+      "report_sha256": "ef95dcf92bb8fc4207c8e15d01e50213d2717cb388710ac5fa6af6586fd2d0f0",
+      "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "validation_rankings_sha256": "4fdaf3ed1073f539b98b41f05c183d33540f2d82668db2de5f5ff5ac61591696",
+      "independent_method": "scalar rank loop with math.fsum; does not call track6.metrics",
+      "metric_tolerance": 1e-12,
+      "metrics": {
+        "min_relevant_k": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.00522875816993464,
+              "mAP@10": 0.0129673721340388,
+              "score": 0.00909806515198672,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.0028011204481792717,
+              "mAP@10": 0.006388944466675559,
+              "score": 0.004595032457427415,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.5227272727272727,
+              "mAP@10": 0.5541847041847041,
+              "score": 0.5384559884559884,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.060007492769835205,
+          "ap_denominator": "min_relevant_k",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        },
+        "all_relevant": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.00522875816993464,
+              "mAP@10": 0.0129673721340388,
+              "score": 0.00909806515198672,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.0028011204481792717,
+              "mAP@10": 0.006388944466675559,
+              "score": 0.004595032457427415,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.5227272727272727,
+              "mAP@10": 0.5541847041847041,
+              "score": 0.5384559884559884,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.060007492769835205,
+          "ap_denominator": "all_relevant",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        }
+      },
+      "artifacts": {
+        "features.npz": "902d9d3307a318b368e8034438ab3a4f43e587408cf8480adb807b83e534240d",
+        "prediction.json": "4cec0699238c0f4adb0ad9524d0b6984d7ccdc2aae4b765acfcdb8bfa0879c10"
+      },
+      "submission_validation": {
+        "passed": true,
+        "queries": 267,
+        "gallery": 1800,
+        "directions": {
+          "O2S": 120,
+          "S2O": 120,
+          "O2O": 27
+        },
+        "candidates_per_query": 10,
+        "metrics_validated": false,
+        "scope": "structure only; hidden identities are unavailable"
+      },
+      "official_scorer_confirmed": false,
+      "leaderboard_submitted": false
+    },
+    "dinov3-satl16-linear20/avg": {
+      "passed": true,
+      "model": "frozen-dinov3-two-linear-contrastive-adapters",
+      "code_commit": "4c2394bdc35b340ab6f53de25acbb8a5a2e82990",
+      "report_sha256": "57864b9efe66187c024f047564640fcbefc50ab7449fe4f5ec3b2be9bbf16fbb",
+      "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "validation_rankings_sha256": "92e16154bd315a6411e71ec7071f20fda1f7d14a288de048fd0e67939a8dd509",
+      "independent_method": "scalar rank loop with math.fsum; does not call track6.metrics",
+      "metric_tolerance": 1e-12,
+      "metrics": {
+        "min_relevant_k": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.11633986928104575,
+              "mAP@10": 0.20996913580246915,
+              "score": 0.16315450254175745,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.10644257703081232,
+              "mAP@10": 0.1832606190624398,
+              "score": 0.14485159804662606,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.5227272727272727,
+              "mAP@10": 0.5818181818181819,
+              "score": 0.5522727272727272,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.1938300179920453,
+          "ap_denominator": "min_relevant_k",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        },
+        "all_relevant": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.11633986928104575,
+              "mAP@10": 0.20996913580246915,
+              "score": 0.16315450254175745,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.10644257703081232,
+              "mAP@10": 0.1832606190624398,
+              "score": 0.14485159804662606,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.5227272727272727,
+              "mAP@10": 0.5818181818181819,
+              "score": 0.5522727272727272,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.1938300179920453,
+          "ap_denominator": "all_relevant",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        }
+      },
+      "artifacts": {
+        "features.npz": "e37bc2dc80f03f3995e0c45846c202c8efee65dbd165790e32b146655cd08fc5",
+        "adapter.pt": "cba2ba1b11d8ba2d5f94be80dea77dd5061aa591873487edf5a1510530a7df3e",
+        "prediction.json": "c0a6ae243ade0777a651488e763cd6825f901e73ff0e17af199fe5996645e15b"
+      },
+      "submission_validation": {
+        "passed": true,
+        "queries": 267,
+        "gallery": 1800,
+        "directions": {
+          "O2S": 120,
+          "S2O": 120,
+          "O2O": 27
+        },
+        "candidates_per_query": 10,
+        "metrics_validated": false,
+        "scope": "structure only; hidden identities are unavailable"
+      },
+      "official_scorer_confirmed": false,
+      "leaderboard_submitted": false
+    },
+    "dinov3-satl16-linear20/cls": {
+      "passed": true,
+      "model": "frozen-dinov3-two-linear-contrastive-adapters",
+      "code_commit": "4c2394bdc35b340ab6f53de25acbb8a5a2e82990",
+      "report_sha256": "28aced9ba69ff4433dcd2cb5d250ad79557337c8e92a7ffcafeb5f5035ce7970",
+      "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "validation_rankings_sha256": "037c54ebbb9681508c8ce020aceb0cd453c1e85548d075f7711c251cca8e38cf",
+      "independent_method": "scalar rank loop with math.fsum; does not call track6.metrics",
+      "metric_tolerance": 1e-12,
+      "metrics": {
+        "min_relevant_k": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.16470588235294117,
+              "mAP@10": 0.24946104367672994,
+              "score": 0.20708346301483554,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.1330532212885154,
+              "mAP@10": 0.21626743289908554,
+              "score": 0.17466032709380047,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.5909090909090909,
+              "mAP@10": 0.6943722943722944,
+              "score": 0.6426406926406927,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.2360487748129555,
+          "ap_denominator": "min_relevant_k",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        },
+        "all_relevant": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.16470588235294117,
+              "mAP@10": 0.24946104367672994,
+              "score": 0.20708346301483554,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.1330532212885154,
+              "mAP@10": 0.21626743289908554,
+              "score": 0.17466032709380047,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.5909090909090909,
+              "mAP@10": 0.6943722943722944,
+              "score": 0.6426406926406927,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.2360487748129555,
+          "ap_denominator": "all_relevant",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        }
+      },
+      "artifacts": {
+        "features.npz": "c0ec2f1ef6bdab0f215b2c095391853a451eb263a97f2a066a0a9d641af244f8",
+        "adapter.pt": "a434dcbf78a6ae21a7c9858dd9370173a6083043f49fa0c7c4c8f045930175b2",
+        "prediction.json": "a69b0792b36b787cebc89bd28e4bd5beb84df00a85989280bad10c6cd1df83f8"
+      },
+      "submission_validation": {
+        "passed": true,
+        "queries": 267,
+        "gallery": 1800,
+        "directions": {
+          "O2S": 120,
+          "S2O": 120,
+          "O2O": 27
+        },
+        "candidates_per_query": 10,
+        "metrics_validated": false,
+        "scope": "structure only; hidden identities are unavailable"
+      },
+      "official_scorer_confirmed": false,
+      "leaderboard_submitted": false
+    },
+    "dinov3-satl16-linear20/cls_foreground": {
+      "passed": true,
+      "model": "frozen-dinov3-two-linear-contrastive-adapters",
+      "code_commit": "4c2394bdc35b340ab6f53de25acbb8a5a2e82990",
+      "report_sha256": "2fe23d51ae6e4f51b487da58e3f5cbe010e849f1498889a1af0f11f6479b911c",
+      "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "validation_rankings_sha256": "2b81cdff5f51d925ea2d15b9448c8bf1bb870c14dd3112ce545b679bf0010d08",
+      "independent_method": "scalar rank loop with math.fsum; does not call track6.metrics",
+      "metric_tolerance": 1e-12,
+      "metrics": {
+        "min_relevant_k": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.16339869281045752,
+              "mAP@10": 0.2676605456997614,
+              "score": 0.21552961925510944,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.14705882352941177,
+              "mAP@10": 0.24764637336416048,
+              "score": 0.19735259844678613,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.6590909090909091,
+              "mAP@10": 0.739105339105339,
+              "score": 0.699098124098124,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.25570681037566545,
+          "ap_denominator": "min_relevant_k",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        },
+        "all_relevant": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.16339869281045752,
+              "mAP@10": 0.2676605456997614,
+              "score": 0.21552961925510944,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.14705882352941177,
+              "mAP@10": 0.24764637336416048,
+              "score": 0.19735259844678613,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.6590909090909091,
+              "mAP@10": 0.739105339105339,
+              "score": 0.699098124098124,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.25570681037566545,
+          "ap_denominator": "all_relevant",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        }
+      },
+      "artifacts": {
+        "features.npz": "19e6d9302aac2542bcef28e3304b852ca557cddb0dc4bd38a5c90b1fbfdb0d03",
+        "adapter.pt": "5e8a454171a084f17262f363901db64fa98922c2e6087cd2eb7bd77c46229456",
+        "prediction.json": "fe9f338665de13b62eb022a6cec5f7f8e8612def3923a8215116c8ae93622f63"
+      },
+      "submission_validation": {
+        "passed": true,
+        "queries": 267,
+        "gallery": 1800,
+        "directions": {
+          "O2S": 120,
+          "S2O": 120,
+          "O2O": 27
+        },
+        "candidates_per_query": 10,
+        "metrics_validated": false,
+        "scope": "structure only; hidden identities are unavailable"
+      },
+      "official_scorer_confirmed": false,
+      "leaderboard_submitted": false
+    },
+    "split2/dinov2-frozen": {
+      "passed": true,
+      "model": "dinov2_vits14",
+      "code_commit": "4c2394bdc35b340ab6f53de25acbb8a5a2e82990",
+      "report_sha256": "41a503b057aeecc2f36a546eccf8ee8e64c0b3664c40c8cd1cf8a9dff8914f36",
+      "split_sha256": "aa7b5835cbbf9699b4b0d1ece79717d36cd9a169ea5d273f6e7c3bb0a39304e0",
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "validation_rankings_sha256": "f15a85add1db86272e247ceaf5072ba9a03fd4eacd5e1cd802cb14b11d033771",
+      "independent_method": "scalar rank loop with math.fsum; does not call track6.metrics",
+      "metric_tolerance": 1e-12,
+      "metrics": {
+        "min_relevant_k": {
+          "directions": {
+            "O2S": {
+              "queries": 762,
+              "R@1": 0.01837270341207349,
+              "mAP@10": 0.0316046431696038,
+              "score": 0.024988673290838644,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 719,
+              "R@1": 0.006954102920723227,
+              "mAP@10": 0.01579354041106475,
+              "score": 0.011373821665893988,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 40,
+              "R@1": 0.55,
+              "mAP@10": 0.6650992063492064,
+              "score": 0.6075496031746033,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.07711808304799002,
+          "ap_denominator": "min_relevant_k",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        },
+        "all_relevant": {
+          "directions": {
+            "O2S": {
+              "queries": 762,
+              "R@1": 0.01837270341207349,
+              "mAP@10": 0.0316046431696038,
+              "score": 0.024988673290838644,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 719,
+              "R@1": 0.006954102920723227,
+              "mAP@10": 0.01579354041106475,
+              "score": 0.011373821665893988,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 40,
+              "R@1": 0.55,
+              "mAP@10": 0.6650992063492064,
+              "score": 0.6075496031746033,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.07711808304799002,
+          "ap_denominator": "all_relevant",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        }
+      },
+      "artifacts": {
+        "features.npz": "f7ca38f4a3021a8d11bd32b1134ae1ca4328de720365ca24b44b103804166d49",
+        "prediction.json": "d30793ebe1836b7efd6f88b904dc7b049ff233ff242da79327d9bb4b8391e412"
+      },
+      "submission_validation": {
+        "passed": true,
+        "queries": 267,
+        "gallery": 1800,
+        "directions": {
+          "O2S": 120,
+          "S2O": 120,
+          "O2O": 27
+        },
+        "candidates_per_query": 10,
+        "metrics_validated": false,
+        "scope": "structure only; hidden identities are unavailable"
+      },
+      "official_scorer_confirmed": false,
+      "leaderboard_submitted": false
+    },
+    "split2/dinov2-linear20": {
+      "passed": true,
+      "model": "frozen-dinov2_vits14-two-linear-contrastive-adapters",
+      "code_commit": "4c2394bdc35b340ab6f53de25acbb8a5a2e82990",
+      "report_sha256": "a4b2e267521056be07096f9676c1c85e1d9a38bdc74c717b58f4f0fb336bfdee",
+      "split_sha256": "aa7b5835cbbf9699b4b0d1ece79717d36cd9a169ea5d273f6e7c3bb0a39304e0",
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "validation_rankings_sha256": "d5c990b21072b5cfe8a59f90d0af9476e7c52caeaa95710aa5d8f5656cd46923",
+      "independent_method": "scalar rank loop with math.fsum; does not call track6.metrics",
+      "metric_tolerance": 1e-12,
+      "metrics": {
+        "min_relevant_k": {
+          "directions": {
+            "O2S": {
+              "queries": 762,
+              "R@1": 0.1377952755905512,
+              "mAP@10": 0.2460512748406449,
+              "score": 0.19192327521559804,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 719,
+              "R@1": 0.13212795549374132,
+              "mAP@10": 0.23492201470296045,
+              "score": 0.18352498509835088,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 40,
+              "R@1": 0.575,
+              "mAP@10": 0.686875,
+              "score": 0.6309374999999999,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.232045467141277,
+          "ap_denominator": "min_relevant_k",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        },
+        "all_relevant": {
+          "directions": {
+            "O2S": {
+              "queries": 762,
+              "R@1": 0.1377952755905512,
+              "mAP@10": 0.2460512748406449,
+              "score": 0.19192327521559804,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 719,
+              "R@1": 0.13212795549374132,
+              "mAP@10": 0.23492201470296045,
+              "score": 0.18352498509835088,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 40,
+              "R@1": 0.575,
+              "mAP@10": 0.686875,
+              "score": 0.6309374999999999,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.232045467141277,
+          "ap_denominator": "all_relevant",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        }
+      },
+      "artifacts": {
+        "features.npz": "243fb0ca98f3343af97af9170ce9b4497150bff90b7026523ad13789a9f193a2",
+        "adapter.pt": "dcb17c2afe1c75ff751229e1704836ec91da28b362df5f8b519cf05166b23c38",
+        "prediction.json": "7e3456de012b2d65a551f9772bb759113b50655b0b45c4f14bf6d272ccdf4d65"
+      },
+      "submission_validation": {
+        "passed": true,
+        "queries": 267,
+        "gallery": 1800,
+        "directions": {
+          "O2S": 120,
+          "S2O": 120,
+          "O2O": 27
+        },
+        "candidates_per_query": 10,
+        "metrics_validated": false,
+        "scope": "structure only; hidden identities are unavailable"
+      },
+      "official_scorer_confirmed": false,
+      "leaderboard_submitted": false
+    },
+    "split2/dinov3-b16-frozen/cls_foreground": {
+      "passed": true,
+      "model": "dinov3",
+      "code_commit": "4c2394bdc35b340ab6f53de25acbb8a5a2e82990",
+      "report_sha256": "e9f73597ab117c88824888a89013a98432d23000522ec483081d4cf78497b910",
+      "split_sha256": "aa7b5835cbbf9699b4b0d1ece79717d36cd9a169ea5d273f6e7c3bb0a39304e0",
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "validation_rankings_sha256": "0a4eed82c6550e2e1bc326a55334d72ddf92ec664b40bff59fe3493ff8d7ab94",
+      "independent_method": "scalar rank loop with math.fsum; does not call track6.metrics",
+      "metric_tolerance": 1e-12,
+      "metrics": {
+        "min_relevant_k": {
+          "directions": {
+            "O2S": {
+              "queries": 762,
+              "R@1": 0.013123359580052493,
+              "mAP@10": 0.02533042744656918,
+              "score": 0.019226893513310837,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 719,
+              "R@1": 0.005563282336578581,
+              "mAP@10": 0.010334569618297018,
+              "score": 0.0079489259774378,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 40,
+              "R@1": 0.625,
+              "mAP@10": 0.6595039682539683,
+              "score": 0.6422519841269841,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.0764543171835353,
+          "ap_denominator": "min_relevant_k",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        },
+        "all_relevant": {
+          "directions": {
+            "O2S": {
+              "queries": 762,
+              "R@1": 0.013123359580052493,
+              "mAP@10": 0.02533042744656918,
+              "score": 0.019226893513310837,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 719,
+              "R@1": 0.005563282336578581,
+              "mAP@10": 0.010334569618297018,
+              "score": 0.0079489259774378,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 40,
+              "R@1": 0.625,
+              "mAP@10": 0.6595039682539683,
+              "score": 0.6422519841269841,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.0764543171835353,
+          "ap_denominator": "all_relevant",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        }
+      },
+      "artifacts": {
+        "features.npz": "c1cbe576e9e8e8e25c40dbb6e3f2efb8d90b44a77c2cf4fb297d222feea46709",
+        "prediction.json": "6c6c4bc66d606808b70c38c6617ed5e038429786e703fde3af325b415055b078"
+      },
+      "submission_validation": {
+        "passed": true,
+        "queries": 267,
+        "gallery": 1800,
+        "directions": {
+          "O2S": 120,
+          "S2O": 120,
+          "O2O": 27
+        },
+        "candidates_per_query": 10,
+        "metrics_validated": false,
+        "scope": "structure only; hidden identities are unavailable"
+      },
+      "official_scorer_confirmed": false,
+      "leaderboard_submitted": false
+    },
+    "split2/dinov3-b16-linear20": {
+      "passed": true,
+      "model": "frozen-dinov3-two-linear-contrastive-adapters",
+      "code_commit": "4c2394bdc35b340ab6f53de25acbb8a5a2e82990",
+      "report_sha256": "36c35fda45fa02615b8318190d2922133dab4193128fa2114cc33f9a9f0f97c4",
+      "split_sha256": "aa7b5835cbbf9699b4b0d1ece79717d36cd9a169ea5d273f6e7c3bb0a39304e0",
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "validation_rankings_sha256": "ebe8c35e8be2e0d9d297b280ea1101e5f2c977e8c3d0a8104fa655b6b2bb7479",
+      "independent_method": "scalar rank loop with math.fsum; does not call track6.metrics",
+      "metric_tolerance": 1e-12,
+      "metrics": {
+        "min_relevant_k": {
+          "directions": {
+            "O2S": {
+              "queries": 762,
+              "R@1": 0.17191601049868765,
+              "mAP@10": 0.2762933279173437,
+              "score": 0.22410466920801567,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 719,
+              "R@1": 0.16689847009735745,
+              "mAP@10": 0.2665629990212744,
+              "score": 0.2167307345593159,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 40,
+              "R@1": 0.725,
+              "mAP@10": 0.8129464285714286,
+              "score": 0.7689732142857143,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.27527325312387063,
+          "ap_denominator": "min_relevant_k",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        },
+        "all_relevant": {
+          "directions": {
+            "O2S": {
+              "queries": 762,
+              "R@1": 0.17191601049868765,
+              "mAP@10": 0.2762933279173437,
+              "score": 0.22410466920801567,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 719,
+              "R@1": 0.16689847009735745,
+              "mAP@10": 0.2665629990212744,
+              "score": 0.2167307345593159,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 40,
+              "R@1": 0.725,
+              "mAP@10": 0.8129464285714286,
+              "score": 0.7689732142857143,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.27527325312387063,
+          "ap_denominator": "all_relevant",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        }
+      },
+      "artifacts": {
+        "features.npz": "e032c5f8efe2215ed637025cf92065449cf5a9fdfcbd3effc01d78d216f233fe",
+        "adapter.pt": "05dfc4c96052d2b6be051571649e1993620c8623527f06d23f9633a5c13afbea",
+        "prediction.json": "5b239aba0f369ca0d46f98aeaa22f048a480ff17a2bbf8034b696f2a3c728916"
+      },
+      "submission_validation": {
+        "passed": true,
+        "queries": 267,
+        "gallery": 1800,
+        "directions": {
+          "O2S": 120,
+          "S2O": 120,
+          "O2O": 27
+        },
+        "candidates_per_query": 10,
+        "metrics_validated": false,
+        "scope": "structure only; hidden identities are unavailable"
+      },
+      "official_scorer_confirmed": false,
+      "leaderboard_submitted": false
+    },
+    "split2/dinov3-b16-reid12": {
+      "passed": true,
+      "model": "image-level-dinov3-cross-modal-reid",
+      "code_commit": "4c2394bdc35b340ab6f53de25acbb8a5a2e82990",
+      "report_sha256": "1cfd0a1373773556c2c82e9e3238eb526eeb3497b1efd2c2bcc37074198e043b",
+      "split_sha256": "aa7b5835cbbf9699b4b0d1ece79717d36cd9a169ea5d273f6e7c3bb0a39304e0",
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "validation_rankings_sha256": "78ea38d3009f18db6a900d33ac7ac2a3d57039da5f9418da0d21d8d9072b6015",
+      "independent_method": "scalar rank loop with math.fsum; does not call track6.metrics",
+      "metric_tolerance": 1e-12,
+      "metrics": {
+        "min_relevant_k": {
+          "directions": {
+            "O2S": {
+              "queries": 762,
+              "R@1": 0.2020997375328084,
+              "mAP@10": 0.32255941965587637,
+              "score": 0.26232957859434236,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 719,
+              "R@1": 0.20027816411682892,
+              "mAP@10": 0.31100109646702134,
+              "score": 0.25563963029192516,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 40,
+              "R@1": 0.75,
+              "mAP@10": 0.8182440476190477,
+              "score": 0.7841220238095239,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.3114983463797728,
+          "ap_denominator": "min_relevant_k",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        },
+        "all_relevant": {
+          "directions": {
+            "O2S": {
+              "queries": 762,
+              "R@1": 0.2020997375328084,
+              "mAP@10": 0.32255941965587637,
+              "score": 0.26232957859434236,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 719,
+              "R@1": 0.20027816411682892,
+              "mAP@10": 0.31100109646702134,
+              "score": 0.25563963029192516,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 40,
+              "R@1": 0.75,
+              "mAP@10": 0.8182440476190477,
+              "score": 0.7841220238095239,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.3114983463797728,
+          "ap_denominator": "all_relevant",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        }
+      },
+      "artifacts": {
+        "features.npz": "590a418c59c4c6cdcb41a8f8f446a1321d808349840f2fbcea282dab082fd2e8",
+        "prediction.json": "73c73e686057d3bc5a54482de61f12d437ce8ebf5736d970eb52bd685e5df590"
+      },
+      "submission_validation": {
+        "passed": true,
+        "queries": 267,
+        "gallery": 1800,
+        "directions": {
+          "O2S": 120,
+          "S2O": 120,
+          "O2O": 27
+        },
+        "candidates_per_query": 10,
+        "metrics_validated": false,
+        "scope": "structure only; hidden identities are unavailable"
+      },
+      "official_scorer_confirmed": false,
+      "leaderboard_submitted": false
+    },
+    "split2/dinov3-b16-replay": {
+      "passed": true,
+      "model": "saved-dinov3-reid-replay",
+      "code_commit": "4c2394bdc35b340ab6f53de25acbb8a5a2e82990",
+      "report_sha256": "763c405321cc9bdb2e78a12a235fdc8924e9bd5c645cc517f7d61984f8c725f7",
+      "split_sha256": "aa7b5835cbbf9699b4b0d1ece79717d36cd9a169ea5d273f6e7c3bb0a39304e0",
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "validation_rankings_sha256": "78ea38d3009f18db6a900d33ac7ac2a3d57039da5f9418da0d21d8d9072b6015",
+      "independent_method": "scalar rank loop with math.fsum; does not call track6.metrics",
+      "metric_tolerance": 1e-12,
+      "metrics": {
+        "min_relevant_k": {
+          "directions": {
+            "O2S": {
+              "queries": 762,
+              "R@1": 0.2020997375328084,
+              "mAP@10": 0.32255941965587637,
+              "score": 0.26232957859434236,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 719,
+              "R@1": 0.20027816411682892,
+              "mAP@10": 0.31100109646702134,
+              "score": 0.25563963029192516,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 40,
+              "R@1": 0.75,
+              "mAP@10": 0.8182440476190477,
+              "score": 0.7841220238095239,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.3114983463797728,
+          "ap_denominator": "min_relevant_k",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        },
+        "all_relevant": {
+          "directions": {
+            "O2S": {
+              "queries": 762,
+              "R@1": 0.2020997375328084,
+              "mAP@10": 0.32255941965587637,
+              "score": 0.26232957859434236,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 719,
+              "R@1": 0.20027816411682892,
+              "mAP@10": 0.31100109646702134,
+              "score": 0.25563963029192516,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 40,
+              "R@1": 0.75,
+              "mAP@10": 0.8182440476190477,
+              "score": 0.7841220238095239,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.3114983463797728,
+          "ap_denominator": "all_relevant",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        }
+      },
+      "artifacts": {
+        "features.npz": "590a418c59c4c6cdcb41a8f8f446a1321d808349840f2fbcea282dab082fd2e8",
+        "prediction.json": "73c73e686057d3bc5a54482de61f12d437ce8ebf5736d970eb52bd685e5df590"
+      },
+      "submission_validation": {
+        "passed": true,
+        "queries": 267,
+        "gallery": 1800,
+        "directions": {
+          "O2S": 120,
+          "S2O": 120,
+          "O2O": 27
+        },
+        "candidates_per_query": 10,
+        "metrics_validated": false,
+        "scope": "structure only; hidden identities are unavailable"
+      },
+      "official_scorer_confirmed": false,
+      "leaderboard_submitted": false
+    }
+  },
+  "checkpoint_replays": {
+    "dinov3-b16-reid12": {
+      "passed": true,
+      "byte_identical_outputs": {
+        "prediction.json": true,
+        "validation-rankings.json": true
+      },
+      "checkpoint_sha256_verified": true,
+      "checkpoint_sha256": "08b3e8b3323e7162f1391bc0303670cc89d89eb2bb2183411d295cdf9371cec5",
+      "prediction_sha256": "af6a07a6f7a4db5139499177ddf4bb0b288f56f4a0f24e890db726746311f9cf",
+      "validation_rankings_sha256": "f649432e97391b21aba11c4ddc64c6357692f25ff7e57ad06b8b5729bdfdf0f0"
+    },
+    "split2/dinov3-b16-reid12": {
+      "passed": true,
+      "byte_identical_outputs": {
+        "prediction.json": true,
+        "validation-rankings.json": true
+      },
+      "checkpoint_sha256_verified": true,
+      "checkpoint_sha256": "826043bef46c1397088efab176c78bb70bf0f4522873ac8024dfbce28c03ba95",
+      "prediction_sha256": "73c73e686057d3bc5a54482de61f12d437ce8ebf5736d970eb52bd685e5df590",
+      "validation_rankings_sha256": "78ea38d3009f18db6a900d33ac7ac2a3d57039da5f9418da0d21d8d9072b6015"
+    }
+  },
+  "validation_tests": {
+    "autodl_linux": {
+      "passed": 27,
+      "skipped": 0,
+      "code_commit": "4c2394bdc35b340ab6f53de25acbb8a5a2e82990"
+    },
+    "windows": {
+      "passed": 21,
+      "skipped": 6,
+      "torch_not_installed": true
+    }
+  }
+}

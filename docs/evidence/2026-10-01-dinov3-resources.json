@@ -1,0 +1,134 @@
+{
+  "reviewed_at": "2026-10-01",
+  "cutoff": "2026-09-01",
+  "scope": "exact timm conversions; code and weights have separate licenses",
+  "resources": {
+    "vit_base_patch16_dinov3.lvd1689m": {
+      "release_history": {
+        "repo": "timm/vit_base_patch16_dinov3.lvd1689m",
+        "repo_revision": "c6a5fb7d12bbd3cf3b0079253141c3332aaed7da",
+        "gated": false,
+        "created_at": "2025-09-17T16:31:36.000Z",
+        "weight_initial_commit": {
+          "id": "e2d80655c8189be2e61f55ed9cc4d4d8e7e31b88",
+          "title": "Add model",
+          "message": "",
+          "authors": [
+            {
+              "user": "rwightman",
+              "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1667002643224-604a5184dca2c7ac7508b849.jpeg"
+            }
+          ],
+          "date": "2025-09-17T16:31:50.000Z"
+        },
+        "weight": {
+          "rfilename": "model.safetensors",
+          "blobId": "1e8c82f412c52d81aa1e6b92c2df1c51a8337df9",
+          "size": 342579728,
+          "lfs": {
+            "sha256": "1f9ed8a2378d65e24bb710ba522ac9fa7be4e036d7aefb4384ce022833926332",
+            "size": 342579728,
+            "pointerSize": 134
+          }
+        },
+        "same_weight_as_initial_commit": true,
+        "README.md_sha256": "cebdbe299e69067797886eb381366e3e353b793a2fed95d2c5a47716f9749b96",
+        "LICENSE.md_sha256": "25d122eb8f5b880fd23c736fb6ea8018ee45c12237e00b8a86d14c653904999e",
+        "config.json_sha256": "5ca17ece8677541aa067db570946330ecca4125b713a51e89be9e7ec97395e94"
+      },
+      "verified_download_and_transfer": {
+        "resource": "vit_base_patch16_dinov3.lvd1689m",
+        "url": "https://huggingface.co/timm/vit_base_patch16_dinov3.lvd1689m/resolve/e2d80655c8189be2e61f55ed9cc4d4d8e7e31b88/model.safetensors",
+        "sha256": "1f9ed8a2378d65e24bb710ba522ac9fa7be4e036d7aefb4384ce022833926332",
+        "bytes": 342579728,
+        "download_verified_at_utc": "2026-10-01T12:20:51.454669+00:00",
+        "elapsed_seconds": 50.14099999998871,
+        "resource_manifest_sha256": "e72a05a7b46a1713d6045565e7feee33ed1935e67d786012848ad38d084b995b"
+      },
+      "compute_transfer_sha256_verified": true,
+      "initial_experiment_resource_manifest_sha256": "e72a05a7b46a1713d6045565e7feee33ed1935e67d786012848ad38d084b995b"
+    },
+    "vit_large_patch16_dinov3.sat493m": {
+      "release_history": {
+        "repo": "timm/vit_large_patch16_dinov3.sat493m",
+        "repo_revision": "ce148bd5ed3de1eb75ebdccafcb2c280bb3e8f7c",
+        "gated": false,
+        "created_at": "2025-09-17T16:37:41.000Z",
+        "weight_initial_commit": {
+          "id": "edb5320108653705f6a402434a1ce00e2cc214f3",
+          "title": "Add model",
+          "message": "",
+          "authors": [
+            {
+              "user": "rwightman",
+              "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1667002643224-604a5184dca2c7ac7508b849.jpeg"
+            }
+          ],
+          "date": "2025-09-17T16:38:22.000Z"
+        },
+        "weight": {
+          "rfilename": "model.safetensors",
+          "blobId": "d56f9d0f1953a7ef088ff1bd940ed438392da220",
+          "size": 1212347640,
+          "lfs": {
+            "sha256": "8d18337f766102f951ac0ca543a22536f58caeb6b6c33cfef73326f866791286",
+            "size": 1212347640,
+            "pointerSize": 135
+          }
+        },
+        "same_weight_as_initial_commit": true,
+        "README.md_sha256": "658c64a8f880c58932f746fd49bca55e052c0cc06c4391c068c37ad202e0067b",
+        "LICENSE.md_sha256": "25d122eb8f5b880fd23c736fb6ea8018ee45c12237e00b8a86d14c653904999e",
+        "config.json_sha256": "2930b9d16c3d2942f654a214e2fb04cc5a5e8c1eb3bba62809d41ee5bfd8c1b1"
+      },
+      "verified_download_and_transfer": {
+        "resource": "vit_large_patch16_dinov3.sat493m",
+        "url": "https://huggingface.co/timm/vit_large_patch16_dinov3.sat493m/resolve/edb5320108653705f6a402434a1ce00e2cc214f3/model.safetensors",
+        "sha256": "8d18337f766102f951ac0ca543a22536f58caeb6b6c33cfef73326f866791286",
+        "bytes": 1212347640,
+        "download_verified_at_utc": "2026-10-01T12:21:49.515858+00:00",
+        "elapsed_seconds": 106.88999999999942,
+        "resource_manifest_sha256": "a470d7275b41c8e9d17f4bd1e8c81327b597109b7aa9a565e5b225a4cd6b315f"
+      },
+      "compute_transfer_sha256_verified": true,
+      "initial_experiment_resource_manifest_sha256": "a470d7275b41c8e9d17f4bd1e8c81327b597109b7aa9a565e5b225a4cd6b315f"
+    },
+    "timm": {
+      "package": "timm",
+      "version": "1.0.20",
+      "wheel": {
+        "comment_text": null,
+        "core-metadata": {
+          "sha256": "2c84b52ec4a30e19120af3cb1d24534fcf6d6a9ec69d00e213408d5d720139f4"
+        },
+        "digests": {
+          "blake2b_256": "c5745573615570bf010f788e977ac57c4b49db0aaf6d634134f6a9212d8dcdfd",
+          "md5": "d62a8de311cee60929f1f182bcff9633",
+          "sha256": "f6e62f780358476691996c47aa49de87b95cc507edf923c3042f74a07e45b7fe"
+        },
+        "downloads": -1,
+        "filename": "timm-1.0.20-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "d62a8de311cee60929f1f182bcff9633",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.8",
+        "size": 2504047,
+        "upload_time": "2025-09-21T17:26:33",
+        "upload_time_iso_8601": "2025-09-21T17:26:33.487785Z",
+        "url": "https://files.pythonhosted.org/packages/c5/74/5573615570bf010f788e977ac57c4b49db0aaf6d634134f6a9212d8dcdfd/timm-1.0.20-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      "license": "Apache-2.0",
+      "repository": {
+        "documentation": "https://huggingface.co/docs/timm/en/index",
+        "homepage": "https://github.com/huggingface/pytorch-image-models",
+        "repository": "https://github.com/huggingface/pytorch-image-models"
+      },
+      "license_file_sha256": "71b111620fa32c17a80ccd6db2da759d31a591e497d8b5f382174f59d1b59d49",
+      "installed_eva_implementation_matches_reviewed_wheel": true,
+      "eva_implementation_sha256": "52e00af9628a8ca785378dad256fd3d5931d61846fc08bbec80deb172d8844be"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+# Recorded recipe; tools use the CLI documented in docs/09-modern-models.md.
+[experiment]
+track = "track6"
+code_commit = "4c2394bdc35b340ab6f53de25acbb8a5a2e82990"
+seed = 20261001
+confirmation_seed = 20261002
+status = "two_local_holdouts_measured"
+
+[data]
+archive_sha256 = "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513"
+split_sha256 = "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5"
+confirmation_split_sha256 = "aa7b5835cbbf9699b4b0d1ece79717d36cd9a169ea5d273f6e7c3bb0a39304e0"
+validation_protocol = "identity-holdout-v1"
+
+[model]
+backend = "timm"
+timm_version = "1.0.20"
+variant = "vit_base_patch16_dinov3.lvd1689m"
+weights_sha256 = "1f9ed8a2378d65e24bb710ba522ac9fa7be4e036d7aefb4384ce022833926332"
+image_size = 256
+pooling = "cls_foreground"
+foreground_threshold_uint8 = 8
+train_last_blocks = 4
+precision = "BF16 encoder; FP32 heads, embeddings and losses"
+
+[training]
+epochs = 12
+identities_per_batch = 32
+inference_batch_size = 32
+backbone_lr = 0.00002
+head_lr = 0.001
+weight_decay = 0.01
+temperature = 0.07
+classification_weight = 0.5
+triplet_weight = 0.2
+augment = false
+selection = "fixed final epoch"
+
+[results]
+first_holdout_weighted_score = 0.3365939470485164
+confirmation_holdout_weighted_score = 0.3114983463797728
+rankings_independently_checked = true
+checkpoint_replays_byte_identical = true
+official_scorer_confirmed = false
+leaderboard_submitted = false

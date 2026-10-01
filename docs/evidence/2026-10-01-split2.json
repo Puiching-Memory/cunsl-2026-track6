@@ -1,0 +1,33 @@
+{
+  "protocol": "identity-holdout-v1",
+  "seed": 20261002,
+  "split_sha256": "aa7b5835cbbf9699b4b0d1ece79717d36cd9a169ea5d273f6e7c3bb0a39304e0",
+  "train_identities": 2827,
+  "validation_identities": 707,
+  "train_images": 5927,
+  "validation_images": 1482,
+  "exclusions": {
+    "identical_pixels_conflicting_identity": 12,
+    "constant_or_invalid": 1
+  },
+  "identity_components": 3487,
+  "largest_identity_component": 3,
+  "tasks": {
+    "O2S": {
+      "queries": 762,
+      "gallery": 720
+    },
+    "S2O": {
+      "queries": 719,
+      "gallery": 762
+    },
+    "O2O": {
+      "queries": 40,
+      "gallery": 722
+    }
+  },
+  "identity_overlap": 0,
+  "pixel_overlap": 0,
+  "near_duplicate_edges_across_split": 0,
+  "test_used_for_split": false
+}

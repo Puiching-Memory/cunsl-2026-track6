@@ -41,3 +41,5 @@ check_metrics.py以独立标量逐位累加核对R@1、两种AP分母及三方�
 run_dinov3.py严格加载逐项审查的本地safetensors，在单次编码中比较CLS、均值和前景池化，保存各自特征与三方向报告；不会自动从hub下载模型。train_adapter.py支持这些审查过的DINOv3缓存，输出适配后特征供后续对照。train_reid.py使用训练身份的实际图像与配对监督微调编码器末端，predict_reid.py从绑定的公开初始化恢复部分参数检查点。资源与方法边界见[新模型章](../docs/09-modern-models.md)。
 
 依赖可隔离安装：`python -m pip install --no-deps --target local/dinov3-deps -r requirements-models.txt`，运行前设置PYTHONPATH指向该目录。所有GPU运行继续使用共同gpu.lock，模型输出和检查点留在Git之外。
+
+上述新路线已在真实5090上运行：两组身份划分分别重训，20份报告独立复算，图像微调检查点恢复后排名/预测逐字节一致。check_metrics自动核对特征缓存、线性适配器及预测摘要；图像级reid.pt摘要另外与训练报告比较，再执行predict_reid覆盖恢复检查，不能把格式校验等同于效果证明。完整命令和配置记录见第9章。

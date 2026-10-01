@@ -31,12 +31,107 @@ timm转换去掉原权重中的零QKV偏置，使用FP32生成RoPE周期；模�
 
 ## 与本题直接相关的研究
 
-- [TransOSS/HOSS-ReID（2025）](https://arxiv.org/abs/2506.22027)：提出光学/SAR舰船重识别、模态独立patch输入和共享Transformer。其公开协议、数据规模与本题不同；涉及实物尺寸的附加输入不能在本题未经公开提供时使用。
-- [MOS（2025）](https://arxiv.org/abs/2512.03404)：研究SAR预处理、按身份对齐及生成模态的特征融合。生成图像的身份细节是否可靠与推理成本需在本题验证，不能直接采纳论文分数。
-- [SDF-Net（2026）](https://arxiv.org/abs/2603.12588)：使用中间特征结构约束、共享和模态特定表示。结构池化和监督对齐值得做独立消融，其论文效果尚未在本题复现。
+- [TransOSS，ICCV 2025](https://arxiv.org/abs/2506.22027)及[官方实现](https://github.com/Alioth2000/Hoss-ReID)：提出光学/SAR舰船重识别、模态独立patch输入和共享Transformer。其公开协议、数据规模与本题不同；涉及实物尺寸的附加输入不能在本题未经公开提供时使用。
+- [MOS，CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/papers/Zhao_MOS_Mitigating_Optical-SAR_Modality_Gap_for_Cross-Modal_Ship_Re-Identification_CVPR_2026_paper.pdf)及[官方实现](https://github.com/yjzhao1019/MOS)：研究SAR去噪、身份内模态对齐及生成模态的特征融合。作者标注代码2026年3月公开，但伪光学转SAR样本于2026年9月发布，晚于本题外部资源截止，不使用该批样本。README更正融合系数τ为0.02，不能照抄论文中的笔误。生成细节可靠性和推理成本仍需本题验证。
+- [SDF-Net（2026）](https://arxiv.org/abs/2603.12588)及[官方实现](https://github.com/cfrfree/SDF-Net)：使用中间特征结构约束、共享和模态特定表示。结构池化和监督对齐值得做独立消融，其论文效果尚未在本题复现。
 
-当前不导入外部HOSS训练数据或基于其身份训练的ReID权重，需先核对身份重叠、资源日期、权重许可和本题允许信息。只把上述论文作为设计参考。DINOv3是否优于现有基准，必须由本题实测确定。
+当前不导入外部HOSS训练数据或基于其身份训练的ReID权重，需先核对身份重叠、资源日期、权重许可和本题允许信息。只把上述论文作为设计参考，论文在HOSS上的分数不能称为本题成绩。
 
-## 测量状态
+## 第一组实测：seed=20261001
 
-两个精确权重已核验。新模型前向、后向、保存恢复、完整识别指标和多种子稳定性仍须实际运行；在完成之前不将训练代码就绪视为识别改善。实际结果将在本章补充，无排行榜提交。
+全部新实验来自干净提交`4c2394bdc35b340ab6f53de25acbb8a5a2e82990`，沿用第7章的身份隔离划分；旧DINOv2对照来自已归档的26f73f3。下表每方向为**R@1% / mAP@10%**，加权分保持0–1尺度。全部保存排名独立复算，两种显式AP分母在此数据上相同；尚未拿到官方评分程序。
+
+| 模型与设置 | O2S | S2O | O2O | 加权分 |
+|---|---:|---:|---:|---:|
+| 旧DINOv2-S/14 + 20轮适配器 | 13.73 / 24.66 | 14.29 / 24.14 | 75.00 / 80.21 | 0.25044 |
+| DINOv3-B 冻结CLS | 1.31 / 3.02 | 0.70 / 1.38 | 68.18 / 75.34 | 0.08618 |
+| DINOv3-B 冻结patch均值 | 2.48 / 3.90 | 1.26 / 2.15 | 63.64 / 69.24 | 0.08847 |
+| DINOv3-B 冻结CLS+前景 | 1.83 / 3.30 | 0.70 / 1.31 | 63.64 / 71.24 | 0.08349 |
+| DINOv3-B CLS + 20轮适配器 | 16.34 / 26.48 | 16.25 / 24.80 | 77.27 / 86.52 | 0.27059 |
+| DINOv3-B patch均值 + 20轮适配器 | 16.34 / 28.55 | 17.79 / 28.28 | 75.00 / 81.01 | 0.28267 |
+| DINOv3-B CLS+前景 + 20轮适配器 | 17.78 / 29.12 | 17.65 / 27.69 | 79.55 / 86.08 | 0.29035 |
+| DINOv3-L SAT 冻结CLS | 0.65 / 1.50 | 0.28 / 1.20 | 43.18 / 46.66 | 0.05308 |
+| DINOv3-L SAT 冻结patch均值 | 0.26 / 1.16 | 0.28 / 1.09 | 45.45 / 48.81 | 0.05340 |
+| DINOv3-L SAT 冻结CLS+前景 | 0.52 / 1.30 | 0.28 / 0.64 | 52.27 / 55.42 | 0.06001 |
+| DINOv3-L SAT CLS + 20轮适配器 | 16.47 / 24.95 | 13.31 / 21.63 | 59.09 / 69.44 | 0.23605 |
+| DINOv3-L SAT patch均值 + 20轮适配器 | 11.63 / 21.00 | 10.64 / 18.33 | 52.27 / 58.18 | 0.19383 |
+| DINOv3-L SAT CLS+前景 + 20轮适配器 | 16.34 / 26.77 | 14.71 / 24.76 | 65.91 / 73.91 | 0.25571 |
+| **DINOv3-B CLS+前景，末4块微调12轮** | **20.78 / 34.61** | **21.57 / 32.99** | **86.36 / 92.05** | **0.33659** |
+
+在这组划分中，监督对齐比直接冻结检索有效，通用B版适配后优于SAT-L版；选择B版继续微调。该比较尚不能说明卫星版的充分微调上限，也不能单独归因于DINO版本：旧模型输入224、新模型256，特征384/768/1536维，对应头部参数量不同。CLS+前景的改善也需固定表示维度的后续消融。
+
+实际微调使用2,819个成对训练身份，5,918张可用配对图，37,398,528个可训练参数。每轮89步，共1,068步；两个模态投影为1536维，编码器其余部分冻结。没有图像增强，采用两轮warmup、余弦衰减、梯度裁剪1、InfoNCE温度0.07、身份分类权重0.5和triplet权重0.2，AdamW权重衰减0.01。训练设定与逐轮损失完整保存在匿名报告。
+
+| 路线 | 实际阶段用时 | PyTorch allocated / reserved峰值 |
+|---|---|---:|
+| B/16冻结编码，共享3种池化 | 9,476张，18.84秒，包含解码 | 587.32 / 778.00 MiB |
+| SAT-L/16冻结编码，共享3种池化 | 9,476张，27.95秒，包含解码 | 1484.53 / 1734.00 MiB |
+| B/16 CLS+前景线性适配器 | 缓存训练3.71秒；上游编码另计 | 见完整报告 |
+| B/16末4块图像微调 | 12轮训练109.35秒；数据预载、推理另计 | 3381.93 / 3982.00 MiB |
+
+显存是PyTorch分配器峰值，不包括CUDA上下文或驱动占用；阶段用时不等于从下载到预测的全流程耗时。
+
+## 第二组实测：seed=20261002
+
+依据第一组结果固定B/16 CLS+前景和12轮设置，再生成另一组身份隔离划分。训练2,827个身份/5,927张图，验证707个身份/1,482张图；方向Query/Gallery为O2S 762/720、S2O 719/762、O2O 40/722。[划分汇总](evidence/2026-10-01-split2.json)记录完整摘要`aa7b5835cbbf9699b4b0d1ece79717d36cd9a169ea5d273f6e7c3bb0a39304e0`，身份、像素和所用近重复边跨区重叠均为0。
+
+旧、新方案各自从原始公开初始化重新训练，只用第二组训练身份。没有复用第一组训练模型评估第二组验证身份。下表单位同上。
+
+| 模型与设置 | O2S | S2O | O2O | 加权分 |
+|---|---:|---:|---:|---:|
+| 冻结DINOv2-S/14 | 1.84 / 3.16 | 0.70 / 1.58 | 55.00 / 66.51 | 0.07712 |
+| DINOv2 + 20轮适配器 | 13.78 / 24.61 | 13.21 / 23.49 | 57.50 / 68.69 | 0.23205 |
+| DINOv3-B 冻结CLS+前景 | 1.31 / 2.53 | 0.56 / 1.03 | 62.50 / 65.95 | 0.07645 |
+| DINOv3-B CLS+前景 + 20轮适配器 | 17.19 / 27.63 | 16.69 / 26.66 | 72.50 / 81.29 | 0.27527 |
+| **DINOv3-B CLS+前景，末4块微调12轮** | **20.21 / 32.26** | **20.03 / 31.10** | **75.00 / 81.82** | **0.31150** |
+
+第二组微调2,816个成对身份，训练110.43秒。相对旧适配器，两组加权分分别提升0.08616和0.07945，两个跨模态方向的R@1与mAP@10均改善。因此当前主线选B/16监督微调。两组来自同一训练包，验证身份可能部分重合，且同时更换了划分与训练随机种子；不是独立外部测试，也不是充分的统计稳定性证明。O2O仅44/40个Query，不根据其单次波动宣称普遍领先。
+
+## 独立核对与复现
+
+[完整实测报告](evidence/2026-10-01-modern-models.json)包含20份报告，其中18个实验设置和2次检查点重放；[核对证据](evidence/2026-10-01-modern-verification.json)独立逐位重算所有排名，误差≤1e-12。所有预测恰好覆盖267个Query、各10个有效唯一目标模态候选。两组图像微调检查点重新加载后，验证排名和测试预测均逐字节一致；检查点本体摘要也已单独核验。
+
+[运行清单](evidence/2026-10-01-modern-runs.json)记录16次持GPU锁的成功模型运行及1次CPU下载失败；每次模型运行先检查已有GPU进程，源代码干净，未终止第5题。图像微调、损失、部分参数保存覆盖与恢复的真实测试已通过；算力机27项检查全通过，Windows 21项通过、6项按平台或无PyTorch跳过。[外部资源证据](evidence/2026-10-01-dinov3-resources.json)保存原始发布时间、精确权重、下载/传输摘要与代码许可。实验使用的是4c2394b中的资源清单摘要，后续仅完善清单说明，不改变具体权重。
+
+复现需使用已核验正式ZIP、审查生成的私有划分和指定本地权重。新配置记录见[dinov3-reid.example.toml](../configs/dinov3-reid.example.toml)，TOML用于记录设置，下列CLI是实际执行入口；输出使用新的复现目录：
+
+```bash
+cd /root/autodl-tmp/cunsl-2026/track6/project
+TRACK6_PY=/root/miniconda3/bin/python
+TRACK6_LOCAL=/root/autodl-tmp/cunsl-2026/track6/local
+TRACK6_DATA=/root/autodl-tmp/cunsl-2026/track6/data
+TRACK6_OUT="$TRACK6_LOCAL/benchmarks/reproduce-b16"
+export PYTHONPATH="$TRACK6_LOCAL/dinov3-deps"
+"$TRACK6_PY" tools/run_job.py --name reproduce-b16-frozen --output-root "$TRACK6_LOCAL/runs" \
+  --gpu-lock /root/autodl-tmp/cunsl-2026/gpu.lock -- \
+  "$TRACK6_PY" tools/run_dinov3.py "$TRACK6_DATA/stage1.zip" --split "$TRACK6_LOCAL/splits/identity-v1.json" \
+  --resource resources/dinov3-vitb16-timm.json --weights "$TRACK6_DATA/weights/dinov3-vitb16-timm.safetensors" \
+  --output-root "$TRACK6_OUT/frozen" --poolings cls avg cls_foreground \
+  --image-size 256 --batch-size 32 --cache-train --predict-test
+"$TRACK6_PY" tools/run_job.py --name reproduce-b16-reid12 --output-root "$TRACK6_LOCAL/runs" \
+  --gpu-lock /root/autodl-tmp/cunsl-2026/gpu.lock -- \
+  "$TRACK6_PY" tools/train_reid.py "$TRACK6_DATA/stage1.zip" --split "$TRACK6_LOCAL/splits/identity-v1.json" \
+  --resource resources/dinov3-vitb16-timm.json --weights "$TRACK6_DATA/weights/dinov3-vitb16-timm.safetensors" \
+  --output-dir "$TRACK6_OUT/reid" --seed 20261001 --epochs 12 \
+  --identities-per-batch 32 --image-size 256 --pooling cls_foreground --train-last-blocks 4 \
+  --backbone-lr .00002 --head-lr .001 --predict-test
+"$TRACK6_PY" tools/check_metrics.py "$TRACK6_DATA/stage1.zip" --split "$TRACK6_LOCAL/splits/identity-v1.json" \
+  --run-dir "$TRACK6_OUT/reid" --output "$TRACK6_OUT/reid/verification.json"
+"$TRACK6_PY" tools/run_job.py --name reproduce-b16-replay --output-root "$TRACK6_LOCAL/runs" \
+  --gpu-lock /root/autodl-tmp/cunsl-2026/gpu.lock -- \
+  "$TRACK6_PY" tools/predict_reid.py "$TRACK6_DATA/stage1.zip" --split "$TRACK6_LOCAL/splits/identity-v1.json" \
+  --resource resources/dinov3-vitb16-timm.json --weights "$TRACK6_DATA/weights/dinov3-vitb16-timm.safetensors" \
+  --checkpoint "$TRACK6_OUT/reid/reid.pt" --output-dir "$TRACK6_OUT/replay" --predict-test
+"$TRACK6_PY" tools/check_metrics.py "$TRACK6_DATA/stage1.zip" --split "$TRACK6_LOCAL/splits/identity-v1.json" \
+  --run-dir "$TRACK6_OUT/replay" --output "$TRACK6_OUT/replay/verification.json"
+cmp "$TRACK6_OUT/reid/prediction.json" "$TRACK6_OUT/replay/prediction.json"
+cmp "$TRACK6_OUT/reid/validation-rankings.json" "$TRACK6_OUT/replay/validation-rankings.json"
+```
+
+实际运行的绝对命令已在运行清单保存，包括全部线性适配器对照。第二组先运行make_split并指定`--seed 20261002`，所有训练命令的split与seed都对应更新；输出使用独立目录，不能覆盖首组产物。正式可复现运行要求源代码先提交且工作区干净。
+
+当前较优候选为算力机`local/benchmarks/dinov3-b16-reid12/prediction.json`，本地副本为`local/modern-results/benchmarks/dinov3-b16-reid12/prediction.json`。模型仍只在首组训练身份上训练，尚未全训练身份重训或提交排行榜。
+
+## 下一步识别研究
+
+跨模态R@1约20%，仍是主要瓶颈。保持这两组划分，优先审查错配样本，再做同预算的损失、翻转增强和末端解冻预算消融，避免把更长训练误当作结构收益。随后评估模态独立patch输入与共享主干、局部船体结构对齐和SAR像素预处理；DINOv3升级已实测，这些改进还未运行。灰度与深层特征融合可作为低成本对照。外部ReID权重、生成图像、全量重训及排行榜提交另行记录，不以论文名称或代码就绪代替本题识别证据。

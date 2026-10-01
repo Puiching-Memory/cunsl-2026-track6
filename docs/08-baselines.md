@@ -83,7 +83,7 @@ DINOv2冻结基准将完整256×256图以bicubic缩为224×224，按ImageNet均�
 
 证据见 [基准原始报告](evidence/2026-10-01-baselines.json)、[独立复算](evidence/2026-10-01-metric-verification.json) 和 [运行记录](evidence/2026-10-01-runs.json)。三个模型的保存排序均由独立标量逐位AP程序复算，误差≤1e-12；三个prediction.json均通过267个Query、10个唯一候选、完整覆盖及目标模态校验。适配器检查点重新加载后，验证排序和测试预测均逐字节一致。
 
-当前候选文件为算力机 `local/benchmarks/dino-linear20/prediction.json`，Windows副本为仓库忽略目录 `local/remote-results/benchmarks/dino-linear20/prediction.json`；它使用本轮未见身份验证的固定最终模型。尚未使用所有可用训练身份重训，也未向比赛平台提交。
+首轮候选文件为算力机 `local/benchmarks/dino-linear20/prediction.json`，Windows副本为仓库忽略目录 `local/remote-results/benchmarks/dino-linear20/prediction.json`；它使用本轮未见身份验证的固定最终模型。随后完成的DINOv3升级、第二组划分对照与较优候选见[第9章](09-modern-models.md)。尚未使用所有可用训练身份重训，也未向比赛平台提交。
 
 失败记录：初次算力机并发ZIP审查在c423a7b上退出码1，8个间歇读取错误。26f73f3为共享读取加锁后，9,489张重新审查全部通过；身份划分跨Windows/Linux逐字节一致。外部库xFormers可选加速被显式关闭，DINO以现有PyTorch运行，未覆盖CUDA环境。失败原始日志保留，见研究日志和运行记录。
 
