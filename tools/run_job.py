@@ -17,10 +17,46 @@ def revision():
                             stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
     return result.stdout.strip() if result.returncode == 0 else None
 
+def dirty_status():
+    result = subprocess.run(["git", "status", "--porcelain"], text=True,
+                            stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
+    return result.stdout.splitlines() if result.returncode == 0 else None
+
+def acquire_gpu_lock(path, timeout):
+    """Cooperate with track5, then reject any pre-existing GPU compute process."""
+    if sys.platform != "linux":
+        raise RuntimeError("Shared GPU locking requires Linux flock")
+    import fcntl
+    path.parent.mkdir(parents=True, exist_ok=True)
+    handle = path.open("a+", encoding="utf-8")
+    deadline = time.monotonic() + timeout
+    while True:
+        try:
+            fcntl.flock(handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+            break
+        except BlockingIOError:
+            if time.monotonic() >= deadline:
+                handle.close()
+                raise RuntimeError("Shared GPU is locked by another task; no process was stopped")
+            print("Waiting for shared GPU lock", flush=True)
+            time.sleep(min(5, max(0, deadline - time.monotonic())))
+    check = subprocess.run(["nvidia-smi", "--query-compute-apps=pid,process_name,used_memory",
+                            "--format=csv,noheader"], text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    if check.returncode != 0 or check.stdout.strip():
+        handle.close()
+        raise RuntimeError("GPU process check failed or GPU is occupied; no process was stopped")
+    handle.seek(0)
+    handle.truncate()
+    handle.write(json.dumps({"pid":__import__("os").getpid(), "name":"track6", "acquired_at_utc":utc()}) + "\n")
+    handle.flush()
+    return handle
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--name", required=True)
     parser.add_argument("--output-root", type=Path, default=Path("local/runs"))
+    parser.add_argument("--gpu-lock", type=Path)
+    parser.add_argument("--gpu-wait-seconds", type=float, default=0)
     parser.add_argument("command", nargs=argparse.REMAINDER)
     args = parser.parse_args()
     if not re.fullmatch(r"[a-z0-9][a-z0-9_-]{0,63}", args.name):
@@ -34,7 +70,8 @@ def main():
     manifest = {
         "name": args.name, "started_at_utc": utc(), "state": "running",
         "command": command, "working_directory": str(Path.cwd()),
-        "git_commit": revision(), "metrics_validated": False,
+        "git_commit": revision(), "git_dirty_files":dirty_status(), "metrics_validated": False,
+        "gpu_lock":str(args.gpu_lock) if args.gpu_lock else None,
         "log": "stdout.log"
     }
     manifest_path = directory / "manifest.json"
@@ -44,7 +81,12 @@ def main():
     save()
     started = time.monotonic()
     process = None
+    lock = None
     try:
+        if args.gpu_lock:
+            lock = acquire_gpu_lock(args.gpu_lock, args.gpu_wait_seconds)
+            manifest["gpu_lock_acquired_at_utc"] = utc()
+            save()
         with (directory / "stdout.log").open("w", encoding="utf-8") as log:
             process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                        text=True, encoding="utf-8", errors="replace")
@@ -68,6 +110,8 @@ def main():
         manifest.update(state="failed", return_code=1,
                         error=f"{type(exc).__name__}: {exc}")
     finally:
+        if lock is not None:
+            lock.close()
         manifest.update(finished_at_utc=utc(), elapsed_seconds=time.monotonic() - started)
         save()
         print(f"Experiment record: {manifest_path}")

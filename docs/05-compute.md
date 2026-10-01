@@ -22,3 +22,7 @@ AutoDL登录横幅显示25核CPU、92GB内存；os.cpu_count()返回208是宿主
 实测依赖包括torchvision 0.27.1+cu130、numpy 2.4.6、Pillow 12.2.0。timm与safetensors未安装；尚未安装比赛框架或下载预训练模型。
 
 建议布局：/root/autodl-tmp/cunsl-2026/track6/{project,data,local}，第5题对应独立track5目录。大文件留在数据盘，不改动现有其他项目。仓库里只保存可复现的非敏感环境记录。
+
+接手时再次核验GPU为32607 MiB、2 MiB占用、利用率0%，无GPU计算进程；数据盘可用约50G。当前实测Python入口为/root/miniconda3/bin/python，非交互SSH的PATH没有python；所有复现命令使用此绝对入口。PyTorch/torchvision/numpy/Pillow版本与初次记录一致，系统环境未覆盖安装。实际模型用时和显存见[基准章](08-baselines.md)，不能使用env_probe结果替代。
+
+GPU共享锁：/root/autodl-tmp/cunsl-2026/gpu.lock。run_job.py在持锁后检查计算进程；拒绝已占用的GPU，也不删除锁文件。代码与数据传输只触及track6目录，另一个赛题独立运行。

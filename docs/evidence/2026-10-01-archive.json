@@ -1,0 +1,27 @@
+{
+  "checked_at_utc": "2026-10-01T10:06:03.730532+00:00",
+  "archive_bytes": 417402707,
+  "sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+  "entries": 9498,
+  "files": 9492,
+  "directories": 6,
+  "uncompressed_bytes": 420342892,
+  "compressed_bytes": 415345733,
+  "extensions": {
+    ".csv": 1,
+    ".json": 1,
+    ".md": 1,
+    ".tif": 9489
+  },
+  "top_level": {
+    "初赛测试数据": 2068,
+    "训练数据": 7424
+  },
+  "duplicate_names": [],
+  "unsafe_paths": [],
+  "encrypted_entries": [],
+  "zero_byte_files": [],
+  "crc_checked": true,
+  "crc_failed_file": null,
+  "passed": true
+}

@@ -1,21 +1,28 @@
-# Template only; no model experiment has been run.
+# Example settings for the audited fixed-feature baseline; CLI commands are in docs/08-baselines.md.
 [experiment]
 track = "track6"
 seed = 20261001
-status = "awaiting_dataset_audit"
+status = "audited_baseline_prepared"
 
 [data]
 root = "/root/autodl-tmp/cunsl-2026/track6/data"
-archive_sha256 = ""
-split_sha256 = ""
-validation_protocol = "to_be_confirmed"
+archive_sha256 = "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513"
+split_sha256 = "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5"
+validation_protocol = "identity-holdout-v1"
 
 [model]
-framework = "to_be_selected"
-initialization = "to_be_reviewed"
-pretrained_url = ""
-pretrained_sha256 = ""
-resource_rules_reviewed = false
+framework = "pytorch_existing_autodl_environment"
+initialization = "reviewed_original_dinov2_vits14_frozen"
+pretrained_url = "https://dl.fbaipublicfiles.com/dinov2/dinov2_vits14/dinov2_vits14_pretrain.pth"
+pretrained_sha256 = "b938bf1bc15cd2ec0feacfe3a1bb553fe8ea9ca46a7e1d8d00217f29aef60cd9"
+resource_rules_reviewed = true
+
+[adapter]
+epochs = 20
+identities_per_batch = 128
+lr = 0.001
+temperature = 0.07
+identity_regularization = 0.01
 
 [results]
 metrics_validated = false

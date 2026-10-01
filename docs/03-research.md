@@ -10,11 +10,15 @@
 | [DINOv2原始S/B/L/g模型卡](https://github.com/facebookresearch/dinov2/blob/main/MODEL_CARD.md) | 原始通用视觉表示支持最近邻图像检索，原始系列模型卡声明Apache-2.0 | 不是SAR专用表示；具体checkpoint必须核对日期和许可；仓库新增XRay/Cell等模型有不同许可，不能一概而论 |
 | [BMDG，WACV 2025](https://openaccess.thecvf.com/content/WACV2025/html/Alehdaghi_Bidirectional_Multi-Step_Domain_Generalization_for_Visible-Infrared_Person_Re-Identification_WACV_2025_paper.html) | 通过多步桥接域讨论可见光/红外模态差异 | 行人身体部位原型不能直接套用；光学/SAR的成像差异不同；这里只作为已有跨模态研究参考 |
 
-原始DINOv2论文为2023年资源，但仍需选择具体公开权重，记录checkpoint URL、版本、许可证和SHA-256。当前没有下载或使用任何外部模型。
+原始DINOv2 ViT-S/14、LVD-142M、无registers权重已完成逐项资源审查，见[资源清单](../resources/dinov2-vits14.json)。其精确URL已出现于2023-04-17的官方初始README；2023-08-31的官方原始S/B/L/g模型卡声明Apache-2.0。代码固定到2026-06-03提交7764ea0，代码LICENSE与具体权重模型卡分别核对。下载摘要另行记录后才运行。本项许可结论不覆盖XRay、Cell或其他变体。
+
+正式训练实测3,534个身份均有光学/SAR，但多数只有各1张，适合先验证成对监督的度量适配器。204个身份有至少2张光学，O2O本地验证较小，不能仅凭单次划分宣称方法稳定领先。
+
+当前准备比较无外部权重的gray32空间灰度检索、冻结DINOv2 CLS特征，以及在相同冻结特征上训练的两模态线性InfoNCE适配器。适配器仅使用训练身份，固定20轮最终模型，不根据测试输入拟合或使用隐藏身份。
 
 ## 待验证的研究问题
 
-1. 官方训练身份是否同时具有两种模态？每身份样本数量会怎样影响稳定的本地验证？
+1. 已核验训练身份均有两种模态；多数各1张的条件下，跨模态监督能否泛化到未见身份？
 2. 图像按随机样本划分是否因身份重叠高估结果？先固定未见身份验证，且按三个方向独立报告R@1和mAP@10。
 3. 通用视觉表示与监督度量学习的差异能否在相同数据/预算/输入尺寸下复现？先建立基准记录，再判断是否需要更复杂方法。
 4. 排序后的模态过滤、重复处理和ID映射是否改变有效提交？验证工程正确性与模型准确率应分开。

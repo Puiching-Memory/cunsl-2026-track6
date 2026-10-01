@@ -1,0 +1,28 @@
+{
+  "name": "DINOv2 original ViT-S/14 LVD-142M backbone without registers",
+  "variant": "dinov2_vits14",
+  "use": "frozen image embedding baseline; optional supervised adaptation using official training identities",
+  "cutoff": "2026-09-01",
+  "reviewed_at": "2026-10-01",
+  "public_before_cutoff_reviewed": true,
+  "code": {
+    "repository": "https://github.com/facebookresearch/dinov2",
+    "commit": "7764ea0f912e53c92e82eb78a2a1631e92725fc8",
+    "commit_date": "2026-06-03T17:28:49+02:00",
+    "license": "Apache-2.0",
+    "license_url": "https://github.com/facebookresearch/dinov2/blob/7764ea0f912e53c92e82eb78a2a1631e92725fc8/LICENSE",
+    "license_reviewed": true
+  },
+  "weights": {
+    "url": "https://dl.fbaipublicfiles.com/dinov2/dinov2_vits14/dinov2_vits14_pretrain.pth",
+    "public_url_present_by": "2023-04-17",
+    "date_evidence": "https://github.com/facebookresearch/dinov2/blob/fc49f49d734c767272a4ea0e18ff2ab8e60fc92d/README.md",
+    "license": "Apache-2.0",
+    "license_evidence": "https://github.com/facebookresearch/dinov2/blob/81b2b6419385a321287de91e00282ef7cbd26f94/MODEL_CARD.md",
+    "license_evidence_date": "2023-08-31",
+    "license_reviewed": true,
+    "sha256": "b938bf1bc15cd2ec0feacfe3a1bb553fe8ea9ca46a7e1d8d00217f29aef60cd9",
+    "bytes": 88283115
+  },
+  "scope": "Review applies only to the exact original ViT-S/14 checkpoint. XRay, Cell and other variants are not covered. Download fingerprint verified on 2026-10-01."
+}

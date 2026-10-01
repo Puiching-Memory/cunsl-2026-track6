@@ -26,6 +26,11 @@ __pycache__/
 *.ckpt
 *.onnx
 *.safetensors
+*.npz
+*.npy
+labels.csv
+task.json
+validation-rankings.json
 prediction.json
 predictions.json
 result_*.json
