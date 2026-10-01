@@ -1,8 +1,10 @@
 """Synthetic regression checks for leakage, official schema and truncated AP."""
 import csv
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import replace
 import io
 import json
+import pickle
 import shutil
 from pathlib import Path
 import tempfile
@@ -120,6 +122,20 @@ class DataTests(unittest.TestCase):
         path = self.root / "portable.json"
         write_json(path,{"note":"跨平台"})
         self.assertNotIn(b"\r\n",path.read_bytes())
+    def test_parallel_archive_reads_match_serial_bytes(self):
+        store = Store(self.source)
+        records,_ = load_labels(store)
+        expected = {r.image_path:store.read(r.image_path) for r in records}
+        names = [r.image_path for r in records]*5
+        with ThreadPoolExecutor(max_workers=8) as pool:
+            actual = list(pool.map(store.read,names))
+        self.assertTrue(all(payload==expected[name] for name,payload in zip(names,actual)))
+    def test_store_pickle_reopens_archive_in_worker(self):
+        store = Store(self.source)
+        member = store.unique("labels.csv")
+        expected = store.read(member)
+        worker_store = pickle.loads(pickle.dumps(store))
+        self.assertEqual(worker_store.read(member),expected)
     def test_identity_split_and_repeatability(self):
         store, records, split = load_split(self.source,self.split_path)
         self.assertFalse(set(split["train_identities"]) & set(split["validation_identities"]))

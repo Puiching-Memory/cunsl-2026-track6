@@ -8,6 +8,7 @@ import json
 import os
 from pathlib import Path, PurePosixPath
 import stat
+import threading
 import zipfile
 
 import numpy as np
@@ -55,6 +56,7 @@ class Store:
         self.zipped = self.source.is_file()
         self._archive = None
         self._pid = None
+        self._read_lock = threading.RLock()
         if self.zipped:
             with zipfile.ZipFile(self.source) as z:
                 entries = z.infolist()
@@ -73,10 +75,16 @@ class Store:
     def read(self, name):
         safe_relative(name)
         if self.zipped:
-            if self._archive is None or self._pid != os.getpid():
-                self._archive = zipfile.ZipFile(self.source)
-                self._pid = os.getpid()
-            return self._archive.read(name)
+            # Serialize access to the shared seek/decompression stream. The
+            # target Python 3.12.3 runtime produced intermittent corrupted reads
+            # under simultaneous ZipFile.read calls, despite valid entry CRCs.
+            with self._read_lock:
+                if self._archive is None or self._pid != os.getpid():
+                    if self._archive is not None:
+                        self._archive.close()
+                    self._archive = zipfile.ZipFile(self.source)
+                    self._pid = os.getpid()
+                return self._archive.read(name)
         path = (self.source / name).resolve()
         if not path.is_relative_to(self.source.resolve()):
             raise ValueError("Path escapes data root")
@@ -84,7 +92,11 @@ class Store:
     def __getstate__(self):
         state = self.__dict__.copy()
         state.update(_archive=None, _pid=None)
+        state.pop("_read_lock",None)
         return state
+    def __setstate__(self,state):
+        self.__dict__.update(state)
+        self._read_lock = threading.RLock()
     def unique(self, suffix):
         found = [n for n in self.names if n == suffix or n.endswith("/" + suffix)]
         if len(found) != 1:
