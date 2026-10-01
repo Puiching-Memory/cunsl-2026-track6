@@ -17,6 +17,8 @@
 
 AutoDL登录横幅显示25核CPU、92GB内存；os.cpu_count()返回208是宿主可见逻辑CPU数，不能据此宣称独占208核。
 
-后续运行tools/env_probe.py记录FP32/BF16卷积反向及环境信息。此类小测试证明CUDA功能可用，不能证明比赛模型速度或训练效果。
+已在本题独立远程目录运行tools/run_job.py与tools/env_probe.py，FP32与BF16卷积反向梯度均有限，进程退出码为0。原始[环境检查记录](evidence/2026-10-01-env-probe.json)已取回；对应工具版本为ffb651e65ab9e21a3936a94444da9a03067e4875。此类小测试证明CUDA功能可用，不能证明比赛模型速度或训练效果。
+
+实测依赖包括torchvision 0.27.1+cu130、numpy 2.4.6、Pillow 12.2.0。timm与safetensors未安装；尚未安装比赛框架或下载预训练模型。
 
 建议布局：/root/autodl-tmp/cunsl-2026/track6/{project,data,local}，第5题对应独立track5目录。大文件留在数据盘，不改动现有其他项目。仓库里只保存可复现的非敏感环境记录。

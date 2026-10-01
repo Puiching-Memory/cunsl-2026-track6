@@ -1,0 +1,35 @@
+{
+  "checked_at_utc": "2026-10-01T05:51:27.809454+00:00",
+  "python": "3.12.3",
+  "platform": "Linux-5.15.0-78-generic-x86_64-with-glibc2.35",
+  "torch": "2.12.1+cu130",
+  "cuda_runtime": "13.0",
+  "cuda_available": true,
+  "compiled_arches": [
+    "sm_75",
+    "sm_80",
+    "sm_86",
+    "sm_90",
+    "sm_100",
+    "sm_120"
+  ],
+  "packages": {
+    "torchvision": "0.27.1+cu130",
+    "timm": null,
+    "numpy": "2.4.6",
+    "Pillow": "12.2.0",
+    "safetensors": null
+  },
+  "scope": "synthetic CUDA correctness and backward checks; not a task benchmark",
+  "device": "NVIDIA GeForce RTX 5090",
+  "vram_bytes": 33670758400,
+  "capability": [
+    12,
+    0
+  ],
+  "sum_of_squares": 1240.0,
+  "fp32_backward_finite": true,
+  "bf16_backward_finite": true,
+  "peak_allocated_bytes": 1462272,
+  "passed": true
+}
