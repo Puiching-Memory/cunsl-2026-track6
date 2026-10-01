@@ -35,3 +35,9 @@ python -m unittest discover -s tests -v
 check_metrics.py以独立标量逐位累加核对R@1、两种AP分母及三方向加权，不调用track6.metrics；同时核对保存产物摘要与预测结构。predict_adapter.py重新加载检查点和绑定的特征缓存，复现验证排序与prediction.json，无需重新训练。
 
 工具实现和真实结构位于track6/，正式模型命令见[基准章](../docs/08-baselines.md)。身份标签、划分、逐图审查、特征、权重与预测只保存在Git忽略目录。验收使用合成数据覆盖安全路径、CSV/JSON结构、解码类型、并发ZIP字节一致性、跨进程读取、身份泄漏、Query自匹配、AP分母、重复排序、非法预测、三方向加权与相同种子重现；Linux另核对共享锁保护。
+
+## 现代骨干与图像级监督
+
+run_dinov3.py严格加载逐项审查的本地safetensors，在单次编码中比较CLS、均值和前景池化，保存各自特征与三方向报告；不会自动从hub下载模型。train_adapter.py支持这些审查过的DINOv3缓存，输出适配后特征供后续对照。train_reid.py使用训练身份的实际图像与配对监督微调编码器末端，predict_reid.py从绑定的公开初始化恢复部分参数检查点。资源与方法边界见[新模型章](../docs/09-modern-models.md)。
+
+依赖可隔离安装：`python -m pip install --no-deps --target local/dinov3-deps -r requirements-models.txt`，运行前设置PYTHONPATH指向该目录。所有GPU运行继续使用共同gpu.lock，模型输出和检查点留在Git之外。

@@ -1,0 +1,5 @@
+# Optional, isolated runtime dependencies; keep the working PyTorch environment.
+timm==1.0.20
+safetensors==0.6.2
+huggingface_hub==0.35.1
+PyYAML==6.0.2

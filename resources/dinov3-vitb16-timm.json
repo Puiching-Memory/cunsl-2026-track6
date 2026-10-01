@@ -1,0 +1,43 @@
+{
+  "name": "DINOv3 ViT-B/16 LVD-1689M, timm maintainer conversion",
+  "variant": "vit_base_patch16_dinov3.lvd1689m",
+  "backend": "timm",
+  "cutoff": "2026-09-01",
+  "reviewed_at": "2026-10-01",
+  "use": "Modern generic image backbone comparison; frozen features and supervised cross-modal fine-tuning on official training identities",
+  "public_before_cutoff_reviewed": true,
+  "code": {
+    "repository": "https://github.com/huggingface/pytorch-image-models",
+    "version": "1.0.20",
+    "commit": "234907eca5d801a369b536e001ec0b45d8ec9d60",
+    "public_by": "2025-09-21",
+    "license": "Apache-2.0",
+    "license_url": "https://github.com/huggingface/pytorch-image-models/blob/234907eca5d801a369b536e001ec0b45d8ec9d60/LICENSE",
+    "license_reviewed": true,
+    "wheel_sha256": "f6e62f780358476691996c47aa49de87b95cc507edf923c3042f74a07e45b7fe"
+  },
+  "weights": {
+    "url": "https://huggingface.co/timm/vit_base_patch16_dinov3.lvd1689m/resolve/e2d80655c8189be2e61f55ed9cc4d4d8e7e31b88/model.safetensors",
+    "repository": "timm/vit_base_patch16_dinov3.lvd1689m",
+    "revision": "e2d80655c8189be2e61f55ed9cc4d4d8e7e31b88",
+    "public_url_present_by": "2025-09-17",
+    "date_evidence": "https://huggingface.co/timm/vit_base_patch16_dinov3.lvd1689m/commit/e2d80655c8189be2e61f55ed9cc4d4d8e7e31b88",
+    "license": "DINOv3 License (2025-08-19)",
+    "license_reviewed": true,
+    "license_evidence": "https://huggingface.co/timm/vit_base_patch16_dinov3.lvd1689m/blob/c6a5fb7d12bbd3cf3b0079253141c3332aaed7da/LICENSE.md",
+    "license_sha256": "25d122eb8f5b880fd23c736fb6ea8018ee45c12237e00b8a86d14c653904999e",
+    "sha256": "1f9ed8a2378d65e24bb710ba522ac9fa7be4e036d7aefb4384ce022833926332",
+    "bytes": 342579728,
+    "format": "safetensors",
+    "public_ungated": true
+  },
+  "original_source": "https://github.com/facebookresearch/dinov3",
+  "model_card": "https://huggingface.co/timm/vit_base_patch16_dinov3.lvd1689m/blob/c6a5fb7d12bbd3cf3b0079253141c3332aaed7da/README.md",
+  "license_obligations": [
+    "Retain DINOv3 License when redistributing weights or derivatives.",
+    "Acknowledge DINOv3 in published research.",
+    "Comply with the stated permitted use restrictions."
+  ],
+  "conversion_notes": "Maintainer removes zero QKV bias and computes RoPE periods in float32; use default timm numerical behavior and record it. Not byte-identical to Meta's native checkpoint.",
+  "scope": "Exact safetensors SHA matches initial 2025-09-17 release. Download completion and local SHA verification still required. Generic web pretraining does not establish SAR applicability."
+}

@@ -1,0 +1,43 @@
+{
+  "name": "DINOv3 ViT-L/16 SAT-493M, timm maintainer conversion",
+  "variant": "vit_large_patch16_dinov3.sat493m",
+  "backend": "timm",
+  "cutoff": "2026-09-01",
+  "reviewed_at": "2026-10-01",
+  "use": "Satellite optical RGB pretrained backbone comparison; frozen features and supervised cross-modal fine-tuning on official training identities",
+  "public_before_cutoff_reviewed": true,
+  "code": {
+    "repository": "https://github.com/huggingface/pytorch-image-models",
+    "version": "1.0.20",
+    "commit": "234907eca5d801a369b536e001ec0b45d8ec9d60",
+    "public_by": "2025-09-21",
+    "license": "Apache-2.0",
+    "license_url": "https://github.com/huggingface/pytorch-image-models/blob/234907eca5d801a369b536e001ec0b45d8ec9d60/LICENSE",
+    "license_reviewed": true,
+    "wheel_sha256": "f6e62f780358476691996c47aa49de87b95cc507edf923c3042f74a07e45b7fe"
+  },
+  "weights": {
+    "url": "https://huggingface.co/timm/vit_large_patch16_dinov3.sat493m/resolve/edb5320108653705f6a402434a1ce00e2cc214f3/model.safetensors",
+    "repository": "timm/vit_large_patch16_dinov3.sat493m",
+    "revision": "edb5320108653705f6a402434a1ce00e2cc214f3",
+    "public_url_present_by": "2025-09-17",
+    "date_evidence": "https://huggingface.co/timm/vit_large_patch16_dinov3.sat493m/commit/edb5320108653705f6a402434a1ce00e2cc214f3",
+    "license": "DINOv3 License (2025-08-19)",
+    "license_reviewed": true,
+    "license_evidence": "https://huggingface.co/timm/vit_large_patch16_dinov3.sat493m/blob/ce148bd5ed3de1eb75ebdccafcb2c280bb3e8f7c/LICENSE.md",
+    "license_sha256": "25d122eb8f5b880fd23c736fb6ea8018ee45c12237e00b8a86d14c653904999e",
+    "sha256": "8d18337f766102f951ac0ca543a22536f58caeb6b6c33cfef73326f866791286",
+    "bytes": 1212347640,
+    "format": "safetensors",
+    "public_ungated": true
+  },
+  "original_source": "https://github.com/facebookresearch/dinov3",
+  "model_card": "https://huggingface.co/timm/vit_large_patch16_dinov3.sat493m/blob/ce148bd5ed3de1eb75ebdccafcb2c280bb3e8f7c/README.md",
+  "license_obligations": [
+    "Retain DINOv3 License when redistributing weights or derivatives.",
+    "Acknowledge DINOv3 in published research.",
+    "Comply with the stated permitted use restrictions."
+  ],
+  "conversion_notes": "Maintainer removes zero QKV bias and computes RoPE periods in float32; use default timm numerical behavior and record it. Not byte-identical to Meta's native checkpoint.",
+  "scope": "Exact safetensors SHA matches initial 2025-09-17 release. Download completion and local SHA verification still required. SAT-493M is optical RGB imagery, not optical/SAR paired pretraining."
+}

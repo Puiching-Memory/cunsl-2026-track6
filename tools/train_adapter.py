@@ -1,4 +1,4 @@
-"""Train a small two-modality contrastive adapter on frozen, audited DINOv2 features."""
+"""Train two-modality contrastive adapters on frozen, audited DINOv2/v3 features."""
 import argparse
 from collections import defaultdict
 import json
@@ -23,7 +23,7 @@ def train(args):
     started = time.monotonic()
     store, records, split = load_split(args.source, args.split)
     base_report = json.loads((args.features_dir / "report.json").read_text(encoding="utf-8"))
-    if base_report["model"] != "dinov2_vits14" or base_report["split_sha256"] != sha256(args.split):
+    if base_report["model"] not in {"dinov2_vits14","dinov3"} or base_report["split_sha256"] != sha256(args.split):
         raise ValueError("Features must come from the reviewed DINO baseline on this exact split")
     if base_report["source_sha256"] != split["source_sha256"]:
         raise ValueError("Feature archive fingerprint mismatch")
@@ -132,10 +132,14 @@ def train(args):
                 prediction.update(cosine_top10([adapted[i] for i in q],[adapted[i] for i in g],q,g))
         write_json(args.output_dir / "prediction.json",prediction)
         test_validation = validate_submission(args.source,args.output_dir / "prediction.json")
-    report = {"model":"frozen-dinov2-s14-two-linear-contrastive-adapters", "state":"completed",
+    np.savez_compressed(args.output_dir / "features.npz",ids=np.asarray([r.image_id for r in selected]),
+                        embeddings=np.asarray([adapted[r.image_id] for r in selected],dtype=np.float32))
+    report = {"model":f"frozen-{base_report['model']}-two-linear-contrastive-adapters", "state":"completed",
         "code_commit":subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip(),
         "seed":args.seed,"split_sha256":sha256(args.split),"source_sha256":split["source_sha256"],
-        "feature_cache_sha256":sha256(cache_path),"feature_report_sha256":sha256(args.features_dir / "report.json"),
+        "input_feature_cache_sha256":sha256(cache_path),"feature_report_sha256":sha256(args.features_dir / "report.json"),
+        "feature_cache_sha256":sha256(args.output_dir / "features.npz"),
+        "backbone_metadata":base_report["metadata"], "feature_dimension":dim,
         "feature_weights_sha256":base_report["metadata"]["weights_sha256"],
         "training":{"epochs":args.epochs,"identities_per_batch":args.identities_per_batch,
                     "paired_training_identities":len(paired),"training_images_available":len(split["train_images"]),
