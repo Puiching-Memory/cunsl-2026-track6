@@ -20,6 +20,7 @@ from track6.metrics import average_precision_at_k, cosine_top10, direction_metri
 from track6.protocol import load_split, make_split
 from track6.submission import validate_submission
 from tools.inspect_archive import inspect
+from tools.check_metrics import reference_metrics
 
 def tiff(rng, sar=False):
     pixels = rng.integers(0,256,size=(256,256,3),dtype=np.uint8)
@@ -204,6 +205,14 @@ class DataTests(unittest.TestCase):
                 rankings[d][q] = (positive+negative)[:10]
         result = evaluate(rankings,split,records,denominator="min_relevant_k")
         self.assertEqual(result["weighted_score"],1)
+        independent = reference_metrics(rankings,split,records,"min_relevant_k")
+        self.assertEqual(result,independent)
+        for direction in rankings:
+            for query in rankings[direction]:
+                rankings[direction][query] = rankings[direction][query][::-1]
+        computed = evaluate(rankings,split,records,denominator="all_relevant")
+        checked = reference_metrics(rankings,split,records,"all_relevant")
+        self.assertAlmostEqual(computed["weighted_score"],checked["weighted_score"],places=12)
 
 if __name__ == "__main__":
     unittest.main()

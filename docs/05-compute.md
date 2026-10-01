@@ -19,7 +19,7 @@ AutoDL登录横幅显示25核CPU、92GB内存；os.cpu_count()返回208是宿主
 
 已在本题独立远程目录运行tools/run_job.py与tools/env_probe.py，FP32与BF16卷积反向梯度均有限，进程退出码为0。原始[环境检查记录](evidence/2026-10-01-env-probe.json)已取回；对应工具版本为ffb651e65ab9e21a3936a94444da9a03067e4875。此类小测试证明CUDA功能可用，不能证明比赛模型速度或训练效果。
 
-实测依赖包括torchvision 0.27.1+cu130、numpy 2.4.6、Pillow 12.2.0。timm与safetensors未安装；尚未安装比赛框架或下载预训练模型。
+实测依赖包括torchvision 0.27.1+cu130、numpy 2.4.6、Pillow 12.2.0。timm与safetensors未安装。本轮只检出审查过的DINOv2源代码并下载原始ViT-S/14权重，不依赖FastReID；实际骨干前向、适配器反向与检查点推理均通过，详见第8章。
 
 建议布局：/root/autodl-tmp/cunsl-2026/track6/{project,data,local}，第5题对应独立track5目录。大文件留在数据盘，不改动现有其他项目。仓库里只保存可复现的非敏感环境记录。
 

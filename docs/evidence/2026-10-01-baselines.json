@@ -1,0 +1,426 @@
+{
+  "scope": "local identity-disjoint holdout; not a leaderboard result",
+  "experiment_code_commit": "26f73f30adec11eefbae49ae3789a2e41e40c598",
+  "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+  "reports": {
+    "gray32": {
+      "model": "gray32",
+      "seed": 20261001,
+      "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+      "labels_sha256": "ec0177e1f7be9245354da41d2ee85a5d4bd4cffedc6eb2eb40053d2284c8ce7d",
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "code_commit": "26f73f30adec11eefbae49ae3789a2e41e40c598",
+      "feature_cache_sha256": "b34e13215b5d9fa4dc2fba26a774d5d7cd2db4f0131ab5d5e0393f374109600d",
+      "metrics": {
+        "min_relevant_k": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.09803921568627451,
+              "mAP@10": 0.161477850399419,
+              "score": 0.12975853304284676,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.1092436974789916,
+              "mAP@10": 0.16186437537978157,
+              "score": 0.13555403642938657,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.7727272727272727,
+              "mAP@10": 0.8236742424242425,
+              "score": 0.7982007575757576,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.19921073202008077,
+          "ap_denominator": "min_relevant_k",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        },
+        "all_relevant": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.09803921568627451,
+              "mAP@10": 0.161477850399419,
+              "score": 0.12975853304284676,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.1092436974789916,
+              "mAP@10": 0.16186437537978157,
+              "score": 0.13555403642938657,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.7727272727272727,
+              "mAP@10": 0.8236742424242425,
+              "score": 0.7982007575757576,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.19921073202008077,
+          "ap_denominator": "all_relevant",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        }
+      },
+      "metadata": {
+        "feature": "32x32 float grayscale standardized per image plus bias",
+        "device": "cpu",
+        "peak_allocated_bytes": 0
+      },
+      "feature_seconds": 5.554019984789193,
+      "elapsed_seconds": 7.037909091450274,
+      "submission_validation": {
+        "passed": true,
+        "queries": 267,
+        "gallery": 1800,
+        "directions": {
+          "O2S": 120,
+          "S2O": 120,
+          "O2O": 27
+        },
+        "candidates_per_query": 10,
+        "metrics_validated": false,
+        "scope": "structure only; hidden identities are unavailable"
+      },
+      "trained": false,
+      "training_embeddings_cached": false,
+      "leaderboard_submitted": false,
+      "state": "completed"
+    },
+    "dino-frozen": {
+      "model": "dinov2_vits14",
+      "seed": 20261001,
+      "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+      "labels_sha256": "ec0177e1f7be9245354da41d2ee85a5d4bd4cffedc6eb2eb40053d2284c8ce7d",
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "code_commit": "26f73f30adec11eefbae49ae3789a2e41e40c598",
+      "feature_cache_sha256": "dde9cd2ade21af20272aae8a84bc8aaa1cc825e432f02a653af6b456ee615811",
+      "metrics": {
+        "min_relevant_k": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.009150326797385621,
+              "mAP@10": 0.02399885880278037,
+              "score": 0.016574592800082995,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.008403361344537815,
+              "mAP@10": 0.01735082922057712,
+              "score": 0.012877095282557469,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.6818181818181818,
+              "mAP@10": 0.7524621212121212,
+              "score": 0.7171401515151514,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.08496727478870335,
+          "ap_denominator": "min_relevant_k",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        },
+        "all_relevant": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.009150326797385621,
+              "mAP@10": 0.02399885880278037,
+              "score": 0.016574592800082995,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.008403361344537815,
+              "mAP@10": 0.01735082922057712,
+              "score": 0.012877095282557469,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.6818181818181818,
+              "mAP@10": 0.7524621212121212,
+              "score": 0.7171401515151514,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.08496727478870335,
+          "ap_denominator": "all_relevant",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        }
+      },
+      "metadata": {
+        "feature": "DINOv2-S/14 CLS, L2 normalization at cosine retrieval",
+        "device": "cuda",
+        "torch": "2.12.1+cu130",
+        "cuda": "13.0",
+        "gpu": "NVIDIA GeForce RTX 5090",
+        "precision": "bf16 autocast; float32 embeddings and cosine",
+        "batch_size": 32,
+        "input": "256x256 uint8 RGB -> whole-image bicubic 224x224 -> ImageNet mean/std",
+        "weights_sha256": "b938bf1bc15cd2ec0feacfe3a1bb553fe8ea9ca46a7e1d8d00217f29aef60cd9",
+        "vendor_commit": "7764ea0f912e53c92e82eb78a2a1631e92725fc8",
+        "peak_allocated_bytes": 261373440,
+        "peak_reserved_bytes": 350224384,
+        "parameters": 22056576,
+        "embedding_seconds": 22.77840496879071
+      },
+      "feature_seconds": 25.157472455874085,
+      "elapsed_seconds": 26.863848832435906,
+      "submission_validation": {
+        "passed": true,
+        "queries": 267,
+        "gallery": 1800,
+        "directions": {
+          "O2S": 120,
+          "S2O": 120,
+          "O2O": 27
+        },
+        "candidates_per_query": 10,
+        "metrics_validated": false,
+        "scope": "structure only; hidden identities are unavailable"
+      },
+      "trained": false,
+      "training_embeddings_cached": true,
+      "leaderboard_submitted": false,
+      "state": "completed"
+    },
+    "dino-linear20": {
+      "model": "frozen-dinov2-s14-two-linear-contrastive-adapters",
+      "state": "completed",
+      "code_commit": "26f73f30adec11eefbae49ae3789a2e41e40c598",
+      "seed": 20261001,
+      "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "feature_cache_sha256": "dde9cd2ade21af20272aae8a84bc8aaa1cc825e432f02a653af6b456ee615811",
+      "feature_report_sha256": "0adf5dc9c47ca8176b944416dfebaae78a287e595b488bf1abee024bc92c63e7",
+      "feature_weights_sha256": "b938bf1bc15cd2ec0feacfe3a1bb553fe8ea9ca46a7e1d8d00217f29aef60cd9",
+      "training": {
+        "epochs": 20,
+        "identities_per_batch": 128,
+        "paired_training_identities": 2819,
+        "training_images_available": 5926,
+        "optimizer": "AdamW",
+        "lr": 0.001,
+        "weight_decay": 0.0001,
+        "temperature": 0.07,
+        "identity_regularization": 0.01,
+        "precision": "float32",
+        "initialization": "identity matrices, no bias",
+        "loss": "symmetric optical/SAR paired InfoNCE",
+        "selection": "fixed final epoch; no validation-based checkpoint selection",
+        "backbone_frozen": true,
+        "test_used_for_training": false,
+        "history": [
+          {
+            "epoch": 1,
+            "mean_loss": 3.7272856921443474,
+            "steps": 23
+          },
+          {
+            "epoch": 2,
+            "mean_loss": 2.7023667519426215,
+            "steps": 23
+          },
+          {
+            "epoch": 3,
+            "mean_loss": 2.193174551362577,
+            "steps": 23
+          },
+          {
+            "epoch": 4,
+            "mean_loss": 1.9243973795648501,
+            "steps": 23
+          },
+          {
+            "epoch": 5,
+            "mean_loss": 1.647993428065725,
+            "steps": 23
+          },
+          {
+            "epoch": 6,
+            "mean_loss": 1.4857721494450031,
+            "steps": 23
+          },
+          {
+            "epoch": 7,
+            "mean_loss": 1.3395590037107468,
+            "steps": 23
+          },
+          {
+            "epoch": 8,
+            "mean_loss": 1.2272928885143737,
+            "steps": 23
+          },
+          {
+            "epoch": 9,
+            "mean_loss": 1.1207913909633846,
+            "steps": 23
+          },
+          {
+            "epoch": 10,
+            "mean_loss": 1.0309606840246883,
+            "steps": 23
+          },
+          {
+            "epoch": 11,
+            "mean_loss": 0.9441181932241939,
+            "steps": 23
+          },
+          {
+            "epoch": 12,
+            "mean_loss": 0.8855342535180566,
+            "steps": 23
+          },
+          {
+            "epoch": 13,
+            "mean_loss": 0.8257164785476483,
+            "steps": 23
+          },
+          {
+            "epoch": 14,
+            "mean_loss": 0.7700154616942873,
+            "steps": 23
+          },
+          {
+            "epoch": 15,
+            "mean_loss": 0.7305411885937919,
+            "steps": 23
+          },
+          {
+            "epoch": 16,
+            "mean_loss": 0.69249243904715,
+            "steps": 23
+          },
+          {
+            "epoch": 17,
+            "mean_loss": 0.6612000077274507,
+            "steps": 23
+          },
+          {
+            "epoch": 18,
+            "mean_loss": 0.6130696659826714,
+            "steps": 23
+          },
+          {
+            "epoch": 19,
+            "mean_loss": 0.5768854837135776,
+            "steps": 23
+          },
+          {
+            "epoch": 20,
+            "mean_loss": 0.5583760276963206,
+            "steps": 23
+          }
+        ]
+      },
+      "metrics": {
+        "min_relevant_k": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.13725490196078433,
+              "mAP@10": 0.24662464985994398,
+              "score": 0.19193977591036415,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.14285714285714285,
+              "mAP@10": 0.24141249092229486,
+              "score": 0.19213481688971884,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.75,
+              "mAP@10": 0.8020833333333333,
+              "score": 0.7760416666666666,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.250437733426704,
+          "ap_denominator": "min_relevant_k",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        },
+        "all_relevant": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.13725490196078433,
+              "mAP@10": 0.24662464985994398,
+              "score": 0.19193977591036415,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.14285714285714285,
+              "mAP@10": 0.24141249092229486,
+              "score": 0.19213481688971884,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.75,
+              "mAP@10": 0.8020833333333333,
+              "score": 0.7760416666666666,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.250437733426704,
+          "ap_denominator": "all_relevant",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        }
+      },
+      "adapter_sha256": "3a3ab7819cf6e335fe7150e53135661d913199630daea8432f4cbafa5a511275",
+      "adapter_parameters": 294912,
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "torch": "2.12.1+cu130",
+      "cuda": "13.0",
+      "training_seconds": 4.59402761887759,
+      "inference_and_scoring_seconds": 0.710631487891078,
+      "feature_extraction_seconds": 25.157472455874085,
+      "elapsed_seconds": 7.2845984529703856,
+      "peak_allocated_bytes": 92683264,
+      "peak_reserved_bytes": 106954752,
+      "submission_validation": {
+        "passed": true,
+        "queries": 267,
+        "gallery": 1800,
+        "directions": {
+          "O2S": 120,
+          "S2O": 120,
+          "O2O": 27
+        },
+        "candidates_per_query": 10,
+        "metrics_validated": false,
+        "scope": "structure only; hidden identities are unavailable"
+      },
+      "leaderboard_submitted": false
+    }
+  },
+  "adapter_checkpoint_replay": {
+    "passed": true,
+    "byte_identical_outputs": {
+      "prediction.json": true,
+      "validation-rankings.json": true
+    }
+  }
+}

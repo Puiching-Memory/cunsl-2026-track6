@@ -28,7 +28,10 @@ python tools/audit_data.py data/stage1.zip --output-dir local/data-audit --worke
 python tools/make_split.py data/stage1.zip --audit-dir local/data-audit --output local/splits/identity-v1.json
 python tools/run_baseline.py data/stage1.zip --split local/splits/identity-v1.json --output-dir local/benchmarks/gray32 --predict-test
 python tools/validate_submission.py data/stage1.zip local/benchmarks/gray32/prediction.json
+python tools/check_metrics.py data/stage1.zip --split local/splits/identity-v1.json --run-dir local/benchmarks/gray32 --output local/benchmarks/gray32/verification.json
 python -m unittest discover -s tests -v
 ```
 
-工具实现和真实结构位于track6/，正式模型命令见[基准章](../docs/08-baselines.md)。身份标签、划分、逐图审查、特征、权重与预测只保存在Git忽略目录。验收使用合成数据覆盖安全路径、CSV/JSON结构、解码类型、身份泄漏、Query自匹配、AP分母、重复排序、非法预测、三方向加权与相同种子重现。
+check_metrics.py以独立标量逐位累加核对R@1、两种AP分母及三方向加权，不调用track6.metrics；同时核对保存产物摘要与预测结构。predict_adapter.py重新加载检查点和绑定的特征缓存，复现验证排序与prediction.json，无需重新训练。
+
+工具实现和真实结构位于track6/，正式模型命令见[基准章](../docs/08-baselines.md)。身份标签、划分、逐图审查、特征、权重与预测只保存在Git忽略目录。验收使用合成数据覆盖安全路径、CSV/JSON结构、解码类型、并发ZIP字节一致性、跨进程读取、身份泄漏、Query自匹配、AP分母、重复排序、非法预测、三方向加权与相同种子重现；Linux另核对共享锁保护。

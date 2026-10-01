@@ -1,0 +1,125 @@
+{
+  "checked_at_utc": "2026-10-01T10:58:58.453235+00:00",
+  "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+  "labels_sha256": "ec0177e1f7be9245354da41d2ee85a5d4bd4cffedc6eb2eb40053d2284c8ce7d",
+  "task_sha256": "5ff6b6b8c3b9c38c7154907cb8545f8385a8aba84c122b932830171a54d78d8c",
+  "official_schema": {
+    "labels": [
+      "image_id",
+      "ship_id",
+      "modality",
+      "image_path"
+    ],
+    "task": [
+      "queries",
+      "gallery"
+    ],
+    "query": [
+      "query_id",
+      "image_path",
+      "query_type"
+    ],
+    "gallery": [
+      "image_id",
+      "image_path",
+      "modality"
+    ]
+  },
+  "roles": {
+    "train": {
+      "images": 7422,
+      "modalities": {
+        "optical": 3829,
+        "sar": 3593
+      },
+      "decode_failures": 0,
+      "constant_images": 1,
+      "low_std_lt_1": 1,
+      "replicated_channels_by_modality": {
+        "sar": 3593
+      },
+      "shape_counts": {
+        "[256, 256, 3]": 7422
+      },
+      "dtype_counts": {
+        "uint8": 7422
+      }
+    },
+    "query": {
+      "images": 267,
+      "modalities": {
+        "optical": 147,
+        "sar": 120
+      },
+      "decode_failures": 0,
+      "constant_images": 1,
+      "low_std_lt_1": 1,
+      "replicated_channels_by_modality": {
+        "sar": 120
+      },
+      "shape_counts": {
+        "[256, 256, 3]": 267
+      },
+      "dtype_counts": {
+        "uint8": 267
+      }
+    },
+    "gallery": {
+      "images": 1800,
+      "modalities": {
+        "sar": 900,
+        "optical": 900
+      },
+      "decode_failures": 0,
+      "constant_images": 1,
+      "low_std_lt_1": 1,
+      "replicated_channels_by_modality": {
+        "sar": 900,
+        "optical": 13
+      },
+      "shape_counts": {
+        "[256, 256, 3]": 1800
+      },
+      "dtype_counts": {
+        "uint8": 1800
+      }
+    }
+  },
+  "query_directions": {
+    "O2S": 120,
+    "S2O": 120,
+    "O2O": 27
+  },
+  "train_identities": 3534,
+  "train_identity_modality_patterns": {
+    "optical=1,sar=1": 3325,
+    "optical=3,sar=2": 49,
+    "optical=2,sar=1": 108,
+    "optical=3,sar=1": 42,
+    "optical=1,sar=2": 5,
+    "optical=2,sar=2": 5
+  },
+  "train_both_modalities": 3534,
+  "train_at_least_two_optical": 204,
+  "file_duplicate_groups": 256,
+  "pixel_duplicate_groups": 256,
+  "pixel_duplicate_images": 513,
+  "pixel_duplicate_role_patterns": {
+    "train": 6,
+    "gallery+query+train": 1,
+    "gallery+query": 212,
+    "query": 27,
+    "gallery": 10
+  },
+  "train_duplicate_identity_conflicts": 6,
+  "near_duplicate_pairs": 78,
+  "near_duplicate_criteria": "float grayscale dHash<=2 AND 16x16 normalized correlation>=0.9998",
+  "near_duplicate_scope": "heuristic flags only; no hidden test identity inference",
+  "test_identities_known": false,
+  "passed": true,
+  "elapsed_seconds": 26.181009182706475,
+  "warnings": [
+    "Constant and duplicate images require protocol handling; raw data is preserved.",
+    "Integrity and decoding do not establish label truth or benchmark accuracy."
+  ]
+}

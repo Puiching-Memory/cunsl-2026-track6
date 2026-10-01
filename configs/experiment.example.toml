@@ -2,7 +2,7 @@
 [experiment]
 track = "track6"
 seed = 20261001
-status = "audited_baseline_prepared"
+status = "local_baselines_completed"
 
 [data]
 root = "/root/autodl-tmp/cunsl-2026/track6/data"
@@ -25,4 +25,6 @@ temperature = 0.07
 identity_regularization = 0.01
 
 [results]
-metrics_validated = false
+local_metrics_independently_checked = true
+official_scorer_confirmed = false
+leaderboard_submitted = false

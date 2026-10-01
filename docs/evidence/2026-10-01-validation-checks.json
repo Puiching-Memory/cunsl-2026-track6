@@ -1,0 +1,38 @@
+{
+  "windows": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "Pillow": "12.3.0",
+    "tests_passed": 20,
+    "linux_only_tests_skipped": 3
+  },
+  "autodl_linux": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "Pillow": "12.2.0",
+    "tests_passed": 23,
+    "tests_skipped": 0,
+    "code_commit": "26f73f30adec11eefbae49ae3789a2e41e40c598"
+  },
+  "all_images_decoded_on_both_hosts": 9489,
+  "zip_crc_passed_on_both_hosts": true,
+  "split_byte_identical_on_both_hosts": true,
+  "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+  "independent_metric_checks": {
+    "passed": true,
+    "models": [
+      "gray32",
+      "dino-frozen",
+      "dino-linear20"
+    ],
+    "absolute_tolerance": 1e-12
+  },
+  "adapter_checkpoint_replay": {
+    "passed": true,
+    "byte_identical_outputs": {
+      "prediction.json": true,
+      "validation-rankings.json": true
+    }
+  },
+  "leaderboard_submitted": false
+}

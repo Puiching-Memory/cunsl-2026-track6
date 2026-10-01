@@ -1,0 +1,9 @@
+{
+  "resource": "dinov2_vits14",
+  "url": "https://dl.fbaipublicfiles.com/dinov2/dinov2_vits14/dinov2_vits14_pretrain.pth",
+  "sha256": "b938bf1bc15cd2ec0feacfe3a1bb553fe8ea9ca46a7e1d8d00217f29aef60cd9",
+  "bytes": 88283115,
+  "download_verified_at_utc": "2026-10-01T10:42:25.245465+00:00",
+  "elapsed_seconds": 712.1841393252835,
+  "resource_manifest_sha256": "acdc6a2eece4f2b17e6b0e2b31d4db1498bfc2b97adb79cf3caf99cf6447d057"
+}

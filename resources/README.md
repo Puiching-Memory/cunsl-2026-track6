@@ -4,4 +4,4 @@
 
 第6题外部数据和预训练模型须在2026-09-01之前公开；具体权重许可逐一核对。
 
-[原始DINOv2 ViT-S/14](dinov2-vits14.json)已审查2023年URL证据、具体模型卡Apache-2.0许可与固定代码LICENSE。SHA-256在实际下载后登记，尚未登记时模型工具拒绝使用。本清单不授权DINOv2其他变体。权重文件保存在data/weights或算力机数据盘，Git仅保存公开URL与审查记录。
+[原始DINOv2 ViT-S/14](dinov2-vits14.json)已审查2023年URL证据、具体模型卡Apache-2.0许可与固定代码LICENSE。88,283,115字节权重已下载并核验SHA-256，见[下载来源证据](../docs/evidence/2026-10-01-weight-source.json)。没有具体摘要时模型工具拒绝使用。本清单不授权DINOv2其他变体。权重文件保存在data/weights或算力机数据盘，Git仅保存公开URL与审查记录。
