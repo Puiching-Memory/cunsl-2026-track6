@@ -43,7 +43,7 @@ run_dinov3.py严格加载逐项审查的本地safetensors，在单次编码中�
 依赖可隔离安装：`python -m pip install --no-deps --target local/dinov3-deps -r requirements-models.txt`，运行前设置PYTHONPATH指向该目录。所有GPU运行继续使用共同gpu.lock，模型输出和检查点留在Git之外。
 
 上述新路线已在真实5090上运行：两组身份划分分别重训，20份报告独立复算，图像微调检查点恢复后排名/预测逐字节一致。check_metrics自动核对特征缓存、线性适配器及预测摘要；图像级reid.pt摘要另外与训练报告比较，再执行predict_reid覆盖恢复检查，不能把格式校验等同于效果证明。完整命令和配置记录见第9章。
-# 领域方法对照与错配分析
+## 领域方法对照与错配分析
 
 `train_reid.py` 可用 `--stem-mode frozen/shared/separate` 比较固定图像入口、可训练共享入口和可训练光学/SAR入口；`--structure-weight 1 --structure-layer 6` 添加中间层 patch 梯度能量一致性约束。默认值仍为 `frozen` 和结构权重 `0`，旧检查点可继续恢复。等预算配置见[领域对照配置](../configs/domain-ablation.example.toml)。这些是自行实现的 DINOv3 改造，不是 TransOSS、MOS 或 SDF-Net 的完整复现。
 
@@ -52,4 +52,3 @@ python tools/analyze_retrieval.py data/stage1.zip --split local/splits/identity-
 ```
 
 错配工具核对特征与划分指纹，重新计算全 Gallery 排名并验证原有前十顺序，然后统计各方向 R@1/5/10/50、正确候选排名、相似度边际及像素占用率。仅分析有训练标签的身份隔离验证集，不能用于猜测初赛身份。`report.json` 是匿名汇总；`private-errors.json`、可选 `--panel` 生成的原始像素图和案例清单均须留在 Git 之外。大于 8 的非黑区域是观察性统计，不是舰船分割，也不能换算物理船长。
-

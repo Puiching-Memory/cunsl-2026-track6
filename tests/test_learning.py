@@ -55,7 +55,7 @@ class LearningTests(unittest.TestCase):
         class Stem(nn.Module):
             def __init__(self):
                 super().__init__(); self.proj=nn.Conv2d(3,8,2,2); self.grid_size=(2,2)
-            def forward(self,x): return self.proj(x).flatten(2).transpose(1,2)
+            def forward(self,x): return self.proj(x).permute(0,2,3,1)
         class Block(nn.Linear):
             def forward(self,x,rope=None): return super().forward(x)
         class Encoder(nn.Module):
@@ -63,7 +63,9 @@ class LearningTests(unittest.TestCase):
                 super().__init__(); self.patch_embed=Stem(); self.num_features=8; self.num_prefix_tokens=1
                 self.norm_pre=nn.Identity(); self.norm=nn.Identity()
                 self.blocks=nn.ModuleList([Block(8,8),Block(8,8)])
-            def _pos_embed(self,x): return torch.cat([x.mean(dim=1,keepdim=True),x],dim=1),None
+            def _pos_embed(self,x):
+                if x.ndim==4: x=x.flatten(1,2)
+                return torch.cat([x.mean(dim=1,keepdim=True),x],dim=1),None
             def forward_features(self,x):
                 x,_=self._pos_embed(self.patch_embed(x))
                 for block in self.blocks: x=block(x)

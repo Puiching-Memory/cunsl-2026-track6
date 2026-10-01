@@ -83,7 +83,10 @@ class SensorReID(nn.Module):
         patches = self.encoder.patch_embed(images)
         if self.stem_mode=='separate':
             sar = self.sar_patch_embed(images)
-            patches = torch.where((modalities==0)[:,None,None],patches,sar)
+            # The reviewed EVA uses NHWC grids before positional encoding;
+            # other patch modules can return NLC sequences.
+            optical_mask = (modalities==0).reshape(len(modalities),*(1 for _ in range(patches.ndim-1)))
+            patches = torch.where(optical_mask,patches,sar)
         tokens,rope = self.encoder._pos_embed(patches)
         tokens = self.encoder.norm_pre(tokens)
         descriptor = None
