@@ -1,0 +1,989 @@
+{
+  "reviewed_at": "2026-10-01",
+  "scope": "primary papers and fixed author implementations; no imported weights, datasets or generated samples",
+  "papers": {
+    "transoss": {
+      "name": "transoss",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Wang_Cross-modal_Ship_Re-Identification_via_Optical_and_SAR_Imagery_A_Novel_ICCV_2025_paper.pdf",
+      "bytes": 1755162,
+      "sha256": "0547a8b0dcc16e7041d99f028f48628b154cd8d975dc3dbfe6abbdf630480efe",
+      "pages": 11,
+      "attempts": [],
+      "first_preprint_date": "2025-06-27",
+      "date_source_url": "https://arxiv.org/abs/2506.22027",
+      "read_scope": "full method, data/protocol, experiments and ablations; rendered method figure inspected",
+      "used_for": "read-only research and independently implemented mechanism ablations",
+      "paper_copyright_does_not_establish_weight_license": true,
+      "venue": "ICCV 2025"
+    },
+    "mos": {
+      "name": "mos",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhao_MOS_Mitigating_Optical-SAR_Modality_Gap_for_Cross-Modal_Ship_Re-Identification_CVPR_2026_paper.pdf",
+      "bytes": 4706195,
+      "sha256": "0c9904d881081249ec983fc15305edbd1bfd24abad77b1a950940fd495221b54",
+      "pages": 11,
+      "attempts": [],
+      "first_preprint_date": "2025-12-03",
+      "date_source_url": "https://arxiv.org/abs/2512.03404",
+      "read_scope": "full method, data/protocol, experiments and ablations; rendered method figure inspected",
+      "used_for": "read-only research and independently implemented mechanism ablations",
+      "paper_copyright_does_not_establish_weight_license": true,
+      "venue": "CVPR 2026"
+    },
+    "sdf-net": {
+      "name": "sdf-net",
+      "url": "https://arxiv.org/pdf/2603.12588v1",
+      "bytes": 1747855,
+      "sha256": "d7235ad2d72057ad2b05469ded7513cc0096e5a4a4a7ff1ee415aca3dc19549a",
+      "pages": 14,
+      "initial_python_tls_validation_failed": true,
+      "recovery": "PowerShell Invoke-WebRequest using system certificate validation; no TLS bypass",
+      "first_preprint_date": "2026-03-13",
+      "date_source_url": "https://arxiv.org/abs/2603.12588",
+      "read_scope": "full method, data/protocol, experiments and ablations; rendered method figure inspected",
+      "used_for": "read-only research and independently implemented mechanism ablations",
+      "paper_copyright_does_not_establish_weight_license": true,
+      "venue": "arXiv v1; journal acceptance not verified"
+    }
+  },
+  "author_code_snapshots": {
+    "Hoss-ReID": {
+      "repo": "https://github.com/Alioth2000/Hoss-ReID",
+      "revision": "bd9b9028e8690c0929ada06beead500acde19aca",
+      "commit_date": "2025-12-07T14:43:36Z",
+      "purpose": "read-only method and protocol inspection; no checkpoint or dataset import",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/LICENSE",
+          "bytes": 1067,
+          "sha256": "97f2a7c116c0720e9e54186a15762fa3674c64c66af063222d2459f02a9c2b3c"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/README.md",
+          "bytes": 4513,
+          "sha256": "5bbe1ae2d42bdbf3918407d747a582268bdc3373605e465175f535359b099330"
+        },
+        {
+          "path": "config/__init__.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/config/__init__.py",
+          "bytes": 150,
+          "sha256": "9114eb48d58a5005687c212d10473a8402f277e7b2d1cbcdde553a0a0aa6bfde"
+        },
+        {
+          "path": "config/defaults.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/config/defaults.py",
+          "bytes": 6347,
+          "sha256": "14821838e8ad14b2d838ca04820d1f62f50f0c39c30d30211b213f0e9ff366ee"
+        },
+        {
+          "path": "configs/hoss_transoss.yml",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/configs/hoss_transoss.yml",
+          "bytes": 1225,
+          "sha256": "8cd7119d9a21532a1646ad57839dc48f5e91a230e63650d7120280d88ab25597"
+        },
+        {
+          "path": "configs/pretrain_transoss.yml",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/configs/pretrain_transoss.yml",
+          "bytes": 1159,
+          "sha256": "0eb194c70faa81e77e863eda69974c5cbbad280553d641e695abdd126700873c"
+        },
+        {
+          "path": "datasets/__init__.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/datasets/__init__.py",
+          "bytes": 95,
+          "sha256": "d7e3ff1d5d7b7d574c077f1c7cce6f09a0010f6b18172ca8bd6e3fb5ee06e02f"
+        },
+        {
+          "path": "datasets/bases.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/datasets/bases.py",
+          "bytes": 4040,
+          "sha256": "1cda8c25a40c9dcf8ac7536a5f6fec1cefe570cceff502439c45170237cb5498"
+        },
+        {
+          "path": "datasets/hoss.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/datasets/hoss.py",
+          "bytes": 5153,
+          "sha256": "0f9c9b885eaa86c1c77676d9199cdf7e9a4305c583e3408d346a46f105fe6c72"
+        },
+        {
+          "path": "datasets/make_dataloader.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/datasets/make_dataloader.py",
+          "bytes": 6691,
+          "sha256": "7c2a543fa85a445b5e4aec74960ff65b113e3096fb16d9d788b7ed3432931fcc"
+        },
+        {
+          "path": "datasets/preprocessing.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/datasets/preprocessing.py",
+          "bytes": 1788,
+          "sha256": "624c28b443e7173ddf2ea1eb2c1b7e2ebc609978a33152d222cc59b0be41009d"
+        },
+        {
+          "path": "datasets/pretrain.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/datasets/pretrain.py",
+          "bytes": 2908,
+          "sha256": "fb1ddc76161602bc04ba7ce2a098d816d8b19245b6e3c98fd8249d48a99e0ab2"
+        },
+        {
+          "path": "datasets/sampler.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/datasets/sampler.py",
+          "bytes": 2361,
+          "sha256": "ee60ab495e7dafac99cecef416c980e6d6100dd39c273a89d9d5545ac6e68121"
+        },
+        {
+          "path": "datasets/sampler_ddp.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/datasets/sampler_ddp.py",
+          "bytes": 7071,
+          "sha256": "94dc04dbecff55c486ac19a701cd0882a651a998a898af15a2d7d8aa8243cb85"
+        },
+        {
+          "path": "loss/__init__.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/loss/__init__.py",
+          "bytes": 102,
+          "sha256": "5891dbf8d2110a7910f4bfa19878a34cd7acad40baa276711eb3e1caa331eed4"
+        },
+        {
+          "path": "loss/arcface.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/loss/arcface.py",
+          "bytes": 2975,
+          "sha256": "3803794a420e4c5d565e6d06415a816889df0ec10b687f8837cc61c6f6cbf46a"
+        },
+        {
+          "path": "loss/center_loss.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/loss/center_loss.py",
+          "bytes": 2335,
+          "sha256": "05ef6f93d39ce4c30f83f77112a6570dcae164a2f8b4aaf642510e717c4a1998"
+        },
+        {
+          "path": "loss/contrastive_loss.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/loss/contrastive_loss.py",
+          "bytes": 492,
+          "sha256": "b2f754db11f014d578de66dab82bbed7c3fbe31a2e4991cef1e992e195721f81"
+        },
+        {
+          "path": "loss/make_loss.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/loss/make_loss.py",
+          "bytes": 3473,
+          "sha256": "eafe518f9d211f37822f8818ce3b36abed803ae6f103524fe6e4370dab504f04"
+        },
+        {
+          "path": "loss/metric_learning.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/loss/metric_learning.py",
+          "bytes": 7001,
+          "sha256": "262cd6a003028e8c11eadf3ed4e43096adae8e9d89d50dc61b1e9bd4fad94246"
+        },
+        {
+          "path": "loss/softmax_loss.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/loss/softmax_loss.py",
+          "bytes": 2037,
+          "sha256": "d872eba630685044eda8e507f9e0f6f0e0a42af7e222ed4d8fd4c418d384c518"
+        },
+        {
+          "path": "loss/triplet_loss.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/loss/triplet_loss.py",
+          "bytes": 4748,
+          "sha256": "c2c9f47b3f462f8a0b5dce178e77979c18c878a90a3187378712f811e06ec54c"
+        },
+        {
+          "path": "model/__init__.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/model/__init__.py",
+          "bytes": 34,
+          "sha256": "9f179b02c62d59506676185be571a51af6bc327ada51ec4fb71ddd73aba778c6"
+        },
+        {
+          "path": "model/backbones/__init__.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/model/backbones/__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "model/backbones/resnet.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/model/backbones/resnet.py",
+          "bytes": 4463,
+          "sha256": "be3ff0726fce3e8430c6ec1717904386f328995ebb3c69084bcf99f34458b87e"
+        },
+        {
+          "path": "model/backbones/vit_pytorch.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/model/backbones/vit_pytorch.py",
+          "bytes": 24090,
+          "sha256": "0e50571d945660ba1b84a10287d7046da50f56e7a48d45eb220a28a0adf849dc"
+        },
+        {
+          "path": "model/backbones/vit_transoss.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/model/backbones/vit_transoss.py",
+          "bytes": 19954,
+          "sha256": "ead8c662471121a1ffa8d827ebf1c652fca0375326184a327c3e9622e184e6bd"
+        },
+        {
+          "path": "model/make_model.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/model/make_model.py",
+          "bytes": 10767,
+          "sha256": "136f00149d150b966abba366f5d8dc459edd2672fb717cb7c6192637773ca5d9"
+        },
+        {
+          "path": "processor/__init__.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/processor/__init__.py",
+          "bytes": 60,
+          "sha256": "9bb91dd31d7ddb425a7a863b75350b077c1293462f81535b24619717f982cd43"
+        },
+        {
+          "path": "processor/processor.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/processor/processor.py",
+          "bytes": 10028,
+          "sha256": "73bc84e5da3422e86ff067109da4e210a9e35de86f643d7b02d90eda811b55d5"
+        },
+        {
+          "path": "requirements.txt",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/requirements.txt",
+          "bytes": 41,
+          "sha256": "c2d94b5c4a29e0dae66697c91a03edffc09a2e1d8cfac9d5babcf440b835e5dd"
+        },
+        {
+          "path": "solver/__init__.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/solver/__init__.py",
+          "bytes": 87,
+          "sha256": "c9359da3e0aec268f2ddbbf3f67a496ece93e15e93732d09438f60f9d4397354"
+        },
+        {
+          "path": "solver/cosine_lr.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/solver/cosine_lr.py",
+          "bytes": 3958,
+          "sha256": "d3db6e30c1666c5af71200086f33c644d476310b6c5dc7ed98097cc989bdad4d"
+        },
+        {
+          "path": "solver/lr_scheduler.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/solver/lr_scheduler.py",
+          "bytes": 1862,
+          "sha256": "397d43647f93fa47de0bac6b1372473a07565a28a092a240ac44c7a0b6c89631"
+        },
+        {
+          "path": "solver/make_optimizer.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/solver/make_optimizer.py",
+          "bytes": 1215,
+          "sha256": "51a3f9f4584e5ed3d8a692f03949bb6ff40531911f8fef7dac4a4fae4c135d04"
+        },
+        {
+          "path": "solver/scheduler.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/solver/scheduler.py",
+          "bytes": 4750,
+          "sha256": "b7517bb0f79a3334e2a3ac5ecb14bdcf69cb28c62dd3c734c4e3d212d0955228"
+        },
+        {
+          "path": "solver/scheduler_factory.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/solver/scheduler_factory.py",
+          "bytes": 1030,
+          "sha256": "1416226155da54dad05c444982296f7fbfae68df793e666561b4e4a68658ab08"
+        },
+        {
+          "path": "test.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/test.py",
+          "bytes": 1534,
+          "sha256": "c60ff6f715b7d2f0dd671a305386c6ac4344be25193d37f349d3b97911a6d17b"
+        },
+        {
+          "path": "train.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/train.py",
+          "bytes": 2554,
+          "sha256": "dfcf22ed9ec9590aeaed063868f018423d900d047ac44ba850bfe97f10394b2e"
+        },
+        {
+          "path": "train_pair.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/train_pair.py",
+          "bytes": 2447,
+          "sha256": "3471d7263545f4dc4aaa133df569c3010d4d23e2fc071f4a579638787ecbd493"
+        },
+        {
+          "path": "utils/__init__.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/utils/__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "utils/iotools.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/utils/iotools.py",
+          "bytes": 775,
+          "sha256": "05e59eac76140ec28c87f606283baae9cdc260b250d3088d9624e08e3cacf3d7"
+        },
+        {
+          "path": "utils/logger.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/utils/logger.py",
+          "bytes": 815,
+          "sha256": "a0bc2f0cb7e2499eb4f82873cb0236545e1028552d8cc3b6d31e7b2630b7b94c"
+        },
+        {
+          "path": "utils/meter.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/utils/meter.py",
+          "bytes": 455,
+          "sha256": "0245aa40c9a6ade9a9ac0a0f882d1a1d7b06260c667ea43e2ecb3ba846311796"
+        },
+        {
+          "path": "utils/metrics.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/utils/metrics.py",
+          "bytes": 4729,
+          "sha256": "2d214239dd03838c9ef0cf8ffcd48f5e612958785e7f697ee15033fd01c537b9"
+        },
+        {
+          "path": "utils/reranking.py",
+          "url": "https://raw.githubusercontent.com/Alioth2000/Hoss-ReID/bd9b9028e8690c0929ada06beead500acde19aca/utils/reranking.py",
+          "bytes": 4397,
+          "sha256": "ceb4b664ca0842c53ab60a91a760cc1fdfa32b601f13f322c1ee3277f10efa7a"
+        }
+      ],
+      "code_license": "MIT",
+      "third_party_weight_or_dataset_license_inferred": false,
+      "author_code_executed": false
+    },
+    "MOS": {
+      "repo": "https://github.com/yjzhao1019/MOS",
+      "revision": "793dc39ef828bbd77c59570aa081389620345e06",
+      "commit_date": "2026-05-30T12:16:31Z",
+      "purpose": "read-only method and protocol inspection; no checkpoint or dataset import",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/LICENSE",
+          "bytes": 1067,
+          "sha256": "97f2a7c116c0720e9e54186a15762fa3674c64c66af063222d2459f02a9c2b3c"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/README.md",
+          "bytes": 4245,
+          "sha256": "9bfc6f1082b6f918ce4772caf9ffe78ed5a458f1874f0ec04de1a233e7452666"
+        },
+        {
+          "path": "config/__init__.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/config/__init__.py",
+          "bytes": 150,
+          "sha256": "9114eb48d58a5005687c212d10473a8402f277e7b2d1cbcdde553a0a0aa6bfde"
+        },
+        {
+          "path": "config/defaults.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/config/defaults.py",
+          "bytes": 6383,
+          "sha256": "feba040815c357a5fdbc342a0b43627b740b6c709123507afc15a160e0051cb5"
+        },
+        {
+          "path": "configs/hoss_transoss.yml",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/configs/hoss_transoss.yml",
+          "bytes": 1183,
+          "sha256": "7854519676044321f137ab7001a79f0426e8f1121eeb9eef9fe049bf7dc6d079"
+        },
+        {
+          "path": "datasets/__init__.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/datasets/__init__.py",
+          "bytes": 95,
+          "sha256": "d7e3ff1d5d7b7d574c077f1c7cce6f09a0010f6b18172ca8bd6e3fb5ee06e02f"
+        },
+        {
+          "path": "datasets/bases.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/datasets/bases.py",
+          "bytes": 6711,
+          "sha256": "652ecb8d5afef1c67dea159f6e333283061c5e2d4f16ea751ba82c2106c7c2f4"
+        },
+        {
+          "path": "datasets/hoss.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/datasets/hoss.py",
+          "bytes": 6255,
+          "sha256": "99e5cdd0a98dd142f997c3a7ebf45f8b51c1328f77a11cf8bc0676f447d7edc1"
+        },
+        {
+          "path": "datasets/make_dataloader.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/datasets/make_dataloader.py",
+          "bytes": 7414,
+          "sha256": "0dd737d42cd48cb378a05377a22468992da2a476fffa93fe2d3f235ffe6271d3"
+        },
+        {
+          "path": "datasets/preprocessing.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/datasets/preprocessing.py",
+          "bytes": 1788,
+          "sha256": "624c28b443e7173ddf2ea1eb2c1b7e2ebc609978a33152d222cc59b0be41009d"
+        },
+        {
+          "path": "datasets/pretrain.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/datasets/pretrain.py",
+          "bytes": 2908,
+          "sha256": "fb1ddc76161602bc04ba7ce2a098d816d8b19245b6e3c98fd8249d48a99e0ab2"
+        },
+        {
+          "path": "datasets/sampler.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/datasets/sampler.py",
+          "bytes": 2361,
+          "sha256": "ee60ab495e7dafac99cecef416c980e6d6100dd39c273a89d9d5545ac6e68121"
+        },
+        {
+          "path": "datasets/sampler_ddp.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/datasets/sampler_ddp.py",
+          "bytes": 7071,
+          "sha256": "94dc04dbecff55c486ac19a701cd0882a651a998a898af15a2d7d8aa8243cb85"
+        },
+        {
+          "path": "logs/hoss_transoss/test_log.txt",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/logs/hoss_transoss/test_log.txt",
+          "bytes": 3519,
+          "sha256": "8c26db45a0735996ab7e1741ee374eab2a6af6cf3fff53bc5a9935e3c30c8f27"
+        },
+        {
+          "path": "loss/__init__.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/loss/__init__.py",
+          "bytes": 102,
+          "sha256": "5891dbf8d2110a7910f4bfa19878a34cd7acad40baa276711eb3e1caa331eed4"
+        },
+        {
+          "path": "loss/arcface.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/loss/arcface.py",
+          "bytes": 2975,
+          "sha256": "3803794a420e4c5d565e6d06415a816889df0ec10b687f8837cc61c6f6cbf46a"
+        },
+        {
+          "path": "loss/center_loss.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/loss/center_loss.py",
+          "bytes": 2335,
+          "sha256": "05ef6f93d39ce4c30f83f77112a6570dcae164a2f8b4aaf642510e717c4a1998"
+        },
+        {
+          "path": "loss/contrastive_loss.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/loss/contrastive_loss.py",
+          "bytes": 492,
+          "sha256": "b2f754db11f014d578de66dab82bbed7c3fbe31a2e4991cef1e992e195721f81"
+        },
+        {
+          "path": "loss/make_loss.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/loss/make_loss.py",
+          "bytes": 7481,
+          "sha256": "92d871bba63d84c48ed24137b0afb59dccdd7ec70971d2809b8b5f12c43eb22a"
+        },
+        {
+          "path": "loss/metric_learning.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/loss/metric_learning.py",
+          "bytes": 7001,
+          "sha256": "262cd6a003028e8c11eadf3ed4e43096adae8e9d89d50dc61b1e9bd4fad94246"
+        },
+        {
+          "path": "loss/softmax_loss.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/loss/softmax_loss.py",
+          "bytes": 2037,
+          "sha256": "d872eba630685044eda8e507f9e0f6f0e0a42af7e222ed4d8fd4c418d384c518"
+        },
+        {
+          "path": "loss/triplet_loss.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/loss/triplet_loss.py",
+          "bytes": 4748,
+          "sha256": "c2c9f47b3f462f8a0b5dce178e77979c18c878a90a3187378712f811e06ec54c"
+        },
+        {
+          "path": "model/__init__.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/model/__init__.py",
+          "bytes": 34,
+          "sha256": "9f179b02c62d59506676185be571a51af6bc327ada51ec4fb71ddd73aba778c6"
+        },
+        {
+          "path": "model/backbones/__init__.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/model/backbones/__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "model/backbones/resnet.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/model/backbones/resnet.py",
+          "bytes": 4463,
+          "sha256": "be3ff0726fce3e8430c6ec1717904386f328995ebb3c69084bcf99f34458b87e"
+        },
+        {
+          "path": "model/backbones/vit_pytorch.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/model/backbones/vit_pytorch.py",
+          "bytes": 24090,
+          "sha256": "0e50571d945660ba1b84a10287d7046da50f56e7a48d45eb220a28a0adf849dc"
+        },
+        {
+          "path": "model/backbones/vit_transoss.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/model/backbones/vit_transoss.py",
+          "bytes": 19954,
+          "sha256": "ead8c662471121a1ffa8d827ebf1c652fca0375326184a327c3e9622e184e6bd"
+        },
+        {
+          "path": "model/make_model.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/model/make_model.py",
+          "bytes": 10237,
+          "sha256": "ae5df43e1b55a3f9f20f4db80f92a06682acbe8a2df46d5736a6f6c69969339e"
+        },
+        {
+          "path": "processor/__init__.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/processor/__init__.py",
+          "bytes": 127,
+          "sha256": "d0abd9ab529c1b6d31b5964217c65de3afd3c8fa58f16ac62f73d3907f48e85b"
+        },
+        {
+          "path": "processor/processor.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/processor/processor.py",
+          "bytes": 16391,
+          "sha256": "5011c6aa78987e76fb4d6b9f99d2a94ecd0bdbf85c63bed9cae29845fdeec28a"
+        },
+        {
+          "path": "requirements.txt",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/requirements.txt",
+          "bytes": 1333,
+          "sha256": "bb496bf68eeeb19e8e8d55ae8671a03cd313214eca6be69f2f1cb331c8d22427"
+        },
+        {
+          "path": "solver/__init__.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/solver/__init__.py",
+          "bytes": 87,
+          "sha256": "c9359da3e0aec268f2ddbbf3f67a496ece93e15e93732d09438f60f9d4397354"
+        },
+        {
+          "path": "solver/cosine_lr.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/solver/cosine_lr.py",
+          "bytes": 3958,
+          "sha256": "d3db6e30c1666c5af71200086f33c644d476310b6c5dc7ed98097cc989bdad4d"
+        },
+        {
+          "path": "solver/lr_scheduler.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/solver/lr_scheduler.py",
+          "bytes": 1862,
+          "sha256": "397d43647f93fa47de0bac6b1372473a07565a28a092a240ac44c7a0b6c89631"
+        },
+        {
+          "path": "solver/make_optimizer.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/solver/make_optimizer.py",
+          "bytes": 1215,
+          "sha256": "51a3f9f4584e5ed3d8a692f03949bb6ff40531911f8fef7dac4a4fae4c135d04"
+        },
+        {
+          "path": "solver/scheduler.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/solver/scheduler.py",
+          "bytes": 4750,
+          "sha256": "b7517bb0f79a3334e2a3ac5ecb14bdcf69cb28c62dd3c734c4e3d212d0955228"
+        },
+        {
+          "path": "solver/scheduler_factory.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/solver/scheduler_factory.py",
+          "bytes": 1030,
+          "sha256": "1416226155da54dad05c444982296f7fbfae68df793e666561b4e4a68658ab08"
+        },
+        {
+          "path": "test.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/test.py",
+          "bytes": 2203,
+          "sha256": "da2d8eb0774aaab6312a9248777a09f064edc9b26a2321ce217a7688e29cc921"
+        },
+        {
+          "path": "train.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/train.py",
+          "bytes": 2816,
+          "sha256": "a9a4241e5374b22cbe1777a085e1e772d74f7bb9d744bf08225de388a3325ee8"
+        },
+        {
+          "path": "utils/__init__.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/utils/__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "utils/iotools.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/utils/iotools.py",
+          "bytes": 775,
+          "sha256": "05e59eac76140ec28c87f606283baae9cdc260b250d3088d9624e08e3cacf3d7"
+        },
+        {
+          "path": "utils/logger.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/utils/logger.py",
+          "bytes": 815,
+          "sha256": "a0bc2f0cb7e2499eb4f82873cb0236545e1028552d8cc3b6d31e7b2630b7b94c"
+        },
+        {
+          "path": "utils/meter.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/utils/meter.py",
+          "bytes": 455,
+          "sha256": "0245aa40c9a6ade9a9ac0a0f882d1a1d7b06260c667ea43e2ecb3ba846311796"
+        },
+        {
+          "path": "utils/metrics.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/utils/metrics.py",
+          "bytes": 20228,
+          "sha256": "4987629baad7dc75b97ce606e4811456828067adc0581418499a5d738913eaf8"
+        },
+        {
+          "path": "utils/reranking.py",
+          "url": "https://raw.githubusercontent.com/yjzhao1019/MOS/793dc39ef828bbd77c59570aa081389620345e06/utils/reranking.py",
+          "bytes": 4397,
+          "sha256": "ceb4b664ca0842c53ab60a91a760cc1fdfa32b601f13f322c1ee3277f10efa7a"
+        }
+      ],
+      "code_license": "MIT",
+      "third_party_weight_or_dataset_license_inferred": false,
+      "author_code_executed": false
+    },
+    "SDF-Net": {
+      "repo": "https://github.com/cfrfree/SDF-Net",
+      "revision": "15cbb1a88742256c9a6754d4f29f956991366f93",
+      "commit_date": "2026-05-27T13:28:32Z",
+      "purpose": "read-only method and protocol inspection; no checkpoint or dataset import",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/LICENSE",
+          "bytes": 1064,
+          "sha256": "cf42efeafbdc41cd5a928afbe9e97a5a137d8deb57d5e870f807b47bbed4e6f0"
+        },
+        {
+          "path": "check_pth.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/check_pth.py",
+          "bytes": 587,
+          "sha256": "ac722b537b57352874455a796a4821ef44190793dfe47ff7fc7a24dc4e3a0e76"
+        },
+        {
+          "path": "config/__init__.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/config/__init__.py",
+          "bytes": 150,
+          "sha256": "9114eb48d58a5005687c212d10473a8402f277e7b2d1cbcdde553a0a0aa6bfde"
+        },
+        {
+          "path": "config/defaults.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/config/defaults.py",
+          "bytes": 2279,
+          "sha256": "ca6b020d1ef6583ba7ad9301089d95b67a4e3487bffb3b59bb7b88966976502b"
+        },
+        {
+          "path": "configs/SDF-Net.yml",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/configs/SDF-Net.yml",
+          "bytes": 1252,
+          "sha256": "2d9149d69f2bed2c0fc6ccb2cca7795afb0afa0d762f98124bfcfdc1f0cb6d5f"
+        },
+        {
+          "path": "configs/hoss_transoss.yml",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/configs/hoss_transoss.yml",
+          "bytes": 1308,
+          "sha256": "3788484e0d960da98aee47cc108f8484b83505d775702723d614849743ff9745"
+        },
+        {
+          "path": "configs/pretrain_transoss.yml",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/configs/pretrain_transoss.yml",
+          "bytes": 1081,
+          "sha256": "e28931489590e75a72f3c834c9d7482f1a8c4ef2f40684b1c19d992a2fa81eb6"
+        },
+        {
+          "path": "datasets/__init__.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/datasets/__init__.py",
+          "bytes": 95,
+          "sha256": "d7e3ff1d5d7b7d574c077f1c7cce6f09a0010f6b18172ca8bd6e3fb5ee06e02f"
+        },
+        {
+          "path": "datasets/bases.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/datasets/bases.py",
+          "bytes": 4528,
+          "sha256": "387a841e7bcac6b84e664bca1331d916c988cdc7a0861c4ab62e5ef35481996b"
+        },
+        {
+          "path": "datasets/hoss.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/datasets/hoss.py",
+          "bytes": 6127,
+          "sha256": "160425b36b69c62ea1335d0ca8d574bae8ad3686f86dac127c3c1629e7a022de"
+        },
+        {
+          "path": "datasets/make_dataloader.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/datasets/make_dataloader.py",
+          "bytes": 7796,
+          "sha256": "cbb1503d90786f7ab3eed6fac5adc406ebd231e6437830c7d47602f2f72c2a7f"
+        },
+        {
+          "path": "datasets/preprocessing.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/datasets/preprocessing.py",
+          "bytes": 1815,
+          "sha256": "bd1e771786a7eed6404ac97cdc1314d8013b77d4ac84168e40bb2ab9d6de7a30"
+        },
+        {
+          "path": "datasets/pretrain.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/datasets/pretrain.py",
+          "bytes": 3174,
+          "sha256": "5b9518b18d6ebeb4ecd003b062cbc6cf2cb08b6c5310d14e51b79cb83013e70d"
+        },
+        {
+          "path": "datasets/sampler.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/datasets/sampler.py",
+          "bytes": 2361,
+          "sha256": "ee60ab495e7dafac99cecef416c980e6d6100dd39c273a89d9d5545ac6e68121"
+        },
+        {
+          "path": "datasets/sampler_ddp.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/datasets/sampler_ddp.py",
+          "bytes": 7296,
+          "sha256": "e78d6b408f8650194aa91627a52eed7c24b01474aabfba8869c4ded4380d75a0"
+        },
+        {
+          "path": "environment.yml",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/environment.yml",
+          "bytes": 6757,
+          "sha256": "a276df04b3df8998e53484cd1e00056caa663698bc8f7aea0a4821a022eb544a"
+        },
+        {
+          "path": "loss/__init__.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/loss/__init__.py",
+          "bytes": 102,
+          "sha256": "5891dbf8d2110a7910f4bfa19878a34cd7acad40baa276711eb3e1caa331eed4"
+        },
+        {
+          "path": "loss/arcface.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/loss/arcface.py",
+          "bytes": 2978,
+          "sha256": "8eaa0c7d0a6bf14c326925e03b741e1463952193d27bd8f308898525fdf42f12"
+        },
+        {
+          "path": "loss/center_loss.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/loss/center_loss.py",
+          "bytes": 2479,
+          "sha256": "949a80705263d680098b0f740109b8ceb0334e1c43d2c9c90a17b9034aaf2709"
+        },
+        {
+          "path": "loss/contrastive_loss.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/loss/contrastive_loss.py",
+          "bytes": 507,
+          "sha256": "e33a5ee84e3c70a9872e45eaedc4a84f57513428ca29e234ab046ce0158a26b6"
+        },
+        {
+          "path": "loss/make_loss.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/loss/make_loss.py",
+          "bytes": 3992,
+          "sha256": "195a228ba52b6b77d16e56f2663dd41161a0b648f036a44db6dd662262b8529b"
+        },
+        {
+          "path": "loss/metric_learning.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/loss/metric_learning.py",
+          "bytes": 7131,
+          "sha256": "de102da2d62e5fe30f57c5dc9c1356453195335f68740cd5e894b84b1fd53eb3"
+        },
+        {
+          "path": "loss/softmax_loss.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/loss/softmax_loss.py",
+          "bytes": 2076,
+          "sha256": "5904ce803eab9dda77dc80690916e7c171a1a7855e310c65b2e6b594df00730e"
+        },
+        {
+          "path": "loss/structure_loss.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/loss/structure_loss.py",
+          "bytes": 1013,
+          "sha256": "be6cc9dd8ccf29340dcc7439d8f9b0daec30ecba7fe405626080dd3750386ce7"
+        },
+        {
+          "path": "loss/triplet_loss.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/loss/triplet_loss.py",
+          "bytes": 4816,
+          "sha256": "4a2ab818435a81b751da7b8f783137a4b593ca5da66029d7699fda5dcc68f64b"
+        },
+        {
+          "path": "model/__init__.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/model/__init__.py",
+          "bytes": 35,
+          "sha256": "bdda0caec0c8555085b4a9af463b4d982a13da428fc6feb9fd3c233c733b907b"
+        },
+        {
+          "path": "model/backbones/__init__.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/model/backbones/__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "model/backbones/resnet.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/model/backbones/resnet.py",
+          "bytes": 4512,
+          "sha256": "32e1c1a042b855ccf775b687fc76fb402743924a25cb90c16c7e9aac4c296d78"
+        },
+        {
+          "path": "model/backbones/vit_pytorch.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/model/backbones/vit_pytorch.py",
+          "bytes": 26240,
+          "sha256": "ace245295baa4a2c6ce3e52071712795ea68476954d4d135ad258b5b9329066f"
+        },
+        {
+          "path": "model/backbones/vit_transoss.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/model/backbones/vit_transoss.py",
+          "bytes": 22110,
+          "sha256": "1459328f39df6a3e0939654c381238a5f10939fa071095c6c2408a853fee19ec"
+        },
+        {
+          "path": "model/make_model.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/model/make_model.py",
+          "bytes": 11334,
+          "sha256": "4390116bfebfa87b2feb61932ae9e97f67e50183241d839f45c96c38f1f92279"
+        },
+        {
+          "path": "processor/__init__.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/processor/__init__.py",
+          "bytes": 61,
+          "sha256": "42c712482d935d41a24fdf403c71f553ea6ef060d991ce01119457dfe469ab76"
+        },
+        {
+          "path": "processor/processor.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/processor/processor.py",
+          "bytes": 12799,
+          "sha256": "1648e232c59333bd896d1ba4b230ee60cd4f07664c3e6f39f4c0af07465d93e8"
+        },
+        {
+          "path": "readme.md",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/readme.md",
+          "bytes": 4072,
+          "sha256": "5ba1b73272c7ce5bf9f44e9bc6bcd15a6f20425f04bdf1bfc6bd4f6f6b6a6ce8"
+        },
+        {
+          "path": "requirements.txt",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/requirements.txt",
+          "bytes": 163,
+          "sha256": "6c6e98470f5078d44e33bc2b5e615c1dfb48c1a40535c45ad8ff079fce9beb4f"
+        },
+        {
+          "path": "solver/__init__.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/solver/__init__.py",
+          "bytes": 87,
+          "sha256": "c9359da3e0aec268f2ddbbf3f67a496ece93e15e93732d09438f60f9d4397354"
+        },
+        {
+          "path": "solver/cosine_lr.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/solver/cosine_lr.py",
+          "bytes": 4086,
+          "sha256": "490aeaf62fedac787aff90d04f3783b401c2a1033cd0d2560d081d17ef3a9e63"
+        },
+        {
+          "path": "solver/lr_scheduler.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/solver/lr_scheduler.py",
+          "bytes": 1831,
+          "sha256": "4b8c39f8e46f0c3487c3e1d2e0640063f8948fb82a4eb758ed4a90cae2e98d36"
+        },
+        {
+          "path": "solver/make_optimizer.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/solver/make_optimizer.py",
+          "bytes": 1273,
+          "sha256": "64d96263eb044eed68e589ad1a30c181966b672fc2f83c2e3ca3edbf891461c0"
+        },
+        {
+          "path": "solver/scheduler.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/solver/scheduler.py",
+          "bytes": 4926,
+          "sha256": "b29d7288e0f74b29a7e6c44964c45376bee939ac3fafeed7dec2783e9378a4b3"
+        },
+        {
+          "path": "solver/scheduler_factory.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/solver/scheduler_factory.py",
+          "bytes": 973,
+          "sha256": "23bf2ed56006907f0e9f8db02d2833fdc7bfa36130895020f453fb1250595110"
+        },
+        {
+          "path": "test.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/test.py",
+          "bytes": 1795,
+          "sha256": "72f988faf9c9be8f8bf19e2400ca53ea75c90af0f9e4590e42c5217e9ff895f7"
+        },
+        {
+          "path": "train.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/train.py",
+          "bytes": 2842,
+          "sha256": "a45063fa1317411c2091cf96344f20f2ac78fb04ba745889dd6697d94c0e3b33"
+        },
+        {
+          "path": "train_pair.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/train_pair.py",
+          "bytes": 2535,
+          "sha256": "61b0ffd7f910e99445298ce3da1cc42f569f2747b41170b181cf58949263b211"
+        },
+        {
+          "path": "utils/__init__.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/utils/__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "utils/iotools.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/utils/iotools.py",
+          "bytes": 775,
+          "sha256": "de62061a1949f06550ecf54b68146530dd3c9b901a671658f6c0def9688b9245"
+        },
+        {
+          "path": "utils/logger.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/utils/logger.py",
+          "bytes": 861,
+          "sha256": "6d701cbeab4086cf73ea4aa9d5b3243fcf54cf50509c21eb64a2e372f6c9a3ef"
+        },
+        {
+          "path": "utils/meter.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/utils/meter.py",
+          "bytes": 456,
+          "sha256": "ac660c609ee238a78923a51e419751e11ca204e627a79ed0027a3356e84b68cb"
+        },
+        {
+          "path": "utils/metrics.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/utils/metrics.py",
+          "bytes": 4734,
+          "sha256": "412768a85c0c08831544683704b0b8da2fffe310a5bd8aed2d49d591d5244625"
+        },
+        {
+          "path": "utils/reranking.py",
+          "url": "https://raw.githubusercontent.com/cfrfree/SDF-Net/15cbb1a88742256c9a6754d4f29f956991366f93/utils/reranking.py",
+          "bytes": 4432,
+          "sha256": "1baeca036f3b7f01f65562ca3e149860ae970856873b05f2d5971118d180c793"
+        }
+      ],
+      "code_license": "MIT",
+      "third_party_weight_or_dataset_license_inferred": false,
+      "author_code_executed": false
+    }
+  },
+  "fd_ga": {
+    "doi": "10.1109/JSTARS.2026.3708907",
+    "publisher_url": "https://ieeexplore.ieee.org/document/11592404/",
+    "publisher_publication_date": "2026-07-01",
+    "crossref_metadata_url": "https://api.crossref.org/works/10.1109/JSTARS.2026.3708907",
+    "crossref_created": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          1
+        ]
+      ],
+      "date-time": "2026-07-01T19:36:55Z",
+      "timestamp": 1782934615000
+    },
+    "crossref_snapshot_sha256": "29feff750bdf6fa78cd275044bda89a788d937d1b50a81097f98af20560b1e93",
+    "read_scope": "publisher-indexed abstract, introduction and method excerpts; complete PDF and author implementation not inspected",
+    "code_and_weights_reviewed": false,
+    "imported": false,
+    "hypothesis": "Fourier amplitude adaptation and local graph matching; orthogonality is not proof of independence"
+  },
+  "adjacent_candidates": [
+    {
+      "name": "CROMA",
+      "official_url": "https://github.com/antofuller/CROMA",
+      "venue": "NeurIPS 2023",
+      "read_scope": "official interface documentation",
+      "native_input": "Sentinel-1 2 channels and Sentinel-2 12 bands; default 120 pixels",
+      "limitation": "Our gray-replicated SAR and RGB optical do not supply the missing physical channels; scene semantics are not ship identity.",
+      "specific_weight_license_and_date_review_complete": false,
+      "imported": false
+    },
+    {
+      "name": "AnySat",
+      "official_url": "https://github.com/gastruc/AnySat",
+      "venue": "CVPR 2025 Highlight",
+      "read_scope": "official interface documentation",
+      "native_sar_input": "VV/VH or VV/VH/ratio time series with day-of-year tensors and metric-resolution assumptions",
+      "limitation": "Required physical channels, dates and scale are not supplied by this task; no fabricated auxiliary metadata.",
+      "specific_weight_license_and_date_review_complete": false,
+      "imported": false
+    },
+    {
+      "name": "SOMA-1M",
+      "official_url": "https://github.com/PeihaoWu/SOMA-1M",
+      "paper_url": "https://arxiv.org/abs/2602.05480",
+      "read_scope": "author repository dataset description",
+      "limitation": "Progressive subset release; paper date alone does not establish exact training subset public date or third-party data rights.",
+      "exact_training_subset_license_and_public_date_review_complete": false,
+      "imported": false
+    }
+  ],
+  "physical_background_url": "https://hyp3-docs.asf.alaska.edu/hyp3-docs/guides/introduction_to_sar/",
+  "failed_read_history": {
+    "manifest_sha256": "31357dc584695b847fdb68cf98c6e8965fc1310d20fa874c7f256430cc3b2dbb",
+    "sdf_net_tls_error_preserved": true,
+    "valid_pdf_recovered": true
+  }
+}

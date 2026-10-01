@@ -136,8 +136,8 @@ cmp "$TRACK6_OUT/reid/validation-rankings.json" "$TRACK6_OUT/replay/validation-r
 
 实际运行的绝对命令已在运行清单保存，包括全部线性适配器对照。第二组先运行make_split并指定`--seed 20261002`，所有训练命令的split与seed都对应更新；输出使用独立目录，不能覆盖首组产物。正式可复现运行要求源代码先提交且工作区干净。
 
-当前较优候选为算力机`local/benchmarks/dinov3-b16-reid12/prediction.json`，本地副本为`local/modern-results/benchmarks/dinov3-b16-reid12/prediction.json`。模型仍只在首组训练身份上训练，尚未全训练身份重训或提交排行榜。
+本章轮次较优候选为算力机`local/benchmarks/dinov3-b16-reid12/prediction.json`，本地副本为`local/modern-results/benchmarks/dinov3-b16-reid12/prediction.json`。后续独立入口结果已超过它，见[第11章](11-domain-ablations.md)；本章保留原始实验记录。模型仍只在首组训练身份上训练，尚未全训练身份重训或提交排行榜。
 
 ## 下一步识别研究
 
-跨模态R@1约20%，仍是主要瓶颈。保持这两组划分，优先审查错配样本，再做同预算的损失、翻转增强和末端解冻预算消融，避免把更长训练误当作结构收益。随后评估模态独立patch输入与共享主干、局部船体结构对齐和SAR像素预处理；DINOv3升级已实测，这些改进还未运行。灰度与深层特征融合可作为低成本对照。外部ReID权重、生成图像、全量重训及排行榜提交另行记录，不以论文名称或代码就绪代替本题识别证据。
+跨模态R@1约20%，仍是主要瓶颈。后续已完成两组错配分析、可训练共享/独立patch入口，以及第6层结构约束消融，见[第10章](10-domain-research.md)和[第11章](11-domain-ablations.md)。独立入口两组均改善，结构损失不一致。背景处理、增强、局部表示和配对预训练仍待控制实验。外部ReID权重、生成图像、全量重训及排行榜提交另行记录，不以论文名称或代码就绪代替本题识别证据。
