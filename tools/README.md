@@ -45,6 +45,8 @@ run_dinov3.py严格加载逐项审查的本地safetensors，在单次编码中�
 上述新路线已在真实5090上运行：两组身份划分分别重训，20份报告独立复算，图像微调检查点恢复后排名/预测逐字节一致。check_metrics自动核对特征缓存、线性适配器及预测摘要；图像级reid.pt摘要另外与训练报告比较，再执行predict_reid覆盖恢复检查，不能把格式校验等同于效果证明。完整命令和配置记录见第9章。
 ## 领域方法对照与错配分析
 
+`diagnose_shortlist.py`在已保存的验证特征上独立复算全Gallery排序、原始R@1/AP@10，并计算固定前10/50/100候选的标签oracle重排上界。Oracle使用已知验证身份，只用于诊断候选缺失与排序问题，不产生可提交模型结果；不读取测试身份。输出为匿名汇总，仍默认保存到local/。
+
 `train_reid.py` 可用 `--stem-mode frozen/shared/separate` 比较固定图像入口、可训练共享入口和可训练光学/SAR入口；`--structure-weight 1 --structure-layer 6` 添加中间层 patch 梯度能量一致性约束。默认值仍为 `frozen` 和结构权重 `0`，旧检查点可继续恢复。等预算配置见[领域对照配置](../configs/domain-ablation.example.toml)。这些是自行实现的 DINOv3 改造，不是 TransOSS、MOS 或 SDF-Net 的完整复现。
 
 ```bash
