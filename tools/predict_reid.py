@@ -25,7 +25,8 @@ def predict(args):
     if checkpoint['weights_sha256']!=resource['weights']['sha256'] or checkpoint['variant']!=resource['variant']:
         raise ValueError('Checkpoint public backbone initialization differs')
     cfg = checkpoint['config']
-    model = SensorReID(encoder,cfg['identities'],cfg['image_size'],cfg['pooling'],cfg['train_last_blocks'])
+    model = SensorReID(encoder,cfg['identities'],cfg['image_size'],cfg['pooling'],cfg['train_last_blocks'],
+                       cfg.get('stem_mode','frozen'),cfg.get('structure_layer',6))
     restore_trainable_state(model,checkpoint['trainable_state'])
     model = model.cuda().eval()
     torch.cuda.reset_peak_memory_stats()

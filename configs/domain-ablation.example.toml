@@ -1,0 +1,46 @@
+# Controlled ablations motivated by primary ship optical/SAR ReID sources.
+# These are our DINOv3 adaptations, not reproductions of TransOSS or SDF-Net.
+[protocol]
+splits = ["local/splits/identity-v1.json", "local/splits/identity-v2.json"]
+seeds = [20261001, 20261002]
+selection = "fixed final epoch; all variants reported"
+test_used_for_training = false
+
+[model]
+resource = "resources/dinov3-vitb16-timm.json"
+weights = "data/weights/dinov3-vitb16-timm.safetensors"
+image_size = 256
+pooling = "cls_foreground"
+train_last_blocks = 4
+
+[training]
+epochs = 12
+identities_per_batch = 32
+backbone_lr = 0.00002
+head_lr = 0.001
+weight_decay = 0.01
+temperature = 0.07
+classification_weight = 0.5
+triplet_weight = 0.2
+augmentation = "none"
+
+[[variants]]
+name = "frozen-stem-control"
+stem_mode = "frozen"
+structure_weight = 0.0
+
+[[variants]]
+name = "learned-shared-stem"
+stem_mode = "shared"
+structure_weight = 0.0
+
+[[variants]]
+name = "learned-sensor-stems"
+stem_mode = "separate"
+structure_weight = 0.0
+
+[[variants]]
+name = "sensor-stems-struct6"
+stem_mode = "separate"
+structure_layer = 6
+structure_weight = 1.0

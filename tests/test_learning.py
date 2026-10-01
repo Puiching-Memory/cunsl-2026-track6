@@ -32,6 +32,60 @@ class ResourceReviewTests(unittest.TestCase):
 
 @unittest.skipUnless(importlib.util.find_spec('torch'),'PyTorch available on compute host')
 class LearningTests(unittest.TestCase):
+    def test_structure_energy_is_stable_to_bias_and_scale_with_finite_gradient(self):
+        import torch
+        from track6.learning import structure_energy,structural_pair_loss
+        torch.manual_seed(9)
+        patches=torch.randn(4,16,8,requires_grad=True)
+        energy=structure_energy(patches,4,4)
+        changed=structure_energy(patches*3+17,4,4)
+        torch.testing.assert_close(energy,changed,atol=.002,rtol=.002)
+        labels=torch.tensor([0,1,0,1]); modalities=torch.tensor([0,0,1,1])
+        structural_pair_loss(energy,labels,modalities).backward()
+        self.assertTrue(torch.isfinite(patches.grad).all())
+        constant=structure_energy(torch.ones(1,16,8),4,4)
+        torch.testing.assert_close(constant,torch.zeros_like(constant))
+        with self.assertRaisesRegex(ValueError,'grid'):
+            structure_energy(torch.ones(1,17,8),4,4)
+
+    def test_separate_stem_routes_modalities_and_replays_its_parameters(self):
+        import torch
+        from torch import nn
+        from track6.learning import SensorReID,trainable_state,restore_trainable_state
+        class Stem(nn.Module):
+            def __init__(self):
+                super().__init__(); self.proj=nn.Conv2d(3,8,2,2); self.grid_size=(2,2)
+            def forward(self,x): return self.proj(x).flatten(2).transpose(1,2)
+        class Block(nn.Linear):
+            def forward(self,x,rope=None): return super().forward(x)
+        class Encoder(nn.Module):
+            def __init__(self):
+                super().__init__(); self.patch_embed=Stem(); self.num_features=8; self.num_prefix_tokens=1
+                self.norm_pre=nn.Identity(); self.norm=nn.Identity()
+                self.blocks=nn.ModuleList([Block(8,8),Block(8,8)])
+            def _pos_embed(self,x): return torch.cat([x.mean(dim=1,keepdim=True),x],dim=1),None
+            def forward_features(self,x):
+                x,_=self._pos_embed(self.patch_embed(x))
+                for block in self.blocks: x=block(x)
+                return self.norm(x)
+        model=SensorReID(Encoder(),2,4,'cls',1,'separate',1)
+        x=torch.randn(4,3,4,4); modalities=torch.tensor([0,1,0,1])
+        reference=model.encoder.forward_features(x)
+        tokens,_=model.encoder_tokens(x,modalities)
+        torch.testing.assert_close(tokens,reference)
+        original=trainable_state(model)
+        self.assertIn('sar_patch_embed.proj.weight',original)
+        self.assertIn('encoder.patch_embed.proj.weight',original)
+        with torch.no_grad(): model.sar_patch_embed.proj.weight.mul_(2)
+        altered,structure=model.encoder_tokens(x,modalities,return_structure=True)
+        torch.testing.assert_close(altered[modalities==0],reference[modalities==0])
+        self.assertGreater(float((altered[modalities==1]-reference[modalities==1]).abs().sum().detach()),0)
+        structure.square().mean().backward()
+        self.assertIsNotNone(model.sar_patch_embed.proj.weight.grad)
+        restore_trainable_state(model,original)
+        restored,_=model.encoder_tokens(x,modalities)
+        torch.testing.assert_close(restored,reference)
+
     def test_foreground_excludes_prefix_and_background_with_empty_fallback(self):
         import torch
         from track6.backbones import pool_tokens

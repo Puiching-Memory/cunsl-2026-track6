@@ -56,7 +56,7 @@ def train(args):
     setup(args.seed)
     import numpy as np
     import torch
-    from track6.learning import SensorReID, retrieval_losses, trainable_state
+    from track6.learning import SensorReID, retrieval_losses, structural_pair_loss, trainable_state
     started = time.monotonic()
     store,records,split = load_split(args.source,args.split)
     by_id = {r.image_id:r for r in records}
@@ -66,7 +66,8 @@ def train(args):
         grouped[r.ship_id][r.modality].append(r)
     paired = sorted(i for i,g in grouped.items() if g['optical'] and g['sar'])
     encoder,resource = load_encoder(args.resource,args.weights,args.image_size)
-    model = SensorReID(encoder,len(paired),args.image_size,args.pooling,args.train_last_blocks).cuda()
+    model = SensorReID(encoder,len(paired),args.image_size,args.pooling,args.train_last_blocks,
+                       args.stem_mode,args.structure_layer).cuda()
     torch.cuda.reset_peak_memory_stats()
     rng = np.random.default_rng(args.seed)
     # Cache only allowed training pixels. Validation/test pixels are decoded after fitting.
@@ -74,7 +75,8 @@ def train(args):
     train_pixels = {r.image_id:decode_image(store.read(r.image_path))
                     for identity in paired for entries in grouped[identity].values() for r in entries}
     preload_seconds = time.monotonic()-preload_start
-    backbone_parameters = [p for p in model.encoder.parameters() if p.requires_grad]
+    backbone_parameters = [p for name,p in model.named_parameters()
+                           if p.requires_grad and not name.startswith(('heads.','classifier.'))]
     head_parameters = list(model.heads.parameters())+list(model.classifier.parameters())
     groups = [{'params':head_parameters,'lr':args.head_lr,'base_lr':args.head_lr}]
     if backbone_parameters:
@@ -103,9 +105,18 @@ def train(args):
             labels = torch.tensor(np.concatenate([indices,indices]),device='cuda',dtype=torch.long)
             modalities = torch.cat([torch.zeros(len(indices),device='cuda',dtype=torch.long),
                                     torch.ones(len(indices),device='cuda',dtype=torch.long)])
-            embeddings = model.encode(pixels,modalities,augment=args.augment)
+            structure = None
+            if args.structure_weight:
+                embeddings,structure = model.encode(pixels,modalities,augment=args.augment,return_structure=True)
+            else:
+                embeddings = model.encode(pixels,modalities,augment=args.augment)
             loss,parts = retrieval_losses(model,embeddings,labels,modalities,args.temperature,
                                           args.classification_weight,args.triplet_weight)
+            if args.structure_weight:
+                if not structure.requires_grad:
+                    raise ValueError('Structural constraint has no trainable path at this layer')
+                parts['structure'] = structural_pair_loss(structure,labels,modalities)
+                loss = loss+args.structure_weight*parts['structure']
             if not torch.isfinite(loss):
                 raise RuntimeError('Nonfinite image-level ReID loss')
             optimizer.zero_grad(set_to_none=True)
@@ -126,7 +137,8 @@ def train(args):
     args.output_dir.mkdir(parents=True,exist_ok=True)
     checkpoint_path = args.output_dir/'reid.pt'
     config = {'image_size':args.image_size,'pooling':args.pooling,'train_last_blocks':args.train_last_blocks,
-              'identities':len(paired),'inference_batch_size':args.inference_batch_size}
+              'identities':len(paired),'inference_batch_size':args.inference_batch_size,
+              'stem_mode':args.stem_mode,'structure_layer':args.structure_layer}
     torch.save({'trainable_state':trainable_state(model),'config':config,'seed':args.seed,
                 'split_sha256':sha256(args.split),'source_sha256':split['source_sha256'],
                 'weights_sha256':resource['weights']['sha256'],'variant':resource['variant']},checkpoint_path)
@@ -144,6 +156,9 @@ def train(args):
               'training':{'epochs':args.epochs,'identities_per_batch':args.identities_per_batch,
                   'paired_training_identities':len(paired),'paired_training_images_available':len(train_pixels),
                   'training_images_available':len(split['train_images']),'train_last_blocks':args.train_last_blocks,
+                  'stem_mode':args.stem_mode,'structure_weight':args.structure_weight,
+                  'structure_layer':args.structure_layer,
+                  'structure_loss':'mean squared difference of channel-standardized adjacent patch gradient energies' if args.structure_weight else 'disabled',
                   'optimizer':'AdamW','weight_decay':.01,'backbone_lr':args.backbone_lr,'head_lr':args.head_lr,
                   'schedule':'2 epoch warmup times cosine decay, floor .1','temperature':args.temperature,
                   'classification_weight':args.classification_weight,'triplet_weight':args.triplet_weight,
@@ -170,6 +185,9 @@ if __name__=='__main__':
     p.add_argument('--image-size',type=int,default=256)
     p.add_argument('--pooling',choices=POOLING,default='cls_foreground')
     p.add_argument('--train-last-blocks',type=int,default=4)
+    p.add_argument('--stem-mode',choices=['frozen','shared','separate'],default='frozen')
+    p.add_argument('--structure-weight',type=float,default=0.)
+    p.add_argument('--structure-layer',type=int,default=6)
     p.add_argument('--epochs',type=int,default=12)
     p.add_argument('--identities-per-batch',type=int,default=32)
     p.add_argument('--inference-batch-size',type=int,default=32)
@@ -183,6 +201,8 @@ if __name__=='__main__':
     args=p.parse_args()
     if min(args.epochs,args.identities_per_batch-1,args.inference_batch_size,args.backbone_lr,args.head_lr,args.temperature)<=0:
         p.error('Positive training settings and at least two identities per batch required')
-    if min(args.classification_weight,args.triplet_weight)<0:
+    if min(args.classification_weight,args.triplet_weight,args.structure_weight)<0:
         p.error('Loss weights cannot be negative')
+    if args.structure_weight and args.stem_mode=='frozen':
+        p.error('A trainable patch stem is required for the structural ablation')
     print(json.dumps(train(args),indent=2))
