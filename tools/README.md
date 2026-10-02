@@ -54,3 +54,13 @@ python tools/analyze_retrieval.py data/stage1.zip --split local/splits/identity-
 ```
 
 错配工具核对特征与划分指纹，重新计算全 Gallery 排名并验证原有前十顺序，然后统计各方向 R@1/5/10/50、正确候选排名、相似度边际及像素占用率。仅分析有训练标签的身份隔离验证集，不能用于猜测初赛身份。`report.json` 是匿名汇总；`private-errors.json`、可选 `--panel` 生成的原始像素图和案例清单均须留在 Git 之外。大于 8 的非黑区域是观察性统计，不是舰船分割，也不能换算物理船长。
+
+## 真实配对观察册
+
+`build_pair_atlas.py` 从指定划分共同的训练身份取样；普通单对身份与多光学图身份各取6组。抽样哈希有独立命名空间，不复用身份划分的排序。生成保留原始256×256像素的PNG、HTML、图板和私有身份映射，并逐像素验证PNG与TIFF解码结果一致；不读取测试图像，不生成模型预测。
+
+```bash
+python tools/build_pair_atlas.py data/stage1.zip --splits local/splits/identity-v1.json local/splits/identity-v2.json --output-dir local/representation-study/atlas-independent --census
+```
+
+`--census` 另外遍历这两个可用训练身份组的光学图像，统计阈值占比。案例中的四档阈值包围框、主轴及二阶矩各向异性只描述亮像素；它们不是舰船分割、物理尺度或经过校准的置信度。多视图组刻意过采样，观察册不能估计总体发生率。同船关系来自官方标签，不能称人工独立核验。全部图像、HTML、逐图观察和身份映射留在Git外，只有匿名summary可整理进证据目录。
