@@ -1,0 +1,510 @@
+{
+  "study_date_local": "2026-10-02",
+  "timezone": "Asia/Shanghai",
+  "status": "offline observational and mathematical study, not a new retrieval model result",
+  "server_contacted": false,
+  "new_gpu_runs": 0,
+  "new_external_weights": 0,
+  "test_used": false,
+  "atlas": {
+    "method": "training-intersection-original-pixel-atlas-v1",
+    "seed": 20261002,
+    "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+    "split_sha256": [
+      "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+      "aa7b5835cbbf9699b4b0d1ece79717d36cd9a169ea5d273f6e7c3bb0a39304e0"
+    ],
+    "tool_sha256": "8ea9e3a069441f3c336b0f0b5c845ba5f03c33b679b0caefb74c302acc27fc6a",
+    "selection": "smallest SHA256(pair-atlas-v1:seed:ship_id) within each predeclared stratum",
+    "eligible_identity_counts": {
+      "one_optical_one_sar": 2123,
+      "multiple_optical": 127
+    },
+    "identities_per_group": 6,
+    "identities": 12,
+    "common_training_optical_census": {
+      "one_optical_one_sar": {
+        "identities": 2123,
+        "optical_images": 2123,
+        "threshold8_fraction_lt_0_3": 236,
+        "threshold8_fraction_ge_0_9": 1863,
+        "threshold8_fraction_median": 0.9999847412109375,
+        "scope": "all optical images in this eligible common-training stratum"
+      },
+      "multiple_optical": {
+        "identities": 127,
+        "optical_images": 312,
+        "threshold8_fraction_lt_0_3": 311,
+        "threshold8_fraction_ge_0_9": 0,
+        "threshold8_fraction_median": 0.16015625,
+        "scope": "all optical images in this eligible common-training stratum"
+      }
+    },
+    "images": 32,
+    "validation_identity_overlap": 0,
+    "test_used": false,
+    "identity_is_official_label_not_manual_confirmation": true,
+    "representative_prevalence_sample": false,
+    "threshold8_is_segmentation": false,
+    "exported_pixels_equal_source": true,
+    "moment_anisotropy_is_calibrated_confidence": false,
+    "panels": [
+      {
+        "file": "panel-1.png",
+        "sha256": "9ac95c2b47b753e49aa0a868cf281a33307f687b4a0106798af72c6af24be618"
+      },
+      {
+        "file": "panel-2.png",
+        "sha256": "de76a9c447ab74288f60c33c0a6a0b2388b86bb5a1030e9ca6b664f490079a1a"
+      },
+      {
+        "file": "panel-3.png",
+        "sha256": "5790c52fe68b0872bac7c35134c860e29a711edc717e4579d115397ef163a2d2"
+      },
+      {
+        "file": "panel-4.png",
+        "sha256": "e67b0ec3f8475e7fcc99459884505d3281f5ab6efba81a52d48571a9503a26f5"
+      }
+    ]
+  },
+  "atlas_run": {
+    "name": "representation-atlas",
+    "started_at_utc": "2026-10-02T05:15:41.868991+00:00",
+    "state": "completed",
+    "command": [
+      "C:\\Users\\11386\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "tools\\build_pair_atlas.py",
+      "data\\stage1.zip",
+      "--splits",
+      "local\\splits\\identity-v1.json",
+      "local\\splits\\identity-v2.json",
+      "--output-dir",
+      "local\\representation-study\\atlas-independent",
+      "--census"
+    ],
+    "working_directory": "C:\\workspace\\github\\cunsl-2026-track6",
+    "git_commit": "3307a9a9158d9d2ca06a1f7e2e87517ba7c081a0",
+    "git_dirty_files": [],
+    "metrics_validated": false,
+    "gpu_lock": null,
+    "log": "stdout.log",
+    "pid": 11612,
+    "return_code": 0,
+    "finished_at_utc": "2026-10-02T05:15:49.401957+00:00",
+    "elapsed_seconds": 7.437000000005355
+  },
+  "independent_pixel_audit": {
+    "images_checked": 32,
+    "all_match_original_audit_sha256": true
+  },
+  "example_brightness_geometry": {
+    "P02": {
+      "Optical 1": [
+        {
+          "threshold": 8,
+          "pixels": 65536,
+          "fraction": 1.0,
+          "bbox_width": 256,
+          "bbox_height": 256,
+          "axis_degrees_mod180": null,
+          "moment_anisotropy": 0.0
+        },
+        {
+          "threshold": 32,
+          "pixels": 65536,
+          "fraction": 1.0,
+          "bbox_width": 256,
+          "bbox_height": 256,
+          "axis_degrees_mod180": null,
+          "moment_anisotropy": 0.0
+        },
+        {
+          "threshold": 64,
+          "pixels": 65125,
+          "fraction": 0.9937286376953125,
+          "bbox_width": 256,
+          "bbox_height": 256,
+          "axis_degrees_mod180": 121.40389189933944,
+          "moment_anisotropy": 0.0032746075831507973
+        },
+        {
+          "threshold": 128,
+          "pixels": 40128,
+          "fraction": 0.6123046875,
+          "bbox_width": 256,
+          "bbox_height": 256,
+          "axis_degrees_mod180": 104.77561359757196,
+          "moment_anisotropy": 0.1965354783848411
+        }
+      ],
+      "SAR 1": [
+        {
+          "threshold": 8,
+          "pixels": 2844,
+          "fraction": 0.04339599609375,
+          "bbox_width": 70,
+          "bbox_height": 129,
+          "axis_degrees_mod180": 116.43525571669751,
+          "moment_anisotropy": 0.9483169422841748
+        },
+        {
+          "threshold": 32,
+          "pixels": 1386,
+          "fraction": 0.021148681640625,
+          "bbox_width": 64,
+          "bbox_height": 126,
+          "axis_degrees_mod180": 116.2105155613249,
+          "moment_anisotropy": 0.9700812440105266
+        },
+        {
+          "threshold": 64,
+          "pixels": 1098,
+          "fraction": 0.016754150390625,
+          "bbox_width": 61,
+          "bbox_height": 125,
+          "axis_degrees_mod180": 115.93414499264271,
+          "moment_anisotropy": 0.9716222862900727
+        },
+        {
+          "threshold": 128,
+          "pixels": 739,
+          "fraction": 0.0112762451171875,
+          "bbox_width": 59,
+          "bbox_height": 121,
+          "axis_degrees_mod180": 116.25901379727826,
+          "moment_anisotropy": 0.9748867145290186
+        }
+      ]
+    },
+    "P05": {
+      "Optical 1": [
+        {
+          "threshold": 8,
+          "pixels": 65536,
+          "fraction": 1.0,
+          "bbox_width": 256,
+          "bbox_height": 256,
+          "axis_degrees_mod180": null,
+          "moment_anisotropy": 0.0
+        },
+        {
+          "threshold": 32,
+          "pixels": 65536,
+          "fraction": 1.0,
+          "bbox_width": 256,
+          "bbox_height": 256,
+          "axis_degrees_mod180": null,
+          "moment_anisotropy": 0.0
+        },
+        {
+          "threshold": 64,
+          "pixels": 65536,
+          "fraction": 1.0,
+          "bbox_width": 256,
+          "bbox_height": 256,
+          "axis_degrees_mod180": null,
+          "moment_anisotropy": 0.0
+        },
+        {
+          "threshold": 128,
+          "pixels": 65526,
+          "fraction": 0.999847412109375,
+          "bbox_width": 256,
+          "bbox_height": 256,
+          "axis_degrees_mod180": 160.79229489386805,
+          "moment_anisotropy": 4.9112947952675754e-05
+        }
+      ],
+      "SAR 1": [
+        {
+          "threshold": 8,
+          "pixels": 2525,
+          "fraction": 0.0385284423828125,
+          "bbox_width": 135,
+          "bbox_height": 147,
+          "axis_degrees_mod180": 50.006138037513985,
+          "moment_anisotropy": 0.9567656073733742
+        },
+        {
+          "threshold": 32,
+          "pixels": 1408,
+          "fraction": 0.021484375,
+          "bbox_width": 133,
+          "bbox_height": 146,
+          "axis_degrees_mod180": 50.351316100918325,
+          "moment_anisotropy": 0.9735842159295316
+        },
+        {
+          "threshold": 64,
+          "pixels": 1046,
+          "fraction": 0.015960693359375,
+          "bbox_width": 131,
+          "bbox_height": 146,
+          "axis_degrees_mod180": 50.44037113522159,
+          "moment_anisotropy": 0.977658544923997
+        },
+        {
+          "threshold": 128,
+          "pixels": 684,
+          "fraction": 0.01043701171875,
+          "bbox_width": 128,
+          "bbox_height": 145,
+          "axis_degrees_mod180": 50.46726490971426,
+          "moment_anisotropy": 0.983611085740743
+        }
+      ]
+    },
+    "P08": {
+      "Optical 1": [
+        {
+          "threshold": 8,
+          "pixels": 10496,
+          "fraction": 0.16015625,
+          "bbox_width": 41,
+          "bbox_height": 256,
+          "axis_degrees_mod180": 90.0,
+          "moment_anisotropy": 0.9500111582236108
+        },
+        {
+          "threshold": 32,
+          "pixels": 10480,
+          "fraction": 0.159912109375,
+          "bbox_width": 41,
+          "bbox_height": 256,
+          "axis_degrees_mod180": 90.01024268166044,
+          "moment_anisotropy": 0.9498911044373595
+        },
+        {
+          "threshold": 64,
+          "pixels": 9442,
+          "fraction": 0.144073486328125,
+          "bbox_width": 41,
+          "bbox_height": 256,
+          "axis_degrees_mod180": 90.08367506770578,
+          "moment_anisotropy": 0.9450393389355897
+        },
+        {
+          "threshold": 128,
+          "pixels": 4818,
+          "fraction": 0.073516845703125,
+          "bbox_width": 41,
+          "bbox_height": 220,
+          "axis_degrees_mod180": 91.69083594953901,
+          "moment_anisotropy": 0.9413716846096706
+        }
+      ],
+      "SAR 1": [
+        {
+          "threshold": 8,
+          "pixels": 4570,
+          "fraction": 0.069732666015625,
+          "bbox_width": 29,
+          "bbox_height": 230,
+          "axis_degrees_mod180": 90.16195538926914,
+          "moment_anisotropy": 0.957542197137163
+        },
+        {
+          "threshold": 32,
+          "pixels": 1787,
+          "fraction": 0.0272674560546875,
+          "bbox_width": 29,
+          "bbox_height": 207,
+          "axis_degrees_mod180": 89.54981992937395,
+          "moment_anisotropy": 0.9282128028900747
+        },
+        {
+          "threshold": 64,
+          "pixels": 768,
+          "fraction": 0.01171875,
+          "bbox_width": 29,
+          "bbox_height": 203,
+          "axis_degrees_mod180": 90.3281241800594,
+          "moment_anisotropy": 0.9022374501634776
+        },
+        {
+          "threshold": 128,
+          "pixels": 236,
+          "fraction": 0.00360107421875,
+          "bbox_width": 29,
+          "bbox_height": 111,
+          "axis_degrees_mod180": 91.10550527465031,
+          "moment_anisotropy": 0.8460209677187366
+        }
+      ],
+      "Optical 2": [
+        {
+          "threshold": 8,
+          "pixels": 10496,
+          "fraction": 0.16015625,
+          "bbox_width": 41,
+          "bbox_height": 256,
+          "axis_degrees_mod180": 90.0,
+          "moment_anisotropy": 0.9500111582236108
+        },
+        {
+          "threshold": 32,
+          "pixels": 9178,
+          "fraction": 0.140045166015625,
+          "bbox_width": 41,
+          "bbox_height": 256,
+          "axis_degrees_mod180": 90.58959738099313,
+          "moment_anisotropy": 0.9475015803795492
+        },
+        {
+          "threshold": 64,
+          "pixels": 5215,
+          "fraction": 0.0795745849609375,
+          "bbox_width": 39,
+          "bbox_height": 214,
+          "axis_degrees_mod180": 90.94666786046142,
+          "moment_anisotropy": 0.9380005497044444
+        },
+        {
+          "threshold": 128,
+          "pixels": 1417,
+          "fraction": 0.0216217041015625,
+          "bbox_width": 37,
+          "bbox_height": 210,
+          "axis_degrees_mod180": 91.79809511234404,
+          "moment_anisotropy": 0.9623838723657112
+        }
+      ],
+      "SAR 2": [
+        {
+          "threshold": 8,
+          "pixels": 4651,
+          "fraction": 0.0709686279296875,
+          "bbox_width": 37,
+          "bbox_height": 222,
+          "axis_degrees_mod180": 90.83391409730683,
+          "moment_anisotropy": 0.9268887133481905
+        },
+        {
+          "threshold": 32,
+          "pixels": 2077,
+          "fraction": 0.0316925048828125,
+          "bbox_width": 37,
+          "bbox_height": 206,
+          "axis_degrees_mod180": 90.1312926741787,
+          "moment_anisotropy": 0.8696030075227259
+        },
+        {
+          "threshold": 64,
+          "pixels": 938,
+          "fraction": 0.014312744140625,
+          "bbox_width": 37,
+          "bbox_height": 186,
+          "axis_degrees_mod180": 90.2145668626199,
+          "moment_anisotropy": 0.8166254040137808
+        },
+        {
+          "threshold": 128,
+          "pixels": 283,
+          "fraction": 0.0043182373046875,
+          "bbox_width": 37,
+          "bbox_height": 166,
+          "axis_degrees_mod180": 92.04963264399453,
+          "moment_anisotropy": 0.8170714439825243
+        }
+      ]
+    }
+  },
+  "finite_example": {
+    "synthetic": true,
+    "full_states": 8,
+    "observations": 12,
+    "visible_coordinates_per_observation": 2,
+    "missing_coordinate_is_known": true,
+    "compatible_states_per_observation": 2,
+    "forced_equality_edges": 12,
+    "equality_connected_components": 1,
+    "scope": "Exact invariance to every one-coordinate deletion collapses all eight full states. This is not a measured bound on contest images."
+  },
+  "relation_bijection_example": {
+    "synthetic": true,
+    "sequence_length": 4,
+    "alphabet_size": 3,
+    "sequences_checked": 81,
+    "canonical_renaming_classes": 14,
+    "distinct_equality_matrices": 14,
+    "bijection_verified": true,
+    "scope": "Exact only modulo bijective symbol renaming at known corresponding positions; not a proved optical-SAR ship representation."
+  },
+  "sources": [
+    {
+      "id": "soatto-chiuso-2016",
+      "title": "Visual Representations: Defining Properties and Deep Approximations",
+      "url": "https://arxiv.org/pdf/1411.7676v9",
+      "public_date": "2016-02-29",
+      "read_scope": "Sections 2.1-2.3, Remark 1, Sections 3.1-3.2; page 6 visually checked",
+      "limits": "Optical image-formation assumptions are not a SAR theorem.",
+      "file": "soatto-chiuso-2016.pdf",
+      "pages": 20,
+      "bytes": 805134,
+      "sha256": "cc42ccfd0cc752ecbdeb7c55a681c064a7a128e716fc214f28b16fc947991b39",
+      "characters": 69386,
+      "use": "paper reading only",
+      "external_code_used": false,
+      "weights_used": false,
+      "license_status": "Not reviewed for code/weight reuse; paper files kept outside Git"
+    },
+    {
+      "id": "self-similarity-2007",
+      "title": "Matching Local Self-Similarities across Images and Videos",
+      "url": "https://www.wisdom.weizmann.ac.il/~vision/VideoAnalysis/Demos/SelfSimilarities/SelfSimilarities_ShechtmanIrani07.pdf",
+      "public_date": "2007-06",
+      "read_scope": "Sections 1-4 and Figure 3; page 3 visually checked",
+      "limits": "Appearance-changing object matching does not establish ship-identity discrimination or SAR repeatability.",
+      "file": "self-similarity-2007.pdf",
+      "pages": 8,
+      "bytes": 2861281,
+      "sha256": "0329f50569bd89b646eb7953e09422266309df75ba166cf8210962dc877a4bde",
+      "characters": 32668,
+      "use": "paper reading only",
+      "external_code_used": false,
+      "weights_used": false,
+      "license_status": "Not reviewed for code/weight reuse; paper files kept outside Git"
+    },
+    {
+      "id": "superglue-2020",
+      "title": "SuperGlue: Learning Feature Matching with Graph Neural Networks",
+      "url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Sarlin_SuperGlue_Learning_Feature_Matching_With_Graph_Neural_Networks_CVPR_2020_paper.pdf",
+      "public_date": "2020-06",
+      "read_scope": "Sections 3.1-3.2 and Figures 3-4; page 4 visually checked",
+      "limits": "Correspondence of visible 3D points is an assumption; no claim of direct optical-SAR transfer.",
+      "file": "superglue-2020.pdf",
+      "pages": 10,
+      "bytes": 8461813,
+      "sha256": "79b367ea82e7eb3cdff2ddf4bf153d29acf4da8c4f18f1466ce877adc18bd383",
+      "characters": 47266,
+      "use": "paper reading only",
+      "external_code_used": false,
+      "weights_used": false,
+      "license_status": "Not reviewed for code/weight reuse; paper files kept outside Git"
+    }
+  ],
+  "additional_physics_reference": {
+    "url": "https://hyp3-docs.asf.alaska.edu/hyp3-docs/guides/introduction_to_sar/",
+    "read_scope": "Backscatter, geometric distortions and speckle",
+    "limits": "Terrain illustrations do not prove a specific ship image suffered layover."
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pillow": "12.3.0",
+    "gpu_used": false
+  },
+  "validation": {
+    "repository_tests_total": 32,
+    "passed": 24,
+    "skipped": 8,
+    "skip_reasons": "3 Linux flock and 5 unavailable PyTorch tests",
+    "linux_tests_run_this_round": false
+  },
+  "recorded_issues": [
+    "Initial paper downloads were blocked by the network sandbox; authorized network access fetched the same exact public PDFs.",
+    "Initial exploratory atlas reused the split hash namespace; changed to independent pair-atlas-v1 namespace before recording final sample. Initial images and manifest retained privately; not included in the final census or sample claims.",
+    "Poppler emitted Symbol/ArialUnicode font warnings; relevant rendered pages were visually readable."
+  ],
+  "collector_sha256": "494830f06c59a966f2f95fa62b63e3b3e242150e17a17ead3d99965d58d892de"
+}

@@ -1,0 +1,617 @@
+{
+  "status": "validation-label oracle only, not model results",
+  "model_description": "DINOv3-B/16 with fixed patch input and last four blocks fine-tuned for 12 epochs",
+  "separate_stem_features_available_locally": false,
+  "reports": [
+    {
+      "split": 1,
+      "report_sha256": "9ee0d069ac3ece8c56178cdd6f19c30e6ddb65b36d21aab8a166fbe6377aaaf9",
+      "report": {
+        "method": "fixed-shortlist-label-oracle-v1",
+        "diagnostic_code_commit": "e3fd07bf9fc88120a9f9a7084156e7ac4ebc58ba",
+        "feature_model_code_commit": "4c2394bdc35b340ab6f53de25acbb8a5a2e82990",
+        "seed": 20261001,
+        "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+        "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+        "model_report_sha256": "498d9c398505919a6b5afdbde8f7b22da6e7d8c2ca08e68dd72f4862f8f0d74b",
+        "feature_cache_sha256": "4c02797e973de682b5b71b7ca275d3ab953eaf08570d46ace728c7787a9ec83d",
+        "diagnostic_tool_sha256": "4f3fa642ed816021a1063208eb8d1a225e84636e040ce11478222bffa7753126",
+        "bound_function_sha256": "e0a846b2de5038755e3b5eb376719e526e874a156c7749b748f459bce6d41f40",
+        "test_used": false,
+        "validation_rankings_reproduced": true,
+        "actual_metrics_recomputed": true,
+        "oracle_uses_heldout_labels": true,
+        "oracle_is_model_result": false,
+        "official_scorer_confirmed": false,
+        "scope": "Upper bound for ordering inside a fixed shortlist only; not an information limit or evidence an image-only reranker can realize it.",
+        "directions": {
+          "min_relevant_k": {
+            "O2S": {
+              "queries": 765,
+              "gallery": 718,
+              "actual": {
+                "R@1": 0.20784313725490197,
+                "mAP@10": 0.3460584604212055,
+                "score": 0.27695079883805374
+              },
+              "ap_denominator": "min_relevant_k",
+              "shortlists": {
+                "10": {
+                  "candidate_recall": 0.6797385620915033,
+                  "positive_capture_fraction": 0.6758169934640523,
+                  "oracle_R@1": 0.6797385620915033,
+                  "oracle_mAP@10": 0.6758169934640523,
+                  "oracle_direction_score": 0.6777777777777778,
+                  "queries_with_no_positive": 245,
+                  "queries_missing_some_positive": 251
+                },
+                "50": {
+                  "candidate_recall": 0.8666666666666667,
+                  "positive_capture_fraction": 0.8666666666666667,
+                  "oracle_R@1": 0.8666666666666667,
+                  "oracle_mAP@10": 0.8666666666666667,
+                  "oracle_direction_score": 0.8666666666666667,
+                  "queries_with_no_positive": 102,
+                  "queries_missing_some_positive": 102
+                },
+                "100": {
+                  "candidate_recall": 0.9267973856209151,
+                  "positive_capture_fraction": 0.9267973856209151,
+                  "oracle_R@1": 0.9267973856209151,
+                  "oracle_mAP@10": 0.9267973856209151,
+                  "oracle_direction_score": 0.9267973856209151,
+                  "queries_with_no_positive": 56,
+                  "queries_missing_some_positive": 56
+                }
+              }
+            },
+            "S2O": {
+              "queries": 714,
+              "gallery": 765,
+              "actual": {
+                "R@1": 0.21568627450980393,
+                "mAP@10": 0.32992057934284824,
+                "score": 0.2728034269263261
+              },
+              "ap_denominator": "min_relevant_k",
+              "shortlists": {
+                "10": {
+                  "candidate_recall": 0.6498599439775911,
+                  "positive_capture_fraction": 0.6328197945845004,
+                  "oracle_R@1": 0.6498599439775911,
+                  "oracle_mAP@10": 0.6328197945845004,
+                  "oracle_direction_score": 0.6413398692810457,
+                  "queries_with_no_positive": 250,
+                  "queries_missing_some_positive": 274
+                },
+                "50": {
+                  "candidate_recall": 0.8501400560224089,
+                  "positive_capture_fraction": 0.8485060690943045,
+                  "oracle_R@1": 0.8501400560224089,
+                  "oracle_mAP@10": 0.8485060690943045,
+                  "oracle_direction_score": 0.8493230625583568,
+                  "queries_with_no_positive": 107,
+                  "queries_missing_some_positive": 110
+                },
+                "100": {
+                  "candidate_recall": 0.9103641456582633,
+                  "positive_capture_fraction": 0.9103641456582633,
+                  "oracle_R@1": 0.9103641456582633,
+                  "oracle_mAP@10": 0.9103641456582633,
+                  "oracle_direction_score": 0.9103641456582633,
+                  "queries_with_no_positive": 64,
+                  "queries_missing_some_positive": 64
+                }
+              }
+            },
+            "O2O": {
+              "queries": 44,
+              "gallery": 721,
+              "actual": {
+                "R@1": 0.8636363636363636,
+                "mAP@10": 0.9204545454545454,
+                "score": 0.8920454545454546
+              },
+              "ap_denominator": "min_relevant_k",
+              "shortlists": {
+                "10": {
+                  "candidate_recall": 1.0,
+                  "positive_capture_fraction": 1.0,
+                  "oracle_R@1": 1.0,
+                  "oracle_mAP@10": 1.0,
+                  "oracle_direction_score": 1.0,
+                  "queries_with_no_positive": 0,
+                  "queries_missing_some_positive": 0
+                },
+                "50": {
+                  "candidate_recall": 1.0,
+                  "positive_capture_fraction": 1.0,
+                  "oracle_R@1": 1.0,
+                  "oracle_mAP@10": 1.0,
+                  "oracle_direction_score": 1.0,
+                  "queries_with_no_positive": 0,
+                  "queries_missing_some_positive": 0
+                },
+                "100": {
+                  "candidate_recall": 1.0,
+                  "positive_capture_fraction": 1.0,
+                  "oracle_R@1": 1.0,
+                  "oracle_mAP@10": 1.0,
+                  "oracle_direction_score": 1.0,
+                  "queries_with_no_positive": 0,
+                  "queries_missing_some_positive": 0
+                }
+              }
+            }
+          },
+          "all_relevant": {
+            "O2S": {
+              "queries": 765,
+              "gallery": 718,
+              "actual": {
+                "R@1": 0.20784313725490197,
+                "mAP@10": 0.3460584604212055,
+                "score": 0.27695079883805374
+              },
+              "ap_denominator": "all_relevant",
+              "shortlists": {
+                "10": {
+                  "candidate_recall": 0.6797385620915033,
+                  "positive_capture_fraction": 0.6758169934640523,
+                  "oracle_R@1": 0.6797385620915033,
+                  "oracle_mAP@10": 0.6758169934640523,
+                  "oracle_direction_score": 0.6777777777777778,
+                  "queries_with_no_positive": 245,
+                  "queries_missing_some_positive": 251
+                },
+                "50": {
+                  "candidate_recall": 0.8666666666666667,
+                  "positive_capture_fraction": 0.8666666666666667,
+                  "oracle_R@1": 0.8666666666666667,
+                  "oracle_mAP@10": 0.8666666666666667,
+                  "oracle_direction_score": 0.8666666666666667,
+                  "queries_with_no_positive": 102,
+                  "queries_missing_some_positive": 102
+                },
+                "100": {
+                  "candidate_recall": 0.9267973856209151,
+                  "positive_capture_fraction": 0.9267973856209151,
+                  "oracle_R@1": 0.9267973856209151,
+                  "oracle_mAP@10": 0.9267973856209151,
+                  "oracle_direction_score": 0.9267973856209151,
+                  "queries_with_no_positive": 56,
+                  "queries_missing_some_positive": 56
+                }
+              }
+            },
+            "S2O": {
+              "queries": 714,
+              "gallery": 765,
+              "actual": {
+                "R@1": 0.21568627450980393,
+                "mAP@10": 0.32992057934284824,
+                "score": 0.2728034269263261
+              },
+              "ap_denominator": "all_relevant",
+              "shortlists": {
+                "10": {
+                  "candidate_recall": 0.6498599439775911,
+                  "positive_capture_fraction": 0.6328197945845004,
+                  "oracle_R@1": 0.6498599439775911,
+                  "oracle_mAP@10": 0.6328197945845004,
+                  "oracle_direction_score": 0.6413398692810457,
+                  "queries_with_no_positive": 250,
+                  "queries_missing_some_positive": 274
+                },
+                "50": {
+                  "candidate_recall": 0.8501400560224089,
+                  "positive_capture_fraction": 0.8485060690943045,
+                  "oracle_R@1": 0.8501400560224089,
+                  "oracle_mAP@10": 0.8485060690943045,
+                  "oracle_direction_score": 0.8493230625583568,
+                  "queries_with_no_positive": 107,
+                  "queries_missing_some_positive": 110
+                },
+                "100": {
+                  "candidate_recall": 0.9103641456582633,
+                  "positive_capture_fraction": 0.9103641456582633,
+                  "oracle_R@1": 0.9103641456582633,
+                  "oracle_mAP@10": 0.9103641456582633,
+                  "oracle_direction_score": 0.9103641456582633,
+                  "queries_with_no_positive": 64,
+                  "queries_missing_some_positive": 64
+                }
+              }
+            },
+            "O2O": {
+              "queries": 44,
+              "gallery": 721,
+              "actual": {
+                "R@1": 0.8636363636363636,
+                "mAP@10": 0.9204545454545454,
+                "score": 0.8920454545454546
+              },
+              "ap_denominator": "all_relevant",
+              "shortlists": {
+                "10": {
+                  "candidate_recall": 1.0,
+                  "positive_capture_fraction": 1.0,
+                  "oracle_R@1": 1.0,
+                  "oracle_mAP@10": 1.0,
+                  "oracle_direction_score": 1.0,
+                  "queries_with_no_positive": 0,
+                  "queries_missing_some_positive": 0
+                },
+                "50": {
+                  "candidate_recall": 1.0,
+                  "positive_capture_fraction": 1.0,
+                  "oracle_R@1": 1.0,
+                  "oracle_mAP@10": 1.0,
+                  "oracle_direction_score": 1.0,
+                  "queries_with_no_positive": 0,
+                  "queries_missing_some_positive": 0
+                },
+                "100": {
+                  "candidate_recall": 1.0,
+                  "positive_capture_fraction": 1.0,
+                  "oracle_R@1": 1.0,
+                  "oracle_mAP@10": 1.0,
+                  "oracle_direction_score": 1.0,
+                  "queries_with_no_positive": 0,
+                  "queries_missing_some_positive": 0
+                }
+              }
+            }
+          }
+        },
+        "weighted_actual": {
+          "min_relevant_k": 0.3365939470485164,
+          "all_relevant": 0.3365939470485164
+        },
+        "weighted_oracle": {
+          "min_relevant_k": {
+            "10": 0.6936029411764706,
+            "50": 0.8721953781512606,
+            "100": 0.9267226890756303
+          },
+          "all_relevant": {
+            "10": 0.6936029411764706,
+            "50": 0.8721953781512606,
+            "100": 0.9267226890756303
+          }
+        }
+      },
+      "run": {
+        "name": "fp-shortlist-split1",
+        "started_at_utc": "2026-10-01T15:42:29.114794+00:00",
+        "state": "completed",
+        "command": [
+          "C:\\Users\\11386\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+          "tools\\diagnose_shortlist.py",
+          "data\\stage1.zip",
+          "--split",
+          "local\\splits\\identity-v1.json",
+          "--run-dir",
+          "local\\modern-results\\benchmarks\\dinov3-b16-reid12",
+          "--output",
+          "local\\first-principles\\split1-frozen-recorded.json"
+        ],
+        "working_directory": "C:\\workspace\\github\\cunsl-2026-track6",
+        "git_commit": "e3fd07bf9fc88120a9f9a7084156e7ac4ebc58ba",
+        "git_dirty_files": [],
+        "metrics_validated": false,
+        "gpu_lock": null,
+        "log": "stdout.log",
+        "pid": 23540,
+        "return_code": 0,
+        "finished_at_utc": "2026-10-01T15:42:30.256181+00:00",
+        "elapsed_seconds": 1.0320000000065193
+      }
+    },
+    {
+      "split": 2,
+      "report_sha256": "f9fa3c6d82381619474609cc830477b902b4c95bb128fd245187550f2dbd6b5b",
+      "report": {
+        "method": "fixed-shortlist-label-oracle-v1",
+        "diagnostic_code_commit": "e3fd07bf9fc88120a9f9a7084156e7ac4ebc58ba",
+        "feature_model_code_commit": "4c2394bdc35b340ab6f53de25acbb8a5a2e82990",
+        "seed": 20261002,
+        "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+        "split_sha256": "aa7b5835cbbf9699b4b0d1ece79717d36cd9a169ea5d273f6e7c3bb0a39304e0",
+        "model_report_sha256": "1cfd0a1373773556c2c82e9e3238eb526eeb3497b1efd2c2bcc37074198e043b",
+        "feature_cache_sha256": "590a418c59c4c6cdcb41a8f8f446a1321d808349840f2fbcea282dab082fd2e8",
+        "diagnostic_tool_sha256": "4f3fa642ed816021a1063208eb8d1a225e84636e040ce11478222bffa7753126",
+        "bound_function_sha256": "e0a846b2de5038755e3b5eb376719e526e874a156c7749b748f459bce6d41f40",
+        "test_used": false,
+        "validation_rankings_reproduced": true,
+        "actual_metrics_recomputed": true,
+        "oracle_uses_heldout_labels": true,
+        "oracle_is_model_result": false,
+        "official_scorer_confirmed": false,
+        "scope": "Upper bound for ordering inside a fixed shortlist only; not an information limit or evidence an image-only reranker can realize it.",
+        "directions": {
+          "min_relevant_k": {
+            "O2S": {
+              "queries": 762,
+              "gallery": 720,
+              "actual": {
+                "R@1": 0.2020997375328084,
+                "mAP@10": 0.32255941965587637,
+                "score": 0.26232957859434236
+              },
+              "ap_denominator": "min_relevant_k",
+              "shortlists": {
+                "10": {
+                  "candidate_recall": 0.6377952755905512,
+                  "positive_capture_fraction": 0.6325459317585301,
+                  "oracle_R@1": 0.6377952755905512,
+                  "oracle_mAP@10": 0.6325459317585301,
+                  "oracle_direction_score": 0.6351706036745406,
+                  "queries_with_no_positive": 276,
+                  "queries_missing_some_positive": 284
+                },
+                "50": {
+                  "candidate_recall": 0.8740157480314961,
+                  "positive_capture_fraction": 0.8733595800524935,
+                  "oracle_R@1": 0.8740157480314961,
+                  "oracle_mAP@10": 0.8733595800524935,
+                  "oracle_direction_score": 0.8736876640419948,
+                  "queries_with_no_positive": 96,
+                  "queries_missing_some_positive": 97
+                },
+                "100": {
+                  "candidate_recall": 0.9356955380577427,
+                  "positive_capture_fraction": 0.9356955380577427,
+                  "oracle_R@1": 0.9356955380577427,
+                  "oracle_mAP@10": 0.9356955380577427,
+                  "oracle_direction_score": 0.9356955380577427,
+                  "queries_with_no_positive": 49,
+                  "queries_missing_some_positive": 49
+                }
+              }
+            },
+            "S2O": {
+              "queries": 719,
+              "gallery": 762,
+              "actual": {
+                "R@1": 0.20027816411682892,
+                "mAP@10": 0.31100109646702134,
+                "score": 0.25563963029192516
+              },
+              "ap_denominator": "min_relevant_k",
+              "shortlists": {
+                "10": {
+                  "candidate_recall": 0.6161335187760779,
+                  "positive_capture_fraction": 0.6050069541029207,
+                  "oracle_R@1": 0.6161335187760779,
+                  "oracle_mAP@10": 0.6050069541029207,
+                  "oracle_direction_score": 0.6105702364394994,
+                  "queries_with_no_positive": 276,
+                  "queries_missing_some_positive": 294
+                },
+                "50": {
+                  "candidate_recall": 0.8650904033379694,
+                  "positive_capture_fraction": 0.8611497450162262,
+                  "oracle_R@1": 0.8650904033379694,
+                  "oracle_mAP@10": 0.8611497450162262,
+                  "oracle_direction_score": 0.8631200741770978,
+                  "queries_with_no_positive": 97,
+                  "queries_missing_some_positive": 103
+                },
+                "100": {
+                  "candidate_recall": 0.9235048678720446,
+                  "positive_capture_fraction": 0.9223458507185905,
+                  "oracle_R@1": 0.9235048678720446,
+                  "oracle_mAP@10": 0.9223458507185905,
+                  "oracle_direction_score": 0.9229253592953175,
+                  "queries_with_no_positive": 55,
+                  "queries_missing_some_positive": 57
+                }
+              }
+            },
+            "O2O": {
+              "queries": 40,
+              "gallery": 722,
+              "actual": {
+                "R@1": 0.75,
+                "mAP@10": 0.8182440476190477,
+                "score": 0.7841220238095239
+              },
+              "ap_denominator": "min_relevant_k",
+              "shortlists": {
+                "10": {
+                  "candidate_recall": 1.0,
+                  "positive_capture_fraction": 1.0,
+                  "oracle_R@1": 1.0,
+                  "oracle_mAP@10": 1.0,
+                  "oracle_direction_score": 1.0,
+                  "queries_with_no_positive": 0,
+                  "queries_missing_some_positive": 0
+                },
+                "50": {
+                  "candidate_recall": 1.0,
+                  "positive_capture_fraction": 1.0,
+                  "oracle_R@1": 1.0,
+                  "oracle_mAP@10": 1.0,
+                  "oracle_direction_score": 1.0,
+                  "queries_with_no_positive": 0,
+                  "queries_missing_some_positive": 0
+                },
+                "100": {
+                  "candidate_recall": 1.0,
+                  "positive_capture_fraction": 1.0,
+                  "oracle_R@1": 1.0,
+                  "oracle_mAP@10": 1.0,
+                  "oracle_direction_score": 1.0,
+                  "queries_with_no_positive": 0,
+                  "queries_missing_some_positive": 0
+                }
+              }
+            }
+          },
+          "all_relevant": {
+            "O2S": {
+              "queries": 762,
+              "gallery": 720,
+              "actual": {
+                "R@1": 0.2020997375328084,
+                "mAP@10": 0.32255941965587637,
+                "score": 0.26232957859434236
+              },
+              "ap_denominator": "all_relevant",
+              "shortlists": {
+                "10": {
+                  "candidate_recall": 0.6377952755905512,
+                  "positive_capture_fraction": 0.6325459317585301,
+                  "oracle_R@1": 0.6377952755905512,
+                  "oracle_mAP@10": 0.6325459317585301,
+                  "oracle_direction_score": 0.6351706036745406,
+                  "queries_with_no_positive": 276,
+                  "queries_missing_some_positive": 284
+                },
+                "50": {
+                  "candidate_recall": 0.8740157480314961,
+                  "positive_capture_fraction": 0.8733595800524935,
+                  "oracle_R@1": 0.8740157480314961,
+                  "oracle_mAP@10": 0.8733595800524935,
+                  "oracle_direction_score": 0.8736876640419948,
+                  "queries_with_no_positive": 96,
+                  "queries_missing_some_positive": 97
+                },
+                "100": {
+                  "candidate_recall": 0.9356955380577427,
+                  "positive_capture_fraction": 0.9356955380577427,
+                  "oracle_R@1": 0.9356955380577427,
+                  "oracle_mAP@10": 0.9356955380577427,
+                  "oracle_direction_score": 0.9356955380577427,
+                  "queries_with_no_positive": 49,
+                  "queries_missing_some_positive": 49
+                }
+              }
+            },
+            "S2O": {
+              "queries": 719,
+              "gallery": 762,
+              "actual": {
+                "R@1": 0.20027816411682892,
+                "mAP@10": 0.31100109646702134,
+                "score": 0.25563963029192516
+              },
+              "ap_denominator": "all_relevant",
+              "shortlists": {
+                "10": {
+                  "candidate_recall": 0.6161335187760779,
+                  "positive_capture_fraction": 0.6050069541029207,
+                  "oracle_R@1": 0.6161335187760779,
+                  "oracle_mAP@10": 0.6050069541029207,
+                  "oracle_direction_score": 0.6105702364394994,
+                  "queries_with_no_positive": 276,
+                  "queries_missing_some_positive": 294
+                },
+                "50": {
+                  "candidate_recall": 0.8650904033379694,
+                  "positive_capture_fraction": 0.8611497450162262,
+                  "oracle_R@1": 0.8650904033379694,
+                  "oracle_mAP@10": 0.8611497450162262,
+                  "oracle_direction_score": 0.8631200741770978,
+                  "queries_with_no_positive": 97,
+                  "queries_missing_some_positive": 103
+                },
+                "100": {
+                  "candidate_recall": 0.9235048678720446,
+                  "positive_capture_fraction": 0.9223458507185905,
+                  "oracle_R@1": 0.9235048678720446,
+                  "oracle_mAP@10": 0.9223458507185905,
+                  "oracle_direction_score": 0.9229253592953175,
+                  "queries_with_no_positive": 55,
+                  "queries_missing_some_positive": 57
+                }
+              }
+            },
+            "O2O": {
+              "queries": 40,
+              "gallery": 722,
+              "actual": {
+                "R@1": 0.75,
+                "mAP@10": 0.8182440476190477,
+                "score": 0.7841220238095239
+              },
+              "ap_denominator": "all_relevant",
+              "shortlists": {
+                "10": {
+                  "candidate_recall": 1.0,
+                  "positive_capture_fraction": 1.0,
+                  "oracle_R@1": 1.0,
+                  "oracle_mAP@10": 1.0,
+                  "oracle_direction_score": 1.0,
+                  "queries_with_no_positive": 0,
+                  "queries_missing_some_positive": 0
+                },
+                "50": {
+                  "candidate_recall": 1.0,
+                  "positive_capture_fraction": 1.0,
+                  "oracle_R@1": 1.0,
+                  "oracle_mAP@10": 1.0,
+                  "oracle_direction_score": 1.0,
+                  "queries_with_no_positive": 0,
+                  "queries_missing_some_positive": 0
+                },
+                "100": {
+                  "candidate_recall": 1.0,
+                  "positive_capture_fraction": 1.0,
+                  "oracle_R@1": 1.0,
+                  "oracle_mAP@10": 1.0,
+                  "oracle_direction_score": 1.0,
+                  "queries_with_no_positive": 0,
+                  "queries_missing_some_positive": 0
+                }
+              }
+            }
+          }
+        },
+        "weighted_actual": {
+          "min_relevant_k": 0.3114983463797728,
+          "all_relevant": 0.3114983463797728
+        },
+        "weighted_oracle": {
+          "min_relevant_k": {
+            "10": 0.660583378051318,
+            "50": 0.8815634821985917,
+            "100": 0.9363794038088772
+          },
+          "all_relevant": {
+            "10": 0.660583378051318,
+            "50": 0.8815634821985917,
+            "100": 0.9363794038088772
+          }
+        }
+      },
+      "run": {
+        "name": "fp-shortlist-split2",
+        "started_at_utc": "2026-10-01T15:42:30.331658+00:00",
+        "state": "completed",
+        "command": [
+          "C:\\Users\\11386\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+          "tools\\diagnose_shortlist.py",
+          "data\\stage1.zip",
+          "--split",
+          "local\\splits\\identity-v2.json",
+          "--run-dir",
+          "local\\modern-results\\benchmarks\\split2\\dinov3-b16-reid12",
+          "--output",
+          "local\\first-principles\\split2-frozen-recorded.json"
+        ],
+        "working_directory": "C:\\workspace\\github\\cunsl-2026-track6",
+        "git_commit": "e3fd07bf9fc88120a9f9a7084156e7ac4ebc58ba",
+        "git_dirty_files": [],
+        "metrics_validated": false,
+        "gpu_lock": null,
+        "log": "stdout.log",
+        "pid": 28000,
+        "return_code": 0,
+        "finished_at_utc": "2026-10-01T15:42:31.522046+00:00",
+        "elapsed_seconds": 1.110000000000582
+      }
+    }
+  ]
+}
