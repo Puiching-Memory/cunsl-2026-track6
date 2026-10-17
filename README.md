@@ -16,7 +16,8 @@
   <a href="#正式提交与成绩">提交成绩</a> ·
   <a href="#最佳方案v5">最佳方案</a> ·
   <a href="#快速开始">快速开始</a> ·
-  <a href="#实验与研究入口">实验记录</a>
+  <a href="#实验与研究入口">实验记录</a> ·
+  <a href="#社区与相关工作">社区与相关工作</a>
 </p>
 
 > [!NOTE]
@@ -232,6 +233,67 @@ local/          实验缓存、日志、检查点及预测（Git忽略）
 ```
 
 较早的DINO研究见[历史配置与资源](docs/archive/dino-settings.md)。实验实现与历史代码清理不纳入本次文档提交。研究阶段逐项追加的旧README保留为[历史快照](docs/archive/readme-research-log.md)，不作为当前使用指南。
+
+## 社区与相关工作
+
+按TAAC仓库的方式整理赛事入口、同题公开资料和可借鉴的研究实现。整理日期：**2026-10-18**。欢迎通过[本仓库Issues](https://github.com/Puiching-Memory/cunsl-2026-track6/issues)补充公开方案、复盘和失效链接；提供方案时请同时附上代码、适用赛段及成绩出处。
+
+### 赛事社区与官方资料
+
+| 入口 | 用途 |
+|---|---|
+| [和鲸赛事主页](https://www.heywhale.com/home/competition/6aba33ce6e5beff2fca53add) | 赛事介绍与各赛题入口 |
+| [赛题6任务说明](https://www.heywhale.com/org/cunsl/competition/area/6aba33ce6e5beff2fca53add/content/1) | 检索方向、输入输出与任务定义 |
+| [赛题6数据说明](https://www.heywhale.com/org/cunsl/competition/area/6aba33ce6e5beff2fca53add/content/2) · [授权数据页](https://www.heywhale.com/org/cunsl/dataset/6abca72bcd87a9ae0e90b857/file) | 官方数据协议和下载入口 |
+| [提交要求](https://www.heywhale.com/org/cunsl/competition/area/6aba33ce6e5beff2fca53add/content/3) · [评测说明](https://www.heywhale.com/org/cunsl/competition/area/6aba33ce6e5beff2fca53add/content/4) · [专项规则](https://www.heywhale.com/org/cunsl/competition/area/6aba33ce6e5beff2fca53add/content/5) | 提交格式、评分与外部资源使用要求 |
+| [官方讨论与公告入口](https://www.heywhale.com/org/cunsl/competition/forumlist/6aba33ce6e5beff2fca53add) | 查找公告、答疑及公开讨论 |
+| [赛题6排行榜](https://www.heywhale.com/org/cunsl/competition/area/6aba33ce6e5beff2fca53add/leaderboard) | 正式成绩与名次以官方页面为准 |
+
+和鲸部分页面需要登录或在浏览器中加载。本轮自动抓取未读到公告与榜单正文；深层入口沿用参赛阶段留存的官方链接，不据此更新最终名次。
+
+### 本届赛题6公开资料
+
+- [jsxyhelu2024/competition-6-sar-optical-ship-reid](https://gitcode.com/jsxyhelu2024/competition-6-sar-optical-ship-reid)（AtomGit / GitCode）— 明确对应本届赛题6，公开目录包含`赛道6.md`和数据分析资料；索引中的提交说明提出ResNet50、InfoNCE与PK采样的初步方案。本轮仅核对到公开搜索索引，项目页直接抓取超时，未核验训练实现、官方得分或名次。
+
+截至本轮检索，尚未核验到能将前排成绩回执与具体实现对应起来的其他队伍开源方案。下面的作者项目用于方法研究，论文基准分数不能作为本届比赛分数比较。
+
+### 光学与SAR舰船重识别：论文、数据与作者项目
+
+| 项目 | 公开入口 | 可借鉴内容与当前范围 |
+|---|---|---|
+| **TransOSS / HOSS-ReID** · ICCV 2025 | [作者代码](https://github.com/Alioth2000/Hoss-ReID) · [论文](https://arxiv.org/abs/2506.22027) | 本项目主干来源；光学/SAR双模态嵌入、场景配对预训练与舰船身份检索 |
+| **HOSS数据与配对预训练数据** | [作者Zenodo发布页](https://zenodo.org/records/15860212) | 作者数据发布与说明入口；研究协议及本赛题身份划分须分别核对 |
+| **TransOSS公开权重** | [Hugging Face模型仓库](https://huggingface.co/Alioth2000/TransOSS) | 场景配对初始化与身份训练权重需区分；本项目实际使用版本见[资源清单](resources/transoss-paired-vitb16.json) |
+| **MOS** · CVPR 2026 | [作者代码](https://github.com/yjzhao1019/MOS) · [论文](https://arxiv.org/abs/2512.03404) | MCRL类别均值对齐，以及CDGF跨模态生成与融合；本项目只对相关组件做过适配对照 |
+| **DSMCL** · 2026预印本 | [论文](https://arxiv.org/abs/2608.06943) | 空间与频域的一致性学习；这里提供论文入口，本项目适配范围见[研究记录](docs/17-dsmcl.md) |
+| **DRI** · 2025预印本 | [论文](https://arxiv.org/abs/2512.20892) · [作者项目](https://github.com/TingfengXian/DRI) | 冻结基础模型并注入领域特征；核查时作者README仍写明接收后完整开源，不能视为已有完整可复现代码 |
+| **QXS-SAROPT** | [作者数据项目](https://github.com/yaoxu008/QXS-SAROPT) | SAR/光学配对场景数据，是MOS所用跨模态生成预训练资源之一；并非舰船身份检索数据集 |
+
+这些资源用于查阅与后续研究。参赛使用需按对应赛段规则核对公开时间、许可、标签与测试集重合情况；链接收录不等于本项目使用过该资源。
+
+### ReID基线、训练与重排序
+
+- [damo-cv/TransReID](https://github.com/damo-cv/TransReID) — Transformer目标重识别作者实现，也是TransOSS引用的代码基础之一。
+- [michuanhaohao/reid-strong-baseline](https://github.com/michuanhaohao/reid-strong-baseline) — Bag of Tricks与BNNeck作者实现，适合核对常见训练配置及基线搭建。
+- [JDAI-CV/fast-reid](https://github.com/JDAI-CV/fast-reid) — 通用ReID研究框架，包含训练、评估、蒸馏及多种检索任务配置。
+- [KevinMusgrave/pytorch-metric-learning](https://github.com/KevinMusgrave/pytorch-metric-learning) — 度量学习损失、样本挖掘与评估组件，便于搭建困难负样本对照。
+- [zhunzhong07/person-re-ranking](https://github.com/zhunzhong07/person-re-ranking) — k-reciprocal重排序作者代码，可作为邻域方法对照；本项目V2的正式得分未改善，见[提交成绩](#正式提交与成绩)。
+
+### 局部匹配、关系交互与联合分配
+
+- [magicleap/SuperGluePretrainedNetwork](https://github.com/magicleap/SuperGluePretrainedNetwork) — 图神经网络与最优匹配层结合的稀疏局部特征匹配作者实现，可参考候选交互与匹配过滤机制。
+- [cvg/LightGlue](https://github.com/cvg/LightGlue) — 自适应局部特征匹配作者实现，提供推理、预训练权重与示例。
+- [cvg/glue-factory](https://github.com/cvg/glue-factory) — 局部特征提取与匹配的训练、评估框架，适合研究匹配器训练和基准协议。
+- [SciPy：linear_sum_assignment](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.linear_sum_assignment.html) — 线性分配问题的官方接口说明，可用于核对一对一联合匹配实现与矩形代价矩阵处理。
+- [POT：Python Optimal Transport](https://pythonot.github.io/) — 最优传输工具及文档，可用于研究软分配、熵正则与非平衡传输。
+
+局部特征匹配工具主要面向图像点对应，迁移到舰船身份检索需要重新验证；一对一分配也需要任务结构支持。这里列出研究工具，不表示直接替换后即可提分。
+
+### 作者讨论与复现交流
+
+- [HOSS-ReID Issues](https://github.com/Alioth2000/Hoss-ReID/issues) — 查阅数据集和作者实现相关问题。
+- [MOS Issues](https://github.com/yjzhao1019/MOS/issues) — 查阅MOS复现、权重与生成样本相关讨论。
+- [TransOSS Hugging Face Community](https://huggingface.co/Alioth2000/TransOSS/discussions) — 模型仓库的社区入口；模型卡提供该入口，本轮未抓取到讨论正文。
 
 ## 致谢与资源
 
