@@ -1,0 +1,70 @@
+{
+  "scope": "paired query analysis of selected local validation checkpoints; not causal factor attribution or official direction metrics",
+  "directions": {
+    "O2S": {
+      "queries": 765,
+      "both_correct_at1": 89,
+      "transoss_new_correct_at1": 263,
+      "transoss_lost_correct_at1": 86,
+      "neither_correct_at1": 327,
+      "dino_positive_in_top10": 502,
+      "transoss_positive_in_top10": 660,
+      "transoss_new_positive_in_top10": 196,
+      "transoss_lost_positive_in_top10": 38,
+      "dino_R@10": 0.6562091503267974,
+      "transoss_R@10": 0.8627450980392157,
+      "weighted_score_contribution": 0.1060952964519141
+    },
+    "S2O": {
+      "queries": 714,
+      "both_correct_at1": 96,
+      "transoss_new_correct_at1": 233,
+      "transoss_lost_correct_at1": 69,
+      "neither_correct_at1": 316,
+      "dino_positive_in_top10": 455,
+      "transoss_positive_in_top10": 614,
+      "transoss_new_positive_in_top10": 199,
+      "transoss_lost_positive_in_top10": 40,
+      "dino_R@10": 0.6372549019607843,
+      "transoss_R@10": 0.8599439775910365,
+      "weighted_score_contribution": 0.10479533480058693
+    },
+    "O2O": {
+      "queries": 44,
+      "both_correct_at1": 38,
+      "transoss_new_correct_at1": 1,
+      "transoss_lost_correct_at1": 4,
+      "neither_correct_at1": 1,
+      "dino_positive_in_top10": 44,
+      "transoss_positive_in_top10": 43,
+      "transoss_new_positive_in_top10": 0,
+      "transoss_lost_positive_in_top10": 1,
+      "dino_R@10": 1.0,
+      "transoss_R@10": 0.9772727272727273,
+      "weighted_score_contribution": -0.0058712121212121104
+    }
+  },
+  "trajectory": {
+    "dino_final12": 0.3554768790091794,
+    "transoss_epoch0": 0.10015844140686579,
+    "transoss_epoch12": 0.44071342514278444,
+    "transoss_best53": 0.5604962981404683,
+    "transoss_final73": 0.5476937403749379,
+    "best_over_last": 0.012802557765530409,
+    "epoch12_over_dino12": 0.08523654613360504,
+    "best_over_epoch12": 0.11978287299768386
+  },
+  "steps": {
+    "dino_per_epoch": 89,
+    "transoss_per_epoch": 177,
+    "dino_to_selected_checkpoint": 1068,
+    "transoss_to_selected_checkpoint": 9381
+  },
+  "mixed_direction_score_arithmetic_only": 0.5663675102616804,
+  "limits": [
+    "Same holdout and gradients exclude validation, but validation selects TransOSS checkpoint.",
+    "Architecture, initialization, optimizer, losses, augmentation, batch size and update budget changed together.",
+    "Best-versus-last difference measures checkpoint selection on this trajectory, not a controlled early-stop treatment.",
+    "No new training, GPU rental, hidden identity inference or submission."
+  ]
+}

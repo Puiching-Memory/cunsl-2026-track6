@@ -1,0 +1,627 @@
+{
+  "date": "2026-10-07",
+  "scope": "Reused labelled holdout conditional task-template stress study; not official score",
+  "official_pages_read": {
+    "task": "https://www.heywhale.com/org/cunsl/competition/area/6aba33ce6e5beff2fca53add/content/1",
+    "data": "https://www.heywhale.com/org/cunsl/competition/area/6aba33ce6e5beff2fca53add/content/2",
+    "submission": "https://www.heywhale.com/org/cunsl/competition/area/6aba33ce6e5beff2fca53add/content/3",
+    "evaluation": "https://www.heywhale.com/org/cunsl/competition/area/6aba33ce6e5beff2fca53add/content/4",
+    "rules": "https://www.heywhale.com/org/cunsl/competition/area/6aba33ce6e5beff2fca53add/content/5"
+  },
+  "official_rules_observed": {
+    "image_content_retrieval": true,
+    "reranking_explicitly_listed": true,
+    "nonpublic_AIS_location_time_prohibited": true,
+    "reproducible_automatic_predictions_required": true,
+    "pretrained_external_data_public_before": "2026-09-01",
+    "daily_submission_limit": 3,
+    "shared_120_distinct_query_ID_cohort_guaranteed": false,
+    "explicit_clause_on_joint_query_inference_found": false,
+    "interpretation": "No direct prohibition of image-only cohort reranking found in the five pages; not explicit organizer endorsement"
+  },
+  "study": {
+    "scope": "Reused labelled holdout conditional task-template stress study; not official score",
+    "seeds": [
+      20261007,
+      20261008,
+      20261009,
+      20261010,
+      20261011,
+      20261012,
+      20261013,
+      20261014,
+      20261015,
+      20261016,
+      20261017,
+      20261018,
+      20261019,
+      20261020,
+      20261021,
+      20261022,
+      20261023,
+      20261024,
+      20261025,
+      20261026
+    ],
+    "unrelated_SAR_query_counts": [
+      0,
+      12,
+      24,
+      60,
+      120
+    ],
+    "fixed_exploratory_controls": {
+      "partial_minimum_cosine": 0.5,
+      "mutual_minimum_margin": 0.02
+    },
+    "thresholds_independently_calibrated": false,
+    "overlap_count_given_to_inference": false,
+    "hidden_shared_identity_assumption_verified": false,
+    "gpu_started": false,
+    "submission_uploaded": false,
+    "gallery_size": {
+      "SAR": 718,
+      "optical": 738
+    }
+  },
+  "runs": {
+    "v3": {
+      "summary": {
+        "0": {
+          "independent": {
+            "mean": 0.5326850639329808,
+            "min": 0.474416942239859,
+            "max": 0.5855681492504409,
+            "mean_gain": 0.0,
+            "directions_mean": {
+              "O2S": 0.5031087136243386,
+              "S2O": 0.49385358796296314,
+              "O2O": 0.8405202821869487
+            }
+          },
+          "complete_one_to_one": {
+            "mean": 0.7996696807484569,
+            "min": 0.722785190696649,
+            "max": 0.8834096395502645,
+            "mean_gain": 0.26698461681547614,
+            "directions_mean": {
+              "O2S": 0.798744957010582,
+              "S2O": 0.7915164930555555,
+              "O2O": 0.8405202821869487
+            },
+            "mean_accepted_pairs": 120.0,
+            "accepted_precision": 0.7791666666666667
+          },
+          "partial_cosine_0.5": {
+            "mean": 0.7912985497960758,
+            "min": 0.7028760196208113,
+            "max": 0.8684096395502645,
+            "mean_gain": 0.25861348586309524,
+            "directions_mean": {
+              "O2S": 0.7892816633597883,
+              "S2O": 0.782377273478836,
+              "O2O": 0.8405202821869487
+            },
+            "mean_accepted_pairs": 118.95,
+            "accepted_precision": 0.7763766288356452
+          },
+          "mutual_margin_0.02": {
+            "mean": 0.6217123332782187,
+            "min": 0.5645573330026457,
+            "max": 0.6665753968253968,
+            "mean_gain": 0.08902726934523812,
+            "directions_mean": {
+              "O2S": 0.59893146494709,
+              "S2O": 0.595869212962963,
+              "O2O": 0.8405202821869487
+            },
+            "mean_accepted_pairs": 57.25,
+            "accepted_precision": 0.9310043668122271
+          }
+        },
+        "12": {
+          "independent": {
+            "mean": 0.5339527226631395,
+            "min": 0.471604442239859,
+            "max": 0.5846566909171076,
+            "mean_gain": 0.0,
+            "directions_mean": {
+              "O2S": 0.5031087136243386,
+              "S2O": 0.49667060736331586,
+              "O2O": 0.8405202821869487
+            }
+          },
+          "complete_one_to_one": {
+            "mean": 0.6889236676036156,
+            "min": 0.6280829475308642,
+            "max": 0.7539301008597883,
+            "mean_gain": 0.15497094494047614,
+            "directions_mean": {
+              "O2S": 0.6760429067460317,
+              "S2O": 0.6681162918871253,
+              "O2O": 0.8405202821869487
+            },
+            "mean_accepted_pairs": 120.0,
+            "accepted_precision": 0.6345833333333334
+          },
+          "partial_cosine_0.5": {
+            "mean": 0.7086554570381394,
+            "min": 0.6582822696208113,
+            "max": 0.7742738508597884,
+            "mean_gain": 0.17470273437499992,
+            "directions_mean": {
+              "O2S": 0.6969002976190476,
+              "S2O": 0.6911073219797179,
+              "O2O": 0.8405202821869487
+            },
+            "mean_accepted_pairs": 115.85,
+            "accepted_precision": 0.6754423823910228
+          },
+          "mutual_margin_0.02": {
+            "mean": 0.6105286899250442,
+            "min": 0.5538359237213404,
+            "max": 0.6577781360229278,
+            "mean_gain": 0.07657596726190477,
+            "directions_mean": {
+              "O2S": 0.5843072916666666,
+              "S2O": 0.5856408454585538,
+              "O2O": 0.8405202821869487
+            },
+            "mean_accepted_pairs": 52.45,
+            "accepted_precision": 0.9084842707340324
+          }
+        },
+        "24": {
+          "independent": {
+            "mean": 0.5361972043099649,
+            "min": 0.467026317239859,
+            "max": 0.5915941909171076,
+            "mean_gain": 0.0,
+            "directions_mean": {
+              "O2S": 0.5031087136243386,
+              "S2O": 0.501658344356261,
+              "O2O": 0.8405202821869487
+            }
+          },
+          "complete_one_to_one": {
+            "mean": 0.6181751432980599,
+            "min": 0.5387362626763669,
+            "max": 0.6829136904761905,
+            "mean_gain": 0.0819779389880952,
+            "directions_mean": {
+              "O2S": 0.5970952380952381,
+              "S2O": 0.5898450176366843,
+              "O2O": 0.8405202821869487
+            },
+            "mean_accepted_pairs": 120.0,
+            "accepted_precision": 0.54
+          },
+          "partial_cosine_0.5": {
+            "mean": 0.6339102933476632,
+            "min": 0.5708091793430334,
+            "max": 0.7053191964285714,
+            "mean_gain": 0.09771308903769839,
+            "directions_mean": {
+              "O2S": 0.6106186755952382,
+              "S2O": 0.6112885802469135,
+              "O2O": 0.8405202821869487
+            },
+            "mean_accepted_pairs": 114.5,
+            "accepted_precision": 0.5689956331877729
+          },
+          "mutual_margin_0.02": {
+            "mean": 0.5974591090718697,
+            "min": 0.5397057705026456,
+            "max": 0.652093612213404,
+            "mean_gain": 0.061261904761904754,
+            "directions_mean": {
+              "O2S": 0.5695529927248678,
+              "S2O": 0.5713516313932981,
+              "O2O": 0.8405202821869487
+            },
+            "mean_accepted_pairs": 48.6,
+            "accepted_precision": 0.8600823045267489
+          }
+        },
+        "60": {
+          "independent": {
+            "mean": 0.5408480599647267,
+            "min": 0.4805620315255733,
+            "max": 0.5802787147266314,
+            "mean_gain": 0.0,
+            "directions_mean": {
+              "O2S": 0.5031087136243386,
+              "S2O": 0.5119935791446208,
+              "O2O": 0.8405202821869487
+            }
+          },
+          "complete_one_to_one": {
+            "mean": 0.4452166673555998,
+            "min": 0.406345458553792,
+            "max": 0.4884987599206351,
+            "mean_gain": -0.09563139260912698,
+            "directions_mean": {
+              "O2S": 0.4023435433201058,
+              "S2O": 0.4002445436507937,
+              "O2O": 0.8405202821869487
+            },
+            "mean_accepted_pairs": 120.0,
+            "accepted_precision": 0.30041666666666667
+          },
+          "partial_cosine_0.5": {
+            "mean": 0.4697259679508378,
+            "min": 0.42488577491181667,
+            "max": 0.5371572420634921,
+            "mean_gain": -0.0711220920138889,
+            "directions_mean": {
+              "O2S": 0.42647408234126993,
+              "S2O": 0.43057911706349217,
+              "O2O": 0.8405202821869487
+            },
+            "mean_accepted_pairs": 110.35,
+            "accepted_precision": 0.33348436792025377
+          },
+          "mutual_margin_0.02": {
+            "mean": 0.5548083278218694,
+            "min": 0.5020993165784833,
+            "max": 0.6196175595238096,
+            "mean_gain": 0.013960267857142838,
+            "directions_mean": {
+              "O2S": 0.5170065310846562,
+              "S2O": 0.5291185791446209,
+              "O2O": 0.8405202821869487
+            },
+            "mean_accepted_pairs": 39.6,
+            "accepted_precision": 0.6679292929292929
+          }
+        },
+        "120": {
+          "independent": {
+            "mean": 0.5523284667107584,
+            "min": 0.509995067239859,
+            "max": 0.5957145337301588,
+            "mean_gain": 0.0,
+            "directions_mean": {
+              "O2S": 0.5031087136243386,
+              "S2O": 0.5375055941358026,
+              "O2O": 0.8405202821869487
+            }
+          },
+          "complete_one_to_one": {
+            "mean": 0.23329693769290122,
+            "min": 0.2263037918871252,
+            "max": 0.24247067901234573,
+            "mean_gain": -0.3190315290178572,
+            "directions_mean": {
+              "O2S": 0.16336627810846563,
+              "S2O": 0.16828907627865963,
+              "O2O": 0.8405202821869487
+            },
+            "mean_accepted_pairs": 120.0,
+            "accepted_precision": 0.0
+          },
+          "partial_cosine_0.5": {
+            "mean": 0.2733156504905203,
+            "min": 0.2504443066578484,
+            "max": 0.3010830302028219,
+            "mean_gain": -0.27901281622023816,
+            "directions_mean": {
+              "O2S": 0.20226963458994715,
+              "S2O": 0.21831619268077604,
+              "O2O": 0.8405202821869487
+            },
+            "mean_accepted_pairs": 104.15,
+            "accepted_precision": 0.0
+          },
+          "mutual_margin_0.02": {
+            "mean": 0.4820390693893299,
+            "min": 0.43766189925044097,
+            "max": 0.5150895337301588,
+            "mean_gain": -0.07028939732142855,
+            "directions_mean": {
+              "O2S": 0.4259347718253969,
+              "S2O": 0.45848087522045866,
+              "O2O": 0.8405202821869487
+            },
+            "mean_accepted_pairs": 27.25,
+            "accepted_precision": 0.0
+          }
+        }
+      },
+      "checkpoint_sha256": "f7c8886d1bb904360fea877f130c7fcddccb2ef8fb34300933bebab0bbdbf6ed",
+      "features_sha256": "c8a844f2e95e368adab03210072504e2df1ba20a36c47973999e198ca9ed9e67"
+    },
+    "joint": {
+      "summary": {
+        "0": {
+          "independent": {
+            "mean": 0.5400290226796739,
+            "min": 0.48872583223104066,
+            "max": 0.5885636298500883,
+            "mean_gain": 0.0,
+            "directions_mean": {
+              "O2S": 0.5168635085978838,
+              "S2O": 0.4999644097222222,
+              "O2O": 0.8245645943562611
+            }
+          },
+          "complete_one_to_one": {
+            "mean": 0.8011699638999119,
+            "min": 0.7405599647266314,
+            "max": 0.8652006448412699,
+            "mean_gain": 0.26114094122023807,
+            "directions_mean": {
+              "O2S": 0.8027444609788359,
+              "S2O": 0.79439666005291,
+              "O2O": 0.8245645943562611
+            },
+            "mean_accepted_pairs": 120.0,
+            "accepted_precision": 0.785
+          },
+          "partial_cosine_0.5": {
+            "mean": 0.7568040226796737,
+            "min": 0.686963996362434,
+            "max": 0.8157867063492065,
+            "mean_gain": 0.216775,
+            "directions_mean": {
+              "O2S": 0.75381427744709,
+              "S2O": 0.7447358630952381,
+              "O2O": 0.8245645943562611
+            },
+            "mean_accepted_pairs": 111.9,
+            "accepted_precision": 0.7846291331546024
+          },
+          "mutual_margin_0.02": {
+            "mean": 0.6377373560130072,
+            "min": 0.5654739307760142,
+            "max": 0.7050513392857143,
+            "mean_gain": 0.09770833333333331,
+            "directions_mean": {
+              "O2S": 0.61747585978836,
+              "S2O": 0.6164816881613756,
+              "O2O": 0.8245645943562611
+            },
+            "mean_accepted_pairs": 66.2,
+            "accepted_precision": 0.9086102719033232
+          }
+        },
+        "12": {
+          "independent": {
+            "mean": 0.5435462101796737,
+            "min": 0.49353764329806,
+            "max": 0.5913966049382717,
+            "mean_gain": 0.0,
+            "directions_mean": {
+              "O2S": 0.5168635085978838,
+              "S2O": 0.5077803819444445,
+              "O2O": 0.8245645943562611
+            }
+          },
+          "complete_one_to_one": {
+            "mean": 0.6909933827987215,
+            "min": 0.6124885361552028,
+            "max": 0.7565119874338624,
+            "mean_gain": 0.14744717261904755,
+            "directions_mean": {
+              "O2S": 0.6796529431216931,
+              "S2O": 0.6726513310185185,
+              "O2O": 0.8245645943562611
+            },
+            "mean_accepted_pairs": 120.0,
+            "accepted_precision": 0.63875
+          },
+          "partial_cosine_0.5": {
+            "mean": 0.7012471402391975,
+            "min": 0.6402142581569665,
+            "max": 0.7561639384920635,
+            "mean_gain": 0.15770093005952374,
+            "directions_mean": {
+              "O2S": 0.6886614169973545,
+              "S2O": 0.6864289847883598,
+              "O2O": 0.8245645943562611
+            },
+            "mean_accepted_pairs": 105.5,
+            "accepted_precision": 0.7170616113744076
+          },
+          "mutual_margin_0.02": {
+            "mean": 0.62667731137015,
+            "min": 0.5463947861552029,
+            "max": 0.6896138392857143,
+            "mean_gain": 0.08313110119047616,
+            "directions_mean": {
+              "O2S": 0.6004570105820106,
+              "S2O": 0.608922660383598,
+              "O2O": 0.8245645943562611
+            },
+            "mean_accepted_pairs": 61.55,
+            "accepted_precision": 0.8813972380178716
+          }
+        },
+        "24": {
+          "independent": {
+            "mean": 0.54356481137015,
+            "min": 0.4965602402998238,
+            "max": 0.5958497299382718,
+            "mean_gain": 0.0,
+            "directions_mean": {
+              "O2S": 0.5168635085978838,
+              "S2O": 0.5078217179232805,
+              "O2O": 0.8245645943562611
+            }
+          },
+          "complete_one_to_one": {
+            "mean": 0.6168596216380071,
+            "min": 0.5423541391093476,
+            "max": 0.6768774801587302,
+            "mean_gain": 0.07329481026785709,
+            "directions_mean": {
+              "O2S": 0.5968885168650795,
+              "S2O": 0.5906740658068783,
+              "O2O": 0.8245645943562611
+            },
+            "mean_accepted_pairs": 120.0,
+            "accepted_precision": 0.5395833333333333
+          },
+          "partial_cosine_0.5": {
+            "mean": 0.648130008542769,
+            "min": 0.5662789902998238,
+            "max": 0.7128514384920636,
+            "mean_gain": 0.10456519717261899,
+            "directions_mean": {
+              "O2S": 0.6296189649470899,
+              "S2O": 0.6274333664021164,
+              "O2O": 0.8245645943562611
+            },
+            "mean_accepted_pairs": 100.9,
+            "accepted_precision": 0.6417244796828543
+          },
+          "mutual_margin_0.02": {
+            "mean": 0.6108465822034834,
+            "min": 0.5170914902998237,
+            "max": 0.6674784226190476,
+            "mean_gain": 0.06728177083333331,
+            "directions_mean": {
+              "O2S": 0.5830192625661376,
+              "S2O": 0.5911810102513229,
+              "O2O": 0.8245645943562611
+            },
+            "mean_accepted_pairs": 57.8,
+            "accepted_precision": 0.8304498269896193
+          }
+        },
+        "60": {
+          "independent": {
+            "mean": 0.5521922357253087,
+            "min": 0.5094821152998238,
+            "max": 0.5920811287477956,
+            "mean_gain": 0.0,
+            "directions_mean": {
+              "O2S": 0.5168635085978838,
+              "S2O": 0.5269937720458555,
+              "O2O": 0.8245645943562611
+            }
+          },
+          "complete_one_to_one": {
+            "mean": 0.45154058021935634,
+            "min": 0.4107091462742505,
+            "max": 0.4939326774691359,
+            "mean_gain": -0.10065165550595241,
+            "directions_mean": {
+              "O2S": 0.41014372519841286,
+              "S2O": 0.41004320987654336,
+              "O2O": 0.8245645943562611
+            },
+            "mean_accepted_pairs": 120.0,
+            "accepted_precision": 0.31
+          },
+          "partial_cosine_0.5": {
+            "mean": 0.5282166776895945,
+            "min": 0.4733794367283952,
+            "max": 0.5953841765873016,
+            "mean_gain": -0.023975558035714297,
+            "directions_mean": {
+              "O2S": 0.486907779431217,
+              "S2O": 0.5036704833553792,
+              "O2O": 0.8245645943562611
+            },
+            "mean_accepted_pairs": 89.65,
+            "accepted_precision": 0.4294478527607362
+          },
+          "mutual_margin_0.02": {
+            "mean": 0.5683430169753086,
+            "min": 0.5115914902998238,
+            "max": 0.630639880952381,
+            "mean_gain": 0.01615078124999996,
+            "directions_mean": {
+              "O2S": 0.5299394014550265,
+              "S2O": 0.5498085041887124,
+              "O2O": 0.8245645943562611
+            },
+            "mean_accepted_pairs": 47.3,
+            "accepted_precision": 0.645877378435518
+          }
+        },
+        "120": {
+          "independent": {
+            "mean": 0.56672041652888,
+            "min": 0.5408783206569666,
+            "max": 0.5964864417989418,
+            "mean_gain": 0.0,
+            "directions_mean": {
+              "O2S": 0.5168635085978838,
+              "S2O": 0.5592786182760141,
+              "O2O": 0.8245645943562611
+            }
+          },
+          "complete_one_to_one": {
+            "mean": 0.23453792644951502,
+            "min": 0.22539572310405642,
+            "max": 0.24287657076719585,
+            "mean_gain": -0.3321824900793652,
+            "directions_mean": {
+              "O2S": 0.16442873677248676,
+              "S2O": 0.17353007881393298,
+              "O2O": 0.8245645943562611
+            },
+            "mean_accepted_pairs": 120.0,
+            "accepted_precision": 0.0
+          },
+          "partial_cosine_0.5": {
+            "mean": 0.35672592248126117,
+            "min": 0.32169755842151687,
+            "max": 0.3805633267195768,
+            "mean_gain": -0.20999449404761905,
+            "directions_mean": {
+              "O2S": 0.2864289847883598,
+              "S2O": 0.32305871086860666,
+              "O2O": 0.8245645943562611
+            },
+            "mean_accepted_pairs": 74.0,
+            "accepted_precision": 0.0
+          },
+          "mutual_margin_0.02": {
+            "mean": 0.4730130876598325,
+            "min": 0.43244082065696654,
+            "max": 0.5196228505291007,
+            "mean_gain": -0.0937073288690476,
+            "directions_mean": {
+              "O2S": 0.4130481150793652,
+              "S2O": 0.45485550319664914,
+              "O2O": 0.8245645943562611
+            },
+            "mean_accepted_pairs": 34.75,
+            "accepted_precision": 0.0
+          }
+        }
+      },
+      "checkpoint_sha256": "fdefc7945e7ba74ad2848501965bca58d1880ac302a3fa0fdc7b6d5bfde17950",
+      "features_sha256": "3b749d2c5f56ea6e28b8031c2c1f495b0c283c011a8df734555c02b32098e061"
+    }
+  },
+  "inference_label_access": false,
+  "labels_used": "Construct shared/unrelated synthetic cohorts and evaluate rankings/accepted pair precision only",
+  "checks": {
+    "unit_test_methods": 6,
+    "enumeration_complete_cases": 16,
+    "enumeration_partial_cases": 12,
+    "ruff_check_passed": true
+  },
+  "artifacts_sha256": {
+    "track6/cohort.py": "aaba7b2165bfe63e50a217b2af3e38ed71816e935eae98df55b6bb54867f5520",
+    "tests/test_cohort.py": "67445ad50186b4dcd16339f2aad0d5a56836b374a33179cdd1f60114fcb6a254",
+    "local/dsmcl/study_partial_cohort.py": "dcf4646da7ad6f746cebb64c2fb6bbe564b5bc6d3fcc30892a88e4dc30c2d6f9",
+    "local/dsmcl/partial-cohort-study.json": "21d8ae0b336f30a7b525e81d54f9205f8b595b1d63fff8931b270fd1c2417983"
+  },
+  "limitations": [
+    "Reused selected holdout and checkpoints, not independent generalization confirmation",
+    "Synthetic cohorts guarantee identity relations that real test does not",
+    "900/900 official gallery scale not reproduced",
+    "Cosine and mutual-margin thresholds uncalibrated; no score search performed in this study",
+    "Complete disjoint cohorts harm even the mutual-margin control",
+    "Not official results and no new hidden prediction"
+  ],
+  "gpu_started": false,
+  "submission_uploaded": false,
+  "gpu_cost": 0,
+  "current_best_official": 0.5144077656525573
+}

@@ -1,0 +1,92 @@
+{
+  "scope": "Anonymous integer resampling mechanism and fixed TRAIN-fitted likelihood fusion; reused validation, no official prediction",
+  "source_mechanism": {
+    "sar": {
+      "images": 151,
+      "accepted": 107,
+      "accepted_exact": 107,
+      "false_downsampled_accepts": 0
+    },
+    "optical": {
+      "images": 245,
+      "accepted": 72,
+      "accepted_exact": 72,
+      "false_downsampled_accepts": 0
+    }
+  },
+  "accepted_exact": 179,
+  "rejected_source_images": 217,
+  "calibration": {
+    "positive": {
+      "mean": 0.29345875139010025,
+      "sigma": 0.11997346116424872,
+      "observation_pairs": 100
+    },
+    "negative": {
+      "mean": 0.015952997328663867,
+      "sigma": 0.41148140541762834,
+      "observation_pairs": 7604
+    },
+    "paired_identities": 37,
+    "training_observations": {
+      "optical": 72,
+      "sar": 107
+    }
+  },
+  "validation_coverage": {
+    "optical": {
+      "gated": 166,
+      "recovered": 61
+    },
+    "sar": {
+      "gated": 276,
+      "recovered": 61
+    }
+  },
+  "validation_overlap_diagnostic": {
+    "recovered_both_modalities_identities": 38,
+    "recovered_positive_observation_pairs": 66,
+    "validation_identities": 707,
+    "validation_positive_log_ratio_mean": 0.12402107119099358,
+    "validation_positive_log_ratio_sigma": 0.20203327671996874,
+    "meaning": "Post-evaluation diagnostic only; validation truth never chooses coefficient or calibrates prior"
+  },
+  "fusion_results": {
+    "full_score": 0.6444656817272364,
+    "full_delta": -0.0009170251433906484,
+    "original40_joint": 0.8415962360146605,
+    "original40_delta": 0.006796019345238097,
+    "original40_improved_equal_worse": [
+      23,
+      6,
+      11
+    ],
+    "development_joint_delta": 3.610491071437405e-05,
+    "reporting_joint_delta": -0.005190401785714394,
+    "extra27_accuracy": 0.5231481481481481,
+    "extra27_delta": 0.04722222222222222,
+    "source93_accuracy": 0.9258064516129032,
+    "source93_delta": -0.0008064516129032695,
+    "clears_significant_gate": false
+  },
+  "source_metadata_amendment": "Historical integer-v3 method field and module hash describe exact DP; its inherited fixed_rule/limitations still describe earlier least-squares pilot. Correct method is minimum integer-feasible H32..224, margin0.001, every observed column. Raw archived report preserved; future tool metadata corrected.",
+  "limitations": [
+    "Integer method designed after optical approximate-fit failures on these source TRAIN samples; not an independent source-data confirmation",
+    "Crop dimensions include margins and backgrounds; other sources may have different physical scale",
+    "Unknown rejected/downsampled heights remain unavailable; accepted validation heights lack source ground truth",
+    "Prior fitted only37 TRAIN identities; reused validation not official score or independent replication"
+  ],
+  "optimizer_steps": 0,
+  "test_images_used": false,
+  "submission_generated": false,
+  "seconds": 172.96799999999348,
+  "bindings": {
+    "source_report": "bd6d933bf11693b9c2cb006241c6953df080729cdae3f11f0231a2093b5a4852",
+    "source_results": "012604bddc024ad6f95b2dafe23332981eb0136d9fda82c30436ad271d704e81",
+    "fusion_report": "49ef2a8e4b915dcfbab08b1b401fa5ab3d99066828d2ef358c6f24ee0d9ec04b",
+    "fusion_protocol": "740100fc19557a7475009eaa880d1c4a8eccaabe7242125e387afa7aa5a8b74a",
+    "verification": "d6ed7082ed51f388df64727e5c2b079e01fcb1e97f6a7e8b39de617c16f455d2",
+    "analysis_script": "f84ae5efe904d0402ab41bcee4411f9f5127dc505efaf94c6150f41ef7e559c7",
+    "figure": "fd189970b0f95cd8432af4133c1afb72336e2f57bba2f1c4c9ce166e30c79c62"
+  }
+}

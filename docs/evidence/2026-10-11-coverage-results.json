@@ -1,0 +1,503 @@
+{
+  "audit_script_sha256": "74cba01c9dec7fba8956063240f3471e05f43fa59e097038bbc8bbf2ed32b75e",
+  "protocol_sha256": "9064ae7d1e8220d8463d9681e6916d585cceacf874f16accac650d001d539a21",
+  "identity_and_image_partitions_disjoint": true,
+  "all_usable_labelled_images_covered": true,
+  "recorded_near_duplicate_edges_isolated": 47,
+  "exact_pixel_overlap": 0,
+  "test_pixels_used": false,
+  "full_sampling_repeats_foundation_prefix": true,
+  "foundation_and_full_union_sampled_identities": 2272,
+  "independent_scalar_scores": true,
+  "development_selection_and_early_stop": true,
+  "sampling_and_checkpoint_bindings": true,
+  "bootstrap_components": 522,
+  "bootstrap_scope": "conditional on labelled corpus and fixed model selection; no independent source generalization claim",
+  "full_minus_specialist_identity_bootstrap95": [
+    0.01029221465800144,
+    0.05754656205233953
+  ],
+  "reports": {
+    "foundation": {
+      "mode": "foundation",
+      "seed": 202610111,
+      "optimizer_steps": 1200,
+      "stop_reason": "max_steps",
+      "selected_step": 1200,
+      "selected_development": 0.2873283326215622,
+      "selected_bank_replay_exact": true,
+      "gradient_check": true,
+      "sampled_distinct_identities": 2272,
+      "training_pool_identities": 2471,
+      "sealed_images_decoded": false,
+      "test_images_used": false,
+      "seconds": 892.6880000000237,
+      "peak_allocated_mib": 1585.42822265625,
+      "protocol_sha256": "9064ae7d1e8220d8463d9681e6916d585cceacf874f16accac650d001d539a21",
+      "script_sha256": "37d0a0d73caf2f222988a49f5db9769a202a1ff464acf473c77a95a1f8ea387a",
+      "coverage_module_sha256": "23408c68ee854166dc39871844e1b0641795c63a3420a200b487a04e9f9a7fe4",
+      "initialization": {
+        "wrapper_prefix_removed": false,
+        "discarded_wrapper_keys": [],
+        "ignored_classification_keys": [
+          "fc.weight",
+          "fc.bias"
+        ],
+        "position_interpolation": {
+          "source_grid": [
+            16,
+            8
+          ],
+          "target_grid": [
+            16,
+            16
+          ],
+          "mode": "bilinear"
+        },
+        "all_backbone_tensors_loaded_strictly": true,
+        "physical_scale_embedding": false
+      },
+      "foundation_sha256": null,
+      "checkpoint_sha256": "b09fe9870c2adc993c5bc19496835a57ac9b5b53375d8d28c1c24d87b3506a6a",
+      "optimizer_reset_at_branch": true
+    },
+    "specialist": {
+      "mode": "specialist",
+      "seed": 202610111,
+      "optimizer_steps": 600,
+      "stop_reason": "development_patience",
+      "selected_step": 0,
+      "selected_development": 0.2873283326215622,
+      "selected_bank_replay_exact": true,
+      "gradient_check": true,
+      "sampled_distinct_identities": 402,
+      "training_pool_identities": 402,
+      "sealed_images_decoded": false,
+      "test_images_used": false,
+      "seconds": 482.5,
+      "peak_allocated_mib": 1585.42822265625,
+      "protocol_sha256": "9064ae7d1e8220d8463d9681e6916d585cceacf874f16accac650d001d539a21",
+      "script_sha256": "37d0a0d73caf2f222988a49f5db9769a202a1ff464acf473c77a95a1f8ea387a",
+      "coverage_module_sha256": "23408c68ee854166dc39871844e1b0641795c63a3420a200b487a04e9f9a7fe4",
+      "initialization": {
+        "wrapper_prefix_removed": false,
+        "discarded_wrapper_keys": [],
+        "ignored_classification_keys": [
+          "fc.weight",
+          "fc.bias"
+        ],
+        "position_interpolation": {
+          "source_grid": [
+            16,
+            8
+          ],
+          "target_grid": [
+            16,
+            16
+          ],
+          "mode": "bilinear"
+        },
+        "all_backbone_tensors_loaded_strictly": true,
+        "physical_scale_embedding": false
+      },
+      "foundation_sha256": "b09fe9870c2adc993c5bc19496835a57ac9b5b53375d8d28c1c24d87b3506a6a",
+      "checkpoint_sha256": "56a175339ffd99d4dcee3b6001d4faf9e09b2933d06336e83785330b03124c8f",
+      "optimizer_reset_at_branch": true
+    },
+    "full": {
+      "mode": "full",
+      "seed": 202610111,
+      "optimizer_steps": 1000,
+      "stop_reason": "development_patience",
+      "selected_step": 600,
+      "selected_development": 0.3249740567214055,
+      "selected_bank_replay_exact": true,
+      "gradient_check": true,
+      "sampled_distinct_identities": 2177,
+      "training_pool_identities": 2471,
+      "sealed_images_decoded": false,
+      "test_images_used": false,
+      "seconds": 773.4220000000205,
+      "peak_allocated_mib": 1585.42822265625,
+      "protocol_sha256": "9064ae7d1e8220d8463d9681e6916d585cceacf874f16accac650d001d539a21",
+      "script_sha256": "37d0a0d73caf2f222988a49f5db9769a202a1ff464acf473c77a95a1f8ea387a",
+      "coverage_module_sha256": "23408c68ee854166dc39871844e1b0641795c63a3420a200b487a04e9f9a7fe4",
+      "initialization": {
+        "wrapper_prefix_removed": false,
+        "discarded_wrapper_keys": [],
+        "ignored_classification_keys": [
+          "fc.weight",
+          "fc.bias"
+        ],
+        "position_interpolation": {
+          "source_grid": [
+            16,
+            8
+          ],
+          "target_grid": [
+            16,
+            16
+          ],
+          "mode": "bilinear"
+        },
+        "all_backbone_tensors_loaded_strictly": true,
+        "physical_scale_embedding": false
+      },
+      "foundation_sha256": "b09fe9870c2adc993c5bc19496835a57ac9b5b53375d8d28c1c24d87b3506a6a",
+      "checkpoint_sha256": "7781be9584034b0ca2c44bfa4a71d64783908e5306e7d1c26af605e6147fe1df",
+      "optimizer_reset_at_branch": true
+    }
+  },
+  "evaluation": {
+    "protocol_sha256": "9064ae7d1e8220d8463d9681e6916d585cceacf874f16accac650d001d539a21",
+    "selections": {
+      "foundation": {
+        "report_sha256": "33adcb2f3dcc904aea434ff6a5542b85e802e9a43f2177a897f37a7c3df80276",
+        "checkpoint_sha256": "b09fe9870c2adc993c5bc19496835a57ac9b5b53375d8d28c1c24d87b3506a6a",
+        "selected_step": 1200,
+        "selected_development": 0.2873283326215622
+      },
+      "specialist": {
+        "report_sha256": "cd88759cd9f040a27d2f2739c20994d5361327baf54b8be7e25a336bdd0e508b",
+        "checkpoint_sha256": "56a175339ffd99d4dcee3b6001d4faf9e09b2933d06336e83785330b03124c8f",
+        "selected_step": 0,
+        "selected_development": 0.2873283326215622
+      },
+      "full": {
+        "report_sha256": "c2cf9b40a2bf2de2d3c294174c22abbabe7624d0c4a2b2720a6e10c42291ca20",
+        "checkpoint_sha256": "7781be9584034b0ca2c44bfa4a71d64783908e5306e7d1c26af605e6147fe1df",
+        "selected_step": 600,
+        "selected_development": 0.3249740567214055
+      }
+    },
+    "results": {
+      "foundation": {
+        "partition": "sealed",
+        "full_cross_modal": 0.24221434890672353,
+        "directions": {
+          "O2S": {
+            "queries": 568,
+            "R@1": 0.18838028169014084,
+            "mAP@10": 0.3235908506595126,
+            "score": 0.2559855661748267,
+            "max_relevant_in_gallery": 2
+          },
+          "S2O": {
+            "queries": 532,
+            "R@1": 0.17293233082706766,
+            "mAP@10": 0.28395393245017303,
+            "score": 0.22844313163862034,
+            "max_relevant_in_gallery": 3
+          }
+        },
+        "optical_strata": {
+          "gated": {
+            "queries": 125,
+            "R@1": 0.328,
+            "mAP@10": 0.5031873015873016,
+            "score": 0.41559365079365085,
+            "max_relevant_in_gallery": 2
+          },
+          "other": {
+            "queries": 443,
+            "R@1": 0.1489841986455982,
+            "mAP@10": 0.2729146511877889,
+            "score": 0.21094942491669355,
+            "max_relevant_in_gallery": 1
+          }
+        },
+        "joint": {
+          "mean": 0.6836918650793652,
+          "extra_pair_accuracy": 0.43888888888888894,
+          "source_pair_accuracy": 0.6838709677419356,
+          "trials": [
+            {
+              "seed": 202610300,
+              "score": 0.733471560846561,
+              "extra_pair_accuracy": 0.5,
+              "source_pair_accuracy": 0.7258064516129032
+            },
+            {
+              "seed": 202610301,
+              "score": 0.7237568824404762,
+              "extra_pair_accuracy": 0.5,
+              "source_pair_accuracy": 0.7096774193548387
+            },
+            {
+              "seed": 202610302,
+              "score": 0.7236445932539683,
+              "extra_pair_accuracy": 0.5555555555555556,
+              "source_pair_accuracy": 0.7096774193548387
+            },
+            {
+              "seed": 202610303,
+              "score": 0.6820593998015875,
+              "extra_pair_accuracy": 0.3888888888888889,
+              "source_pair_accuracy": 0.7096774193548387
+            },
+            {
+              "seed": 202610304,
+              "score": 0.6728934358465608,
+              "extra_pair_accuracy": 0.2777777777777778,
+              "source_pair_accuracy": 0.7096774193548387
+            },
+            {
+              "seed": 202610305,
+              "score": 0.5840899057539682,
+              "extra_pair_accuracy": 0.3888888888888889,
+              "source_pair_accuracy": 0.532258064516129
+            },
+            {
+              "seed": 202610306,
+              "score": 0.7298343253968255,
+              "extra_pair_accuracy": 0.4444444444444444,
+              "source_pair_accuracy": 0.7580645161290323
+            },
+            {
+              "seed": 202610307,
+              "score": 0.6351501736111113,
+              "extra_pair_accuracy": 0.4444444444444444,
+              "source_pair_accuracy": 0.6129032258064516
+            },
+            {
+              "seed": 202610308,
+              "score": 0.6583047495039682,
+              "extra_pair_accuracy": 0.3888888888888889,
+              "source_pair_accuracy": 0.6612903225806451
+            },
+            {
+              "seed": 202610309,
+              "score": 0.6937136243386244,
+              "extra_pair_accuracy": 0.5,
+              "source_pair_accuracy": 0.7096774193548387
+            }
+          ]
+        },
+        "scope": "fresh supervision split, labelled corpus previously studied, 80-query shared-identity diagnostic, no official score"
+      },
+      "specialist": {
+        "partition": "sealed",
+        "full_cross_modal": 0.24221434890672353,
+        "directions": {
+          "O2S": {
+            "queries": 568,
+            "R@1": 0.18838028169014084,
+            "mAP@10": 0.3235908506595126,
+            "score": 0.2559855661748267,
+            "max_relevant_in_gallery": 2
+          },
+          "S2O": {
+            "queries": 532,
+            "R@1": 0.17293233082706766,
+            "mAP@10": 0.28395393245017303,
+            "score": 0.22844313163862034,
+            "max_relevant_in_gallery": 3
+          }
+        },
+        "optical_strata": {
+          "gated": {
+            "queries": 125,
+            "R@1": 0.328,
+            "mAP@10": 0.5031873015873016,
+            "score": 0.41559365079365085,
+            "max_relevant_in_gallery": 2
+          },
+          "other": {
+            "queries": 443,
+            "R@1": 0.1489841986455982,
+            "mAP@10": 0.2729146511877889,
+            "score": 0.21094942491669355,
+            "max_relevant_in_gallery": 1
+          }
+        },
+        "joint": {
+          "mean": 0.6836918650793652,
+          "extra_pair_accuracy": 0.43888888888888894,
+          "source_pair_accuracy": 0.6838709677419356,
+          "trials": [
+            {
+              "seed": 202610300,
+              "score": 0.733471560846561,
+              "extra_pair_accuracy": 0.5,
+              "source_pair_accuracy": 0.7258064516129032
+            },
+            {
+              "seed": 202610301,
+              "score": 0.7237568824404762,
+              "extra_pair_accuracy": 0.5,
+              "source_pair_accuracy": 0.7096774193548387
+            },
+            {
+              "seed": 202610302,
+              "score": 0.7236445932539683,
+              "extra_pair_accuracy": 0.5555555555555556,
+              "source_pair_accuracy": 0.7096774193548387
+            },
+            {
+              "seed": 202610303,
+              "score": 0.6820593998015875,
+              "extra_pair_accuracy": 0.3888888888888889,
+              "source_pair_accuracy": 0.7096774193548387
+            },
+            {
+              "seed": 202610304,
+              "score": 0.6728934358465608,
+              "extra_pair_accuracy": 0.2777777777777778,
+              "source_pair_accuracy": 0.7096774193548387
+            },
+            {
+              "seed": 202610305,
+              "score": 0.5840899057539682,
+              "extra_pair_accuracy": 0.3888888888888889,
+              "source_pair_accuracy": 0.532258064516129
+            },
+            {
+              "seed": 202610306,
+              "score": 0.7298343253968255,
+              "extra_pair_accuracy": 0.4444444444444444,
+              "source_pair_accuracy": 0.7580645161290323
+            },
+            {
+              "seed": 202610307,
+              "score": 0.6351501736111113,
+              "extra_pair_accuracy": 0.4444444444444444,
+              "source_pair_accuracy": 0.6129032258064516
+            },
+            {
+              "seed": 202610308,
+              "score": 0.6583047495039682,
+              "extra_pair_accuracy": 0.3888888888888889,
+              "source_pair_accuracy": 0.6612903225806451
+            },
+            {
+              "seed": 202610309,
+              "score": 0.6937136243386244,
+              "extra_pair_accuracy": 0.5,
+              "source_pair_accuracy": 0.7096774193548387
+            }
+          ]
+        },
+        "scope": "fresh supervision split, labelled corpus previously studied, 80-query shared-identity diagnostic, no official score"
+      },
+      "full": {
+        "partition": "sealed",
+        "full_cross_modal": 0.2759878834935259,
+        "directions": {
+          "O2S": {
+            "queries": 568,
+            "R@1": 0.2130281690140845,
+            "mAP@10": 0.35401785714285716,
+            "score": 0.28352301307847083,
+            "max_relevant_in_gallery": 2
+          },
+          "S2O": {
+            "queries": 532,
+            "R@1": 0.20488721804511278,
+            "mAP@10": 0.33201828977204917,
+            "score": 0.268452753908581,
+            "max_relevant_in_gallery": 3
+          }
+        },
+        "optical_strata": {
+          "gated": {
+            "queries": 125,
+            "R@1": 0.352,
+            "mAP@10": 0.5280952380952381,
+            "score": 0.440047619047619,
+            "max_relevant_in_gallery": 2
+          },
+          "other": {
+            "queries": 443,
+            "R@1": 0.17381489841986456,
+            "mAP@10": 0.3048989573255939,
+            "score": 0.23935692787272922,
+            "max_relevant_in_gallery": 1
+          }
+        },
+        "joint": {
+          "mean": 0.6845391761739419,
+          "extra_pair_accuracy": 0.4222222222222222,
+          "source_pair_accuracy": 0.6887096774193548,
+          "trials": [
+            {
+              "seed": 202610300,
+              "score": 0.7138472222222223,
+              "extra_pair_accuracy": 0.4444444444444444,
+              "source_pair_accuracy": 0.7258064516129032
+            },
+            {
+              "seed": 202610301,
+              "score": 0.7035598958333333,
+              "extra_pair_accuracy": 0.5,
+              "source_pair_accuracy": 0.6774193548387096
+            },
+            {
+              "seed": 202610302,
+              "score": 0.7424884672619048,
+              "extra_pair_accuracy": 0.3333333333333333,
+              "source_pair_accuracy": 0.7903225806451613
+            },
+            {
+              "seed": 202610303,
+              "score": 0.6460286871693122,
+              "extra_pair_accuracy": 0.3333333333333333,
+              "source_pair_accuracy": 0.6451612903225806
+            },
+            {
+              "seed": 202610304,
+              "score": 0.6431953538359788,
+              "extra_pair_accuracy": 0.2777777777777778,
+              "source_pair_accuracy": 0.6612903225806451
+            },
+            {
+              "seed": 202610305,
+              "score": 0.639670634920635,
+              "extra_pair_accuracy": 0.5,
+              "source_pair_accuracy": 0.5967741935483871
+            },
+            {
+              "seed": 202610306,
+              "score": 0.6986193369708995,
+              "extra_pair_accuracy": 0.3333333333333333,
+              "source_pair_accuracy": 0.7258064516129032
+            },
+            {
+              "seed": 202610307,
+              "score": 0.6771806175595239,
+              "extra_pair_accuracy": 0.5,
+              "source_pair_accuracy": 0.6774193548387096
+            },
+            {
+              "seed": 202610308,
+              "score": 0.6883116732804233,
+              "extra_pair_accuracy": 0.4444444444444444,
+              "source_pair_accuracy": 0.6935483870967742
+            },
+            {
+              "seed": 202610309,
+              "score": 0.6924898726851854,
+              "extra_pair_accuracy": 0.5555555555555556,
+              "source_pair_accuracy": 0.6935483870967742
+            }
+          ]
+        },
+        "scope": "fresh supervision split, labelled corpus previously studied, 80-query shared-identity diagnostic, no official score"
+      }
+    },
+    "delta": {
+      "full_cross_modal": 0.03377353458680235,
+      "joint": 0.0008473110945766971,
+      "extra_pair_accuracy": -0.01666666666666672,
+      "source_pair_accuracy": 0.004838709677419284
+    },
+    "fixed_gate_passed": false,
+    "sealed_images_decoded": 1102,
+    "test_images_used": false,
+    "seconds": 35.96899999998277,
+    "peak_allocated_mib": 765.1533203125,
+    "producer_sha256": "67c1a739d725aef433bf90f749c6a727b91c2c35b8c51e4378c74bf2e8ffcc9b",
+    "coverage_module_sha256": "23408c68ee854166dc39871844e1b0641795c63a3420a200b487a04e9f9a7fe4",
+    "scope": "single fixed sealed evaluation; no official score; no tuning after this result"
+  },
+  "scope": "labelled identity holdout; source isolation and official gain unverified"
+}

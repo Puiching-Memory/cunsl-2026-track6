@@ -1,0 +1,150 @@
+{
+  "checked_at_local": "2026-10-08T02:07:10.196958+08:00",
+  "scope": "User-authorized isolated Windows GPU PyTorch setup and lightweight checks",
+  "authorization": {
+    "cuda_and_driver_installation": "user managed",
+    "gpu_pytorch_installation": "user explicitly requested reinstall torch"
+  },
+  "dependency_directory": "local/cuda-deps",
+  "cpu_dependency_directory_preserved": "local/refactor-deps",
+  "python": "3.12.14",
+  "driver": "616.56",
+  "toolkit_probe": {
+    "checked_at_utc": "2026-10-07T17:47:44.007809+00:00",
+    "toolkit": "13.4.2",
+    "scope": "NVRTC compilation and one CUDA kernel; no PyTorch or model execution",
+    "values": [
+      0.0,
+      1.0,
+      4.0,
+      9.0,
+      16.0,
+      25.0,
+      36.0,
+      49.0,
+      64.0,
+      81.0,
+      100.0,
+      121.0,
+      144.0,
+      169.0,
+      196.0,
+      225.0
+    ],
+    "sum_of_squares": 1240.0,
+    "passed": true,
+    "packages_installed": false,
+    "driver_or_toolkit_modified": false
+  },
+  "wheel_verification": {
+    "url": "https://download-r2.pytorch.org/whl/cu130/torch-2.12.1%2Bcu130-cp312-cp312-win_amd64.whl",
+    "bytes": 1926431198,
+    "sha256": "52c5da6a0898d5d3473c02bd304b7a3bc0b72e351c6f3bfa0783e45ef9f4cd61",
+    "official_hash_matched": true,
+    "seconds": 839.0
+  },
+  "download_mirror": "https://mirrors.nju.edu.cn/pytorch/whl/cu130/",
+  "torch_probe": {
+    "checked_at_utc": "2026-10-07T18:04:04.799517+00:00",
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "torch": "2.12.1+cu130",
+    "cuda_runtime": "13.0",
+    "cuda_available": true,
+    "compiled_arches": [
+      "sm_75",
+      "sm_80",
+      "sm_86",
+      "sm_90",
+      "sm_100",
+      "sm_120"
+    ],
+    "packages": {
+      "torch": "2.12.1+cu130",
+      "numpy": "2.5.3",
+      "Pillow": "12.3.0"
+    },
+    "scope": "synthetic CUDA correctness and backward checks; not a task benchmark",
+    "device": "NVIDIA GeForce RTX 4060 Ti",
+    "vram_bytes": 17175150592,
+    "capability": [
+      8,
+      9
+    ],
+    "sum_of_squares": 1240.0,
+    "fp32_backward_finite": true,
+    "bf16_backward_finite": true,
+    "peak_allocated_bytes": 1462272,
+    "passed": true
+  },
+  "native_transoss_dsmcl_smoke": {
+    "scope": "Local CUDA real native model on four training images; no optimizer update or holdout evaluation",
+    "checkpoint_sha256": "f7c8886d1bb904360fea877f130c7fcddccb2ef8fb34300933bebab0bbdbf6ed",
+    "global_cls_exactly_unchanged_by_hook": true,
+    "patches_shape": [
+      4,
+      256,
+      768
+    ],
+    "frequency_shape": [
+      4,
+      196608
+    ],
+    "finite_backbone_gradients": true,
+    "finite_mask_gradients": true,
+    "nonzero_mask_gradients": true,
+    "hooks_removed": true,
+    "gpu_started": true,
+    "optimizer_steps": 0,
+    "gradient_training_ids_only": true,
+    "spatial_counts": {
+      "paired_identities": 2,
+      "single_pair_identities": 2,
+      "unpaired_identities_skipped": 0
+    },
+    "loss_components": {
+      "classification": 5.112717628479004,
+      "triplet": 3.91409412259236e-06,
+      "dsmcl_spatial": 274.51171875,
+      "dsmcl_frequency": 0.9633990526199341,
+      "total": 5.483572959899902
+    },
+    "peak_allocated_mib": 1193.4580078125,
+    "peak_reserved_mib": 1246.0,
+    "gpu_name": "NVIDIA GeForce RTX 4060 Ti",
+    "cuda": "13.0",
+    "bf16_supported": true,
+    "seconds": 10.34400000000096,
+    "torch": "2.12.1+cu130",
+    "device": "cuda"
+  },
+  "regression": {
+    "total": 74,
+    "passed": 71,
+    "skipped": 3,
+    "skip_reason": "Linux-only lock checks on Windows",
+    "seconds": 11.882
+  },
+  "gpu_compute_processes_after_checks": "",
+  "system_cuda_or_driver_modified_by_assistant": false,
+  "paid_gpu_cost": 0,
+  "new_training_runs": 0,
+  "new_test_predictions": 0,
+  "new_submissions": 0,
+  "official_best_known": 0.5144077656525573,
+  "limitations": [
+    "Four training images, zero optimizer steps; no new holdout or official score.",
+    "Model smoke timing starts after Python imports; not a training throughput benchmark.",
+    "Initial toolkit DLL lookup failed; explicit local builtins preload fixed the probe.",
+    "First pip install failed in sandbox temp directory; project-local TMP/TEMP succeeded."
+  ],
+  "artifact_sha256": {
+    "requirements-local-gpu.txt": "7de6d30dc536e54c219315bae5edc5567227bb0b89f1b9be640aff78e3f78fd6",
+    "tools/env_probe.py": "9a481f75b2bc57e1be139c72c3d51942216d160eacfedc83fb418c6f1eeed716",
+    "tools/run_job.py": "1c70dcac9a74471477e54955d30c73a181dd06e8042a8088febb9da15e34e0e2",
+    "local/local-gpu/probe_toolkit.py": "d28c5c79e4c5f437713a94bca863bbeacd63eb21b8f4b79763fec90f122a7be1",
+    "local/local-gpu/smoke_native_cuda.py": "e6551d2b8327b3418cc1d351d3cacf84623c7380e5451da48529905be9a397b4",
+    "local/local-gpu/regression-cu130.log": "5e622e9aecdfa5665afc87bcce9a2d521ed747f867b796c68a393ffeed0624b5",
+    "local/local-gpu/installed-versions.txt": "48df1742dac5eb91dd092de128f9e2ab9ed54f4af161895a50e9180282bf74cd"
+  }
+}

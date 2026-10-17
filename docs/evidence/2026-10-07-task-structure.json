@@ -1,0 +1,345 @@
+{
+  "date": "2026-10-07",
+  "scope": "Supplied public task structure audit and conditional labelled-holdout study",
+  "user_direction": "Reconsider DSMCL as a large-gain strategy; investigate possible dataset feature leakage",
+  "verified_structure": {
+    "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+    "directions": {
+      "O2S": {
+        "queries": 120,
+        "constant_query": 0,
+        "same_source_gallery": 93,
+        "same_target_gallery": 0,
+        "nonconstant_same_target_gallery": 0,
+        "other_query_duplicate": 27,
+        "training_pixel_duplicate": 0
+      },
+      "S2O": {
+        "queries": 120,
+        "constant_query": 1,
+        "same_source_gallery": 120,
+        "same_target_gallery": 0,
+        "nonconstant_same_target_gallery": 0,
+        "other_query_duplicate": 0,
+        "training_pixel_duplicate": 1
+      },
+      "O2O": {
+        "queries": 27,
+        "constant_query": 0,
+        "same_source_gallery": 0,
+        "same_target_gallery": 0,
+        "nonconstant_same_target_gallery": 0,
+        "other_query_duplicate": 27,
+        "training_pixel_duplicate": 0
+      }
+    },
+    "repeated_query_type_patterns": {
+      "O2O+O2S": 27
+    },
+    "tiff_tag_number_patterns": {
+      "train": {
+        "256,257,258,259,262,273,277,278,279,284": 7422
+      },
+      "query": {
+        "256,257,258,259,262,273,277,278,279,284": 267
+      },
+      "gallery": {
+        "256,257,258,259,262,273,277,278,279,284": 1800
+      }
+    },
+    "string_metadata_counts": {},
+    "metadata_scope": "All 9489 image TIFF directories read; existing pixel audit hashes used for duplicates",
+    "identity_inference": "No test identities known; pixel equality is not proof of identity when source labels conflict or images are constant",
+    "gpu_started": false,
+    "submission_uploaded": false
+  },
+  "official_text_read_status": {
+    "downloaded_standalone_readme_bytes": 0,
+    "package_readme_read": true,
+    "package_readme_sha256": "d9fdf0e3b1ef64fc1008388b7ccc23f328d793b17f31cd06de7ca4de296996fb",
+    "latest_official_full_text_retrieved": false,
+    "blockers": [
+      "Web fetch unavailable",
+      "Edge header-policy load error twice",
+      "In-app browser reaches organization login"
+    ],
+    "prior_rules_record": "docs/01-contest.md",
+    "user_requested_to_provide_full_text": true,
+    "public_test_joint_inference_rules_reconfirmed": false
+  },
+  "inferences": {
+    "pixel_same_source_copy_is_not_legal_cross_modal_answer": true,
+    "hidden_120_shared_distinct_ID_cohort_verified": false,
+    "same_query_counts_and_duplicates_do_not_prove_shared_ID_cohort": true,
+    "hidden_label_leak_verified": false,
+    "leaderboard_team_method_known": false,
+    "simple_linear_query_to_source_gallery_number_correlation": {
+      "O2S": -0.03233418910166865,
+      "S2O": -0.03217802115628235
+    },
+    "number_correlation_scope": "Not proof against more complex numbering/construction rules",
+    "pixel_geometry_background_or_public_source_overlap_audited": false
+  },
+  "conditional_simulation": {
+    "scope": "Conditional matched-query-template CPU study on reused labelled holdout; NOT original validation or official score",
+    "assumptions": [
+      "120 optical queries and 120 SAR queries represent exactly same 120 distinct IDs",
+      "27 optical queries are absent from optical gallery and repeat as O2O queries",
+      "Other 93 optical queries and all120 SAR queries are exact source-gallery copies"
+    ],
+    "labels_used": "Construct synthetic cohort and evaluate; no labels in similarity/assignment/source-bridge inference",
+    "trials": 20,
+    "seeds": [
+      20261007,
+      20261008,
+      20261009,
+      20261010,
+      20261011,
+      20261012,
+      20261013,
+      20261014,
+      20261015,
+      20261016,
+      20261017,
+      20261018,
+      20261019,
+      20261020,
+      20261021,
+      20261022,
+      20261023,
+      20261024,
+      20261025,
+      20261026
+    ],
+    "gallery_scale": "718 SAR and738 optical, rather than hidden900 each",
+    "cohort_shuffled_independently": true,
+    "assignment_bruteforce_checks": 15,
+    "models": {
+      "v3": {
+        "summary": {
+          "independent_full_gallery": {
+            "mean": 0.5326850639329808,
+            "min": 0.474416942239859,
+            "max": 0.5855681492504409,
+            "mean_gain_vs_matched_independent": 0.0,
+            "directions_mean": {
+              "O2S": {
+                "R@1": 0.4333333333333334,
+                "mAP@10": 0.5728840939153439,
+                "score": 0.5031087136243386
+              },
+              "S2O": {
+                "R@1": 0.4375,
+                "mAP@10": 0.550207175925926,
+                "score": 0.49385358796296314
+              },
+              "O2O": {
+                "R@1": 0.812962962962963,
+                "mAP@10": 0.8680776014109346,
+                "score": 0.8405202821869487
+              }
+            }
+          },
+          "query_cohort_top1_only": {
+            "mean": 0.6197018050044093,
+            "min": 0.5731853918650794,
+            "max": 0.6726566909171076,
+            "mean_gain_vs_matched_independent": 0.08701674107142858,
+            "directions_mean": {
+              "O2S": {
+                "R@1": 0.6720833333333334,
+                "mAP@10": 0.7208751653439153,
+                "score": 0.6964792493386243
+              },
+              "S2O": {
+                "R@1": 0.4375,
+                "mAP@10": 0.550207175925926,
+                "score": 0.49385358796296314
+              },
+              "O2O": {
+                "R@1": 0.812962962962963,
+                "mAP@10": 0.8680776014109346,
+                "score": 0.8405202821869487
+              }
+            }
+          },
+          "one_to_one_O2S_only": {
+            "mean": 0.6657213734567902,
+            "min": 0.6198252728174604,
+            "max": 0.7258791335978836,
+            "mean_gain_vs_matched_independent": 0.1330363095238095,
+            "directions_mean": {
+              "O2S": {
+                "R@1": 0.7791666666666666,
+                "mAP@10": 0.8183232473544972,
+                "score": 0.798744957010582
+              },
+              "S2O": {
+                "R@1": 0.4375,
+                "mAP@10": 0.550207175925926,
+                "score": 0.49385358796296314
+              },
+              "O2O": {
+                "R@1": 0.812962962962963,
+                "mAP@10": 0.8680776014109346,
+                "score": 0.8405202821869487
+              }
+            }
+          },
+          "one_to_one_and_source_bridges": {
+            "mean": 0.7996696807484569,
+            "min": 0.722785190696649,
+            "max": 0.8834096395502645,
+            "mean_gain_vs_matched_independent": 0.26698461681547614,
+            "directions_mean": {
+              "O2S": {
+                "R@1": 0.7791666666666666,
+                "mAP@10": 0.8183232473544972,
+                "score": 0.798744957010582
+              },
+              "S2O": {
+                "R@1": 0.7766666666666666,
+                "mAP@10": 0.8063663194444445,
+                "score": 0.7915164930555555
+              },
+              "O2O": {
+                "R@1": 0.812962962962963,
+                "mAP@10": 0.8680776014109346,
+                "score": 0.8405202821869487
+              }
+            }
+          }
+        },
+        "stress_20percent_unrelated_SAR_O2S_mean": 0.5834277860449737,
+        "checkpoint_sha256": "f7c8886d1bb904360fea877f130c7fcddccb2ef8fb34300933bebab0bbdbf6ed",
+        "features_sha256": "c8a844f2e95e368adab03210072504e2df1ba20a36c47973999e198ca9ed9e67"
+      },
+      "joint": {
+        "summary": {
+          "independent_full_gallery": {
+            "mean": 0.5400290226796739,
+            "min": 0.48872583223104066,
+            "max": 0.5885636298500883,
+            "mean_gain_vs_matched_independent": 0.0,
+            "directions_mean": {
+              "O2S": {
+                "R@1": 0.4529166666666667,
+                "mAP@10": 0.5808103505291007,
+                "score": 0.5168635085978838
+              },
+              "S2O": {
+                "R@1": 0.4366666666666667,
+                "mAP@10": 0.5632621527777778,
+                "score": 0.4999644097222222
+              },
+              "O2O": {
+                "R@1": 0.7962962962962963,
+                "mAP@10": 0.8528328924162256,
+                "score": 0.8245645943562611
+              }
+            }
+          },
+          "query_cohort_top1_only": {
+            "mean": 0.6172306223820547,
+            "min": 0.5740829750881835,
+            "max": 0.6643084215167548,
+            "mean_gain_vs_matched_independent": 0.07720159970238091,
+            "directions_mean": {
+              "O2S": {
+                "R@1": 0.6637500000000001,
+                "mAP@10": 0.7130952380952382,
+                "score": 0.688422619047619
+              },
+              "S2O": {
+                "R@1": 0.4366666666666667,
+                "mAP@10": 0.5632621527777778,
+                "score": 0.4999644097222222
+              },
+              "O2O": {
+                "R@1": 0.7962962962962963,
+                "mAP@10": 0.8528328924162256,
+                "score": 0.8245645943562611
+              }
+            }
+          },
+          "one_to_one_O2S_only": {
+            "mean": 0.6686754512511024,
+            "min": 0.6169788635361553,
+            "max": 0.7037832341269842,
+            "mean_gain_vs_matched_independent": 0.12864642857142855,
+            "directions_mean": {
+              "O2S": {
+                "R@1": 0.7849999999999999,
+                "mAP@10": 0.8204889219576721,
+                "score": 0.8027444609788359
+              },
+              "S2O": {
+                "R@1": 0.4366666666666667,
+                "mAP@10": 0.5632621527777778,
+                "score": 0.4999644097222222
+              },
+              "O2O": {
+                "R@1": 0.7962962962962963,
+                "mAP@10": 0.8528328924162256,
+                "score": 0.8245645943562611
+              }
+            }
+          },
+          "one_to_one_and_source_bridges": {
+            "mean": 0.8011699638999119,
+            "min": 0.7405599647266314,
+            "max": 0.8652006448412699,
+            "mean_gain_vs_matched_independent": 0.26114094122023807,
+            "directions_mean": {
+              "O2S": {
+                "R@1": 0.7849999999999999,
+                "mAP@10": 0.8204889219576721,
+                "score": 0.8027444609788359
+              },
+              "S2O": {
+                "R@1": 0.7791666666666666,
+                "mAP@10": 0.8096266534391534,
+                "score": 0.79439666005291
+              },
+              "O2O": {
+                "R@1": 0.7962962962962963,
+                "mAP@10": 0.8528328924162256,
+                "score": 0.8245645943562611
+              }
+            }
+          }
+        },
+        "stress_20percent_unrelated_SAR_O2S_mean": 0.5857034556878308,
+        "checkpoint_sha256": "fdefc7945e7ba74ad2848501965bca58d1880ac302a3fa0fdc7b6d5bfde17950",
+        "features_sha256": "3b749d2c5f56ea6e28b8031c2c1f495b0c283c011a8df734555c02b32098e061"
+      }
+    },
+    "limitations": [
+      "Same holdout selected checkpoints; no fresh-training confirmation",
+      "Shared-ID one-to-one cohort created by labels in simulation and unverified for hidden test",
+      "No hidden prediction was computed or scored",
+      "Gallery scale and possible distractors differ"
+    ],
+    "stress_scope": "Replace24/120 SAR queries with identities outside optical cohort; evaluate O2S only",
+    "disjoint_cohort_counterexample": "If query ID cohorts are disjoint, all hard-assigned O2S first candidates are wrong regardless of embedding quality",
+    "official_score_prediction": null
+  },
+  "decision": "Prioritize verification of task construction and cross-direction joint inference; keep DSMCL as later representation candidate",
+  "execution": {
+    "gpu_started": false,
+    "gpu_cost_yuan": 0,
+    "test_embeddings_extracted": false,
+    "hidden_prediction_generated": false,
+    "submission_uploaded": false,
+    "official_best_unchanged": 0.5144077656525573
+  },
+  "artifact_sha256": {
+    "local/dsmcl/audit_task_structure.py": "2af73044fda29e021af7a1a5c6482060539fc2e606b74b5558699f688ae7e35c",
+    "local/dsmcl/study_task_coupling.py": "3819a11cae0c6c38f6b2f8c6ae96c964bc91171feb3aa4f29c35993292b9b2e3",
+    "local/dsmcl/task-structure-summary.json": "2b57a7a68544c85772f704e2c947b95d43677182e33e5196b97688814e69919f",
+    "local/dsmcl/task-coupling-study.json": "da3e292ed2a52d8b0b38d6cb5170575b34fa85c8000d58e0cc2428de420ef427",
+    "local/data-audit/images.json": "8e197e753efa7e153a7f60c2be2bcae9c9158d4f77bb7bafd5a8365a4425cee3",
+    "local/data-audit/duplicates.json": "9dc80ce7af871b38df8274e42e32f2088522d8afaf098de3eaabf735df470aaf",
+    "local/splits/identity-v1.json": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5"
+  }
+}

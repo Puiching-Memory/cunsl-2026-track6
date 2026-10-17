@@ -1,0 +1,116 @@
+{
+  "producer": {
+    "scope": "V6 fixed native/overlap equal blend on pixel-gated optical query rows; V5 cost fallback, existing global assignment/bridges and V3 tails",
+    "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+    "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+    "script_sha256": "ab44f0298105f01ffb0e42219b56914a3d2ed2990daa3cb3f4289722ce6354b0",
+    "selection": "Three fixed blends selected only on development20; mean native/overlap chosen, all local validation reused. Does not clear old+.03 large-gain threshold; practical V6 requested by user, not a claimed large breakthrough",
+    "fusion_weights": {
+      "native-control": 0.5,
+      "overlap-control": 0.5
+    },
+    "models": {
+      "native-control": {
+        "checkpoint": "a73db28a64c08bfe86f2b6cd6ad1481a3b64039a254442c016f4757e5c48439c",
+        "protocol": "79a47ef490c429c19faae5f3d32a837a2a636e08cd5d5827bee46d7aef52a41c",
+        "validation_bank": "9da3a2508de14f0c2f688a14c64e3f93f89e70a020a66b2633dd626c3d1132f1",
+        "query_scores": "a3f5623428b65810378f84e615514253a0d00453afe16a591526adce1e83dd5a",
+        "public_features": "6d1a78de1647044a32e2c669bb823a0b60e3e7474423b500ee5ee2abd471be0a",
+        "stride": 16,
+        "selected_epoch": 8
+      },
+      "overlap-control": {
+        "checkpoint": "b7b73dbf13ee5182e727237b2c295e7e2fa516c9f8114f88b910d1f03a67871c",
+        "protocol": "9617e812e1ba6c1b22627e29ec28b2c1a43be2461777de32ab0c6f4017399085",
+        "validation_bank": "e2156509d9e350fef83c80562268d3f33243fb7a6fd48c036c9fa0b04bb09678",
+        "query_scores": "d24659238864ec9d03206e6bdcd64a27098a3838b57e7337d5acf207e1ab236c",
+        "public_features": "a9a83287e1bca33f6650f190431465040aeed33bca65c8309dea4e129746ced1",
+        "stride": 8,
+        "selected_epoch": 9
+      }
+    },
+    "validation_banks_replay_exact": true,
+    "public_scores_repeat_exact": true,
+    "v5_prediction_control_replay_exact": true,
+    "public_pixel_gate_optical": 84,
+    "accepted_pairs": 119,
+    "mapping_changed_from_v5": 29,
+    "rankings_changed_from_v5": {
+      "O2S": 29,
+      "S2O": 28,
+      "O2O": 0
+    },
+    "fallback_score_rows_exact": true,
+    "baseline_tail_preserved": true,
+    "O2O_and_constant_SAR_preserved": true,
+    "prediction_sha256": "97ef995f3e252888864a460f49d5601f603c40010806bc198d7a490dd2731770",
+    "query_scores_sha256": "66ecb533c2ba3a3bbbf5fc03e2c8cfd75e903c3309859fdc7f17369aa43d7279",
+    "prediction_bytes": 48063,
+    "format_validation": {
+      "passed": true,
+      "queries": 267,
+      "gallery": 1800,
+      "directions": {
+        "O2S": 120,
+        "S2O": 120,
+        "O2O": 27
+      },
+      "candidates_per_query": 10,
+      "metrics_validated": false,
+      "scope": "structure only; hidden identities are unavailable"
+    },
+    "bindings": {
+      "screen_report": "530976a4c355db639a66cbf0a27a749c43cb71ddbfd0716dc87758686b34f627",
+      "screen_protocol": "b459a310bc5958310359c5a9a5e541a33ca010517207faeb19d4745459765a8a",
+      "screen_verification": "2f5159689c6daa0282e03d2da4da841f87abfe3d7fa7bd34cbdb1e202823be24",
+      "v5_prediction": "9181fb8b923f325ec32f4c99bc9d0b34f4431427288dd7e34a8d5bb36741cafe",
+      "v5_query_scores": "c129a12c12509a4122efb4bf74eb6a2222403fe6714b0e56b981378df5a8fd98",
+      "v3_prediction": "0020ec05521b2cede6dd6856d1a943f96a95b803749300dfb2f450398ca27e8f",
+      "pixel_gate": "47bf06d66e336edc991692826eaba9e47e71266d9c9cc9ac7ccbabe0906db15f",
+      "encoder": "655e98da24705b410003763a7c9a6303f4200b55fdb1636ef68412c145d162f6",
+      "overlap": "e094ae8f26f873fcf222f1f51ccd5557252b8ab08e4d47c16a8166b160813e79"
+    },
+    "test_identity_labels_used": false,
+    "shared_identity_assumption_verified": false,
+    "optimizer_steps": 0,
+    "uploaded": false,
+    "official_score": null,
+    "seconds": 81.125,
+    "peak_allocated_mib": 4245.92529296875
+  },
+  "independent_audit": {
+    "scope": "Independent CPU artifact audit; not hidden-label accuracy or an official score",
+    "auditor_sha256": "79fee4ac79f2567eda15e0bb68fe861fa3043c0018aca267091f1bc0f7410d36",
+    "report_sha256": "1e0cf681f8ec6d0e36e75ffb989f2704ca9bd3101984fe937104dc8886414713",
+    "prediction_sha256": "97ef995f3e252888864a460f49d5601f603c40010806bc198d7a490dd2731770",
+    "all_source_bindings_passed": true,
+    "equal_fusion_exact": true,
+    "pixel_bridges_reconstructed": true,
+    "fallback_rows_exact": true,
+    "networkx_blossom_v5_replay_exact": true,
+    "networkx_blossom_v6_prediction_and_pairs_exact": true,
+    "mapping_changed_from_v5": 29,
+    "rankings_changed_from_v5": {
+      "O2S": 29,
+      "S2O": 28,
+      "O2O": 0
+    },
+    "format_validation": {
+      "passed": true,
+      "queries": 267,
+      "gallery": 1800,
+      "directions": {
+        "O2S": 120,
+        "S2O": 120,
+        "O2O": 27
+      },
+      "candidates_per_query": 10,
+      "metrics_validated": false,
+      "scope": "structure only; hidden identities are unavailable"
+    },
+    "test_identity_labels_used": false,
+    "shared_identity_assumption_verified": false,
+    "uploaded": false,
+    "official_score": null
+  }
+}

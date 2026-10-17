@@ -1,0 +1,143 @@
+{
+  "scope": "Fixed mean-only CMAL weight2 versus fresh weight0 native full-model control; one seed, reused validation, no official result",
+  "models": {
+    "v5": {
+      "selected_epoch": 0,
+      "full": 0.645382706870627,
+      "development_joint": 0.854387572973901,
+      "reporting_joint": 0.8595548580109128,
+      "original40_joint": 0.8348002166694224,
+      "hard27_accuracy": 0.4759259259259259,
+      "source93_accuracy": 0.9266129032258065
+    },
+    "control": {
+      "selected_epoch": 8,
+      "full": 0.6411772371827519,
+      "development_joint": 0.8704555789262821,
+      "reporting_joint": 0.8551016772073414,
+      "original40_joint": 0.8526030657517637,
+      "hard27_accuracy": 0.5703703703703704,
+      "source93_accuracy": 0.9311827956989247
+    },
+    "mean_alignment": {
+      "selected_epoch": 7,
+      "full": 0.6289475453060012,
+      "development_joint": 0.8643596897893773,
+      "reporting_joint": 0.8588074807787699,
+      "original40_joint": 0.8483870749283511,
+      "hard27_accuracy": 0.5648148148148148,
+      "source93_accuracy": 0.9276881720430108
+    }
+  },
+  "mean_alignment_minus_control": {
+    "full": -0.012229691876750715,
+    "development_joint": -0.006095889136904842,
+    "reporting_joint": 0.0037058035714284676,
+    "original40_joint": -0.004215990823412619,
+    "hard27_accuracy": -0.005555555555555647,
+    "source93_accuracy": -0.0034946236559139088
+  },
+  "preregistered_gate": {
+    "full_or_original40_gain_required": 0.03,
+    "maximum_other_metric_and_reporting_drop": 0.005,
+    "passed": false,
+    "reference": "Fresh ordinary control, not V5"
+  },
+  "original40_paired_scene_changes": {
+    "improved": 15,
+    "equal": 3,
+    "worse": 22,
+    "median": -0.0034244791666666607,
+    "scope": "Overlapping reused scenes, descriptive only"
+  },
+  "control_audit": {
+    "weight": 0.0,
+    "smoke": false,
+    "completed_epochs": 16,
+    "optimizer_steps": 928,
+    "selection": {
+      "selected": 8,
+      "best": 0.8704555789262821,
+      "last": 16,
+      "reference": 0.8704555789262821,
+      "stale": 8
+    },
+    "sources_bound": true,
+    "objective_decomposition_verified": true,
+    "initial_v5_and_selected_bank_replayed_exactly": true,
+    "latest_state_verified": true,
+    "auxiliary_gradient_verified": null,
+    "bindings": {
+      "report.json": "61988bc497bebe676e58de225cdf41669510d93efcb01d4d9b703d838a4ecfec",
+      "protocol.json": "79a47ef490c429c19faae5f3d32a837a2a636e08cd5d5827bee46d7aef52a41c",
+      "history.json": "19d54399f6048075598e03e23555945476dd31e7190546f591574874dc66e08a",
+      "verification.json": "42ba6842aa01d54220d8c8b85211af5a0d125c18ff16fa49791b837adfecac2a",
+      "expert.pt": "a73db28a64c08bfe86f2b6cd6ad1481a3b64039a254442c016f4757e5c48439c",
+      "training-state.pt": "8e7dc4e35431b961d983fed0ce5b7bc3152d53bac26e9e72f5a7a9b32f42bc78"
+    }
+  },
+  "treatment_audit": {
+    "weight": 2.0,
+    "smoke": false,
+    "completed_epochs": 13,
+    "optimizer_steps": 754,
+    "selection": {
+      "selected": 7,
+      "best": 0.8643596897893773,
+      "last": 13,
+      "reference": 0.8640406607715201,
+      "stale": 8
+    },
+    "sources_bound": true,
+    "objective_decomposition_verified": true,
+    "initial_v5_and_selected_bank_replayed_exactly": true,
+    "latest_state_verified": true,
+    "auxiliary_gradient_verified": true,
+    "bindings": {
+      "report.json": "421fcee1db8f741802d823cc136186e6d8bf128e74e5a5cf40e2763743ad3a77",
+      "protocol.json": "5c9f0a120286852590737b45d0aa6ab8b07356633660f47c87a0515056d60ca3",
+      "history.json": "833b176acc7647d738ae6c0709cbafe3bad934e279f73873b5d49fd40c6a73ba",
+      "verification.json": "bbaab7e226ee44cc516e8c071246303f3ffbd532d1695d9d4390420c873a15bf",
+      "expert.pt": "c7c515b171f8aad8d3efe8bb6c9c5ce35d55bfc2d9a86bf7a867c67f98705ad2",
+      "training-state.pt": "267ee44618951b93e6d89c0dc69696e2de33bb74f2d7dc4cac0e5d26369bd098"
+    }
+  },
+  "historical_control_replay": {
+    "exact_epochs": 16,
+    "selection": {
+      "selected": 8,
+      "best": 0.8704555789262821,
+      "last": 16,
+      "reference": 0.8704555789262821,
+      "stale": 8
+    },
+    "old_report_sha256": "754dea78928517c337fe2dbc8483959287eac19624b464a36c93e2c7a75cf221",
+    "bank_values_and_training_trajectory_exact": true
+  },
+  "actual_sampling_prefix_identical": true,
+  "common_completed_epochs": 13,
+  "resources": {
+    "control": {
+      "seconds": 850.5469999999623,
+      "peak_allocated_mib": 1595.330078125,
+      "completed_epochs": 16,
+      "optimizer_steps": 928,
+      "stop_reason": "development_joint_plateau"
+    },
+    "mean_alignment": {
+      "seconds": 752.844000000041,
+      "peak_allocated_mib": 1587.8359375,
+      "completed_epochs": 13,
+      "optimizer_steps": 754,
+      "stop_reason": "development_joint_plateau"
+    }
+  },
+  "limitations": "One seed, repeatedly reused local validation; each arm selects only development20 but reporting20 is not independent new data. Separate early stopping can give unequal final update counts. Mean-only normalized class centroid L2, not full MCRL, no variance/denoising/generation. Expert only replaces accepted optical rows; native shortlist, other V5 rows and O2O remain fixed. Auxiliary distance decline is not proof of discriminative gain; control distance not measured in training. No official score forecast.",
+  "bindings": {
+    "analysis_script": "591ce32a298857a059217848d0a12fc4727f79a038714442a4699bf8323ba1ef",
+    "independent_replay_helper": "84038bca871248a9e90768b598684b4b763f4d47dfe472eaa18c76092311d7d4",
+    "score_verifier": "415c3bda7205c5330039f59a59accdb6ddca01201b2a5d2d044050ddd906289a"
+  },
+  "test_images_used": false,
+  "submission_generated": false
+}

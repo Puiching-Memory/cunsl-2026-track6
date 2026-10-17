@@ -1,0 +1,256 @@
+{
+  "recorded_at_utc": "2026-10-07T07:39:31.430170+00:00",
+  "scope": "Public source search and local CPU reranking; leaderboard result recorded separately",
+  "public_search": {
+    "keywords": [
+      "2026全国大数据与计算智能挑战赛 赛题6",
+      "多源卫星跨模态舰船重识别",
+      "CUNSL2026 / cunsl-2026",
+      "舰船重识别 比赛 高分 / baseline"
+    ],
+    "surfaces": [
+      "public web search",
+      "GitHub/Gitee indexes",
+      "CSDN/Zhihu/Bilibili indexes",
+      "official contest forum"
+    ],
+    "verified_current_contest_solution_found": false,
+    "limitation": "Search coverage only; no access to private groups or unindexed content. No claim about leaderboard team methods.",
+    "official_forum": {
+      "url": "https://www.heywhale.com/org/cunsl/competition/forumlist/6aba33ce6e5beff2fca53add",
+      "visible_topics": [
+        "重新选择比赛",
+        "指导老师在哪里填",
+        "组队看这里-如何加入团队？"
+      ],
+      "technical_topic_found": false
+    },
+    "sources": [
+      {
+        "name": "TransOSS (ICCV 2025)",
+        "code": "https://github.com/Alioth2000/Hoss-ReID",
+        "model": "https://huggingface.co/Alioth2000/TransOSS",
+        "competition_solution": false
+      },
+      {
+        "name": "MOS (CVPR 2026)",
+        "code": "https://github.com/yjzhao1019/MOS",
+        "discussion": "https://github.com/yjzhao1019/MOS/issues/5",
+        "discussion_scope": "A user reports an S2O reproduction gap; not an author-confirmed diagnosis or competition solution"
+      },
+      {
+        "name": "SDF-Net",
+        "code": "https://github.com/cfrfree/SDF-Net",
+        "model": "https://huggingface.co/Chenfree233/SDF-Net",
+        "competition_solution": false
+      },
+      {
+        "name": "DSMCL",
+        "paper": "https://arxiv.org/abs/2608.06943",
+        "first_public_date": "2026-08-07",
+        "read_scope": "abstract and selected implementation/results sections; no verified code release"
+      },
+      {
+        "name": "k-reciprocal encoding",
+        "paper": "https://openaccess.thecvf.com/content_cvpr_2017/html/Zhong_Re-Ranking_Person_Re-Identification_CVPR_2017_paper.html",
+        "code": "https://github.com/zhunzhong07/person-re-ranking"
+      }
+    ]
+  },
+  "leaderboard_before_v2": {
+    "url": "https://www.heywhale.com/org/cunsl/competition/area/6aba33ce6e5beff2fca53add/leaderboard",
+    "top_scores": [
+      0.9101041666666667,
+      0.9091666666666667,
+      0.8641168154761906
+    ],
+    "tenth": 0.7720034722222223,
+    "ours": 0.43929340277777784,
+    "rank": 65,
+    "scored_teams": 76
+  },
+  "local_baseline": {
+    "weighted_score": 0.3554768790091794,
+    "candidate_recall": {
+      "O2S": {
+        "10": 0.6562091503267974,
+        "50": 0.8679738562091504,
+        "100": 0.9320261437908497
+      },
+      "S2O": {
+        "10": 0.6372549019607843,
+        "50": 0.8487394957983193,
+        "100": 0.9173669467787114
+      },
+      "O2O": {
+        "10": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      }
+    },
+    "training_identities": 2819,
+    "epochs": 12,
+    "augmentation": "none",
+    "last_epoch_training_InfoNCE": 0.012323673580069451
+  },
+  "exploration": {
+    "settings": 24,
+    "kreciprocal_scope": "independently implemented label-free exploratory method, not a copied or full author baseline",
+    "query_reference_full_holdout_score": 0.38281087510761885,
+    "query_reference_120_query_weighted_mean_gain": -0.00020997643849206062,
+    "query_reference_candidate_submitted": false
+  },
+  "candidate": {
+    "method": "gallery-logmeanexp-correction-v2",
+    "parameters": {
+      "temperature": 0.05,
+      "penalty": 1.0,
+      "O2O": "unchanged cosine"
+    },
+    "reference_cohort": "all validation source-modality images; test source-modality gallery",
+    "metrics": {
+      "min_relevant_k": {
+        "directions": {
+          "O2S": {
+            "queries": 765,
+            "R@1": 0.26143790849673204,
+            "mAP@10": 0.3787148563128956,
+            "score": 0.32007638240481384,
+            "max_relevant_in_gallery": 2
+          },
+          "S2O": {
+            "queries": 714,
+            "R@1": 0.2647058823529412,
+            "mAP@10": 0.3723493100944082,
+            "score": 0.31852759622367466,
+            "max_relevant_in_gallery": 3
+          },
+          "O2O": {
+            "queries": 44,
+            "R@1": 0.9545454545454546,
+            "mAP@10": 0.9640151515151515,
+            "score": 0.959280303030303,
+            "max_relevant_in_gallery": 2
+          }
+        },
+        "weighted_score": 0.38329982068585017,
+        "ap_denominator": "min_relevant_k",
+        "official_scorer_confirmed": false,
+        "scope": "local identity-disjoint holdout; not a leaderboard result"
+      },
+      "all_relevant": {
+        "directions": {
+          "O2S": {
+            "queries": 765,
+            "R@1": 0.26143790849673204,
+            "mAP@10": 0.3787148563128956,
+            "score": 0.32007638240481384,
+            "max_relevant_in_gallery": 2
+          },
+          "S2O": {
+            "queries": 714,
+            "R@1": 0.2647058823529412,
+            "mAP@10": 0.3723493100944082,
+            "score": 0.31852759622367466,
+            "max_relevant_in_gallery": 3
+          },
+          "O2O": {
+            "queries": 44,
+            "R@1": 0.9545454545454546,
+            "mAP@10": 0.9640151515151515,
+            "score": 0.959280303030303,
+            "max_relevant_in_gallery": 2
+          }
+        },
+        "weighted_score": 0.38329982068585017,
+        "ap_denominator": "all_relevant",
+        "official_scorer_confirmed": false,
+        "scope": "local identity-disjoint holdout; not a leaderboard result"
+      }
+    },
+    "weighted_gain": 0.027822941676670765,
+    "inference_uses_labels": false,
+    "test_used_for_parameter_selection": false,
+    "confirmation_split_available": false,
+    "cohort_sensitivity": {
+      "scope": "Query-cohort sensitivity on the same tuned validation split; NOT independent confirmation",
+      "fixed_reference": true,
+      "test_labels_used": false,
+      "test_features_used": false,
+      "directions": {
+        "O2S": {
+          "mean_gain": 0.030563719411375662,
+          "min_gain": -0.015880456349206318,
+          "max_gain": 0.06768187830687827,
+          "improved_trials": 35,
+          "trials": 40,
+          "queries_per_trial": 120
+        },
+        "S2O": {
+          "mean_gain": 0.030155926201499116,
+          "min_gain": -0.018589616402116427,
+          "max_gain": 0.06225198412698413,
+          "improved_trials": 39,
+          "trials": 40,
+          "queries_per_trial": 120
+        }
+      },
+      "weighted_mean_gain": 0.027323840525793654,
+      "weighted_min_gain": 0.00022358630952379333,
+      "weighted_max_gain": 0.05847023809523808,
+      "weighted_improved_trials": 40
+    },
+    "independent_metric_recomputation_passed": true,
+    "submission_validation": {
+      "passed": true,
+      "queries": 267,
+      "gallery": 1800,
+      "directions": {
+        "O2S": 120,
+        "S2O": 120,
+        "O2O": 27
+      },
+      "candidates_per_query": 10,
+      "metrics_validated": false,
+      "scope": "structure only; hidden identities are unavailable"
+    },
+    "prediction_sha256": "f3a6a5503c23d79d1ce3b70a6ffb922c07c8322dd769174d2fbf984eb1616f8e",
+    "report_sha256": "a6466a942d844d8c51491c7d540a1178ca1d5e6cda7675f61556a2cbae6a0838",
+    "verification_sha256": "df92717d95f275b42caf236b2524e6e0bc624216e1c7ac922dea43a738c2fc9b"
+  },
+  "checks": {
+    "total": 37,
+    "passed": 29,
+    "skipped": 8,
+    "skip_reason": "Windows lacks Linux flock and local PyTorch"
+  },
+  "official_v2": {
+    "user_approved": true,
+    "submitted_at_local": "2026-10-07 15:37 Asia/Shanghai",
+    "state": "reviewed",
+    "today_used": 2,
+    "today_limit": 3,
+    "score": 0.4350858134920635,
+    "first_submission_score": 0.43929340277777784,
+    "delta_from_first": -0.004207589285714353,
+    "review_observed_at_utc": "2026-10-07T07:43:00Z",
+    "current_best_score": 0.43929340277777784,
+    "proof": "local/submission-v2-gallery-reference/official-score.jpg"
+  },
+  "compute": {
+    "gpu_started": false,
+    "additional_gpu_cost": 0
+  },
+  "domain_resource": {
+    "manifest": "resources/transoss-paired-vitb16.json",
+    "download_complete": false,
+    "partial_bytes": 46740980,
+    "download_routes_attempted": [
+      "huggingface.co",
+      "hf-mirror.com"
+    ],
+    "download_failure": "Low throughput and timeout; partial file retained, not SHA-verified or loadable",
+    "weights_loaded": false,
+    "trained_on_contest": false
+  }
+}

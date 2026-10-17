@@ -1,0 +1,72 @@
+{
+  "scope": "All TRAIN optical images; nonblack content windows, not ship segmentation or measured attention",
+  "groups": {
+    "pixel_gated_optical": {
+      "images": 695,
+      "native_nonblack_windows_q10_median_q90": [
+        32.0,
+        64.0,
+        64.0
+      ],
+      "overlap_nonblack_windows_q10_median_q90": [
+        155.0,
+        217.0,
+        279.0
+      ],
+      "native_nonblack_fraction_q10_median_q90": [
+        0.125,
+        0.25,
+        0.25
+      ],
+      "overlap_nonblack_fraction_q10_median_q90": [
+        0.16129032258064516,
+        0.22580645161290322,
+        0.2903225806451613
+      ]
+    },
+    "other_optical": {
+      "images": 2357,
+      "native_nonblack_windows_q10_median_q90": [
+        256.0,
+        256.0,
+        256.0
+      ],
+      "overlap_nonblack_windows_q10_median_q90": [
+        961.0,
+        961.0,
+        961.0
+      ],
+      "native_nonblack_fraction_q10_median_q90": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "overlap_nonblack_fraction_q10_median_q90": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "patch_kernel": 16,
+  "native_grid": [
+    16,
+    16
+  ],
+  "overlap_grid": [
+    31,
+    31
+  ],
+  "all_original_windows_preserved": true,
+  "direct_pixel_window_checks_passed": true,
+  "train_only": true,
+  "optimizer_steps": 0,
+  "gpu_used": false,
+  "interpretation": "Overlap adds sampling positions, not original pixels or an information-theoretic resolution guarantee. Exactly black windows still yield stem bias, positional and modality tokens; nonblack-window fraction is not attention allocation. More windows alone does not establish a training gain.",
+  "bindings": {
+    "source": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+    "split": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+    "analysis_script": "4693d096b9e0b9624b42fabc61a2e9334fa0de9ef6695aa91cef25b9d8d69950",
+    "gate_script": "47bf06d66e336edc991692826eaba9e47e71266d9c9cc9ac7ccbabe0906db15f"
+  }
+}

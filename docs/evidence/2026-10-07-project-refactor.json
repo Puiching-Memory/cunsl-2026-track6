@@ -1,0 +1,36 @@
+{
+  "scope": "CPU strict recovery and synthetic two-modality forward; not full holdout replay or GPU score verification",
+  "torch": "2.6.0+cpu",
+  "device": "cpu",
+  "checkpoint_sha256": "f7c8886d1bb904360fea877f130c7fcddccb2ef8fb34300933bebab0bbdbf6ed",
+  "selected_epoch": 53,
+  "recorded_validation_score": 0.5604962981404683,
+  "all_state_tensors_loaded_strictly": true,
+  "data_split_initialization_binding_verified": true,
+  "author_backbone_sha256": "ead8c662471121a1ffa8d827ebf1c652fca0375326184a327c3e9622e184e6bd",
+  "synthetic_features_shape": [
+    2,
+    768
+  ],
+  "synthetic_features_finite": true,
+  "trained": false,
+  "leaderboard_submitted": false,
+  "gpu_started": false,
+  "gpu_numerical_replay_verified": false,
+  "tests": {
+    "run": 46,
+    "passed": 43,
+    "skipped": 3,
+    "skip_reason": "Linux shared GPU locks on Windows"
+  },
+  "source_focus": "TransOSS only; DINO implementations removed; historical research retained in docs",
+  "configuration": "configs/transoss.toml actually loaded; CLI overrides validated",
+  "pipeline_regressions": [
+    "paired sampler excludes holdout and preserves modality/identity order",
+    "epoch zero wins tied retrieval; later BN updates are rolled back",
+    "full model replay creates no optimizer",
+    "prediction structure and independent scalar metrics agree",
+    "checkpoint/data/split/initialization binding and artifact tampering rejected"
+  ],
+  "runtime_dino_implementation_references": 0
+}

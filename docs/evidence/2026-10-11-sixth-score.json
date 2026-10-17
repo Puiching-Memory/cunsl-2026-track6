@@ -1,0 +1,17 @@
+{
+  "version": "V6",
+  "source": "Visible official submission record in logged-in Edge",
+  "url": "https://www.heywhale.com/org/cunsl/competition/area/6aba33ce6e5beff2fca53add/submit",
+  "submitted_at_site": "2026/10/11 20:30",
+  "observed_at_utc": "2026-10-11T12:34:22.639520+00:00",
+  "status": "已评审",
+  "official_public_score": 0.7176979442239859,
+  "previous_v5_public_score": 0.7185908013668432,
+  "delta_vs_v5": -0.0008928571428572507,
+  "relative_change_vs_v5": -0.0012425112333179777,
+  "best_version": "V5",
+  "prediction_sha256": "97ef995f3e252888864a460f49d5601f603c40010806bc198d7a490dd2731770",
+  "screenshot_sha256": "6b3a3e872c24f8df9b206d2d37a7fa144c8fde140ab249d7290feb7d4ab81cf0",
+  "dom_receipt_sha256": "7d3e9b759a689dc2dc942d18c296d1b12c66c26b4da087996cb58c07fffc1e5b",
+  "scope": "Official total confirms this fixed V6 did not improve V5; no direction or per-query labels, cannot attribute regression to an individual component."
+}

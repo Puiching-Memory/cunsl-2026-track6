@@ -1,0 +1,38 @@
+{
+  "scope": "Independent scalar query-by-query reconstruction from saved raw CLS; still TRAIN mechanism, not generalization",
+  "training_pool_rebuilt_from_pixels": true,
+  "record_identity_partition_and_modality_verified": true,
+  "all_real_pool_observations_verified": true,
+  "both_model_metadata_identical": true,
+  "summary_and_per_identity_values_verified": true,
+  "models": {
+    "control": {
+      "mean_class_centroid_l2": 0.4477284824288762,
+      "mean_class_equal_best_positive_cosine": 0.8913364773875359,
+      "mean_class_equal_hardest_negative_cosine": 0.8571879381550203,
+      "mean_class_equal_cosine_margin": 0.034148539232515464,
+      "mean_class_equal_cosine_top1": 0.8676046176046176,
+      "mean_class_equal_optical_centroid_radius": 0.9935362679576896,
+      "mean_class_equal_sar_centroid_radius": 0.9977310659305875,
+      "mean_class_equal_cross_modal_centroid_cosine": 0.8974403959679573
+    },
+    "mean_alignment": {
+      "mean_class_centroid_l2": 0.16069125358278805,
+      "mean_class_equal_best_positive_cosine": 0.9859344314615758,
+      "mean_class_equal_hardest_negative_cosine": 0.9805782899822234,
+      "mean_class_equal_cosine_margin": 0.005356141479352404,
+      "mean_class_equal_cosine_top1": 0.8593073593073594,
+      "mean_class_equal_optical_centroid_radius": 0.9990655324669059,
+      "mean_class_equal_sar_centroid_radius": 0.9996684436219125,
+      "mean_class_equal_cross_modal_centroid_cosine": 0.9868779878638091
+    }
+  },
+  "bindings": {
+    "report": "a67b8a22df3b5c1cb1573b0c7cd4c9c37590c5f1178a04ecd89c2531efe4db28",
+    "script": "c2f3b5292d3ef8f26a3604c3336c0ce0ae4f9cca782d58c2addbbcf8a7b8a98d",
+    "features": {
+      "control": "3c277a81b8f30f9785a79893e457c9f98da8eb9cc5de4d0d3ee75c0b8dca32d0",
+      "mean_alignment": "fbe1b417d29d3f3f52b1139209bc6e745f6a8b4ebb59c42887e53dc30e357c24"
+    }
+  }
+}

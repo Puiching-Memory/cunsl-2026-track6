@@ -1,0 +1,66 @@
+{
+  "name": "TransOSS ViT-B/16 optical-SAR scene-pair pretraining",
+  "variant": "vit_base_patch16_224_TransOSS-paired",
+  "cutoff": "2026-09-01",
+  "reviewed_at": "2026-10-07",
+  "use": "Paired scene initialization for author TransOSS contest adaptation; full download, strict GPU loading and local holdout training verified",
+  "public_before_cutoff_reviewed": true,
+  "code": {
+    "repository": "https://github.com/Alioth2000/Hoss-ReID",
+    "commit": "bd9b9028e8690c0929ada06beead500acde19aca",
+    "public_by": "2025-12-07",
+    "license": "MIT",
+    "license_reviewed": true,
+    "license_url": "https://github.com/Alioth2000/Hoss-ReID/blob/bd9b9028e8690c0929ada06beead500acde19aca/LICENSE",
+    "license_sha256": "97f2a7c116c0720e9e54186a15762fa3674c64c66af063222d2459f02a9c2b3c",
+    "vendored_backbone": "track6/vendor/transoss_backbone.py",
+    "vendored_backbone_sha256": "ead8c662471121a1ffa8d827ebf1c652fca0375326184a327c3e9622e184e6bd",
+    "review_evidence": "../docs/evidence/2026-10-01-domain-sources.json"
+  },
+  "weights": {
+    "repository": "Alioth2000/TransOSS",
+    "revision": "fb4403a0caadc4dcdf7cef394469caba5c2387d4",
+    "url": "https://huggingface.co/Alioth2000/TransOSS/resolve/fb4403a0caadc4dcdf7cef394469caba5c2387d4/vit_b512_pre.pth",
+    "public_url_present_by": "2025-07-03",
+    "date_evidence": "https://huggingface.co/Alioth2000/TransOSS/commits/main",
+    "license": "CC-BY-4.0 (author model repository declaration)",
+    "license_reviewed": true,
+    "license_evidence": "https://huggingface.co/Alioth2000/TransOSS/tree/fb4403a0caadc4dcdf7cef394469caba5c2387d4",
+    "license_terms": "https://creativecommons.org/licenses/by/4.0/",
+    "sha256": "bd8f1dd35cfb6bc6c2a111fa3f8e4a415bfe6e04231aab7cf0f076a97bc2b5f9",
+    "bytes": 348477907,
+    "format": "PyTorch checkpoint; use torch.load(weights_only=True), never unrestricted pickle execution",
+    "public_ungated": true
+  },
+  "attribution": "Han Wang et al., Cross-modal Ship Re-Identification via Optical and SAR Imagery: A Novel Dataset and Method, ICCV 2025; https://github.com/Alioth2000/Hoss-ReID",
+  "training_provenance": "Author describes SEN1-2/DFC23 scene-pair pretraining initialized from ImageNet ViT. This is vit_b512_pre.pth, not HOSS_TransOSS.pth trained with ship identities. Exact checkpoint training data not independently audited.",
+  "integration_constraints": [
+    "Use the reviewed author ViT architecture and strictly load every backbone tensor.",
+    "Use modality information supplied by task.json; do not infer it from grayscale appearance.",
+    "Disable physical size/GSD embeddings; competition images do not provide valid physical metadata.",
+    "Disclose source, fixed version, license, attribution and changes in reproduction materials.",
+    "Do not import HOSS hidden/test identity annotations or use identity-trained checkpoints without checking data overlap and rules."
+  ],
+  "download_verified": {
+    "full_file_sha256_matches": true,
+    "bytes": 348477907,
+    "transport": "public mirror ranged download, incomplete ranges repaired in 1 MiB pieces",
+    "metadata_inspection_only": "pickle opcodes inspected without executing pickle; pos_embed shape 1x129x768, both patch stems and mie_embed present",
+    "torch_load_or_training_completed": true
+  },
+  "integration_verified": {
+    "date": "2026-10-07",
+    "backbone_load": "all backbone tensors loaded strictly with weights_only=True",
+    "position_grid_adaptation": "16x8 to 16x16 bilinear interpolation; no physical-scale metadata",
+    "training_epochs": 73,
+    "selected_epoch": 53,
+    "local_weighted_score": 0.5604962981404683,
+    "checkpoint_replay_verified": true,
+    "independent_metric_verification_passed": true,
+    "evidence": "../docs/evidence/2026-10-07-transoss.json",
+    "leaderboard_submitted": true,
+    "official_public_score": 0.5144077656525573,
+    "official_evidence": "../docs/evidence/2026-10-07-third-submission.json"
+  },
+  "eligibility_scope": "Reviewed public dates, declared licenses and actual strict architecture loading; local holdout score is not an official competition score or organizer-specific resource approval."
+}

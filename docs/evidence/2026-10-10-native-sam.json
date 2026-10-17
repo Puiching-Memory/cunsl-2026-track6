@@ -1,0 +1,60 @@
+{
+  "scope": "Single-seed standard SAM vs native full objective; reused local validation, no official score",
+  "models": {
+    "native": {
+      "selected_epoch": 8,
+      "full": 0.6411772371827519,
+      "development_joint": 0.8704555789262821,
+      "reporting_joint": 0.8551016772073414,
+      "original40_joint": 0.8526030657517637,
+      "hard27_accuracy": 0.5703703703703704,
+      "source93_accuracy": 0.9311827956989247
+    },
+    "sam": {
+      "selected_epoch": 8,
+      "full": 0.6399769904173791,
+      "development_joint": 0.8684804859203299,
+      "reporting_joint": 0.8665818948412699,
+      "original40_joint": 0.8598889009452162,
+      "hard27_accuracy": 0.6111111111111112,
+      "source93_accuracy": 0.9341397849462365
+    }
+  },
+  "sam_minus_native": {
+    "full": -0.001200246765372781,
+    "development_joint": -0.001975093005952222,
+    "reporting_joint": 0.01148021763392848,
+    "original40_joint": 0.0072858351934524945,
+    "hard27_accuracy": 0.040740740740740744,
+    "source93_accuracy": 0.002956989247311803
+  },
+  "original40_paired_scene_changes": {
+    "improved": 25,
+    "equal": 4,
+    "worse": 11,
+    "median": 0.006282738095238161,
+    "minimum": -0.03191220238095216,
+    "maximum": 0.036794642857142845,
+    "scope": "Overlapping reused cohorts; descriptive counts, not independent samples or a confidence interval"
+  },
+  "historical_native_stopping_replay": {
+    "epochs": 16,
+    "selected_epoch": 8
+  },
+  "zero_radius_gpu_replay_exact": true,
+  "latest_training_state_verified": true,
+  "batchnorm_updates": 928,
+  "sam_epochs": 16,
+  "sam_radius": 0.05,
+  "mean_training_perturbation_loss_gap": 0.6872279619605377,
+  "fraction_perturbation_gap_positive": 1.0,
+  "seconds": 1354.2350000000442,
+  "peak_allocated_mib": 1937.07763671875,
+  "limitations": "One fixed radius and seed; native control is a bound historical trajectory replayed under identical stopping rules, not a new concurrent arm. Same views, loss, optimizers and outer update counts per epoch; SAM adds a second forward/backward. Local validation extensively reused. Training perturbation gap is parameterization-dependent and not a generalization certificate.",
+  "bindings": {
+    "report": "49a816d7838090bc2ae725021f3ff4db649707c7d255ebdb99739428556790a3",
+    "zero_replay": "fdb96c2601e215e3305ddcdcce2320411a9114ac2cd5928fccbbd36cf1c0238d",
+    "historical_report": "754dea78928517c337fe2dbc8483959287eac19624b464a36c93e2c7a75cf221",
+    "analysis_script": "6718bf045b534ff10adeb8f620485998d00c546e1b03bab765e1bfc597d87ac0"
+  }
+}

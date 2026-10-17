@@ -1,0 +1,61 @@
+{
+  "scope": "One-seed matched first-order identity-meta vs pair-only control, reused local validation; no official score",
+  "models": {
+    "control": {
+      "selected_epoch": 18,
+      "completed_epochs": 24,
+      "full": 0.6401481297064281,
+      "development_joint": 0.8632439531822345,
+      "reporting_joint": 0.8443447296626981,
+      "original40_joint": 0.8378261033261684,
+      "hard27_accuracy": 0.4962962962962963,
+      "transfer": {
+        "probes": 192,
+        "mean_change": 0.0,
+        "fraction_improved": 0.0,
+        "first_epoch_mean_change": 0.0
+      },
+      "seconds": 1211.4219999999914,
+      "peak_allocated_mib": 1939.75146484375,
+      "report_sha256": "669ebf372bb35579e8f15cba690c838dc71394a6abae617f5aca98cbc64e2e75"
+    },
+    "meta": {
+      "selected_epoch": 18,
+      "completed_epochs": 24,
+      "full": 0.637382877772321,
+      "development_joint": 0.8652541466346152,
+      "reporting_joint": 0.8452246124751983,
+      "original40_joint": 0.8375083019868829,
+      "hard27_accuracy": 0.49444444444444446,
+      "transfer": {
+        "probes": 192,
+        "mean_change": 0.0018828734755516052,
+        "fraction_improved": 0.453125,
+        "first_epoch_mean_change": -0.03544391691684723
+      },
+      "seconds": 1226.7649999999558,
+      "peak_allocated_mib": 2237.36181640625,
+      "report_sha256": "c41eaaf67564e3d3f0a74f4c6cc7671764716d0aeb1f45697e698bfcf8163c91"
+    }
+  },
+  "meta_minus_control": {
+    "full": -0.002765251934107038,
+    "development_joint": 0.0020101934523807374,
+    "reporting_joint": 0.0008798828125001767,
+    "original40_joint": -0.00031780133928549503,
+    "hard27_accuracy": -0.0018518518518518268
+  },
+  "sampling_prefix_exact": true,
+  "frozen_classifier_bn_exact": true,
+  "original40_paired_scene_changes": {
+    "improved": 14,
+    "equal": 12,
+    "worse": 14,
+    "median": 0.0,
+    "minimum": -0.031260416666666346,
+    "maximum": 0.029060763888888896,
+    "scope": "Overlapping reused cohorts; descriptive paired counts, not independent samples or a confidence interval"
+  },
+  "limitations": "TRAIN B is used in the outer objective and initial model already saw TRAIN identities; before/after improvement does not prove unseen-identity generalization. First-order approximation. Historical full native objective differs. Validation reused extensively.",
+  "analysis_script_sha256": "2c5043071c3bc09215319f6fae0cfab5946e5ba6a6dd70d71d01bb32e9fede4b"
+}

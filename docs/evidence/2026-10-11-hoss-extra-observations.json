@@ -1,0 +1,25 @@
+{
+  "scope": "Member-name census for already exact TRAIN optical-mapped source identities",
+  "mapped_source_training_identities": 114,
+  "source_training_views": {
+    "optical": 245,
+    "sar": 152
+  },
+  "candidate_extra_views": {
+    "optical": 0,
+    "sar": 1
+  },
+  "identities_with_extra_views": 1,
+  "source_query_test_pixels_read": false,
+  "contest_validation_test_pixels_read": false,
+  "source_pixels_read": false,
+  "identity_transfer_into_training": false,
+  "limitation": "A filename candidate is not an audited usable image. Only the114 already mapped source TRAIN identities; does not rule out other external training data or unidentified source identities.",
+  "bindings": {
+    "archive": "49c9c81d017c7d5a937a8237f4ae92ad4a314ad7bb19eaeb9c4a4c52216d8955",
+    "optical_matches": "e675d1da341ac630258a88aa5303ef2069b74b567c5069b7e7af328f449c66aa",
+    "sar_matches": "6e52018ef0f8ebf1b02ff9b4001fc3d1b3fc33bde93560f99216842d9e0c7c6e",
+    "original_source_report": "3f26a7fab553185d69dad69af7d0fb950c9687670316203440603a93ab50cee8",
+    "script": "559c7fd6ada67f664b6922142f58cdd77e3971994fadbf69263b8a82e9e995c3"
+  }
+}

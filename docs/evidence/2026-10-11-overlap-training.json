@@ -1,0 +1,112 @@
+{
+  "scope": "Fixed single-seed overlapping-token pilot; reused local validation, no official result",
+  "models": {
+    "v5": {
+      "selected_epoch": 0,
+      "full": 0.645382706870627,
+      "development_joint": 0.854387572973901,
+      "reporting_joint": 0.8595548580109128,
+      "original40_joint": 0.8348002166694224,
+      "hard27_accuracy": 0.4759259259259259,
+      "source93_accuracy": 0.9266129032258065
+    },
+    "native_trained": {
+      "selected_epoch": 8,
+      "full": 0.6411772371827519,
+      "development_joint": 0.8704555789262821,
+      "reporting_joint": 0.8551016772073414,
+      "original40_joint": 0.8526030657517637,
+      "hard27_accuracy": 0.5703703703703704,
+      "source93_accuracy": 0.9311827956989247
+    },
+    "overlap_untrained": {
+      "selected_epoch": 0,
+      "full": 0.6440035385366267,
+      "development_joint": 0.8757834621108058,
+      "reporting_joint": null,
+      "original40_joint": 0.8397992680087082,
+      "hard27_accuracy": 0.5083333333333333,
+      "source93_accuracy": 0.9263440860215054
+    },
+    "overlap_trained": {
+      "selected_epoch": 9,
+      "full": 0.6542988691688796,
+      "development_joint": 0.8878020819024725,
+      "reporting_joint": 0.8601658513144841,
+      "original40_joint": 0.8611677513916446,
+      "hard27_accuracy": 0.6157407407407407,
+      "source93_accuracy": 0.9362903225806452
+    }
+  },
+  "overlap_minus_native": {
+    "full": 0.013121631986127702,
+    "development_joint": 0.017346502976190337,
+    "reporting_joint": 0.0050641741071426605,
+    "original40_joint": 0.008564685639880887,
+    "hard27_accuracy": 0.04537037037037028,
+    "source93_accuracy": 0.005107526881720448
+  },
+  "training_minus_frozen_overlap": {
+    "full": 0.010295330632252853,
+    "development_joint": 0.01201861979166663,
+    "original40_joint": 0.0213684833829364,
+    "hard27_accuracy": 0.1074074074074074,
+    "source93_accuracy": 0.009946236559139732
+  },
+  "preregistered_gate": {
+    "full_or_original40_gain_required": 0.03,
+    "maximum_other_metric_and_reporting_drop": 0.005,
+    "passed": false,
+    "reference": "Historical original full-model native expert, not V5"
+  },
+  "original40_paired_scene_changes": {
+    "improved": 27,
+    "equal": 0,
+    "worse": 13,
+    "median": 0.010876488095238168,
+    "scope": "Overlapping reused scenes, descriptive only"
+  },
+  "sampling_prefix_matches_native": true,
+  "native_stride16_v5_replay_exact": true,
+  "selected_bank_replayed_exactly": true,
+  "latest_training_state_verified": true,
+  "overlapping_selection": {
+    "selected": 9,
+    "best": 0.8878020819024725,
+    "last": 17,
+    "reference": 0.8878020819024725,
+    "stale": 8
+  },
+  "historical_native_stopping_replay": {
+    "selected": 8,
+    "best": 0.8704555789262821,
+    "last": 16,
+    "reference": 0.8704555789262821,
+    "stale": 8
+  },
+  "token_grids": {
+    "native": [
+      16,
+      16
+    ],
+    "overlap": [
+      31,
+      31
+    ]
+  },
+  "epochs": 17,
+  "optimizer_steps": 986,
+  "seconds": 4090.9839999999967,
+  "peak_allocated_mib": 7581.35791015625,
+  "limitations": "One seed; bound historical native trajectory rather than a new concurrent arm. Same input pixels, sampled identities/views/flips, objective, optimizers and parameter count; more tokens and altered odd-grid readout increase compute. Not a full TransReID/JPM reproduction. Only accepted optical rows replaced; other rows and native shortlist/O2O fixed. Validation repeatedly reused; no official forecast or significance certificate.",
+  "bindings": {
+    "report": "74cd37d51bcd7e29d031b5d4a80581b7629a0b8dec07c70253d500e3a673346d",
+    "protocol": "9617e812e1ba6c1b22627e29ec28b2c1a43be2461777de32ab0c6f4017399085",
+    "history": "35a41be5c2a895d430d900b47741dfaa98ff3411e21b27f08c3f5d65fe95bb4b",
+    "verification": "0453a2262db239e1fd06dcb00b343d4d716c6b2df2522bb2f05929578bb11689",
+    "checkpoint": "b7b73dbf13ee5182e727237b2c295e7e2fa516c9f8114f88b910d1f03a67871c",
+    "historical_report": "754dea78928517c337fe2dbc8483959287eac19624b464a36c93e2c7a75cf221",
+    "historical_verification": "e3c6cb3f6dc77191e5b452def7e327f451cac3f7477f64b026e9e24058a68bb5",
+    "analysis_script": "84038bca871248a9e90768b598684b4b763f4d47dfe472eaa18c76092311d7d4"
+  }
+}

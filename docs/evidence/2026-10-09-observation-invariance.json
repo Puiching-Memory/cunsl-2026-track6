@@ -1,0 +1,150 @@
+{
+  "date": "2026-10-09",
+  "scope": "Matched full-backbone two-optical-view training; identity-disjoint but reused validation; fixed native candidate pools/O2O/tails/bridges; conditional cohorts are not official scores",
+  "official_best": 0.7185908013668432,
+  "training_data": {
+    "paired_identities": 2819,
+    "with_two_or_more_optical": 160,
+    "with_two_or_more_sar": 47
+  },
+  "prior_v5": {
+    "full_validation": 0.645382706870627,
+    "conditional_cohort_mean": 0.8348002166694224,
+    "observation_group_accuracy": {
+      "extra_27_optical": 0.4759259259259259,
+      "source_93_optical": 0.9266129032258065,
+      "extra_optical_fraction_of_errors": 0.6746126340882003
+    }
+  },
+  "runs": [
+    {
+      "mode": "augmented",
+      "selected_epoch": 0,
+      "development": 0.6359039433380246,
+      "full_validation": 0.645382706870627,
+      "full_gain_over_v5": 0.0,
+      "reused_reporting": 0.6531464341771993,
+      "reporting_gain_over_v5": 0.0,
+      "conditional_cohort_mean": 0.8348002166694224,
+      "cohort_gain_over_v5": 0.0,
+      "cohort_improved_equal_worse_over_v5": [
+        0,
+        40,
+        0
+      ],
+      "observation_group_accuracy": {
+        "extra_27_optical": 0.4759259259259259,
+        "source_93_optical": 0.9266129032258065,
+        "extra_optical_fraction_of_errors": 0.6746126340882003
+      },
+      "extra_group_gain_over_v5": 0.0,
+      "source_group_gain_over_v5": 0.0,
+      "passes_significant_gain_screen": false,
+      "optimizer_steps": 708,
+      "checkpoint_sha256": "8e6f51e33eddd5275cff572ab3fd65b5ec0b8313a5a0c7b40d614e476c75c8ca",
+      "seconds": 581.1089999999967,
+      "peak_allocated_mib": 2579.12890625,
+      "per_epoch_development": [
+        0.5669842094956941,
+        0.5690723042788635,
+        0.5684391042388299,
+        0.5762964878817729
+      ],
+      "per_epoch_training_loss": [
+        4.68757577400423,
+        3.8857139881047824,
+        3.599807014573092,
+        3.4240981165298634
+      ]
+    },
+    {
+      "mode": "unaugmented",
+      "selected_epoch": 3,
+      "development": 0.6405002414106983,
+      "full_validation": 0.6383444290595026,
+      "full_gain_over_v5": -0.007038277811124427,
+      "reused_reporting": 0.6344071890981711,
+      "reporting_gain_over_v5": -0.018739245079028244,
+      "conditional_cohort_mean": 0.8352352551118827,
+      "cohort_gain_over_v5": 0.0004350384424603032,
+      "cohort_improved_equal_worse_over_v5": [
+        19,
+        0,
+        21
+      ],
+      "observation_group_accuracy": {
+        "extra_27_optical": 0.49166666666666664,
+        "source_93_optical": 0.9236559139784947,
+        "extra_optical_fraction_of_errors": 0.65906362545018
+      },
+      "extra_group_gain_over_v5": 0.015740740740740722,
+      "source_group_gain_over_v5": -0.002956989247311803,
+      "passes_significant_gain_screen": false,
+      "optimizer_steps": 708,
+      "checkpoint_sha256": "ee4d98d00db22fd670e7e0130b32b1b565ca6365063ef9949d2655e1ef23e847",
+      "seconds": 574.5780000000086,
+      "peak_allocated_mib": 2578.82421875,
+      "per_epoch_development": [
+        0.6295378039955095,
+        0.6395072297230012,
+        0.6405002414106983,
+        0.6256610947737709
+      ],
+      "per_epoch_training_loss": [
+        1.8293789574655437,
+        1.4322938445934468,
+        1.2526107898539742,
+        1.1548159954238073
+      ]
+    }
+  ],
+  "augmented_minus_unaugmented": {
+    "full_validation": 0.007038277811124427,
+    "reused_reporting": 0.018739245079028244,
+    "conditional_cohort_mean": -0.00043503844246028933,
+    "extra_group_gain_over_v5": -0.015740740740740722,
+    "source_group_gain_over_v5": 0.002956989247311803
+  },
+  "decision": "Expand only if the prespecified large-gain and difficult-group gate passes; no automatic submission",
+  "checks": {
+    "all_4_epoch_samples_plans_and_708_updates_matched": true,
+    "both_initial_native_cls_nodes_and_v5_dense_banks_exact": true,
+    "both_saved_models_dense_replay_exact": true,
+    "classification_and_global_heads_unchanged": true,
+    "both_stems_and_first_block_gradients_verified": true,
+    "four_ranking_files_independently_scored": true,
+    "all_80_native_and_v5_cohort_controls_reproduced": true,
+    "observation_unit_tests_passed": 4
+  },
+  "bindings": {
+    "augmented": {
+      "script_sha256": "0a9a7546b67a4d6cdf7dd32b6b19375098d69ffbf4a87a906cb82615424b2c74",
+      "observation_module_sha256": "23d98a18bd572c4abefdcb0f9b402c9669aa13824f9073e0324fd5e48815b233",
+      "protocol_sha256": "ca00e0f65a2e690f2c2b8d78d50540e91c0ffcc0cf951b94be8c7634b32631d1"
+    },
+    "unaugmented": {
+      "script_sha256": "0a9a7546b67a4d6cdf7dd32b6b19375098d69ffbf4a87a906cb82615424b2c74",
+      "observation_module_sha256": "23d98a18bd572c4abefdcb0f9b402c9669aa13824f9073e0324fd5e48815b233",
+      "protocol_sha256": "1e87e119ecad58e39b22629d0611e5f1d0f2fb3909b52eb0280ae811780a769b"
+    }
+  },
+  "limitations": [
+    "Two-dimensional D4/resize/pad transformations do not simulate new physical camera/SAR geometry",
+    "Only 160 of 2819 training identities offer a second optical observation; most second views are synthetic versions",
+    "Short four-epoch pilot from a previously selected native checkpoint; not new pretraining from public initialization",
+    "Single matched seed; both validation halves repeatedly reused; shared hidden query identities not proven",
+    "Frozen identity classifier and global head, fixed original candidate pools and pipeline components constrain adaptation"
+  ],
+  "gpu_smoke": {
+    "seconds": 50.890999999974156,
+    "peak_allocated_mib": 2574.16015625,
+    "both_stems_and_first_block_gradients_verified": true,
+    "initial_all_native_cls_and_nodes_replayed_exactly": true
+  },
+  "first_smoke_failure": "Deterministic CUDA median-with-indices unsupported; stopped before optimizer steps, replaced by stable-sort lower median; determinism retained",
+  "paid_gpu_cost_yuan": 0,
+  "test_images_used": false,
+  "prediction_generated": false,
+  "leaderboard_submitted": false,
+  "summary_script_sha256": "8ad498ed72be24c35d8b5a745f8fba889d6a9fa33a90a9986ed0d0bda159df37"
+}

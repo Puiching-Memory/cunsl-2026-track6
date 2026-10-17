@@ -1,0 +1,145 @@
+{
+  "scope": "Preprocessing provenance and information-loss diagnostic; public HOSS TRAIN and contest TRAIN only",
+  "sar_source_training_images": 489,
+  "sar_sources_excluded_nodata": 5,
+  "sar_nodata_policy": "Five sources with negative values including -9999 excluded; nodata/interpolation suspected, conversion not inferred for them",
+  "sar_exact_matches": 151,
+  "sar_distinct_contest_images": 151,
+  "sar_source_identities": 113,
+  "sar_ids_with_optical_mapping": 113,
+  "sar_matches_with_optical_mapping": 151,
+  "sar_optical_identity_inconsistent": 0,
+  "sar_conversion": "Per-source-crop p0.5/p99.5 clip, linear scale, np.rint -> uint8, then PIL bilinear long-edge 256 and black pad",
+  "sar_conversion_discovery": "Fixed on first known training optical/SAR identity; unchanged validation of all HOSS TRAIN SAR",
+  "sar_quantile_summary": {
+    "scale": [
+      0.6153846153846154,
+      1.110634293242989,
+      1.3403141361256545,
+      1.8687127024722932,
+      5.12
+    ],
+    "unique_float": [
+      700.0,
+      3714.5,
+      5600.0,
+      9733.0,
+      38677.0
+    ],
+    "unique_uint8": [
+      129.0,
+      205.0,
+      227.0,
+      255.0,
+      256.0
+    ],
+    "quantized_zero_fraction": [
+      0.008384819064430714,
+      0.04551468151610603,
+      0.06988636363636364,
+      0.10048993928648184,
+      0.16518697874630078
+    ],
+    "quantized_255_fraction": [
+      0.00503711558854719,
+      0.005154639175257732,
+      0.005235602094240838,
+      0.005365507131808519,
+      0.005738880918220947
+    ],
+    "upper_tail_intensity_fraction": [
+      0.015416274234870147,
+      0.025640595483510588,
+      0.0456289395432152,
+      0.06257059876570133,
+      0.1625293043717936
+    ],
+    "clipped_excess_intensity_fraction": [
+      0.00011748211711243336,
+      0.0010768162463737395,
+      0.004824963975308442,
+      0.00950642977925662,
+      0.06346091089886816
+    ]
+  },
+  "optical_samples": 245,
+  "optical_quantile_summary": {
+    "original_width": [
+      17.0,
+      32.0,
+      42.0,
+      54.0,
+      125.0
+    ],
+    "original_height": [
+      68.0,
+      198.0,
+      284.0,
+      302.0,
+      678.0
+    ],
+    "scale": [
+      0.3775811209439528,
+      0.847682119205298,
+      0.9014084507042254,
+      1.292929292929293,
+      3.764705882352941
+    ],
+    "resized_width": [
+      22.0,
+      37.0,
+      44.0,
+      51.0,
+      85.0
+    ],
+    "resized_height": [
+      256.0,
+      256.0,
+      256.0,
+      256.0,
+      256.0
+    ],
+    "canvas_content_fraction": [
+      0.0859375,
+      0.14453125,
+      0.171875,
+      0.19921875,
+      0.33203125
+    ],
+    "patch_columns": [
+      2.0,
+      3.0,
+      3.0,
+      4.0,
+      6.0
+    ],
+    "downsample_area_ratio": [
+      0.1425675028932919,
+      0.7185649752203851,
+      0.8125371950009919,
+      1.0,
+      1.0
+    ]
+  },
+  "pixel_information_claim": "Intensity sum is a descriptive radiometric proxy, not calibrated electromagnetic energy or identity information",
+  "test_images_read": false,
+  "contest_validation_read": false,
+  "optimizer_steps": 0,
+  "submission_generated": false,
+  "inputs_sha256": {
+    "hoss": "49c9c81d017c7d5a937a8237f4ae92ad4a314ad7bb19eaeb9c4a4c52216d8955",
+    "split": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+    "prior_optical_matches": "e675d1da341ac630258a88aa5303ef2069b74b567c5069b7e7af328f449c66aa"
+  },
+  "script_sha256": "fb4318a8eaa8e940024a6fe3e0365b5a9502c16bc99b65adeb84590f5c0f2857",
+  "figure_sha256": "4df964b4c5997ca36ff74f426513471dc75e6c6161eefdccb34f5f74927df08c",
+  "independent_verification": {
+    "independently_verified_exact_sar": 151,
+    "external_train_only": true,
+    "contest_train_only": true,
+    "implementation": "np.quantile + ImageOps.contain + independent PIL canvas",
+    "audit_report_sha256": "61bea5430dd47557a21e073a38eda139253302f1af535c32269cb95986e2fd3b"
+  },
+  "audit_report_sha256": "61bea5430dd47557a21e073a38eda139253302f1af535c32269cb95986e2fd3b",
+  "independent_verification_sha256": "10a552dc5428221fd844d7a6180b586fa2df66f946e0ed91dabe86bb01834e50"
+}

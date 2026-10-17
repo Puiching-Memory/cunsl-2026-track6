@@ -1,0 +1,105 @@
+{
+  "date": "2026-10-11",
+  "scope": "Primary-source method/ablation reading, existing local evidence review, research plan only",
+  "plan": "docs/38-literature-research-plan.md",
+  "new_training": false,
+  "new_model_results": false,
+  "gpu_used": false,
+  "paid_compute_used": false,
+  "test_pixels_used": false,
+  "submission_generated_or_uploaded": false,
+  "reading_claim": "Selected relevant full-text sections, not a claim that every page, appendix or implementation was reproduced",
+  "papers": [
+    {
+      "title": "Cross-modal Ship Re-Identification via Optical and SAR Imagery: A Novel Dataset and Method",
+      "url": "https://arxiv.org/html/2506.22027v1",
+      "reading": "Dataset/task description; architecture, auxiliary scale information and training; relevant baseline discussion",
+      "transfer": "Shared optical/SAR representation is a foundation; approximate GSD size and individual retrieval do not supply the contest's joint identity decision",
+      "limit": "No trustworthy physical-size input in contest preprocessing; paper score is not contest score"
+    },
+    {
+      "title": "MOS: Mitigating Optical-SAR Modality Gap for Cross-Modal Ship Re-Identification",
+      "url": "https://arxiv.org/html/2512.03404v1",
+      "reading": "Section 3 methods, class-wise alignment formulas and Table 3 ablation",
+      "hoss_s2o_rank1_percent": {"baseline": 29.9, "mcrl_only": 40.3, "generation_only": 32.8, "combined": 46.3},
+      "limit": "Local mean-only experiment is not full MOS; variance/std and norm conventions differ across derivation, final equation and previously reviewed author code"
+    },
+    {
+      "title": "Dual-Space Modality Consistency Learning for Universal Cross-Modal Re-Identification",
+      "url": "https://arxiv.org/html/2608.06943v1",
+      "reading": "Sections III-B and III-C, Gaussian statistics, diagonal covariance rationale and frequency-aware identity contrast",
+      "transfer": "Preserve identity separation when reducing modality discrepancy",
+      "limit": "Repeated augmentation does not create real multi-observation statistics; no new DSMCL training performed"
+    },
+    {
+      "title": "SuperGlue: Learning Feature Matching with Graph Neural Networks",
+      "url": "https://arxiv.org/pdf/1911.11763",
+      "reading": "Sections 3.1-3.3 and implementation/training description",
+      "transfer": "Contextual local correspondence, explicit unmatched dustbin and matchability",
+      "limit": "Original geometric correspondence supervision is unavailable here; proposed identity-supervised partial matching is an adaptation, not a reproduction"
+    },
+    {
+      "title": "Bayesian Estimation of Bipartite Matchings for Record Linkage",
+      "url": "https://arxiv.org/pdf/1601.06630",
+      "reading": "Pairwise linkage limitations, sections 4-5 joint matching model, uncertainty and partial decisions",
+      "transfer": "Dependent entity-link decisions and uncertainty propagation across conflicting candidates",
+      "limit": "Field comparison independence, priors and missing-data assumptions cannot be assumed for visual feature summaries; submission cannot abstain"
+    },
+    {
+      "title": "Learning a Neural Solver for Multiple Object Tracking",
+      "url": "https://arxiv.org/pdf/1912.07515",
+      "reading": "Sections 3.3-4, association edge prediction and constraint-aware message passing",
+      "transfer": "Learn candidate association from set context instead of only pair appearance",
+      "limit": "No temporal motion/position features or time-directed track constraints available or imported"
+    },
+    {
+      "title": "Smart Predict, then Optimize",
+      "url": "https://arxiv.org/html/1710.08005v4",
+      "reading": "Decision-loss motivation, section 3 SPO/SPO+ formulation and assumptions",
+      "transfer": "Judge predictions by downstream matching decisions rather than retrieval or score-error proxies",
+      "limit": "Identity labels are not a known true continuous cost distribution; theoretical consistency is not inherited"
+    },
+    {
+      "title": "Diagonal integration of multimodal single-cell data: potential pitfalls and paths forward",
+      "url": "https://www.nature.com/articles/s41467-022-31104-x",
+      "reading": "Manifold alignment setup, simulated incorrect alignments and partial prior knowledge sections",
+      "transfer": "Structural or modality alignment can admit semantically incorrect correspondences without trustworthy identity evidence",
+      "limit": "Comment with simulations in a different field; not direct empirical evidence of ship identifiability limits"
+    }
+  ],
+  "screened_not_used_as_full_method_evidence": [
+    {"title": "LightGlue", "url": "https://arxiv.org/abs/2306.13643", "reading": "Official abstract/intro search excerpt; attempted full text access unsuccessful"},
+    {"title": "RoMa", "url": "https://arxiv.org/abs/2305.15404", "reading": "Official abstract; attempted PDF access unsuccessful", "assets_used": false},
+    {"title": "Pamona", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8696097/", "reading": "Abstract/author repository screening; full article access blocked, not used as a reproduced method"}
+  ],
+  "local_evidence": [
+    "docs/26-set-pairing.md",
+    "docs/27-significant-gain-screen.md",
+    "docs/32-visual-observation-analysis.md",
+    "docs/34-domain-axial-matching.md",
+    "docs/36-v6-transfer-gap.md",
+    "docs/37-coverage-research.md",
+    "docs/evidence/2026-10-10-assignment-training.json",
+    "track6/local_pair_verifier.py"
+  ],
+  "hypotheses_not_established_causes": [
+    "Forced local correspondence may mix identity evidence with non-corresponding regions",
+    "Independent pair-score compression may omit useful candidate competition and gallery-observation uncertainty",
+    "Seen-identity easy TRAIN cohorts may not expose the errors faced on unseen identities"
+  ],
+  "synthetic_algebra_check": {
+    "seed": 20261011,
+    "matrices": 1000,
+    "square_size": 4,
+    "permutations_enumerated_per_matrix": 24,
+    "same_optimum_count": {"positive_affine_plus_row_column_bias": 1000, "row_log_softmax": 1000, "ten_log_sinkhorn_iterations": 1000},
+    "scope": "CPU standard-library numerical check of complete square assignment invariance; not contest data or a score prediction",
+    "limitations": "Not ordinary softmax probabilities, partial/rectangular matching, or a learned model changed by a training loss"
+  },
+  "confirmation_limits": [
+    "Existing sealed results have been opened and cannot be reused as untouched confirmation",
+    "The labelled corpus has already been studied; new partitions only provide conditional prospective retraining checks",
+    "Recorded identity/near-duplicate isolation is not independently verified acquisition-source isolation",
+    "No forecast of official 0.9 score or claim about leaderboard teams' undisclosed methods"
+  ]
+}

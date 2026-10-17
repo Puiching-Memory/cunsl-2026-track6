@@ -1,0 +1,380 @@
+{
+  "date": "2026-10-08",
+  "scope": "Frozen-CLS learned pair verifier, local GPU only",
+  "official_best_unchanged": 0.6699152061287479,
+  "extraction": {
+    "scope": "Frozen native TransOSS inference on audited training images only",
+    "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+    "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+    "checkpoint_sha256": "f7c8886d1bb904360fea877f130c7fcddccb2ef8fb34300933bebab0bbdbf6ed",
+    "features_sha256": "4218be7abc247bed22735e2b5a0b5a1a30d3b324469eaca8069dcb0a38e1c161",
+    "script_sha256": "f7f06b00c1a504af669c2bc5351be8f6efe008296912d91540b8e36d0345a9e1",
+    "images": 5926,
+    "identities": 2827,
+    "seconds": 41.421000000002095,
+    "peak_allocated_mib": 756.2109375,
+    "optimizer_steps": 0,
+    "torch": "2.12.1+cu130",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "test_images_read": false,
+    "validation_images_encoded": false
+  },
+  "pair_training": {
+    "scope": "Two-seed frozen-CLS pair-head pilot, original O2O rankings retained",
+    "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+    "script_sha256": "ed362ff9d7e56d7aa57791afef198e776266d02eed4fd42b8e0677c89cb6d99a",
+    "pair_module_sha256": "a4988b1b4b8523cf2b0e26a70ff0f1396893de3a25b030c669edcb74336c4297",
+    "protocol_sha256": "06dc4a7f41daa0e3ce22c93d0f3c5006e9413c58237d52a6ba6490404ee5593e",
+    "training_features_sha256": "4218be7abc247bed22735e2b5a0b5a1a30d3b324469eaca8069dcb0a38e1c161",
+    "validation_features_sha256": "d729f0842801eec08041bb01766c68132eaca0bff6354e3755fe42970ffc5947",
+    "baseline_full": {
+      "directions": {
+        "O2S": {
+          "queries": 765,
+          "R@1": 0.4562091503267974,
+          "mAP@10": 0.5903589583981741,
+          "score": 0.5232840543624857,
+          "max_relevant_in_gallery": 2
+        },
+        "S2O": {
+          "queries": 714,
+          "R@1": 0.45938375350140054,
+          "mAP@10": 0.5772194989106754,
+          "score": 0.5183016262060379,
+          "max_relevant_in_gallery": 3
+        },
+        "O2O": {
+          "queries": 44,
+          "R@1": 0.8863636363636364,
+          "mAP@10": 0.9147727272727273,
+          "score": 0.9005681818181819,
+          "max_relevant_in_gallery": 2
+        }
+      },
+      "weighted_score": 0.5587703744376539,
+      "ap_denominator": "min_relevant_k",
+      "official_scorer_confirmed": false,
+      "scope": "local identity-disjoint holdout; not a leaderboard result"
+    },
+    "baseline_development": {
+      "directions": {
+        "O2S": {
+          "queries": 387,
+          "R@1": 0.45478036175710596,
+          "mAP@10": 0.5874471924859521,
+          "score": 0.5211137771215291,
+          "max_relevant_in_gallery": 2
+        },
+        "S2O": {
+          "queries": 355,
+          "R@1": 0.428169014084507,
+          "mAP@10": 0.5486077576570534,
+          "score": 0.4883883858707802,
+          "max_relevant_in_gallery": 3
+        },
+        "O2O": {
+          "queries": 26,
+          "R@1": 0.9230769230769231,
+          "mAP@10": 0.9551282051282051,
+          "score": 0.9391025641025641,
+          "max_relevant_in_gallery": 2
+        }
+      },
+      "weighted_score": 0.5481862297567957
+    },
+    "baseline_confirmation": {
+      "directions": {
+        "O2S": {
+          "queries": 378,
+          "R@1": 0.4576719576719577,
+          "mAP@10": 0.5933400520702108,
+          "score": 0.5255060048710842,
+          "max_relevant_in_gallery": 2
+        },
+        "S2O": {
+          "queries": 359,
+          "R@1": 0.49025069637883006,
+          "mAP@10": 0.6055124463898837,
+          "score": 0.5478815713843569,
+          "max_relevant_in_gallery": 3
+        },
+        "O2O": {
+          "queries": 18,
+          "R@1": 0.8333333333333334,
+          "mAP@10": 0.8564814814814815,
+          "score": 0.8449074074074074,
+          "max_relevant_in_gallery": 2
+        }
+      },
+      "weighted_score": 0.5675151500556893
+    },
+    "runs": [
+      {
+        "seed": 20261008,
+        "selected_epoch": 24,
+        "development": 0.5693575194458342,
+        "confirmation": {
+          "directions": {
+            "O2S": {
+              "queries": 378,
+              "R@1": 0.455026455026455,
+              "mAP@10": 0.6002792475014698,
+              "score": 0.5276528512639624,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 359,
+              "R@1": 0.4986072423398329,
+              "mAP@10": 0.6199219613565017,
+              "score": 0.5592646018481673,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 18,
+              "R@1": 0.8333333333333334,
+              "mAP@10": 0.8564814814814815,
+              "score": 0.8449074074074074,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.5736035946411991
+        },
+        "full_validation": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.47058823529411764,
+              "mAP@10": 0.6045715323166303,
+              "score": 0.537579883805374,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.4733893557422969,
+              "mAP@10": 0.5954287270463741,
+              "score": 0.5344090413943354,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.8863636363636364,
+              "mAP@10": 0.9147727272727273,
+              "score": 0.9005681818181819,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.5724518345216875,
+          "ap_denominator": "min_relevant_k",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        },
+        "confirmation_delta": 0.0060884445855098335,
+        "full_delta": 0.013681460084033592,
+        "parameters": 205313,
+        "checkpoint_sha256": "e9b9dc05498f2264a33a64c280e40f34dfc8f15ae7f46156e97486872432c3d7",
+        "replay_verified": true
+      },
+      {
+        "seed": 20261009,
+        "selected_epoch": 21,
+        "development": 0.5682848557504838,
+        "confirmation": {
+          "directions": {
+            "O2S": {
+              "queries": 378,
+              "R@1": 0.47883597883597884,
+              "mAP@10": 0.6090010078105317,
+              "score": 0.5439184933232553,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 359,
+              "R@1": 0.4958217270194986,
+              "mAP@10": 0.6150423354114162,
+              "score": 0.5554320312154574,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 18,
+              "R@1": 0.8333333333333334,
+              "mAP@10": 0.8564814814814815,
+              "score": 0.8449074074074074,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.5791984767831615
+        },
+        "full_validation": {
+          "directions": {
+            "O2S": {
+              "queries": 765,
+              "R@1": 0.47843137254901963,
+              "mAP@10": 0.6052458761282291,
+              "score": 0.5418386243386244,
+              "max_relevant_in_gallery": 2
+            },
+            "S2O": {
+              "queries": 714,
+              "R@1": 0.47478991596638653,
+              "mAP@10": 0.5952308701258281,
+              "score": 0.5350103930461073,
+              "max_relevant_in_gallery": 3
+            },
+            "O2O": {
+              "queries": 44,
+              "R@1": 0.8863636363636364,
+              "mAP@10": 0.9147727272727273,
+              "score": 0.9005681818181819,
+              "max_relevant_in_gallery": 2
+            }
+          },
+          "weighted_score": 0.5746388760049475,
+          "ap_denominator": "min_relevant_k",
+          "official_scorer_confirmed": false,
+          "scope": "local identity-disjoint holdout; not a leaderboard result"
+        },
+        "confirmation_delta": 0.011683326727472187,
+        "full_delta": 0.01586850156729358,
+        "parameters": 205313,
+        "checkpoint_sha256": "c2c4879a8b69f797db355f6027359e3033d91bd01bf90ec5e9edc6983d111fa4",
+        "replay_verified": true
+      }
+    ],
+    "seconds": 64.09399999999732,
+    "peak_allocated_mib": 234.9052734375,
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "torch": "2.12.1+cu130",
+    "backbone_optimizer_steps": 0,
+    "test_images_scored": false,
+    "submission_generated": false,
+    "leaderboard_submitted": false,
+    "confirmation_limitation": "Pair-head selection holdout; backbone and past research used the full validation set"
+  },
+  "development_identity_count": 354,
+  "confirmation_identity_count": 353,
+  "scalar_checks": {
+    "20261008": {
+      "independent_scalar_score": 0.5724518345216875,
+      "matches_report": true,
+      "confirmation_gain_conditional_bootstrap_95": [
+        -0.010417258813611968,
+        0.02253935886431577
+      ],
+      "bootstrap_scope": "Fixed gallery, paired identity clusters; excludes earlier model/validation reuse and official distribution shift",
+      "top1_transitions": {
+        "O2S": {
+          "wrong_to_correct": 38,
+          "correct_to_wrong": 27
+        },
+        "S2O": {
+          "wrong_to_correct": 55,
+          "correct_to_wrong": 45
+        },
+        "O2O": {
+          "wrong_to_correct": 0,
+          "correct_to_wrong": 0
+        }
+      }
+    },
+    "20261009": {
+      "independent_scalar_score": 0.5746388760049476,
+      "matches_report": true,
+      "confirmation_gain_conditional_bootstrap_95": [
+        -0.003282311831212701,
+        0.027097946811696114
+      ],
+      "bootstrap_scope": "Fixed gallery, paired identity clusters; excludes earlier model/validation reuse and official distribution shift",
+      "top1_transitions": {
+        "O2S": {
+          "wrong_to_correct": 42,
+          "correct_to_wrong": 25
+        },
+        "S2O": {
+          "wrong_to_correct": 41,
+          "correct_to_wrong": 30
+        },
+        "O2O": {
+          "wrong_to_correct": 0,
+          "correct_to_wrong": 0
+        }
+      }
+    }
+  },
+  "cohort_summary": {
+    "native": {
+      "mean": 0.7910318293926367,
+      "mean_gain": 0.0,
+      "improved_equal_worse": [
+        0,
+        40,
+        0
+      ],
+      "pair_accuracy": 0.769375
+    },
+    "20261008": {
+      "mean": 0.7959548018628748,
+      "mean_gain": 0.004922972470238105,
+      "improved_equal_worse": [
+        21,
+        0,
+        19
+      ],
+      "pair_accuracy": 0.776875
+    },
+    "20261009": {
+      "mean": 0.802135354318232,
+      "mean_gain": 0.011103524925595238,
+      "improved_equal_worse": [
+        25,
+        0,
+        15
+      ],
+      "pair_accuracy": 0.7854166666666667
+    }
+  },
+  "all_40_existing_baselines_reproduced": true,
+  "confirmation_limitation": "Pair-head selection holdout; backbone and past research used the full validation set",
+  "cohort_scope": "Reused labelled validation, assumed shared 120 identities; fixed native tails and O2O bridges; not official score",
+  "checks": {
+    "new_unit_tests": 3,
+    "unit_tests_passed": true,
+    "ruff_passed": true,
+    "artifact_bindings_verified": true
+  },
+  "source_and_reports_sha256": {
+    "track6/pair_verifier.py": "a4988b1b4b8523cf2b0e26a70ff0f1396893de3a25b030c669edcb74336c4297",
+    "tools/extract_pair_training_features.py": "4d2da74ae1675cf8a92478429f794e720a68a5ef969b58bddf302a55630d8f45",
+    "tools/train_pair_verifier.py": "ed362ff9d7e56d7aa57791afef198e776266d02eed4fd42b8e0677c89cb6d99a",
+    "tools/study_pair_verifier.py": "0606d32ae0f1616c0838d72921ba3f823f23d922cf2495082f4a1ea27b6b21a6",
+    "tests/test_pair_verifier.py": "1f63a8e8bec2a1727c289a313edf6dded497fa2e989f2b70fc51d2e9f5e723a7",
+    "local/pair-verifier/cls-v1/report.json": "786be14a01ffb25a988a9e2cc7ea1048afd455cf88832a9a8ca9f2ddd1f240c3",
+    "local/pair-verifier/cls-v1/verification.json": "2d56b6d6091adb94a87b50c8fc8b38a955616f114f8d4ea39ddb18a4f0ed97ad"
+  },
+  "extraction_source_note": "Extraction source was Ruff-formatted after the run; runtime and current source SHA are separately retained.",
+  "completed_jobs": [
+    {
+      "record": "local\\local-gpu\\runs\\20261008T143445870128Z-pair-training-features\\manifest.json",
+      "state": "completed",
+      "elapsed_seconds": 51.71899999999732
+    },
+    {
+      "record": "local\\local-gpu\\runs\\20261008T143818790580Z-train-pair-verifier\\manifest.json",
+      "state": "completed",
+      "elapsed_seconds": 68.06200000000536
+    },
+    {
+      "record": "local\\local-gpu\\runs\\20261008T144056099250Z-pair-verifier-study\\manifest.json",
+      "state": "completed",
+      "elapsed_seconds": 8.860000000000582
+    },
+    {
+      "record": "local\\local-gpu\\runs\\20261008T144233744747Z-pair-verifier-verified-study\\manifest.json",
+      "state": "completed",
+      "elapsed_seconds": 8.421999999991385
+    }
+  ],
+  "paid_gpu_used": false,
+  "test_images_scored": false,
+  "prediction_generated": false,
+  "leaderboard_submitted": false
+}

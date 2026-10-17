@@ -1,0 +1,610 @@
+{
+  "validation_only": true,
+  "judges_independent_context_same_underlying_agent_model": true,
+  "protocol_sha256": "4fcf6ca258f9bbd98ca0e2f61d37d108a7f7c1cc298f20b3d38109b428728727",
+  "judge_answer_sha256": {
+    "a": "340cd08ff7f84d63e4e6811d8c25d53af50f98fb93140a94d59ab07b14bd3a3f",
+    "b": "6a9d3efd7fa8f963ca2632a97fe7f6f18e06a158d14771b1b1c31aed4bde1fe1",
+    "c": "a2bb6eb2c25d829e0f8c6f41af376f84857c31fdee7ece021fd6437e272f3152"
+  },
+  "overall": {
+    "n": 18,
+    "positive_present": 18,
+    "unanimous": 9,
+    "abstentions": {
+      "a": 10,
+      "b": 12,
+      "c": 10
+    },
+    "methods": {
+      "baseline": {
+        "correct": 16,
+        "total": 18,
+        "accuracy": 0.8888888888888888,
+        "rescued": 0,
+        "harmed": 0,
+        "changed": 0
+      },
+      "forced_majority": {
+        "correct": 9,
+        "total": 18,
+        "accuracy": 0.5,
+        "rescued": 1,
+        "harmed": 8,
+        "changed": 12
+      },
+      "conservative_fusion": {
+        "correct": 15,
+        "total": 18,
+        "accuracy": 0.8333333333333334,
+        "rescued": 1,
+        "harmed": 2,
+        "changed": 5
+      },
+      "judge_a": {
+        "correct": 9,
+        "total": 18,
+        "accuracy": 0.5,
+        "rescued": 1,
+        "harmed": 8,
+        "changed": 12
+      },
+      "judge_a_fallback": {
+        "correct": 15,
+        "total": 18,
+        "accuracy": 0.8333333333333334,
+        "rescued": 1,
+        "harmed": 2,
+        "changed": 5
+      },
+      "judge_b": {
+        "correct": 7,
+        "total": 18,
+        "accuracy": 0.3888888888888889,
+        "rescued": 1,
+        "harmed": 10,
+        "changed": 14
+      },
+      "judge_b_fallback": {
+        "correct": 15,
+        "total": 18,
+        "accuracy": 0.8333333333333334,
+        "rescued": 1,
+        "harmed": 2,
+        "changed": 5
+      },
+      "judge_c": {
+        "correct": 10,
+        "total": 18,
+        "accuracy": 0.5555555555555556,
+        "rescued": 2,
+        "harmed": 8,
+        "changed": 12
+      },
+      "judge_c_fallback": {
+        "correct": 15,
+        "total": 18,
+        "accuracy": 0.8333333333333334,
+        "rescued": 1,
+        "harmed": 2,
+        "changed": 5
+      }
+    }
+  },
+  "cross_modal": {
+    "n": 12,
+    "positive_present": 12,
+    "unanimous": 4,
+    "abstentions": {
+      "a": 10,
+      "b": 12,
+      "c": 9
+    },
+    "methods": {
+      "baseline": {
+        "correct": 11,
+        "total": 12,
+        "accuracy": 0.9166666666666666,
+        "rescued": 0,
+        "harmed": 0,
+        "changed": 0
+      },
+      "forced_majority": {
+        "correct": 4,
+        "total": 12,
+        "accuracy": 0.3333333333333333,
+        "rescued": 0,
+        "harmed": 7,
+        "changed": 8
+      },
+      "conservative_fusion": {
+        "correct": 10,
+        "total": 12,
+        "accuracy": 0.8333333333333334,
+        "rescued": 0,
+        "harmed": 1,
+        "changed": 1
+      },
+      "judge_a": {
+        "correct": 4,
+        "total": 12,
+        "accuracy": 0.3333333333333333,
+        "rescued": 0,
+        "harmed": 7,
+        "changed": 8
+      },
+      "judge_a_fallback": {
+        "correct": 10,
+        "total": 12,
+        "accuracy": 0.8333333333333334,
+        "rescued": 0,
+        "harmed": 1,
+        "changed": 1
+      },
+      "judge_b": {
+        "correct": 3,
+        "total": 12,
+        "accuracy": 0.25,
+        "rescued": 0,
+        "harmed": 8,
+        "changed": 9
+      },
+      "judge_b_fallback": {
+        "correct": 11,
+        "total": 12,
+        "accuracy": 0.9166666666666666,
+        "rescued": 0,
+        "harmed": 0,
+        "changed": 0
+      },
+      "judge_c": {
+        "correct": 5,
+        "total": 12,
+        "accuracy": 0.4166666666666667,
+        "rescued": 1,
+        "harmed": 7,
+        "changed": 8
+      },
+      "judge_c_fallback": {
+        "correct": 9,
+        "total": 12,
+        "accuracy": 0.75,
+        "rescued": 0,
+        "harmed": 2,
+        "changed": 2
+      }
+    }
+  },
+  "by_direction": {
+    "O2S": {
+      "n": 6,
+      "positive_present": 6,
+      "unanimous": 1,
+      "abstentions": {
+        "a": 5,
+        "b": 6,
+        "c": 4
+      },
+      "methods": {
+        "baseline": {
+          "correct": 6,
+          "total": 6,
+          "accuracy": 1.0,
+          "rescued": 0,
+          "harmed": 0,
+          "changed": 0
+        },
+        "forced_majority": {
+          "correct": 1,
+          "total": 6,
+          "accuracy": 0.16666666666666666,
+          "rescued": 0,
+          "harmed": 5,
+          "changed": 5
+        },
+        "conservative_fusion": {
+          "correct": 5,
+          "total": 6,
+          "accuracy": 0.8333333333333334,
+          "rescued": 0,
+          "harmed": 1,
+          "changed": 1
+        },
+        "judge_a": {
+          "correct": 1,
+          "total": 6,
+          "accuracy": 0.16666666666666666,
+          "rescued": 0,
+          "harmed": 5,
+          "changed": 5
+        },
+        "judge_a_fallback": {
+          "correct": 5,
+          "total": 6,
+          "accuracy": 0.8333333333333334,
+          "rescued": 0,
+          "harmed": 1,
+          "changed": 1
+        },
+        "judge_b": {
+          "correct": 1,
+          "total": 6,
+          "accuracy": 0.16666666666666666,
+          "rescued": 0,
+          "harmed": 5,
+          "changed": 5
+        },
+        "judge_b_fallback": {
+          "correct": 6,
+          "total": 6,
+          "accuracy": 1.0,
+          "rescued": 0,
+          "harmed": 0,
+          "changed": 0
+        },
+        "judge_c": {
+          "correct": 1,
+          "total": 6,
+          "accuracy": 0.16666666666666666,
+          "rescued": 0,
+          "harmed": 5,
+          "changed": 5
+        },
+        "judge_c_fallback": {
+          "correct": 4,
+          "total": 6,
+          "accuracy": 0.6666666666666666,
+          "rescued": 0,
+          "harmed": 2,
+          "changed": 2
+        }
+      }
+    },
+    "S2O": {
+      "n": 6,
+      "positive_present": 6,
+      "unanimous": 3,
+      "abstentions": {
+        "a": 5,
+        "b": 6,
+        "c": 5
+      },
+      "methods": {
+        "baseline": {
+          "correct": 5,
+          "total": 6,
+          "accuracy": 0.8333333333333334,
+          "rescued": 0,
+          "harmed": 0,
+          "changed": 0
+        },
+        "forced_majority": {
+          "correct": 3,
+          "total": 6,
+          "accuracy": 0.5,
+          "rescued": 0,
+          "harmed": 2,
+          "changed": 3
+        },
+        "conservative_fusion": {
+          "correct": 5,
+          "total": 6,
+          "accuracy": 0.8333333333333334,
+          "rescued": 0,
+          "harmed": 0,
+          "changed": 0
+        },
+        "judge_a": {
+          "correct": 3,
+          "total": 6,
+          "accuracy": 0.5,
+          "rescued": 0,
+          "harmed": 2,
+          "changed": 3
+        },
+        "judge_a_fallback": {
+          "correct": 5,
+          "total": 6,
+          "accuracy": 0.8333333333333334,
+          "rescued": 0,
+          "harmed": 0,
+          "changed": 0
+        },
+        "judge_b": {
+          "correct": 2,
+          "total": 6,
+          "accuracy": 0.3333333333333333,
+          "rescued": 0,
+          "harmed": 3,
+          "changed": 4
+        },
+        "judge_b_fallback": {
+          "correct": 5,
+          "total": 6,
+          "accuracy": 0.8333333333333334,
+          "rescued": 0,
+          "harmed": 0,
+          "changed": 0
+        },
+        "judge_c": {
+          "correct": 4,
+          "total": 6,
+          "accuracy": 0.6666666666666666,
+          "rescued": 1,
+          "harmed": 2,
+          "changed": 3
+        },
+        "judge_c_fallback": {
+          "correct": 5,
+          "total": 6,
+          "accuracy": 0.8333333333333334,
+          "rescued": 0,
+          "harmed": 0,
+          "changed": 0
+        }
+      }
+    },
+    "O2O": {
+      "n": 6,
+      "positive_present": 6,
+      "unanimous": 5,
+      "abstentions": {
+        "a": 0,
+        "b": 0,
+        "c": 1
+      },
+      "methods": {
+        "baseline": {
+          "correct": 5,
+          "total": 6,
+          "accuracy": 0.8333333333333334,
+          "rescued": 0,
+          "harmed": 0,
+          "changed": 0
+        },
+        "forced_majority": {
+          "correct": 5,
+          "total": 6,
+          "accuracy": 0.8333333333333334,
+          "rescued": 1,
+          "harmed": 1,
+          "changed": 4
+        },
+        "conservative_fusion": {
+          "correct": 5,
+          "total": 6,
+          "accuracy": 0.8333333333333334,
+          "rescued": 1,
+          "harmed": 1,
+          "changed": 4
+        },
+        "judge_a": {
+          "correct": 5,
+          "total": 6,
+          "accuracy": 0.8333333333333334,
+          "rescued": 1,
+          "harmed": 1,
+          "changed": 4
+        },
+        "judge_a_fallback": {
+          "correct": 5,
+          "total": 6,
+          "accuracy": 0.8333333333333334,
+          "rescued": 1,
+          "harmed": 1,
+          "changed": 4
+        },
+        "judge_b": {
+          "correct": 4,
+          "total": 6,
+          "accuracy": 0.6666666666666666,
+          "rescued": 1,
+          "harmed": 2,
+          "changed": 5
+        },
+        "judge_b_fallback": {
+          "correct": 4,
+          "total": 6,
+          "accuracy": 0.6666666666666666,
+          "rescued": 1,
+          "harmed": 2,
+          "changed": 5
+        },
+        "judge_c": {
+          "correct": 5,
+          "total": 6,
+          "accuracy": 0.8333333333333334,
+          "rescued": 1,
+          "harmed": 1,
+          "changed": 4
+        },
+        "judge_c_fallback": {
+          "correct": 6,
+          "total": 6,
+          "accuracy": 1.0,
+          "rescued": 1,
+          "harmed": 0,
+          "changed": 3
+        }
+      }
+    }
+  },
+  "by_stratum": {
+    "low_gap": {
+      "n": 9,
+      "positive_present": 9,
+      "unanimous": 6,
+      "abstentions": {
+        "a": 4,
+        "b": 6,
+        "c": 4
+      },
+      "methods": {
+        "baseline": {
+          "correct": 7,
+          "total": 9,
+          "accuracy": 0.7777777777777778,
+          "rescued": 0,
+          "harmed": 0,
+          "changed": 0
+        },
+        "forced_majority": {
+          "correct": 4,
+          "total": 9,
+          "accuracy": 0.4444444444444444,
+          "rescued": 1,
+          "harmed": 4,
+          "changed": 7
+        },
+        "conservative_fusion": {
+          "correct": 6,
+          "total": 9,
+          "accuracy": 0.6666666666666666,
+          "rescued": 1,
+          "harmed": 2,
+          "changed": 4
+        },
+        "judge_a": {
+          "correct": 4,
+          "total": 9,
+          "accuracy": 0.4444444444444444,
+          "rescued": 1,
+          "harmed": 4,
+          "changed": 7
+        },
+        "judge_a_fallback": {
+          "correct": 6,
+          "total": 9,
+          "accuracy": 0.6666666666666666,
+          "rescued": 1,
+          "harmed": 2,
+          "changed": 4
+        },
+        "judge_b": {
+          "correct": 5,
+          "total": 9,
+          "accuracy": 0.5555555555555556,
+          "rescued": 1,
+          "harmed": 3,
+          "changed": 6
+        },
+        "judge_b_fallback": {
+          "correct": 7,
+          "total": 9,
+          "accuracy": 0.7777777777777778,
+          "rescued": 1,
+          "harmed": 1,
+          "changed": 3
+        },
+        "judge_c": {
+          "correct": 5,
+          "total": 9,
+          "accuracy": 0.5555555555555556,
+          "rescued": 2,
+          "harmed": 4,
+          "changed": 7
+        },
+        "judge_c_fallback": {
+          "correct": 6,
+          "total": 9,
+          "accuracy": 0.6666666666666666,
+          "rescued": 1,
+          "harmed": 2,
+          "changed": 4
+        }
+      }
+    },
+    "random_remaining": {
+      "n": 9,
+      "positive_present": 9,
+      "unanimous": 3,
+      "abstentions": {
+        "a": 6,
+        "b": 6,
+        "c": 6
+      },
+      "methods": {
+        "baseline": {
+          "correct": 9,
+          "total": 9,
+          "accuracy": 1.0,
+          "rescued": 0,
+          "harmed": 0,
+          "changed": 0
+        },
+        "forced_majority": {
+          "correct": 5,
+          "total": 9,
+          "accuracy": 0.5555555555555556,
+          "rescued": 0,
+          "harmed": 4,
+          "changed": 5
+        },
+        "conservative_fusion": {
+          "correct": 9,
+          "total": 9,
+          "accuracy": 1.0,
+          "rescued": 0,
+          "harmed": 0,
+          "changed": 1
+        },
+        "judge_a": {
+          "correct": 5,
+          "total": 9,
+          "accuracy": 0.5555555555555556,
+          "rescued": 0,
+          "harmed": 4,
+          "changed": 5
+        },
+        "judge_a_fallback": {
+          "correct": 9,
+          "total": 9,
+          "accuracy": 1.0,
+          "rescued": 0,
+          "harmed": 0,
+          "changed": 1
+        },
+        "judge_b": {
+          "correct": 2,
+          "total": 9,
+          "accuracy": 0.2222222222222222,
+          "rescued": 0,
+          "harmed": 7,
+          "changed": 8
+        },
+        "judge_b_fallback": {
+          "correct": 8,
+          "total": 9,
+          "accuracy": 0.8888888888888888,
+          "rescued": 0,
+          "harmed": 1,
+          "changed": 2
+        },
+        "judge_c": {
+          "correct": 5,
+          "total": 9,
+          "accuracy": 0.5555555555555556,
+          "rescued": 0,
+          "harmed": 4,
+          "changed": 5
+        },
+        "judge_c_fallback": {
+          "correct": 9,
+          "total": 9,
+          "accuracy": 1.0,
+          "rescued": 0,
+          "harmed": 0,
+          "changed": 1
+        }
+      }
+    }
+  },
+  "limitations": [
+    "18 non-population cases; half selected by small raw row score gap, not assignment posterior uncertainty",
+    "reused validation identities; no independent generalization or official metric",
+    "O2O control baseline is native cosine, not full V5 O2O",
+    "independent rows do not enforce global matching feasibility",
+    "online agents are validation judges, not an authorized contest test prediction service",
+    "independent contexts are not independent model families; consensus may have correlated errors"
+  ]
+}

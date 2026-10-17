@@ -1,0 +1,21 @@
+{
+  "scope": "Exact source-transform reproduction; HOSS TRAIN optical -> contest TRAIN optical only",
+  "source_url": "https://zenodo.org/records/15860212",
+  "hoss_md5": "fc9d603e633235e1271a451f903a05fa",
+  "hoss_sha256": "49c9c81d017c7d5a937a8237f4ae92ad4a314ad7bb19eaeb9c4a4c52216d8955",
+  "source_training_optical": 574,
+  "contest_training_optical": 3052,
+  "exact_member_image_matches": 245,
+  "matched_distinct_contest_images": 245,
+  "matched_distinct_source_identities": 114,
+  "matched_distinct_contest_identities": 114,
+  "source_ids_with_multiple_contest_ids": 0,
+  "matched_roi_eligible": 245,
+  "procedure": "RGB, long edge 256, round short edge, PIL bilinear, floor-centered black canvas; all 196608 RGB bytes exact",
+  "discovery_scope": "Operator discovered on first high-correlation training candidate; applied unchanged to all source TRAIN optical images",
+  "external_query_test_pixels_read": false,
+  "contest_validation_test_pixels_read": false,
+  "identity_transfer": false,
+  "script_sha256": "b7478ef919ce42468041ae8759b8aa67ee0ba68557f673b9fbb5b0fd19e8a8de",
+  "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5"
+}

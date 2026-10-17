@@ -1,0 +1,83 @@
+{
+  "scope": "TRAIN only; fixed MOS alpha=5 denoising and real-observation availability, not a trained MCRL result",
+  "denoising": {
+    "all_train_sar": {
+      "images": 2874,
+      "zero_percentile5": 2874,
+      "no_positive_pixel_removal": 2874,
+      "maximum_already_255": 2848,
+      "exact_stretch_identity": 13,
+      "change_at_most_one_intensity_level": 2865,
+      "mean_absolute_pixel_change_q10_median_q90": [
+        0.04013519287109375,
+        0.09256744384765625,
+        0.190386962890625
+      ]
+    },
+    "current_462_identity_pool_sar": {
+      "images": 509,
+      "zero_percentile5": 509,
+      "no_positive_pixel_removal": 509,
+      "maximum_already_255": 483,
+      "exact_stretch_identity": 13,
+      "change_at_most_one_intensity_level": 500,
+      "mean_absolute_pixel_change_q10_median_q90": [
+        0.1131500244140625,
+        0.1790008544921875,
+        0.253790283203125
+      ]
+    }
+  },
+  "observations": {
+    "all_train_paired": {
+      "identities": 2819,
+      "distinct_optical_sar_views_capped_at_two": {
+        "1_optical_1_sar": 2657,
+        "1_optical_2_sar": 2,
+        "2_optical_1_sar": 115,
+        "2_optical_2_sar": 45
+      }
+    },
+    "current_pool": {
+      "identities": 462,
+      "distinct_optical_sar_views_capped_at_two": {
+        "1_optical_1_sar": 300,
+        "1_optical_2_sar": 2,
+        "2_optical_1_sar": 115,
+        "2_optical_2_sar": 45
+      }
+    }
+  },
+  "cached_native_cls_class_moments": {
+    "all_train_paired": {
+      "identities": 2819,
+      "mean_alignment_term": 0.5189563697515913,
+      "variance_alignment_term": 0.00018416091393266964,
+      "variance_fraction_of_unweighted_total": 0.0003547419302757586,
+      "both_singleton_variance_exactly_zero": true
+    },
+    "current_pool": {
+      "identities": 462,
+      "mean_alignment_term": 0.5346223459918935,
+      "variance_alignment_term": 0.001123700468346744,
+      "variance_fraction_of_unweighted_total": 0.002097449856646097,
+      "both_singleton_variance_exactly_zero": true
+    }
+  },
+  "moment_scope": "All distinct cached real TRAIN observations per identity, L2-normalized native TransOSS CLS. Not the actual 2-view stochastic training batch, not the new overlap model and not a trained CMAL result.",
+  "alpha_percent": 5,
+  "train_only": true,
+  "gpu_used": false,
+  "optimizer_steps": 0,
+  "independent_percentile_checks": true,
+  "reference": "https://github.com/yjzhao1019/MOS/blob/793dc39ef828bbd77c59570aa081389620345e06/datasets/bases.py",
+  "limitations": "No efficacy inference from pixel statistics alone. Black padding can make the lower percentile zero; remaining contrast stretch is distinct from removing positive SAR intensities. Real view counts do not include random flips or stochastic model variance. CMAL mean alignment remains available even for singleton identities. This does not reject MCRL training or adapted preprocessing, and alpha was not tuned on validation.",
+  "bindings": {
+    "source": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+    "split": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+    "script": "4e7d637f5657d286c692dbebc3a863cb7bd84543614775aab0127936fda0a12d",
+    "gate": "47bf06d66e336edc991692826eaba9e47e71266d9c9cc9ac7ccbabe0906db15f",
+    "cached_train_features": "4218be7abc247bed22735e2b5a0b5a1a30d3b324469eaca8069dcb0a38e1c161",
+    "cached_train_feature_report": "e606f233933efb72ba0c832e304dd11405d9c81bd77342433eb8ffb148b23898"
+  }
+}

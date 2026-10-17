@@ -1,0 +1,349 @@
+{
+  "recorded_at": "2026-10-09T20:23:36.385322+08:00",
+  "scope": "Significant-gain screen, fixed reused holdout and conditional 120-identity cohort simulations; no official prediction",
+  "current_official_best": 0.7185908013668432,
+  "screen_gate": {
+    "minimum_full_or_conditional_gain": 0.03,
+    "maximum_other_metric_or_reporting_regression": 0.005
+  },
+  "v5_head_full_validation": 0.645382706870627,
+  "v5_head_conditional_cohort": 0.8348002166694224,
+  "runs": [
+    {
+      "model": "local",
+      "seed": 20261009,
+      "grid": 8,
+      "selected_epoch": 12,
+      "selected_development": 0.65289876173159,
+      "full_validation": 0.6667706203693599,
+      "full_gain_over_v5_head": 0.021387913498732813,
+      "reused_reporting": 0.6790372588992266,
+      "reporting_gain_over_v5_head": 0.025890824722027306,
+      "conditional_cohort_mean": 0.8450258925126765,
+      "cohort_gain_over_v5_head": 0.010225675843253953,
+      "cohort_improved_equal_worse_over_v5_head": [
+        30,
+        0,
+        10
+      ],
+      "cohort_gain_min_max": [
+        -0.0497142857142856,
+        0.0705851934523809
+      ],
+      "cohort_pair_accuracy": 0.83875,
+      "parameters": 151330,
+      "optimizer_steps": 2136,
+      "checkpoint_sha256": "1f390de611a05224e424ebd0c1e6f707eecde35dd8739ecfd12cd4aa63bc8f91",
+      "passes_significant_gain_screen": false
+    },
+    {
+      "model": "cross",
+      "seed": 20261009,
+      "grid": 8,
+      "selected_epoch": 24,
+      "selected_development": 0.6753281708737817,
+      "full_validation": 0.6886412019353195,
+      "full_gain_over_v5_head": 0.04325849506469248,
+      "reused_reporting": 0.7002380116778992,
+      "reporting_gain_over_v5_head": 0.04709157750069992,
+      "conditional_cohort_mean": 0.8496521945960097,
+      "cohort_gain_over_v5_head": 0.014851977926587276,
+      "cohort_improved_equal_worse_over_v5_head": [
+        28,
+        1,
+        11
+      ],
+      "cohort_gain_min_max": [
+        -0.027078125000000064,
+        0.10067894345238093
+      ],
+      "cohort_pair_accuracy": 0.8452083333333333,
+      "parameters": 227106,
+      "optimizer_steps": 2136,
+      "checkpoint_sha256": "55c2097a263ec583e3df3ecb372155f402da744ea577e3dcebc8599cefe3fb82",
+      "passes_significant_gain_screen": true
+    }
+  ],
+  "checks": {
+    "same_24_epoch_training_samples": true,
+    "three_dense_controls_replay_exact": true,
+    "historical_global_control_exact": true,
+    "two_saved_models_dense_replay_exact": true,
+    "eight_rankings_independently_scalar_checked": true,
+    "both_40_native_baselines_exact": true,
+    "related_cpu_tests_passed": 6
+  },
+  "extraction": {
+    "seconds": 69.86000000001513,
+    "peak_allocated_mib": 811.2734375,
+    "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+    "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+    "checkpoint_sha256": "f7c8886d1bb904360fea877f130c7fcddccb2ef8fb34300933bebab0bbdbf6ed",
+    "script_sha256": "e5dadc0b0d1af477dc02ab715d79c1d8b723fc2706dfbfd9948aca82660f4b2a",
+    "grid": 8,
+    "parts": {
+      "training": {
+        "images": 5926,
+        "cls_replay_exact": true,
+        "global_features_sha256": "4218be7abc247bed22735e2b5a0b5a1a30d3b324469eaca8069dcb0a38e1c161",
+        "nodes_sha256": "90c924b923166fa5a49b468826e41ecb9dff07252b88c93598c7a969c8f987b0",
+        "ids_sha256": "412cb58326749c21e378a77cd15c23386f52c86f668a14364d8a97e017996799"
+      },
+      "validation": {
+        "images": 1483,
+        "cls_replay_exact": true,
+        "global_features_sha256": "d729f0842801eec08041bb01766c68132eaca0bff6354e3755fe42970ffc5947",
+        "nodes_sha256": "63bd6334eaa86090e9a571273a2abb2607dc9dedc7f1f4a150bc2a9a4703e23c",
+        "ids_sha256": "aaee29013621cda7ccf2f7bd729dce92cc9e15574c3472a8ef5398c92dc974b2"
+      }
+    }
+  },
+  "training": {
+    "local": {
+      "seconds": 153.57800000000861,
+      "peak_allocated_mib": 1399.6318359375,
+      "script_sha256": "8a7ef00c5f6e471faab90d98812f098141fa1b6d585d8c264b158cb3937ffc72",
+      "module_sha256": "c8396d2fd1d650c50b2ea9934ce0d002f53510d73ab57c9b0cf06c9f705d82ca",
+      "cross_pair_module_sha256": "465cf2b02539e8ef199af2c0c86c9f49b31ec183d0d006b193ccfbae40d21585",
+      "protocol_sha256": "b87f95dd49cc0e17f9df8e08e297b746c6eedf51c2618c351bed09aeb98a8b91"
+    },
+    "cross": {
+      "seconds": 277.51599999997416,
+      "peak_allocated_mib": 2064.798828125,
+      "script_sha256": "8a7ef00c5f6e471faab90d98812f098141fa1b6d585d8c264b158cb3937ffc72",
+      "module_sha256": "c8396d2fd1d650c50b2ea9934ce0d002f53510d73ab57c9b0cf06c9f705d82ca",
+      "cross_pair_module_sha256": "465cf2b02539e8ef199af2c0c86c9f49b31ec183d0d006b193ccfbae40d21585",
+      "protocol_sha256": "204f854b98838f4f404379a8fd3bd954db0df21501d9407f9773f2ecf26e36cb"
+    }
+  },
+  "paid_gpu_cost_yuan": 0,
+  "test_images_used": false,
+  "prediction_generated": false,
+  "leaderboard_submitted": false,
+  "research_sources": [
+    "https://arxiv.org/abs/2105.14432",
+    "https://github.com/ShengcaiLiao/TransMatcher"
+  ],
+  "summary_script_sha256": "280aeefedf021fa7029f273cc1358838e0c2e69de8a0e20c49b6bbd3353e2179",
+  "second_seed_confirmation": {
+    "seed": 20261008,
+    "selected_epoch": 18,
+    "full_validation": 0.6273857497544472,
+    "full_gain_over_own_v5_head": -0.015892686241163245,
+    "reused_reporting": 0.6385558686102111,
+    "conditional_cohort_mean": 0.8172585034997795,
+    "cohort_gain_over_own_v5_head": -0.018603955853174647,
+    "checkpoint_sha256": "9d177b30eed252be115295dc6479e202b34eea82b727331eccea7a735babdfc2",
+    "replay_exact": true,
+    "training_seconds": 271.2809999999881
+  },
+  "decision": "First-seed retrieval gain does not replicate; conditional gain is modest. Stop scaling this cross-interaction structure, prioritize directly adapting backbone representation.",
+  "full_candidate_ranking_research": {
+    "candidate/native": {
+      "mean": 0.8496521945960097,
+      "delta_vs_fifth_simulation": 0.014851977926587276,
+      "win_equal_loss": [
+        28,
+        1,
+        11
+      ]
+    },
+    "candidate/50": {
+      "mean": 0.8527259700176367,
+      "delta_vs_fifth_simulation": 0.01792575334821428,
+      "win_equal_loss": [
+        32,
+        0,
+        8
+      ]
+    },
+    "candidate/all": {
+      "mean": 0.8526216545414463,
+      "delta_vs_fifth_simulation": 0.017821437872023803,
+      "win_equal_loss": [
+        32,
+        0,
+        8
+      ]
+    }
+  },
+  "validation_label_component_interventions_not_deployable": {
+    "perfect_pairs_native_tails": 0.9582993362130733,
+    "perfect_bridges_candidate_pairs_native_tails": 0.8531883832120812,
+    "perfect_pairs_learned_tails": 0.9596076013420415,
+    "perfect_pairs_and_bridges_learned_tails": 0.9771343467537479
+  },
+  "oracle_interventions_are_not_strict_AP_upper_bounds": "Correct identity bridges choose the first legal same-identity gallery image, not an AP-maximizing oracle. Original O2O rankings remain fixed.",
+  "tail_checks": {
+    "all_120_previous_control_scores_replayed": true,
+    "tail_only_top1_unchanged_all_trials": true,
+    "independent_metric_checks": 27
+  },
+  "token_diversity_diagnostic": {
+    "scope": "32 paired validation identities for diagnostics; no training or test images",
+    "results": [
+      {
+        "seed": 20261009,
+        "pair_type": "true_identity_pairs",
+        "stages": [
+          {
+            "round": 0,
+            "optical": {
+              "mean_within_image_token_cosine": 0.13276073336601257,
+              "angular_diversity": 0.8672392666339874
+            },
+            "SAR": {
+              "mean_within_image_token_cosine": 0.1754530817270279,
+              "angular_diversity": 0.8245469182729721
+            }
+          },
+          {
+            "round": 1,
+            "optical": {
+              "mean_within_image_token_cosine": 0.2567104697227478,
+              "angular_diversity": 0.7432895302772522
+            },
+            "SAR": {
+              "mean_within_image_token_cosine": 0.2708352208137512,
+              "angular_diversity": 0.7291647791862488
+            }
+          },
+          {
+            "round": 2,
+            "optical": {
+              "mean_within_image_token_cosine": 0.47127440571784973,
+              "angular_diversity": 0.5287255942821503
+            },
+            "SAR": {
+              "mean_within_image_token_cosine": 0.5460162162780762,
+              "angular_diversity": 0.45398378372192383
+            }
+          }
+        ],
+        "checkpoint_sha256": "55c2097a263ec583e3df3ecb372155f402da744ea577e3dcebc8599cefe3fb82"
+      },
+      {
+        "seed": 20261009,
+        "pair_type": "different_identity_pairs",
+        "stages": [
+          {
+            "round": 0,
+            "optical": {
+              "mean_within_image_token_cosine": 0.13276073336601257,
+              "angular_diversity": 0.8672392666339874
+            },
+            "SAR": {
+              "mean_within_image_token_cosine": 0.1754530817270279,
+              "angular_diversity": 0.8245469182729721
+            }
+          },
+          {
+            "round": 1,
+            "optical": {
+              "mean_within_image_token_cosine": 0.27276086807250977,
+              "angular_diversity": 0.7272391319274902
+            },
+            "SAR": {
+              "mean_within_image_token_cosine": 0.25139129161834717,
+              "angular_diversity": 0.7486087083816528
+            }
+          },
+          {
+            "round": 2,
+            "optical": {
+              "mean_within_image_token_cosine": 0.4632691442966461,
+              "angular_diversity": 0.5367308557033539
+            },
+            "SAR": {
+              "mean_within_image_token_cosine": 0.5274227857589722,
+              "angular_diversity": 0.47257721424102783
+            }
+          }
+        ],
+        "checkpoint_sha256": "55c2097a263ec583e3df3ecb372155f402da744ea577e3dcebc8599cefe3fb82"
+      },
+      {
+        "seed": 20261008,
+        "pair_type": "true_identity_pairs",
+        "stages": [
+          {
+            "round": 0,
+            "optical": {
+              "mean_within_image_token_cosine": 0.1091080978512764,
+              "angular_diversity": 0.8908919021487236
+            },
+            "SAR": {
+              "mean_within_image_token_cosine": 0.26001957058906555,
+              "angular_diversity": 0.7399804294109344
+            }
+          },
+          {
+            "round": 1,
+            "optical": {
+              "mean_within_image_token_cosine": 0.2335701882839203,
+              "angular_diversity": 0.7664298117160797
+            },
+            "SAR": {
+              "mean_within_image_token_cosine": 0.2901953160762787,
+              "angular_diversity": 0.7098046839237213
+            }
+          },
+          {
+            "round": 2,
+            "optical": {
+              "mean_within_image_token_cosine": 0.321379154920578,
+              "angular_diversity": 0.678620845079422
+            },
+            "SAR": {
+              "mean_within_image_token_cosine": 0.3881678581237793,
+              "angular_diversity": 0.6118321418762207
+            }
+          }
+        ],
+        "checkpoint_sha256": "9d177b30eed252be115295dc6479e202b34eea82b727331eccea7a735babdfc2"
+      },
+      {
+        "seed": 20261008,
+        "pair_type": "different_identity_pairs",
+        "stages": [
+          {
+            "round": 0,
+            "optical": {
+              "mean_within_image_token_cosine": 0.1091080978512764,
+              "angular_diversity": 0.8908919021487236
+            },
+            "SAR": {
+              "mean_within_image_token_cosine": 0.26001957058906555,
+              "angular_diversity": 0.7399804294109344
+            }
+          },
+          {
+            "round": 1,
+            "optical": {
+              "mean_within_image_token_cosine": 0.2328706830739975,
+              "angular_diversity": 0.7671293169260025
+            },
+            "SAR": {
+              "mean_within_image_token_cosine": 0.3856929838657379,
+              "angular_diversity": 0.6143070161342621
+            }
+          },
+          {
+            "round": 2,
+            "optical": {
+              "mean_within_image_token_cosine": 0.3337464928627014,
+              "angular_diversity": 0.6662535071372986
+            },
+            "SAR": {
+              "mean_within_image_token_cosine": 0.5053388476371765,
+              "angular_diversity": 0.4946611523628235
+            }
+          }
+        ],
+        "checkpoint_sha256": "9d177b30eed252be115295dc6479e202b34eea82b727331eccea7a735babdfc2"
+      }
+    ],
+    "causal_proof": false
+  },
+  "oversmoothing_failure_hypothesis_supported": false
+}

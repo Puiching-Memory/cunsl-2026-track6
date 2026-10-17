@@ -1,0 +1,93 @@
+{
+  "date": "2026-10-09",
+  "scope": "Reused labelled validation; 40 shared-identity cohorts, original native tails/O2O; not official score",
+  "official_best": 0.7185908013668432,
+  "relation_diagnostic": {
+    "training": {
+      "identity_count": 2819,
+      "means": {
+        "raw_true_relation_correlation": 0.8644439905618799,
+        "centered_true_relation_correlation": 0.855645180764021,
+        "random_centered_relation_correlation": 0.001235198367556248
+      }
+    },
+    "validation": {
+      "identity_count": 703,
+      "means": {
+        "raw_true_relation_correlation": 0.7206921756962761,
+        "centered_true_relation_correlation": 0.7028749647128826,
+        "random_centered_relation_correlation": -0.003845728231416978
+      }
+    }
+  },
+  "diagnostic_script_sha256": "f94a9937ca29f1ec70e6188f65226eaf6fec32cead4af8f9eee5b8034339a195",
+  "runs": [
+    {
+      "mode": "combined",
+      "v5_mean": 0.8348002166694224,
+      "graph_mean": 0.837613953648589,
+      "gain_mean": 0.00281373697916667,
+      "improved_equal_worse": [
+        11,
+        26,
+        3
+      ],
+      "v5_pair_accuracy": 0.8252083333333333,
+      "graph_pair_accuracy": 0.828125,
+      "passes_initial_cohort_gain_gate": false,
+      "seconds": 9.03200000000652,
+      "script_sha256": "0c4cdcaa674d3f800942b509a1a16d7c177253e13a84c3dc22fb87634721155d",
+      "module_sha256": "f978103c9ddbf2d62a8bbb0784430430c8187bc71a29eee5b6b985f4c01b4e11",
+      "protocol_sha256": "e1c39c2ac9e58e5a5d6f75f3e1e03e1ba8b97965ce875e7efa231c446b2dfcc7",
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "total_changed_query_pairs": 54
+    },
+    {
+      "mode": "graph_only",
+      "v5_mean": 0.8348002166694224,
+      "graph_mean": 0.7978684644372795,
+      "gain_mean": -0.036931752232142866,
+      "improved_equal_worse": [
+        4,
+        0,
+        36
+      ],
+      "v5_pair_accuracy": 0.8252083333333333,
+      "graph_pair_accuracy": 0.7795833333333333,
+      "passes_initial_cohort_gain_gate": false,
+      "seconds": 71.14000000001397,
+      "script_sha256": "5c5893813aadac7c313bd7443719519074db653d4b4e15b940aa9f4186bea44d",
+      "module_sha256": "3b9c7e96e358cd2c079d2e3fe8423942906e772434648eb3496cb6e565bc4508",
+      "protocol_sha256": "232d777209974d9625d550a129e791c94b65bb409b9403be29f609a5ae9d9b8f",
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "total_changed_query_pairs": 503
+    }
+  ],
+  "checks": {
+    "all_80_v5_control_scores_and_pair_counts_reproduced": true,
+    "all_80_discrete_objectives_not_lower_than_v5": true,
+    "all_source_and_protocol_snapshot_hashes_matched": true,
+    "algorithm_tests_passed": 3
+  },
+  "input_sha256": {
+    "v5_score_bank": "d35dc817c415075af3f8fcac54241090e3c7eb7bfa2f1df3753067a6d09c53a6",
+    "native_features": "d729f0842801eec08041bb01766c68132eaca0bff6354e3755fe42970ffc5947"
+  },
+  "decision": "No significant gain. Do not expand the current native-cosine relation graph or generate a submission.",
+  "limitations": [
+    "High true relation correlation is a validation-label diagnostic, not deployable identity knowledge",
+    "Graph-only control was added after viewing combined pilot; not independent confirmation",
+    "FAQ-style local optimization is not exact; higher graph objective can prefer wrong identities",
+    "Only one graph representation and fixed coefficient tested; negative results do not rule out learned relation representations",
+    "No hidden cohort identity assumptions have been verified"
+  ],
+  "research_sources": [
+    "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0121002",
+    "https://docs.scipy.org/doc/scipy/reference/optimize.qap-faq.html"
+  ],
+  "test_images_used": false,
+  "prediction_generated": false,
+  "leaderboard_submitted": false,
+  "paid_gpu_cost_yuan": 0,
+  "summary_script_sha256": "2a2fa7a5b7de7d993f67ff5faf33630f6c8411f7c21d0ee3cbf222c375b6f3a6"
+}

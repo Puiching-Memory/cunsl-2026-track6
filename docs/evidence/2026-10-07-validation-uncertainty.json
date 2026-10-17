@@ -1,0 +1,63 @@
+{
+  "scope": "paired identity-cluster percentile bootstrap; fixed selected models, queries and galleries; descriptive sampling sensitivity only",
+  "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+  "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+  "rankings_sha256": {
+    "baseline": "9aa7800861286fc3c04717a598f0076b84c16e3cc107f084d4a62ce451da447f",
+    "hard": "44b7ce43429163beae62d2b673e385556e77c2962a72ab8384bc1bf4979627bb",
+    "joint": "a568564782a42cdc480097c1a6b415682880eeb9b6acfa81fb2ba3d8a56e5664",
+    "joint_local": "e404880a8f56abf78085456c5c8ae21d2b6aea226fec2ff11a17038025f621ca"
+  },
+  "excluded_uncertainty": [
+    "training seeds",
+    "epoch/model selection",
+    "repeated holdout tuning",
+    "gallery variation",
+    "hidden distribution shift",
+    "official scoring implementation"
+  ],
+  "seed": 20261007,
+  "repetitions": 10000,
+  "query_identity_clusters": 703,
+  "query_counts": {
+    "O2S": 765,
+    "S2O": 714,
+    "O2O": 44
+  },
+  "test_used": false,
+  "new_training": false,
+  "comparisons": {
+    "baseline -> hard": {
+      "observed_gain": 0.008442597493542875,
+      "conditional_95_percentile_interval": [
+        -0.004607170968294831,
+        0.021314976109050088
+      ],
+      "not_a_probability_of_official_improvement": true
+    },
+    "hard -> joint": {
+      "observed_gain": 0.0043542068342488464,
+      "conditional_95_percentile_interval": [
+        -0.010952315727749243,
+        0.019366674735926626
+      ],
+      "not_a_probability_of_official_improvement": true
+    },
+    "joint -> joint_local": {
+      "observed_gain": 0.006265085200746965,
+      "conditional_95_percentile_interval": [
+        0.001299187441703086,
+        0.011193019015900188
+      ],
+      "not_a_probability_of_official_improvement": true
+    },
+    "baseline -> joint_local": {
+      "observed_gain": 0.019061889528538687,
+      "conditional_95_percentile_interval": [
+        0.003003082526774321,
+        0.03556424294421645
+      ],
+      "not_a_probability_of_official_improvement": true
+    }
+  }
+}

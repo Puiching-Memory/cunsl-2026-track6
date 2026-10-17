@@ -1,0 +1,24 @@
+{
+  "audit_sha256": "f6f625e7b5c9f32562f74f61690b4b2b00e4bf49c3f4559936d004d52df9e48b",
+  "checked_manifests": [
+    "coverage-protocol",
+    "coverage-smoke",
+    "coverage-foundation",
+    "coverage-split-audit",
+    "coverage-specialist",
+    "coverage-full",
+    "coverage-sealed",
+    "coverage-publication-audit"
+  ],
+  "gpu_lock_reacquired_and_released": true,
+  "no_compute_process_at_closure": true,
+  "gpu_job_wall_seconds_including_cpu_io": 2261.4550000001327,
+  "trained_updates": 2800,
+  "peak_allocated_mib": 1585.42822265625,
+  "fixed_gate_passed": false,
+  "second_seed_run": false,
+  "hidden_test_pixels_used": false,
+  "leaderboard_submitted": false,
+  "paid_gpu_cost": 0,
+  "plots_visually_inspected": true
+}

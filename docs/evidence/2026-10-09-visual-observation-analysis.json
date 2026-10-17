@@ -1,0 +1,88 @@
+{
+  "scope": "Validation only; 40 existing conditional cohorts; fixed V5 predictions; no new independent test or official score",
+  "group_statistics": {
+    "held_multiple_O": {
+      "exposures": 1080,
+      "unique_identities": 44,
+      "correct": 514,
+      "accuracy": 0.4759259259259259,
+      "conditional_identity_cluster_interval_95": [
+        0.38455250308201794,
+        0.5679947395549088
+      ]
+    },
+    "source_multiple_O": {
+      "exposures": 98,
+      "unique_identities": 38,
+      "correct": 57,
+      "accuracy": 0.5816326530612245,
+      "conditional_identity_cluster_interval_95": [
+        0.44871794871794873,
+        0.7017543859649122
+      ]
+    },
+    "source_single_O": {
+      "exposures": 3622,
+      "unique_identities": 655,
+      "correct": 3390,
+      "accuracy": 0.9359469906129211,
+      "conditional_identity_cluster_interval_95": [
+        0.9224867262900741,
+        0.9484566691456011
+      ]
+    }
+  },
+  "margin_statistics": {
+    "held_multiple_O": {
+      "fraction_negative": 0.5851851851851851,
+      "median": -0.05055588483810425,
+      "quantiles_10_90": [
+        -0.3037107586860657,
+        0.22020787000656128
+      ],
+      "independent_top1_accuracy_same_120_candidates": 0.4148148148148148,
+      "assignment_wrong_to_correct_count": 154,
+      "assignment_correct_to_wrong_count": 88
+    },
+    "source_multiple_O": {
+      "fraction_negative": 0.4897959183673469,
+      "median": 0.012936457991600037,
+      "quantiles_10_90": [
+        -0.24181809425354003,
+        0.25155949592590326
+      ],
+      "independent_top1_accuracy_same_120_candidates": 0.5102040816326531,
+      "assignment_wrong_to_correct_count": 14,
+      "assignment_correct_to_wrong_count": 7
+    },
+    "source_single_O": {
+      "fraction_negative": 0.17117614577581447,
+      "median": 0.28280623257160187,
+      "quantiles_10_90": [
+        -0.11611786484718323,
+        0.82027867436409
+      ],
+      "independent_top1_accuracy_same_120_candidates": 0.8288238542241856,
+      "assignment_wrong_to_correct_count": 452,
+      "assignment_correct_to_wrong_count": 64
+    }
+  },
+  "cohort_correct_pair_counts_all_40_reproduced": true,
+  "bootstrap": {
+    "unit": "identity clusters across all reused cohorts",
+    "draws": 10000,
+    "seed": 20261009,
+    "limitation": "Conditions on fixed predictions and assignment contexts; excludes assignment interactions, model selection, validation reuse and official distribution shift"
+  },
+  "bindings": {
+    "plot_script_sha256": "fb8a996eeba02cd103d2ea43f87f42bb2bb954f8a737c22cd102746575a13067",
+    "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+    "score_bank_sha256": "d35dc817c415075af3f8fcac54241090e3c7eb7bfa2f1df3753067a6d09c53a6",
+    "baseline_sha256": "58c7b6026fd38843aaa1bc80d1187e1dab0f0b5e0a5a1664f7b0ebdc0f4f9552",
+    "view_evidence_sha256": "b5c8fa7e30920e58c2843e6df875d87dbc66f5a43a3df4162e91b7a6c3f23831",
+    "exposure_evidence_sha256": "14a334c73b819e7f08cc01fd6196b43b7d71bc27e285c19a77c8213699ad3aa4"
+  },
+  "test_images_used": false,
+  "training_started": false,
+  "submission_generated": false
+}

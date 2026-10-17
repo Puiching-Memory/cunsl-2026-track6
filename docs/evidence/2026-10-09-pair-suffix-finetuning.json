@@ -1,0 +1,132 @@
+{
+  "date": "2026-10-09",
+  "scope": "Identity-disjoint train/validation, repeatedly reused development and reporting; deployment-like cohorts assume shared 120 identities; local scores are not official scores",
+  "official_best": 0.7185908013668432,
+  "prior_v5_local": {
+    "full_validation": 0.645382706870627,
+    "development": 0.6359039433380246,
+    "reused_reporting": 0.6531464341771993,
+    "conditional_cohort_mean": 0.8348002166694224,
+    "checkpoint_sha256": "ae510bf0de7fd111e44223a5aae5e9e7d5c1a87a71c9b5450016851d234d5d77"
+  },
+  "runs": [
+    {
+      "mode": "joint",
+      "selected_epoch": 1,
+      "development": 0.6427678252730455,
+      "full_validation": 0.6459408301199269,
+      "full_gain_over_v5": 0.0005581232492998245,
+      "reused_reporting": 0.6474886818701484,
+      "reporting_gain_over_v5": -0.005657752307050901,
+      "conditional_cohort_mean": 0.8388878096753748,
+      "cohort_gain_over_v5": 0.004087593005952389,
+      "cohort_improved_equal_worse_over_v5": [
+        25,
+        0,
+        15
+      ],
+      "conditional_pair_accuracy": 0.831875,
+      "passes_significant_gain_screen": false,
+      "optimizer_steps": 1062,
+      "checkpoint_sha256": "4aff0740e662a382155d00d10682dbfc3994854c33468dcbeea523f754cd8582",
+      "seconds": 652.25,
+      "peak_allocated_mib": 4635.1513671875,
+      "per_epoch_development": [
+        0.6427678252730455,
+        0.6386556759559544,
+        0.637040573519631,
+        0.6342292095346878,
+        0.6243274199210369,
+        0.6277343566967297
+      ],
+      "per_epoch_training_loss": [
+        1.2069468180001792,
+        0.9368783367724068,
+        0.8404882095627866,
+        0.749777235301201,
+        0.663899492240895,
+        0.6226728853196074
+      ]
+    },
+    {
+      "mode": "frozen",
+      "selected_epoch": 5,
+      "development": 0.639403209607476,
+      "full_validation": 0.6496073217165654,
+      "full_gain_over_v5": 0.00422461484593839,
+      "reused_reporting": 0.6582087003402413,
+      "reporting_gain_over_v5": 0.005062266163041951,
+      "conditional_cohort_mean": 0.8377892512676366,
+      "cohort_gain_over_v5": 0.0029890345982142574,
+      "cohort_improved_equal_worse_over_v5": [
+        23,
+        3,
+        14
+      ],
+      "conditional_pair_accuracy": 0.8304166666666667,
+      "passes_significant_gain_screen": false,
+      "optimizer_steps": 1062,
+      "checkpoint_sha256": "d65674c0ba673ea6d0185a504a7519a8a986031ee0b594633027f406e67200fe",
+      "seconds": 367.7030000000086,
+      "peak_allocated_mib": 814.36279296875,
+      "per_epoch_development": [
+        0.6382857259588139,
+        0.634034091799855,
+        0.6377981860553102,
+        0.6359362791487546,
+        0.639403209607476,
+        0.6342701713910976
+      ],
+      "per_epoch_training_loss": [
+        1.6591538524223586,
+        1.62461279071657,
+        1.6009362976429826,
+        1.5729522553540893,
+        1.544461379280198,
+        1.5372528171135207
+      ]
+    }
+  ],
+  "joint_minus_frozen": {
+    "full_validation": -0.003666491596638566,
+    "reused_reporting": -0.010720018470092851,
+    "conditional_cohort_mean": 0.0010985584077382038
+  },
+  "decision": "Stop expanding this pilot unless its prespecified significant-gain screen passes; retain official v5",
+  "checks": {
+    "all_6_epoch_samples_and_1062_updates_matched": true,
+    "initial_dense_scores_rankings_and_all_40_v5_cohorts_exact": true,
+    "both_selected_checkpoints_dense_replay_exact": true,
+    "frozen_prefix_classifier_and_global_heads_unchanged": true,
+    "frozen_arm_suffix_unchanged": true,
+    "four_ranking_files_independently_scored": true,
+    "all_40_native_controls_each_arm_reproduced": true
+  },
+  "bindings": {
+    "joint": {
+      "script_sha256": "bf2b4c7bb3f1477a5fbbed799c6f7f182a214f23749b5f9618ac316d41f7d4c5",
+      "suffix_module_sha256": "1e4648f75519db446d9a299bbd39a46e31eddc2b4eb93784007799d82e278516",
+      "protocol_sha256": "f01c561af7253a6b7ba0f3ff75c98cf2f00816483a90bc17cbdebb1954827d17",
+      "prefix_report_sha256": "14166aa63da18ad7d1e97df7a8d8e148e9609b9cf9da12e3119ee8697acc2472"
+    },
+    "frozen": {
+      "script_sha256": "bf2b4c7bb3f1477a5fbbed799c6f7f182a214f23749b5f9618ac316d41f7d4c5",
+      "suffix_module_sha256": "1e4648f75519db446d9a299bbd39a46e31eddc2b4eb93784007799d82e278516",
+      "protocol_sha256": "a9b5e08e75f1153c65ea262fb5a38cf4a1d53ce15cc4054fcb684152cb843058",
+      "prefix_report_sha256": "14166aa63da18ad7d1e97df7a8d8e148e9609b9cf9da12e3119ee8697acc2472"
+    }
+  },
+  "prefix_cache_report_sha256": "14166aa63da18ad7d1e97df7a8d8e148e9609b9cf9da12e3119ee8697acc2472",
+  "limitations": [
+    "Only one seed per arm; both validation halves reused; no augmentation with cached prefixes",
+    "Pilot restarts optimizers, freezes early layers and original classifier/global head, fixes original native top50 candidate pools and O2O; failure does not rule out other backbone training protocols",
+    "Development selects saved epoch including zero; losses can fall while validation deteriorates",
+    "Protocol inherited historical metadata; actual pilot parameters are specified by protocol addendum and source snapshots",
+    "Study bootstrap compares to native CLS baseline, not incremental v5 or frozen control gain"
+  ],
+  "paid_gpu_cost_yuan": 0,
+  "test_images_used": false,
+  "prediction_generated": false,
+  "leaderboard_submitted": false,
+  "summary_script_sha256": "d3048c71b2728cd0f412c3bf53a754a4b673a1777d5186a705028c7ba1d182a4"
+}

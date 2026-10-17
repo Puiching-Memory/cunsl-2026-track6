@@ -1,0 +1,1244 @@
+{
+  "date": "2026-10-09",
+  "official_best": 0.7185908013668432,
+  "protocol": {
+    "scope": "All validation optical queries, fixed full validation SAR gallery; no test data, optimizer or submission",
+    "variants": [
+      "baseline",
+      "grayscale",
+      "darker",
+      "brighter",
+      "padding_gray",
+      "background_flat",
+      "roi_removed",
+      "end_0_removed",
+      "middle_removed",
+      "end_1_removed",
+      "canonical_roi"
+    ],
+    "roi_variants": [
+      "background_flat",
+      "canonical_roi",
+      "end_0_removed",
+      "end_1_removed",
+      "middle_removed",
+      "padding_gray",
+      "roi_removed"
+    ],
+    "roi": "v3: opposing-black-borders processed content support, 8-connected largest component, PCA rectangle; content ROI including any sea strip, not ship segmentation. v1 visual QA failed on ports/fragments; v2 all-border gate admitted only 2 images; all revisions before GPU scoring",
+    "roi_parameters": {
+      "threshold": "channel max > 8; >=98% of one opposing border pair black; largest component covers >=90% nonblack support",
+      "component_fraction": [
+        0.005,
+        0.45
+      ],
+      "elongation_min": 3,
+      "rectangle_fraction": [
+        0.015,
+        0.6
+      ],
+      "padding_long_cross_pixels": [
+        8,
+        6
+      ]
+    },
+    "region_validity": "Region results exclude rejected ROIs; photometric results include all paired optical validation queries",
+    "primary_statistics": "Paired changes in identity-macro R1, R10 and true-vs-best-wrong margin; conditional identity bootstrap, reused validation",
+    "fixed_gallery": "All validation SAR images, never shortlist by intervened features",
+    "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+    "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+    "script_sha256": "8874248f832713030361eed92cd403cfdcc2803da2e3677d3d673abcc82e5110",
+    "intervention_module_sha256": "ca2e1113bc155e222d72d604f4f84428fe0ebcbe5d3011f9d3ff2c204341e886",
+    "roi_metadata_sha256": "bba715043f2555f8b2fc428c8b0dc5b20411a70d9ed097ceac273e70d9671c57",
+    "roi_masks_sha256": "b7ecdaffbeb9f426065d00d56fb4d90ee52987c7800e402cf7b50c50d3d57b26",
+    "optical_images": 765,
+    "roi_eligible_images": 166,
+    "test_images_used": false,
+    "optimizer_steps": 0
+  },
+  "report": {
+    "scope": "All validation optical queries, fixed full validation SAR gallery; no test data, optimizer or submission",
+    "summaries": {
+      "baseline": {
+        "single_optical": {
+          "queries": 659,
+          "identities": 659,
+          "fields": {
+            "r1": {
+              "baseline_identity_macro": 0.5887708649468892,
+              "intervened_identity_macro": 0.5887708649468892,
+              "paired_delta": 0.0,
+              "conditional_identity_interval_95": [
+                0.0,
+                0.0
+              ]
+            },
+            "r10": {
+              "baseline_identity_macro": 0.9317147192716236,
+              "intervened_identity_macro": 0.9317147192716236,
+              "paired_delta": 0.0,
+              "conditional_identity_interval_95": [
+                0.0,
+                0.0
+              ]
+            },
+            "margin": {
+              "baseline_identity_macro": 0.08064707473757053,
+              "intervened_identity_macro": 0.08064707473757053,
+              "paired_delta": 0.0,
+              "conditional_identity_interval_95": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "correct_to_wrong_queries": 0,
+          "wrong_to_correct_queries": 0
+        },
+        "multiple_optical": {
+          "queries": 106,
+          "identities": 44,
+          "fields": {
+            "r1": {
+              "baseline_identity_macro": 0.3333333333333333,
+              "intervened_identity_macro": 0.3333333333333333,
+              "paired_delta": 0.0,
+              "conditional_identity_interval_95": [
+                0.0,
+                0.0
+              ]
+            },
+            "r10": {
+              "baseline_identity_macro": 0.8674242424242423,
+              "intervened_identity_macro": 0.8674242424242423,
+              "paired_delta": 0.0,
+              "conditional_identity_interval_95": [
+                0.0,
+                0.0
+              ]
+            },
+            "margin": {
+              "baseline_identity_macro": -0.09567832780268158,
+              "intervened_identity_macro": -0.09567832780268158,
+              "paired_delta": 0.0,
+              "conditional_identity_interval_95": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "correct_to_wrong_queries": 0,
+          "wrong_to_correct_queries": 0
+        }
+      },
+      "grayscale": {
+        "single_optical": {
+          "queries": 659,
+          "identities": 659,
+          "fields": {
+            "r1": {
+              "baseline_identity_macro": 0.5887708649468892,
+              "intervened_identity_macro": 0.5174506828528073,
+              "paired_delta": -0.07132018209408195,
+              "conditional_identity_interval_95": [
+                -0.10166919575113809,
+                -0.0409711684370258
+              ]
+            },
+            "r10": {
+              "baseline_identity_macro": 0.9317147192716236,
+              "intervened_identity_macro": 0.8831562974203339,
+              "paired_delta": -0.048558421851289835,
+              "conditional_identity_interval_95": [
+                -0.06828528072837632,
+                -0.028831562974203338
+              ]
+            },
+            "margin": {
+              "baseline_identity_macro": 0.08064707473757053,
+              "intervened_identity_macro": 0.030682480185997865,
+              "paired_delta": -0.04996459455157267,
+              "conditional_identity_interval_95": [
+                -0.06304314205273195,
+                -0.03679638000612173
+              ]
+            }
+          },
+          "correct_to_wrong_queries": 80,
+          "wrong_to_correct_queries": 33
+        },
+        "multiple_optical": {
+          "queries": 106,
+          "identities": 44,
+          "fields": {
+            "r1": {
+              "baseline_identity_macro": 0.3333333333333333,
+              "intervened_identity_macro": 0.23863636363636365,
+              "paired_delta": -0.09469696969696968,
+              "conditional_identity_interval_95": [
+                -0.178030303030303,
+                -0.007575757575757574
+              ]
+            },
+            "r10": {
+              "baseline_identity_macro": 0.8674242424242423,
+              "intervened_identity_macro": 0.8409090909090909,
+              "paired_delta": -0.026515151515151512,
+              "conditional_identity_interval_95": [
+                -0.09090909090909091,
+                0.026515151515151516
+              ]
+            },
+            "margin": {
+              "baseline_identity_macro": -0.09567832780268158,
+              "intervened_identity_macro": -0.11652898726363978,
+              "paired_delta": -0.020850659460958206,
+              "conditional_identity_interval_95": [
+                -0.049557047021913936,
+                0.010712852101829465
+              ]
+            }
+          },
+          "correct_to_wrong_queries": 15,
+          "wrong_to_correct_queries": 4
+        }
+      },
+      "darker": {
+        "single_optical": {
+          "queries": 659,
+          "identities": 659,
+          "fields": {
+            "r1": {
+              "baseline_identity_macro": 0.5887708649468892,
+              "intervened_identity_macro": 0.5462822458270106,
+              "paired_delta": -0.042488619119878605,
+              "conditional_identity_interval_95": [
+                -0.06676783004552352,
+                -0.018209408194233688
+              ]
+            },
+            "r10": {
+              "baseline_identity_macro": 0.9317147192716236,
+              "intervened_identity_macro": 0.9150227617602428,
+              "paired_delta": -0.01669195751138088,
+              "conditional_identity_interval_95": [
+                -0.03186646433990895,
+                -0.0015174506828528073
+              ]
+            },
+            "margin": {
+              "baseline_identity_macro": 0.08064707473757053,
+              "intervened_identity_macro": 0.06560260041055803,
+              "paired_delta": -0.015044474327012513,
+              "conditional_identity_interval_95": [
+                -0.024357948025154324,
+                -0.00564277159115116
+              ]
+            }
+          },
+          "correct_to_wrong_queries": 48,
+          "wrong_to_correct_queries": 20
+        },
+        "multiple_optical": {
+          "queries": 106,
+          "identities": 44,
+          "fields": {
+            "r1": {
+              "baseline_identity_macro": 0.3333333333333333,
+              "intervened_identity_macro": 0.3522727272727273,
+              "paired_delta": 0.018939393939393933,
+              "conditional_identity_interval_95": [
+                -0.045454545454545456,
+                0.08333333333333334
+              ]
+            },
+            "r10": {
+              "baseline_identity_macro": 0.8674242424242423,
+              "intervened_identity_macro": 0.8901515151515151,
+              "paired_delta": 0.022727272727272728,
+              "conditional_identity_interval_95": [
+                0.0,
+                0.056818181818181816
+              ]
+            },
+            "margin": {
+              "baseline_identity_macro": -0.09567832780268158,
+              "intervened_identity_macro": -0.08278077112680132,
+              "paired_delta": 0.012897556675880245,
+              "conditional_identity_interval_95": [
+                -0.004575485330441909,
+                0.031934406391740076
+              ]
+            }
+          },
+          "correct_to_wrong_queries": 5,
+          "wrong_to_correct_queries": 7
+        }
+      },
+      "brighter": {
+        "single_optical": {
+          "queries": 659,
+          "identities": 659,
+          "fields": {
+            "r1": {
+              "baseline_identity_macro": 0.5887708649468892,
+              "intervened_identity_macro": 0.5857359635811836,
+              "paired_delta": -0.0030349013657056147,
+              "conditional_identity_interval_95": [
+                -0.028831562974203338,
+                0.021244309559939303
+              ]
+            },
+            "r10": {
+              "baseline_identity_macro": 0.9317147192716236,
+              "intervened_identity_macro": 0.9347496206373292,
+              "paired_delta": 0.0030349013657056147,
+              "conditional_identity_interval_95": [
+                -0.007587253414264037,
+                0.015174506828528073
+              ]
+            },
+            "margin": {
+              "baseline_identity_macro": 0.08064707473757053,
+              "intervened_identity_macro": 0.06310226382724432,
+              "paired_delta": -0.017544810910326215,
+              "conditional_identity_interval_95": [
+                -0.025725755664450716,
+                -0.009352151209655274
+              ]
+            }
+          },
+          "correct_to_wrong_queries": 36,
+          "wrong_to_correct_queries": 34
+        },
+        "multiple_optical": {
+          "queries": 106,
+          "identities": 44,
+          "fields": {
+            "r1": {
+              "baseline_identity_macro": 0.3333333333333333,
+              "intervened_identity_macro": 0.28409090909090906,
+              "paired_delta": -0.04924242424242425,
+              "conditional_identity_interval_95": [
+                -0.10984848484848485,
+                0.011363636363636364
+              ]
+            },
+            "r10": {
+              "baseline_identity_macro": 0.8674242424242423,
+              "intervened_identity_macro": 0.8977272727272726,
+              "paired_delta": 0.0303030303030303,
+              "conditional_identity_interval_95": [
+                0.0,
+                0.06818181818181818
+              ]
+            },
+            "margin": {
+              "baseline_identity_macro": -0.09567832780268158,
+              "intervened_identity_macro": -0.10696903125128963,
+              "paired_delta": -0.011290703448608065,
+              "conditional_identity_interval_95": [
+                -0.026273727213088988,
+                0.002806271335364055
+              ]
+            }
+          },
+          "correct_to_wrong_queries": 9,
+          "wrong_to_correct_queries": 3
+        }
+      },
+      "padding_gray": {
+        "single_optical": {
+          "queries": 60,
+          "identities": 60,
+          "fields": {
+            "r1": {
+              "baseline_identity_macro": 0.36666666666666664,
+              "intervened_identity_macro": 0.36666666666666664,
+              "paired_delta": 0.0,
+              "conditional_identity_interval_95": [
+                -0.08333333333333333,
+                0.08333333333333333
+              ]
+            },
+            "r10": {
+              "baseline_identity_macro": 0.8166666666666667,
+              "intervened_identity_macro": 0.7666666666666667,
+              "paired_delta": -0.05,
+              "conditional_identity_interval_95": [
+                -0.11666666666666667,
+                0.0
+              ]
+            },
+            "margin": {
+              "baseline_identity_macro": -0.07453137164314588,
+              "intervened_identity_macro": -0.09046951327472925,
+              "paired_delta": -0.015938141631583372,
+              "conditional_identity_interval_95": [
+                -0.04608170711124937,
+                0.013356128387774028
+              ]
+            }
+          },
+          "correct_to_wrong_queries": 3,
+          "wrong_to_correct_queries": 3
+        },
+        "multiple_optical": {
+          "queries": 106,
+          "identities": 44,
+          "fields": {
+            "r1": {
+              "baseline_identity_macro": 0.3333333333333333,
+              "intervened_identity_macro": 0.2727272727272727,
+              "paired_delta": -0.0606060606060606,
+              "conditional_identity_interval_95": [
+                -0.16287878787878787,
+                0.03787878787878787
+              ]
+            },
+            "r10": {
+              "baseline_identity_macro": 0.8674242424242423,
+              "intervened_identity_macro": 0.8295454545454544,
+              "paired_delta": -0.03787878787878788,
+              "conditional_identity_interval_95": [
+                -0.12121212121212123,
+                0.0303030303030303
+              ]
+            },
+            "margin": {
+              "baseline_identity_macro": -0.09567832780268158,
+              "intervened_identity_macro": -0.10385681087659164,
+              "paired_delta": -0.008178483073910076,
+              "conditional_identity_interval_95": [
+                -0.03701234755430821,
+                0.021597819365419896
+              ]
+            }
+          },
+          "correct_to_wrong_queries": 14,
+          "wrong_to_correct_queries": 8
+        }
+      },
+      "background_flat": {
+        "single_optical": {
+          "queries": 60,
+          "identities": 60,
+          "fields": {
+            "r1": {
+              "baseline_identity_macro": 0.36666666666666664,
+              "intervened_identity_macro": 0.36666666666666664,
+              "paired_delta": 0.0,
+              "conditional_identity_interval_95": [
+                0.0,
+                0.0
+              ]
+            },
+            "r10": {
+              "baseline_identity_macro": 0.8166666666666667,
+              "intervened_identity_macro": 0.8166666666666667,
+              "paired_delta": 0.0,
+              "conditional_identity_interval_95": [
+                0.0,
+                0.0
+              ]
+            },
+            "margin": {
+              "baseline_identity_macro": -0.07453137164314588,
+              "intervened_identity_macro": -0.07453137164314588,
+              "paired_delta": 0.0,
+              "conditional_identity_interval_95": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "correct_to_wrong_queries": 0,
+          "wrong_to_correct_queries": 0
+        },
+        "multiple_optical": {
+          "queries": 106,
+          "identities": 44,
+          "fields": {
+            "r1": {
+              "baseline_identity_macro": 0.3333333333333333,
+              "intervened_identity_macro": 0.3333333333333333,
+              "paired_delta": 0.0,
+              "conditional_identity_interval_95": [
+                0.0,
+                0.0
+              ]
+            },
+            "r10": {
+              "baseline_identity_macro": 0.8674242424242423,
+              "intervened_identity_macro": 0.8674242424242423,
+              "paired_delta": 0.0,
+              "conditional_identity_interval_95": [
+                0.0,
+                0.0
+              ]
+            },
+            "margin": {
+              "baseline_identity_macro": -0.09567832780268158,
+              "intervened_identity_macro": -0.09557116881125806,
+              "paired_delta": 0.00010715899142352018,
+              "conditional_identity_interval_95": [
+                -9.694356809962879e-05,
+                0.0004184205423701893
+              ]
+            }
+          },
+          "correct_to_wrong_queries": 0,
+          "wrong_to_correct_queries": 0
+        }
+      },
+      "roi_removed": {
+        "single_optical": {
+          "queries": 60,
+          "identities": 60,
+          "fields": {
+            "r1": {
+              "baseline_identity_macro": 0.36666666666666664,
+              "intervened_identity_macro": 0.0,
+              "paired_delta": -0.36666666666666664,
+              "conditional_identity_interval_95": [
+                -0.48333333333333334,
+                -0.25
+              ]
+            },
+            "r10": {
+              "baseline_identity_macro": 0.8166666666666667,
+              "intervened_identity_macro": 0.0,
+              "paired_delta": -0.8166666666666667,
+              "conditional_identity_interval_95": [
+                -0.9,
+                -0.7166666666666667
+              ]
+            },
+            "margin": {
+              "baseline_identity_macro": -0.07453137164314588,
+              "intervened_identity_macro": -1.0239769160747527,
+              "paired_delta": -0.9494455444316069,
+              "conditional_identity_interval_95": [
+                -1.0405653849802912,
+                -0.859757848797987
+              ]
+            }
+          },
+          "correct_to_wrong_queries": 22,
+          "wrong_to_correct_queries": 0
+        },
+        "multiple_optical": {
+          "queries": 106,
+          "identities": 44,
+          "fields": {
+            "r1": {
+              "baseline_identity_macro": 0.3333333333333333,
+              "intervened_identity_macro": 0.0,
+              "paired_delta": -0.3333333333333333,
+              "conditional_identity_interval_95": [
+                -0.45075757575757575,
+                -0.22348484848484845
+              ]
+            },
+            "r10": {
+              "baseline_identity_macro": 0.8674242424242423,
+              "intervened_identity_macro": 0.0,
+              "paired_delta": -0.8674242424242423,
+              "conditional_identity_interval_95": [
+                -0.9431818181818182,
+                -0.7765151515151515
+              ]
+            },
+            "margin": {
+              "baseline_identity_macro": -0.09567832780268158,
+              "intervened_identity_macro": -1.0158955210989171,
+              "paired_delta": -0.9202171932962357,
+              "conditional_identity_interval_95": [
+                -0.9907343345623688,
+                -0.849494142586958
+              ]
+            }
+          },
+          "correct_to_wrong_queries": 37,
+          "wrong_to_correct_queries": 0
+        }
+      },
+      "end_0_removed": {
+        "single_optical": {
+          "queries": 60,
+          "identities": 60,
+          "fields": {
+            "r1": {
+              "baseline_identity_macro": 0.36666666666666664,
+              "intervened_identity_macro": 0.16666666666666666,
+              "paired_delta": -0.2,
+              "conditional_identity_interval_95": [
+                -0.3333333333333333,
+                -0.06666666666666667
+              ]
+            },
+            "r10": {
+              "baseline_identity_macro": 0.8166666666666667,
+              "intervened_identity_macro": 0.5833333333333334,
+              "paired_delta": -0.23333333333333334,
+              "conditional_identity_interval_95": [
+                -0.35,
+                -0.13333333333333333
+              ]
+            },
+            "margin": {
+              "baseline_identity_macro": -0.07453137164314588,
+              "intervened_identity_macro": -0.1288101928929488,
+              "paired_delta": -0.054278821249802905,
+              "conditional_identity_interval_95": [
+                -0.11063269733606527,
+                0.0020589710903974696
+              ]
+            }
+          },
+          "correct_to_wrong_queries": 15,
+          "wrong_to_correct_queries": 3
+        },
+        "multiple_optical": {
+          "queries": 106,
+          "identities": 44,
+          "fields": {
+            "r1": {
+              "baseline_identity_macro": 0.3333333333333333,
+              "intervened_identity_macro": 0.17424242424242423,
+              "paired_delta": -0.15909090909090906,
+              "conditional_identity_interval_95": [
+                -0.28409090909090906,
+                -0.04166666666666666
+              ]
+            },
+            "r10": {
+              "baseline_identity_macro": 0.8674242424242423,
+              "intervened_identity_macro": 0.6136363636363636,
+              "paired_delta": -0.2537878787878788,
+              "conditional_identity_interval_95": [
+                -0.37878787878787873,
+                -0.1325757575757576
+              ]
+            },
+            "margin": {
+              "baseline_identity_macro": -0.09567832780268158,
+              "intervened_identity_macro": -0.10728988097980618,
+              "paired_delta": -0.011611553177124619,
+              "conditional_identity_interval_95": [
+                -0.06626460796017482,
+                0.04397536338391621
+              ]
+            }
+          },
+          "correct_to_wrong_queries": 23,
+          "wrong_to_correct_queries": 7
+        }
+      },
+      "middle_removed": {
+        "single_optical": {
+          "queries": 60,
+          "identities": 60,
+          "fields": {
+            "r1": {
+              "baseline_identity_macro": 0.36666666666666664,
+              "intervened_identity_macro": 0.08333333333333333,
+              "paired_delta": -0.2833333333333333,
+              "conditional_identity_interval_95": [
+                -0.43333333333333335,
+                -0.11666666666666667
+              ]
+            },
+            "r10": {
+              "baseline_identity_macro": 0.8166666666666667,
+              "intervened_identity_macro": 0.55,
+              "paired_delta": -0.26666666666666666,
+              "conditional_identity_interval_95": [
+                -0.38333333333333336,
+                -0.15
+              ]
+            },
+            "margin": {
+              "baseline_identity_macro": -0.07453137164314588,
+              "intervened_identity_macro": -0.14614776557233805,
+              "paired_delta": -0.07161639392919218,
+              "conditional_identity_interval_95": [
+                -0.13208333402484035,
+                -0.01228811179937721
+              ]
+            }
+          },
+          "correct_to_wrong_queries": 22,
+          "wrong_to_correct_queries": 5
+        },
+        "multiple_optical": {
+          "queries": 106,
+          "identities": 44,
+          "fields": {
+            "r1": {
+              "baseline_identity_macro": 0.3333333333333333,
+              "intervened_identity_macro": 0.07954545454545454,
+              "paired_delta": -0.2537878787878788,
+              "conditional_identity_interval_95": [
+                -0.38267045454545456,
+                -0.1212121212121212
+              ]
+            },
+            "r10": {
+              "baseline_identity_macro": 0.8674242424242423,
+              "intervened_identity_macro": 0.48863636363636354,
+              "paired_delta": -0.37878787878787884,
+              "conditional_identity_interval_95": [
+                -0.5,
+                -0.26136363636363635
+              ]
+            },
+            "margin": {
+              "baseline_identity_macro": -0.09567832780268158,
+              "intervened_identity_macro": -0.12428702261637556,
+              "paired_delta": -0.028608694813694012,
+              "conditional_identity_interval_95": [
+                -0.08375549787747193,
+                0.030744705684341945
+              ]
+            }
+          },
+          "correct_to_wrong_queries": 33,
+          "wrong_to_correct_queries": 4
+        }
+      },
+      "end_1_removed": {
+        "single_optical": {
+          "queries": 60,
+          "identities": 60,
+          "fields": {
+            "r1": {
+              "baseline_identity_macro": 0.36666666666666664,
+              "intervened_identity_macro": 0.21666666666666667,
+              "paired_delta": -0.15,
+              "conditional_identity_interval_95": [
+                -0.2833333333333333,
+                -0.016666666666666666
+              ]
+            },
+            "r10": {
+              "baseline_identity_macro": 0.8166666666666667,
+              "intervened_identity_macro": 0.6833333333333333,
+              "paired_delta": -0.13333333333333333,
+              "conditional_identity_interval_95": [
+                -0.25,
+                -0.03333333333333333
+              ]
+            },
+            "margin": {
+              "baseline_identity_macro": -0.07453137164314588,
+              "intervened_identity_macro": -0.09364144820719958,
+              "paired_delta": -0.019110076564053693,
+              "conditional_identity_interval_95": [
+                -0.06987539837292085,
+                0.03147500189642106
+              ]
+            }
+          },
+          "correct_to_wrong_queries": 14,
+          "wrong_to_correct_queries": 5
+        },
+        "multiple_optical": {
+          "queries": 106,
+          "identities": 44,
+          "fields": {
+            "r1": {
+              "baseline_identity_macro": 0.3333333333333333,
+              "intervened_identity_macro": 0.16666666666666666,
+              "paired_delta": -0.16666666666666666,
+              "conditional_identity_interval_95": [
+                -0.29166666666666663,
+                -0.04924242424242424
+              ]
+            },
+            "r10": {
+              "baseline_identity_macro": 0.8674242424242423,
+              "intervened_identity_macro": 0.6893939393939393,
+              "paired_delta": -0.178030303030303,
+              "conditional_identity_interval_95": [
+                -0.3143939393939394,
+                -0.04545454545454546
+              ]
+            },
+            "margin": {
+              "baseline_identity_macro": -0.09567832780268158,
+              "intervened_identity_macro": -0.09864890811767318,
+              "paired_delta": -0.0029705803149916014,
+              "conditional_identity_interval_95": [
+                -0.052251549554762966,
+                0.04573175003028925
+              ]
+            }
+          },
+          "correct_to_wrong_queries": 25,
+          "wrong_to_correct_queries": 6
+        }
+      },
+      "canonical_roi": {
+        "single_optical": {
+          "queries": 60,
+          "identities": 60,
+          "fields": {
+            "r1": {
+              "baseline_identity_macro": 0.36666666666666664,
+              "intervened_identity_macro": 0.3,
+              "paired_delta": -0.06666666666666667,
+              "conditional_identity_interval_95": [
+                -0.16666666666666666,
+                0.03333333333333333
+              ]
+            },
+            "r10": {
+              "baseline_identity_macro": 0.8166666666666667,
+              "intervened_identity_macro": 0.6833333333333333,
+              "paired_delta": -0.13333333333333333,
+              "conditional_identity_interval_95": [
+                -0.21666666666666667,
+                -0.05
+              ]
+            },
+            "margin": {
+              "baseline_identity_macro": -0.07453137164314588,
+              "intervened_identity_macro": -0.13017430454492568,
+              "paired_delta": -0.05564293290177981,
+              "conditional_identity_interval_95": [
+                -0.10633713629717628,
+                -0.0037939300015568896
+              ]
+            }
+          },
+          "correct_to_wrong_queries": 7,
+          "wrong_to_correct_queries": 3
+        },
+        "multiple_optical": {
+          "queries": 106,
+          "identities": 44,
+          "fields": {
+            "r1": {
+              "baseline_identity_macro": 0.3333333333333333,
+              "intervened_identity_macro": 0.2537878787878788,
+              "paired_delta": -0.07954545454545456,
+              "conditional_identity_interval_95": [
+                -0.15151515151515152,
+                -0.01893939393939394
+              ]
+            },
+            "r10": {
+              "baseline_identity_macro": 0.8674242424242423,
+              "intervened_identity_macro": 0.8446969696969696,
+              "paired_delta": -0.022727272727272728,
+              "conditional_identity_interval_95": [
+                -0.08333333333333334,
+                0.026515151515151516
+              ]
+            },
+            "margin": {
+              "baseline_identity_macro": -0.09567832780268158,
+              "intervened_identity_macro": -0.10615725039194027,
+              "paired_delta": -0.010478922589258715,
+              "conditional_identity_interval_95": [
+                -0.039914579662691914,
+                0.018120528224178332
+              ]
+            }
+          },
+          "correct_to_wrong_queries": 10,
+          "wrong_to_correct_queries": 2
+        }
+      }
+    },
+    "roi_coverage": {
+      "optical": 765,
+      "eligible": 166
+    },
+    "checks": {
+      "v5_full_bank_replay_exact": true,
+      "all_10_unchanged_sar_banks_exact": true,
+      "case_duplicate_baselines_exact": true
+    },
+    "bindings": {
+      "protocol_sha256": "adbfb21541a4c9049ef2ff6238705d4f07919e9414711bfe1aa7b0524cac195e",
+      "native_checkpoint_sha256": "f7c8886d1bb904360fea877f130c7fcddccb2ef8fb34300933bebab0bbdbf6ed",
+      "head_sha256": "ae510bf0de7fd111e44223a5aae5e9e7d5c1a87a71c9b5450016851d234d5d77",
+      "baseline_scores_sha256": "d35dc817c415075af3f8fcac54241090e3c7eb7bfa2f1df3753067a6d09c53a6"
+    },
+    "bootstrap_scope": "Paired identity averages, 5000 bootstrap draws conditional on fixed model/gallery; excludes validation reuse, segmentation uncertainty and official shift",
+    "limitations": [
+      "ROI is an unlabelled heuristic, not ship segmentation",
+      "Optical-only interventions; no SAR geometry registration",
+      "Occlusion and canonicalization can create distribution shift; sensitivity is not evidence of a learned shortcut",
+      "The four equal-area case maps are qualitative examples, not a population sample"
+    ],
+    "seconds": 112.7960000000021,
+    "peak_allocated_mib": 805.150390625,
+    "optimizer_steps": 0,
+    "test_images_used": false,
+    "prediction_generated": false,
+    "leaderboard_submitted": false
+  },
+  "population_diagnostic": {
+    "scope": "Descriptive association; identity and image-domain selection confounded; full 718-SAR gallery, fixed V5 scores, not official metric",
+    "groups": {
+      "single_other_background": {
+        "queries": 599,
+        "identities": 599,
+        "roi_accepted_queries": 0,
+        "r1": {
+          "identity_macro_mean": 0.6110183639398998,
+          "conditional_interval_95": [
+            0.5726210350584308,
+            0.6510851419031719
+          ]
+        },
+        "r10": {
+          "identity_macro_mean": 0.9432387312186978,
+          "conditional_interval_95": [
+            0.9232053422370617,
+            0.9616026711185309
+          ]
+        },
+        "margin": {
+          "identity_macro_mean": 0.09619082562712476,
+          "conditional_interval_95": [
+            0.071102014093509,
+            0.12169096681595667
+          ]
+        }
+      },
+      "single_opposing_black": {
+        "queries": 60,
+        "identities": 60,
+        "roi_accepted_queries": 60,
+        "r1": {
+          "identity_macro_mean": 0.36666666666666664,
+          "conditional_interval_95": [
+            0.25,
+            0.48333333333333334
+          ]
+        },
+        "r10": {
+          "identity_macro_mean": 0.8166666666666667,
+          "conditional_interval_95": [
+            0.7166666666666667,
+            0.9
+          ]
+        },
+        "margin": {
+          "identity_macro_mean": -0.07453137164314588,
+          "conditional_interval_95": [
+            -0.13445283608511088,
+            -0.014445748596141785
+          ]
+        }
+      },
+      "multiple_other_background": {
+        "queries": 0,
+        "identities": 0,
+        "roi_accepted_queries": 0
+      },
+      "multiple_opposing_black": {
+        "queries": 106,
+        "identities": 44,
+        "roi_accepted_queries": 106,
+        "r1": {
+          "identity_macro_mean": 0.3333333333333333,
+          "conditional_interval_95": [
+            0.22348484848484845,
+            0.45075757575757575
+          ]
+        },
+        "r10": {
+          "identity_macro_mean": 0.8674242424242423,
+          "conditional_interval_95": [
+            0.7765151515151515,
+            0.9431818181818182
+          ]
+        },
+        "margin": {
+          "identity_macro_mean": -0.09567832780268158,
+          "conditional_interval_95": [
+            -0.15080697542959542,
+            -0.04219830106506411
+          ]
+        }
+      }
+    },
+    "populations": {
+      "training": {
+        "optical_image_counts": {
+          "single_other_background": 2351,
+          "single_opposing_black": 308,
+          "multiple_opposing_black": 393
+        },
+        "paired_identities": 2819,
+        "identity_domain_counts": {
+          "O_other_S_black": 2351,
+          "O_black_S_black": 468
+        },
+        "identity_weighted_true_pair_processing_table_Orows_Scols_other_then_black": [
+          [
+            0.0,
+            2351.0
+          ],
+          [
+            0.0,
+            468.00000000000153
+          ]
+        ]
+      },
+      "validation": {
+        "optical_image_counts": {
+          "single_other_background": 599,
+          "single_opposing_black": 60,
+          "multiple_opposing_black": 106
+        },
+        "paired_identities": 703,
+        "identity_domain_counts": {
+          "O_other_S_black": 599,
+          "O_black_S_black": 104
+        },
+        "identity_weighted_true_pair_processing_table_Orows_Scols_other_then_black": [
+          [
+            0.0,
+            599.0
+          ],
+          [
+            0.0,
+            103.99999999999994
+          ]
+        ]
+      }
+    },
+    "test_images_used": false,
+    "fixed_model_comparisons_full_718_gallery": {
+      "native_cosine": {
+        "single_other_background": {
+          "r1": 0.4941569282136895,
+          "r10": 0.8664440734557596,
+          "margin": -0.01396615935088398
+        },
+        "single_opposing_black": {
+          "r1": 0.31666666666666665,
+          "r10": 0.8166666666666667,
+          "margin": -0.03172470033168793
+        },
+        "multiple_opposing_black": {
+          "r1": 0.3068181818181818,
+          "r10": 0.8446969696969696,
+          "margin": -0.03231752799315886
+        }
+      },
+      "global-20261009": {
+        "single_other_background": {
+          "r1": 0.5091819699499165,
+          "r10": 0.8814691151919867,
+          "margin": 0.017389281564244442
+        },
+        "single_opposing_black": {
+          "r1": 0.31666666666666665,
+          "r10": 0.8166666666666667,
+          "margin": -0.07745833148558935
+        },
+        "multiple_opposing_black": {
+          "r1": 0.37878787878787873,
+          "r10": 0.856060606060606,
+          "margin": -0.09171250597997145
+        }
+      },
+      "local-20261009": {
+        "single_other_background": {
+          "r1": 0.6110183639398998,
+          "r10": 0.9432387312186978,
+          "margin": 0.09619082562712476
+        },
+        "single_opposing_black": {
+          "r1": 0.36666666666666664,
+          "r10": 0.8166666666666667,
+          "margin": -0.07453137164314588
+        },
+        "multiple_opposing_black": {
+          "r1": 0.3333333333333333,
+          "r10": 0.8674242424242423,
+          "margin": -0.09567832780268158
+        }
+      }
+    }
+  },
+  "independent_checks": {
+    "all_10_saved_banks_independently_verified": {
+      "grayscale": true,
+      "darker": true,
+      "brighter": true,
+      "padding_gray": true,
+      "background_flat": true,
+      "roi_removed": true,
+      "end_0_removed": true,
+      "middle_removed": true,
+      "end_1_removed": true,
+      "canonical_roi": true
+    },
+    "all_query_scalar_metrics_and_identity_paired_deltas_match": true,
+    "four_case_baseline_vs_original_full_bank_max_abs_diff": 2.644956111907959e-07,
+    "case_baseline_drift_below_1e_minus_6": true,
+    "source_snapshots_match_protocol": true,
+    "pixel_change_audit": {
+      "grayscale": {
+        "single_optical": {
+          "mean_changed_pixel_fraction": 0.9205328748873767,
+          "exact_no_op_queries": 0,
+          "queries": 659
+        },
+        "multiple_optical": {
+          "mean_changed_pixel_fraction": 0.16675250935104657,
+          "exact_no_op_queries": 0,
+          "queries": 106
+        }
+      },
+      "darker": {
+        "single_optical": {
+          "mean_changed_pixel_fraction": 0.9239908082351337,
+          "exact_no_op_queries": 0,
+          "queries": 659
+        },
+        "multiple_optical": {
+          "mean_changed_pixel_fraction": 0.16708417208689563,
+          "exact_no_op_queries": 0,
+          "queries": 106
+        }
+      },
+      "brighter": {
+        "single_optical": {
+          "mean_changed_pixel_fraction": 0.9236057958762092,
+          "exact_no_op_queries": 0,
+          "queries": 659
+        },
+        "multiple_optical": {
+          "mean_changed_pixel_fraction": 0.16708417208689563,
+          "exact_no_op_queries": 0,
+          "queries": 106
+        }
+      },
+      "padding_gray": {
+        "single_optical": {
+          "mean_changed_pixel_fraction": 0.7808792114257812,
+          "exact_no_op_queries": 0,
+          "queries": 60
+        },
+        "multiple_optical": {
+          "mean_changed_pixel_fraction": 0.7861876577701209,
+          "exact_no_op_queries": 0,
+          "queries": 106
+        }
+      },
+      "background_flat": {
+        "single_optical": {
+          "mean_changed_pixel_fraction": 0.0,
+          "exact_no_op_queries": 60,
+          "queries": 60
+        },
+        "multiple_optical": {
+          "mean_changed_pixel_fraction": 0.00017446841833726416,
+          "exact_no_op_queries": 104,
+          "queries": 106
+        }
+      },
+      "roi_removed": {
+        "single_optical": {
+          "mean_changed_pixel_fraction": 0.17200520833333333,
+          "exact_no_op_queries": 0,
+          "queries": 60
+        },
+        "multiple_optical": {
+          "mean_changed_pixel_fraction": 0.1669098476193986,
+          "exact_no_op_queries": 0,
+          "queries": 106
+        }
+      },
+      "end_0_removed": {
+        "single_optical": {
+          "mean_changed_pixel_fraction": 0.055767059326171875,
+          "exact_no_op_queries": 0,
+          "queries": 60
+        },
+        "multiple_optical": {
+          "mean_changed_pixel_fraction": 0.054188566387824294,
+          "exact_no_op_queries": 0,
+          "queries": 106
+        }
+      },
+      "middle_removed": {
+        "single_optical": {
+          "mean_changed_pixel_fraction": 0.060470835367838545,
+          "exact_no_op_queries": 0,
+          "queries": 60
+        },
+        "multiple_optical": {
+          "mean_changed_pixel_fraction": 0.058599220131928066,
+          "exact_no_op_queries": 0,
+          "queries": 106
+        }
+      },
+      "end_1_removed": {
+        "single_optical": {
+          "mean_changed_pixel_fraction": 0.05576731363932292,
+          "exact_no_op_queries": 0,
+          "queries": 60
+        },
+        "multiple_optical": {
+          "mean_changed_pixel_fraction": 0.05412206109964623,
+          "exact_no_op_queries": 0,
+          "queries": 106
+        }
+      },
+      "canonical_roi": {
+        "single_optical": {
+          "mean_changed_pixel_fraction": 0.17059224446614582,
+          "exact_no_op_queries": 0,
+          "queries": 60
+        },
+        "multiple_optical": {
+          "mean_changed_pixel_fraction": 0.16561472191000884,
+          "exact_no_op_queries": 0,
+          "queries": 106
+        }
+      }
+    },
+    "bindings": {
+      "grayscale": "9d62de1b2f83f1f17c28544d5fd9b5eb8660014d0a60bbebd2d543c6dbfedb8d",
+      "darker": "8c5c2588aeb80b605dd7d7da43a2096d7aeb2c713c1b28b4c1d0e4776f25d2f4",
+      "brighter": "181375a256a2dbf3e2204c8b277325a7e9cd9ccb07c1634919c73d330a9644cd",
+      "padding_gray": "f1212565a395b9753e85260d0fb8478e99c795a7eb0d458e8ffe0150c851701b",
+      "background_flat": "6f6be6617c9a82df8f933ae17f4907031b379eaf734bd8714b7d66698f4052f1",
+      "roi_removed": "7aa25ababb5e0e1c6563d06094e1e73d4ca869a00f1f5eb5c5664a1909f2b54f",
+      "end_0_removed": "8479adc422dc7e189db2fb3c2f6b163b71545a421c2cc6112430355f5efe2302",
+      "middle_removed": "e02619dbd5d2bb065159fc076e76d23893cdb6c0b2db6fd7b8590c9db1d4f5cd",
+      "end_1_removed": "31b6e3b189ab1279c59bf61506315fd9121c6577a8466fa38cdee95066c023de",
+      "canonical_roi": "2baed9f291b15d9adbe2363c03a933c8d92712dd258eb44cf55a67838459d02e"
+    },
+    "checker_sha256": "951437db7aa22e221134ff51faaaa9c502be5782a005c553bafb09bfad4463ab",
+    "optimizer_steps": 0,
+    "test_images_used": false
+  },
+  "figure_bindings": {
+    "processing-confounding": "b1852a44df7ec9812ff3877d048d66d539f20c9846c53366c273192f72a118b2",
+    "intervention-effects": "87a78534aa77f1e1025d7b8275af8c730a32531d55b568a08a411ac2fcc29ec9"
+  },
+  "bindings": {
+    "study_source_sha256": "8874248f832713030361eed92cd403cfdcc2803da2e3677d3d673abcc82e5110",
+    "intervention_source_sha256": "ca2e1113bc155e222d72d604f4f84428fe0ebcbe5d3011f9d3ff2c204341e886",
+    "plotter_sha256": "b31abe1f53c3df383594d0612cab830ae8db680fde48e8405f130cc83ecb6990",
+    "population_checker_sha256": "c73260996ba697d24e6cc37a6ed17bf2decf15d5e8e002011f3adb4a529d7d9b"
+  },
+  "decision": "No significant inference candidate; investigate processed-optical-domain and geometrically aligned token pooling rather than direct grayscale/crop",
+  "cpu_tests_passed": 4,
+  "paid_gpu_cost_yuan": 0,
+  "test_images_used": false,
+  "optimizer_steps": 0,
+  "prediction_generated": false,
+  "leaderboard_submitted": false
+}

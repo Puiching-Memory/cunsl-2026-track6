@@ -1,0 +1,14 @@
+# Windows x86-64 / CPython 3.12; install into local/cuda-deps.
+# Match the PyTorch version used by the recovered cloud TransOSS runs.
+torch @ https://download-r2.pytorch.org/whl/cu130/torch-2.12.1%2Bcu130-cp312-cp312-win_amd64.whl#sha256=52c5da6a0898d5d3473c02bd304b7a3bc0b72e351c6f3bfa0783e45ef9f4cd61
+filelock==4.0.12
+fsspec==2026.9.0
+Jinja2==3.1.6
+MarkupSafe==3.0.4
+mpmath==1.3.0
+networkx==3.7
+numpy==2.5.3
+Pillow==12.3.0
+setuptools==81.0.0
+sympy==1.14.0
+typing-extensions==4.16.0

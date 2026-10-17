@@ -1,0 +1,70 @@
+{
+  "scope": "Post-selection deterministic raw CLS geometry on all real TRAIN observations in the same462-identity pixel-gated training pool; no augmentation or validation/test encoding",
+  "models": {
+    "control": {
+      "mean_class_centroid_l2": 0.4477284824288762,
+      "mean_class_equal_best_positive_cosine": 0.8913364773875357,
+      "mean_class_equal_hardest_negative_cosine": 0.8571879381550203,
+      "mean_class_equal_cosine_margin": 0.03414853923251545,
+      "mean_class_equal_cosine_top1": 0.8676046176046176,
+      "mean_class_equal_optical_centroid_radius": 0.9935362679576896,
+      "mean_class_equal_sar_centroid_radius": 0.9977310659305875,
+      "mean_class_equal_cross_modal_centroid_cosine": 0.8974403959679573
+    },
+    "mean_alignment": {
+      "mean_class_centroid_l2": 0.16069125358278805,
+      "mean_class_equal_best_positive_cosine": 0.9859344314615758,
+      "mean_class_equal_hardest_negative_cosine": 0.9805782899822234,
+      "mean_class_equal_cosine_margin": 0.005356141479352367,
+      "mean_class_equal_cosine_top1": 0.8593073593073594,
+      "mean_class_equal_optical_centroid_radius": 0.9990655324669059,
+      "mean_class_equal_sar_centroid_radius": 0.9996684436219125,
+      "mean_class_equal_cross_modal_centroid_cosine": 0.9868779878638091
+    }
+  },
+  "mean_alignment_minus_control": {
+    "mean_class_centroid_l2": -0.2870372288460882,
+    "mean_class_equal_best_positive_cosine": 0.09459795407404004,
+    "mean_class_equal_hardest_negative_cosine": 0.12339035182720315,
+    "mean_class_equal_cosine_margin": -0.028792397753163085,
+    "mean_class_equal_cosine_top1": -0.008297258297258248,
+    "mean_class_equal_optical_centroid_radius": 0.005529264509216314,
+    "mean_class_equal_sar_centroid_radius": 0.0019373776913250706,
+    "mean_class_equal_cross_modal_centroid_cosine": 0.08943759189585176
+  },
+  "identities": 462,
+  "images": 1204,
+  "optical_images": 695,
+  "sar_images": 509,
+  "rows_class_equal": true,
+  "mean_loss_independently_recomputed": true,
+  "normalization": "L2-normalize each observation; unnormalized modality centroids; class-equal L2 distance. Cosine margins and top1 average observations per modality, then modalities and identities equally; all other training-pool identities compete.",
+  "limitations": "TRAIN was optimized and supplies a mechanism check, not held-out or official generalization. Best-positive cosine margin is optimistic for multi-view identities and is not the global/local pair-head score. No epoch, weight or configuration selected from these diagnostics. Auxiliary distance shrinkage alone does not imply identity discrimination or validation improvement.",
+  "optimizer_steps": 0,
+  "test_images_read": false,
+  "validation_images_encoded": false,
+  "submission_generated": false,
+  "seconds": 34.43800000002375,
+  "peak_allocated_mib": 765.1796875,
+  "bindings": {
+    "models": {
+      "control": {
+        "checkpoint": "a73db28a64c08bfe86f2b6cd6ad1481a3b64039a254442c016f4757e5c48439c",
+        "protocol": "79a47ef490c429c19faae5f3d32a837a2a636e08cd5d5827bee46d7aef52a41c",
+        "report": "61988bc497bebe676e58de225cdf41669510d93efcb01d4d9b703d838a4ecfec",
+        "features": "3c277a81b8f30f9785a79893e457c9f98da8eb9cc5de4d0d3ee75c0b8dca32d0"
+      },
+      "mean_alignment": {
+        "checkpoint": "c7c515b171f8aad8d3efe8bb6c9c5ce35d55bfc2d9a86bf7a867c67f98705ad2",
+        "protocol": "5c9f0a120286852590737b45d0aa6ab8b07356633660f47c87a0515056d60ca3",
+        "report": "421fcee1db8f741802d823cc136186e6d8bf128e74e5a5cf40e2763743ad3a77",
+        "features": "fbe1b417d29d3f3f52b1139209bc6e745f6a8b4ebb59c42887e53dc30e357c24"
+      }
+    },
+    "source": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+    "split": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+    "script": "25c5fd2a040f215d43ded9c6640196446cc7da2dfa1ca885dbcb8bf6846ad87a",
+    "encoder": "655e98da24705b410003763a7c9a6303f4200b55fdb1636ef68412c145d162f6",
+    "packing": "47bf06d66e336edc991692826eaba9e47e71266d9c9cc9ac7ccbabe0906db15f"
+  }
+}

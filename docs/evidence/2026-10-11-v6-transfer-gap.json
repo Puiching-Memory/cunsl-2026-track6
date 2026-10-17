@@ -1,0 +1,91 @@
+{
+  "scope": "Post-official-score diagnosis, frozen models and reused validation; not new confirmation, official score forecast or weight selection",
+  "summary": {
+    "70pct_gate_all_observations": {
+      "v5-control": 0.6422005166997355,
+      "native-overlap-mean": 0.7040801049933861,
+      "overlap-control": 0.7226407882771164,
+      "v6_minus_v5": 0.06187958829365078,
+      "improved_equal_worse": [
+        20,
+        0,
+        0
+      ]
+    },
+    "70pct_gate_one_observation": {
+      "v5-control": 0.6523689406047913,
+      "native-overlap-mean": 0.7151392531047913,
+      "overlap-control": 0.7338292456643152,
+      "v6_minus_v5": 0.06277031250000002,
+      "improved_equal_worse": [
+        20,
+        0,
+        0
+      ]
+    },
+    "70pct_gate_one_observation_10pct_unshared": {
+      "v5-control": 0.5928835239381247,
+      "native-overlap-mean": 0.6328084495333628,
+      "overlap-control": 0.6503800269143152,
+      "v6_minus_v5": 0.03992492559523811,
+      "improved_equal_worse": [
+        20,
+        0,
+        0
+      ]
+    }
+  },
+  "split_pair_groups": {
+    "development_joint": {
+      "v5-control": {
+        "extra_pair_accuracy": 0.5153846153846154,
+        "source_pair_accuracy": 0.931382978723404
+      },
+      "native-overlap-mean": {
+        "extra_pair_accuracy": 0.6057692307692308,
+        "source_pair_accuracy": 0.9382978723404254
+      },
+      "overlap-control": {
+        "extra_pair_accuracy": 0.6903846153846153,
+        "source_pair_accuracy": 0.9430851063829788
+      }
+    },
+    "reporting_joint": {
+      "v5-control": {
+        "extra_pair_accuracy": 0.5527777777777778,
+        "source_pair_accuracy": 0.9620967741935484
+      },
+      "native-overlap-mean": {
+        "extra_pair_accuracy": 0.5944444444444443,
+        "source_pair_accuracy": 0.9508064516129033
+      },
+      "overlap-control": {
+        "extra_pair_accuracy": 0.6472222222222223,
+        "source_pair_accuracy": 0.9443548387096775
+      }
+    }
+  },
+  "original40_gate_mean": 38.725,
+  "public_gate": 84,
+  "public_extra_gate": 27,
+  "validation_optical_gate": 166,
+  "validation_optical_total": 765,
+  "multi_optical_validation_identities": 44,
+  "dev_multi_identities": 26,
+  "report_multi_identities": 18,
+  "one_gallery_scope": "One per paired validation identity, fewer than public 900 files; public files need not be unique identities. Stress assumption only",
+  "script_sha256": "8dca9aff96ea789eb97d49f4ea34048496af0b9c5c8392b67b9e656a879f302e",
+  "bindings": {
+    "screen_report": "530976a4c355db639a66cbf0a27a749c43cb71ddbfd0716dc87758686b34f627",
+    "source": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+    "split": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+    "native_features": "d729f0842801eec08041bb01766c68132eaca0bff6354e3755fe42970ffc5947",
+    "score_banks": {
+      "v5-control": "d35dc817c415075af3f8fcac54241090e3c7eb7bfa2f1df3753067a6d09c53a6",
+      "native-overlap-mean": "de30590f890846d6acd443d7090179788cc2ce791d36e439565daaf2925d1b39",
+      "overlap-control": "e2156509d9e350fef83c80562268d3f33243fb7a6fd48c036c9fa0b04bb09678"
+    }
+  },
+  "training_updates": 0,
+  "test_identity_labels_used": false
+}

@@ -1,0 +1,229 @@
+{
+  "scope": "Fixed frozen HOSS-inspired input probes; reused contest validation; no external validation/test pixels or labels",
+  "results": {
+    "v5-control": {
+      "full_score": 0.645382706870627,
+      "cohort_mean": 0.8348002166694224,
+      "cohort_v5_delta": 0.0,
+      "cohort_vs_v5_improved_equal_worse": [
+        0,
+        40,
+        0
+      ],
+      "reporting_v5_delta_conditional_identity_interval_95": [
+        0.0,
+        0.0
+      ],
+      "v5_relative_top1_transitions": {
+        "O2S": {
+          "wrong_to_correct": 0,
+          "correct_to_wrong": 0
+        },
+        "S2O": {
+          "wrong_to_correct": 0,
+          "correct_to_wrong": 0
+        },
+        "O2O": {
+          "wrong_to_correct": 0,
+          "correct_to_wrong": 0
+        }
+      },
+      "optical_groups": {
+        "other_optical": {
+          "queries": 599,
+          "identities": 599,
+          "baseline_identity_macro_r1": 0.6126878130217028,
+          "new_identity_macro_r1": 0.6126878130217028,
+          "delta": 0.0
+        },
+        "packed_single": {
+          "queries": 60,
+          "identities": 60,
+          "baseline_identity_macro_r1": 0.36666666666666664,
+          "new_identity_macro_r1": 0.36666666666666664,
+          "delta": 0.0
+        },
+        "packed_multiple": {
+          "queries": 106,
+          "identities": 44,
+          "baseline_identity_macro_r1": 0.3333333333333333,
+          "new_identity_macro_r1": 0.3333333333333333,
+          "delta": 0.0
+        }
+      },
+      "extra27_pair_accuracy": 0.4759259259259259
+    },
+    "sar-sqrt": {
+      "full_score": 0.5684952185419623,
+      "cohort_mean": 0.8173679312031525,
+      "cohort_v5_delta": -0.01743228546626984,
+      "cohort_vs_v5_improved_equal_worse": [
+        11,
+        0,
+        29
+      ],
+      "reporting_v5_delta_conditional_identity_interval_95": [
+        -0.1126176200757416,
+        -0.05166764369989424
+      ],
+      "v5_relative_top1_transitions": {
+        "O2S": {
+          "wrong_to_correct": 72,
+          "correct_to_wrong": 120
+        },
+        "S2O": {
+          "wrong_to_correct": 65,
+          "correct_to_wrong": 152
+        },
+        "O2O": {
+          "wrong_to_correct": 0,
+          "correct_to_wrong": 0
+        }
+      },
+      "optical_groups": {
+        "other_optical": {
+          "queries": 599,
+          "identities": 599,
+          "baseline_identity_macro_r1": 0.6126878130217028,
+          "new_identity_macro_r1": 0.5409015025041736,
+          "delta": -0.07178631051752922
+        },
+        "packed_single": {
+          "queries": 60,
+          "identities": 60,
+          "baseline_identity_macro_r1": 0.36666666666666664,
+          "new_identity_macro_r1": 0.21666666666666667,
+          "delta": -0.15
+        },
+        "packed_multiple": {
+          "queries": 106,
+          "identities": 44,
+          "baseline_identity_macro_r1": 0.3333333333333333,
+          "new_identity_macro_r1": 0.3598484848484848,
+          "delta": 0.026515151515151516
+        }
+      },
+      "extra27_pair_accuracy": 0.4564814814814815
+    },
+    "strip-conditional": {
+      "full_score": 0.6154247987073618,
+      "cohort_mean": 0.785818805459105,
+      "cohort_v5_delta": -0.04898141121031748,
+      "cohort_vs_v5_improved_equal_worse": [
+        2,
+        0,
+        38
+      ],
+      "reporting_v5_delta_conditional_identity_interval_95": [
+        -0.038391073892724295,
+        -0.012787429725960742
+      ],
+      "v5_relative_top1_transitions": {
+        "O2S": {
+          "wrong_to_correct": 14,
+          "correct_to_wrong": 37
+        },
+        "S2O": {
+          "wrong_to_correct": 6,
+          "correct_to_wrong": 29
+        },
+        "O2O": {
+          "wrong_to_correct": 0,
+          "correct_to_wrong": 0
+        }
+      },
+      "optical_groups": {
+        "other_optical": {
+          "queries": 599,
+          "identities": 599,
+          "baseline_identity_macro_r1": 0.6126878130217028,
+          "new_identity_macro_r1": 0.6126878130217028,
+          "delta": 0.0
+        },
+        "packed_single": {
+          "queries": 60,
+          "identities": 60,
+          "baseline_identity_macro_r1": 0.36666666666666664,
+          "new_identity_macro_r1": 0.2,
+          "delta": -0.16666666666666666
+        },
+        "packed_multiple": {
+          "queries": 106,
+          "identities": 44,
+          "baseline_identity_macro_r1": 0.3333333333333333,
+          "new_identity_macro_r1": 0.19318181818181818,
+          "delta": -0.14015151515151517
+        }
+      },
+      "extra27_pair_accuracy": 0.33796296296296297
+    },
+    "strip-sqrt-conditional": {
+      "full_score": 0.6144688996810845,
+      "cohort_mean": 0.776675070960097,
+      "cohort_v5_delta": -0.05812514570932541,
+      "cohort_vs_v5_improved_equal_worse": [
+        0,
+        0,
+        40
+      ],
+      "reporting_v5_delta_conditional_identity_interval_95": [
+        -0.04514604363681701,
+        -0.014758195681302388
+      ],
+      "v5_relative_top1_transitions": {
+        "O2S": {
+          "wrong_to_correct": 15,
+          "correct_to_wrong": 38
+        },
+        "S2O": {
+          "wrong_to_correct": 10,
+          "correct_to_wrong": 30
+        },
+        "O2O": {
+          "wrong_to_correct": 0,
+          "correct_to_wrong": 0
+        }
+      },
+      "optical_groups": {
+        "other_optical": {
+          "queries": 599,
+          "identities": 599,
+          "baseline_identity_macro_r1": 0.6126878130217028,
+          "new_identity_macro_r1": 0.6126878130217028,
+          "delta": 0.0
+        },
+        "packed_single": {
+          "queries": 60,
+          "identities": 60,
+          "baseline_identity_macro_r1": 0.36666666666666664,
+          "new_identity_macro_r1": 0.1,
+          "delta": -0.26666666666666666
+        },
+        "packed_multiple": {
+          "queries": 106,
+          "identities": 44,
+          "baseline_identity_macro_r1": 0.3333333333333333,
+          "new_identity_macro_r1": 0.24621212121212122,
+          "delta": -0.0871212121212121
+        }
+      },
+      "extra27_pair_accuracy": 0.3148148148148148
+    }
+  },
+  "bindings": {
+    "protocol": "33be90c267a06787af489a998adf8d260d6ac998de7f656204fff9ac80d8cd46",
+    "report": "f48c9ed6f5f3016657a152f881288f350e2d5d0bfac502032641990dcf4f08ac",
+    "verification": "08773b9f766e27e854ba1de03aa92cbe55fba274b2fc33e4859ccc3496648e02",
+    "study_snapshot": "47bf06d66e336edc991692826eaba9e47e71266d9c9cc9ac7ccbabe0906db15f",
+    "analysis_script": "3c3ff98368b76fc459df20e4afb178fb191d4c41c5d20727a049e4b75f0cd6ac",
+    "figure": "e3f3ec2caf686168372d59a80025d8a28c3bad6c9cee264fae17850d271bf3c6"
+  },
+  "v5_bank_replay_exact": true,
+  "optimizer_steps": 0,
+  "test_images_used": false,
+  "submission_generated": false,
+  "peak_allocated_mib": 766.0478515625,
+  "gpu_job_seconds": 34.73399999999674,
+  "conclusion": "No candidate meets +0.03 significant-gain screen. Frozen intervention rejection does not reject trained strip input or prove absence of identity signal.",
+  "interval_scope": "Paired fixed reporting identity clusters vs V5, excludes model/validation reuse and official shift; shared cohorts are not independent trials."
+}

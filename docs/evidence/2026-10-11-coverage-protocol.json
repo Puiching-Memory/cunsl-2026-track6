@@ -1,0 +1,70 @@
+{
+  "version": "coverage-sealed-v1",
+  "seed": 202610111,
+  "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+  "labels_sha256": "ec0177e1f7be9245354da41d2ee85a5d4bd4cffedc6eb2eb40053d2284c8ce7d",
+  "summary": {
+    "train": {
+      "identities": 2479,
+      "paired_identities": 2471,
+      "gated_identities": 402,
+      "other_identities": 2069,
+      "multi_optical_identities": 142,
+      "images": 5199
+    },
+    "development": {
+      "identities": 528,
+      "paired_identities": 526,
+      "gated_identities": 82,
+      "other_identities": 444,
+      "multi_optical_identities": 31,
+      "images": 1108
+    },
+    "sealed": {
+      "identities": 527,
+      "paired_identities": 525,
+      "gated_identities": 82,
+      "other_identities": 443,
+      "multi_optical_identities": 31,
+      "images": 1102
+    }
+  },
+  "near_duplicate_cross_partition_edges": 0,
+  "pixel_overlap": 0,
+  "script_sha256": "5a406d0e32edf4498cd105ce2051ec69213af214a4a12cd32700af03fc42477d",
+  "bindings": {
+    "original_split": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+    "duplicates": "9dc80ce7af871b38df8274e42e32f2088522d8afaf098de3eaabf735df470aaf",
+    "pixel_gate_module": "47bf06d66e336edc991692826eaba9e47e71266d9c9cc9ac7ccbabe0906db15f",
+    "pretrained_weights": "bd8f1dd35cfb6bc6c2a111fa3f8e4a415bfe6e04231aab7cf0f076a97bc2b5f9"
+  },
+  "configuration": {
+    "image_size": 256,
+    "patch_stride": 16,
+    "identities_per_batch": 8,
+    "observations_per_modality": 2,
+    "backbone_lr": 0.0005,
+    "head_lr": 0.0001,
+    "head_weight_decay": 0.01,
+    "sgd_momentum": 0.9,
+    "sgd_weight_decay": 0.0001,
+    "pair_loss_weight": 0.5,
+    "local_loss_weight": 0.25,
+    "evaluation_every_steps": 100,
+    "foundation_max_steps": 1200,
+    "arms_max_steps": 1000,
+    "minimum_steps": 600,
+    "stale_evaluations": 4,
+    "minimum_delta": 0.001,
+    "selection": "greatest development full cross-modal score: .5*(O2S score+S2O score); no sealed access",
+    "full_sampling": "4 gated +4 other distinct identities per update, uniform within strata; foundation and full arm",
+    "specialist_sampling": "8 gated distinct identities per update",
+    "comparison": "Same selected fresh foundation, initialization, optimizers and maximum update/compute budget; target-domain exposure differs (8 vs4 per step), explicit training regime comparison not isolated identity-count causality",
+    "primary_gate": "full arm minus specialist: sealed full cross-modal >=.03, joint >=.01, extra pairing >=0, source pairing >=-.005; then repeat both arms with a second seed before deployment"
+  },
+  "initialization": "Reviewed scene-pair pretraining only, random classifier/global/local heads, no old identity-trained checkpoint or old pair head",
+  "sealed_policy": "Training decodes train/development only. Both arms select and finish on development before one final sealed evaluation. No changes based on sealed outcome",
+  "limitation": "New holdout for fresh supervision/selection, not a newly acquired dataset; labelled corpus was previously studied. Author pretraining provenance not independently audited; no claim of absolute unseen source",
+  "test_images_used": false,
+  "protocol_sha256": "9064ae7d1e8220d8463d9681e6916d585cceacf874f16accac650d001d539a21"
+}

@@ -1,5 +1,7 @@
 # 新骨干与识别效果实验
 
+2026-10-07起本页保留为历史研究记录。DINO实现已删除；当前TransOSS路线与入口见[项目结构](14-project-structure.md)和[工具说明](../tools/README.md)。
+
 ## 研究重心
 
 首轮gray32、冻结DINOv2-S/14及线性适配器用于建立正确、可复现的流程。0.25044只是一次本地身份隔离划分上的起点，不能代表先进算法或最终方案。后续优先提升两个跨模态方向的识别效果，以三方向完整指标和独立复算决定取舍。
@@ -15,7 +17,7 @@ Meta在2025年8月发布[DINOv3](https://github.com/facebookresearch/dinov3)。�
 
 维护者的初始提交已含精确safetensors文件；当日当前版本的LFS完整SHA-256与初始版本相同。两个仓库均为公开非gated资源。本地完整下载和传入算力机后的摘要均核验通过，实际权重保存在data/weights，原始模型卡、许可及API历史快照保存在local/research。
 
-精确来源、权重摘要与许可分别记录在[通用版资源清单](../resources/dinov3-vitb16-timm.json)和[卫星版资源清单](../resources/dinov3-vitl16-sat-timm.json)。timm代码固定1.0.20/tag 234907e，2025-09-21公开，代码Apache-2.0；已核验PyPI原始wheel摘要及EVA实现文件。权重继续受[DINOv3 License](https://github.com/facebookresearch/dinov3/blob/main/LICENSE.md)约束，不能随代码称为Apache-2.0。发布研究需致谢；分发权重或衍生权重需随附该许可并遵守其中用途限制。
+精确来源、权重摘要与许可分别记录在[通用版资源清单](archive/dino-settings.md#dinov3-vitb16-timm-json)和[卫星版资源清单](archive/dino-settings.md#dinov3-vitl16-sat-timm-json)。timm代码固定1.0.20/tag 234907e，2025-09-21公开，代码Apache-2.0；已核验PyPI原始wheel摘要及EVA实现文件。权重继续受[DINOv3 License](https://github.com/facebookresearch/dinov3/blob/main/LICENSE.md)约束，不能随代码称为Apache-2.0。发布研究需致谢；分发权重或衍生权重需随附该许可并遵守其中用途限制。
 
 适用边界：按2026-10-01已核对的赛题规则，这两份具体权重满足2026-09-01之前公开与资源登记条件；这是资源条件审查，不是主办方对DINOv3的专项审核结论。当前只用于公开算法竞赛研究，在自有环境上使用正式训练标签优化、测试图像推理，未导入AIS、位置、时间等未公开辅助信息。
 
@@ -99,7 +101,7 @@ timm转换去掉原权重中的零QKV偏置，使用FP32生成RoPE周期；模�
 
 [运行清单](evidence/2026-10-01-modern-runs.json)记录16次持GPU锁的成功模型运行及1次CPU下载失败；每次模型运行先检查已有GPU进程，源代码干净，未终止第5题。图像微调、损失、部分参数保存覆盖与恢复的真实测试已通过；算力机27项检查全通过，Windows 21项通过、6项按平台或无PyTorch跳过。[外部资源证据](evidence/2026-10-01-dinov3-resources.json)保存原始发布时间、精确权重、下载/传输摘要与代码许可。实验使用的是4c2394b中的资源清单摘要，后续仅完善清单说明，不改变具体权重。
 
-复现需使用已核验正式ZIP、审查生成的私有划分和指定本地权重。新配置记录见[dinov3-reid.example.toml](../configs/dinov3-reid.example.toml)，TOML用于记录设置，下列CLI是实际执行入口；输出使用新的复现目录：
+复现需使用已核验正式ZIP、审查生成的私有划分和指定本地权重。新配置记录见[dinov3-reid.example.toml](archive/dino-settings.md#dinov3-reid-example-toml)，TOML用于记录设置，下列CLI是实际执行入口；输出使用新的复现目录：
 
 ```bash
 cd /root/autodl-tmp/cunsl-2026/track6/project

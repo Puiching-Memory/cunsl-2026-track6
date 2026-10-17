@@ -1,0 +1,21 @@
+{
+  "version": "V6 native-overlap equal blend with V5 fallback",
+  "user_authorized": true,
+  "destination": "https://www.heywhale.com/org/cunsl/competition/area/6aba33ce6e5beff2fca53add/submit",
+  "submitted_at_site": "2026/10/11 20:30",
+  "site_timezone": "Asia/Shanghai",
+  "observed_at_utc": "2026-10-11T12:31:12.469021+00:00",
+  "uploaded": true,
+  "status": "待评审",
+  "official_score": null,
+  "submissions_today": 1,
+  "daily_limit": 3,
+  "submissions_total": 6,
+  "prediction_sha256": "97ef995f3e252888864a460f49d5601f603c40010806bc198d7a490dd2731770",
+  "prediction_bytes": 48063,
+  "screenshot_sha256": "8a604c45ea02f365a8b2e4f75650260eaff8045939d90e14249ea448e0c11bb3",
+  "dom_receipt_sha256": "55dbaa723baedf7e2ce8d0309d55fd8360e87f49433ed92fb5f72a10ea812fa2",
+  "producer_report_sha256": "1e0cf681f8ec6d0e36e75ffb989f2704ca9bd3101984fe937104dc8886414713",
+  "independent_audit_sha256": "cecdd0278d508b2255ec78855194a4b1f7748959d46d73c54e6fda2297a9f590",
+  "scope": "Visible site receipt confirms acceptance; not an official accuracy result. Producer report and audit remain unchanged as pre-submission records."
+}

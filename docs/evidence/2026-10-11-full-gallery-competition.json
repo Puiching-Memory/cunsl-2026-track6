@@ -1,0 +1,102 @@
+{
+  "scope": "TRAIN-only fixed seen-identity optical queries; same source views as prior diagnostic, expanded SAR competitors",
+  "models": {
+    "native_cls": {
+      "source_only": {
+        "gallery_identities": 462,
+        "best_positive_top1": 0.56,
+        "all_positive_top1": 0.55,
+        "competitor_count_quantiles": [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          11.0
+        ],
+        "outside_source_outrankers": 0,
+        "fraction_queries_with_outside_source_outranker": 0.0,
+        "expected_random_identity_top1": {
+          "8": 0.9862821573150065,
+          "32": 0.9432550717185384,
+          "120": 0.8217725756978622,
+          "462": 0.56
+        }
+      },
+      "all_training": {
+        "gallery_identities": 2819,
+        "best_positive_top1": 0.56,
+        "all_positive_top1": 0.55,
+        "competitor_count_quantiles": [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          11.0
+        ],
+        "outside_source_outrankers": 1,
+        "fraction_queries_with_outside_source_outranker": 0.005,
+        "expected_random_identity_top1": {
+          "8": 0.997709128485902,
+          "32": 0.9899740219258689,
+          "120": 0.9630856542914011,
+          "2819": 0.56
+        }
+      }
+    },
+    "v5_local_head": {
+      "source_only": {
+        "gallery_identities": 462,
+        "best_positive_top1": 0.86,
+        "all_positive_top1": 0.84,
+        "competitor_count_quantiles": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          6.0
+        ],
+        "outside_source_outrankers": 0,
+        "fraction_queries_with_outside_source_outranker": 0.0,
+        "expected_random_identity_top1": {
+          "8": 0.9968416461549913,
+          "32": 0.9865169967761008,
+          "120": 0.9538303765826851,
+          "462": 0.86
+        }
+      },
+      "all_training": {
+        "gallery_identities": 2819,
+        "best_positive_top1": 0.86,
+        "all_positive_top1": 0.84,
+        "competitor_count_quantiles": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          6.0
+        ],
+        "outside_source_outrankers": 0,
+        "fraction_queries_with_outside_source_outranker": 0.0,
+        "expected_random_identity_top1": {
+          "8": 0.9994791720616015,
+          "32": 0.9977078239356283,
+          "120": 0.9913950935731087,
+          "2819": 0.86
+        }
+      }
+    }
+  },
+  "audit": {
+    "native_cls": {
+      "identity_targets_checked": true,
+      "source_and_full_events_recomputed": true
+    },
+    "v5_local_head": {
+      "identity_targets_checked": true,
+      "source_and_full_events_recomputed": true
+    }
+  },
+  "limitations": "Fixed seen TRAIN observations; not joint assignment, actual loss, generalization or proof that global-negative training helps. Outside-source means optical pixel-gate group, not independently certified physical source.",
+  "report_sha256": "1f58e2c7908e96b23554abec6bb1ecc4a2980ef2fde13d26fb229a713c305d72",
+  "analysis_script_sha256": "d223a0cdd88c4d3a16cc970f7b2be0b2bfca23306ca5dc6ba58fa5d31a6c8f93"
+}

@@ -1,0 +1,1856 @@
+{
+  "date": "2026-10-08",
+  "request": "Continue investigating with agents from different angles",
+  "scope": "Three parallel investigations and root cross-checks; no hidden identity input or submission",
+  "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+  "official_best_unchanged": 0.6699152061287479,
+  "generation": {
+    "searches": [
+      {
+        "name": "fresh categorical shuffle fingerprints",
+        "seed_count": 66632,
+        "seed_family": "integers 0..65535 plus YYYYMMDD dates 2024-01-01..2026-12-31",
+        "libraries": [
+          "python.Random.shuffle",
+          "numpy.RandomState.permutation",
+          "numpy.default_rng.permutation"
+        ],
+        "query_templates": 10,
+        "gallery_templates": 4,
+        "categorical_comparisons": 2798544,
+        "triplet_comparisons": 199896,
+        "exact_hits": 0,
+        "summary": "pipeline-summary.json",
+        "script": "probe_pipeline.py"
+      },
+      {
+        "name": "fixed preceding RNG histories",
+        "seed_count": 1090,
+        "seed_family": "0..1023, dates 2026-08-01..2026-09-30, 1234/2024/2025/2026/20261001",
+        "libraries": 3,
+        "history_count": 37,
+        "categorical_comparisons": 1693860,
+        "triplet_comparisons": 120990,
+        "exact_hits": 0,
+        "summary": "prior-summary.json",
+        "script": "probe_prior_state.py"
+      },
+      {
+        "name": "sequential-write time bucket shuffle fingerprints",
+        "seed_count": 66632,
+        "seed_family": "0..65535 plus 2024..2026 dates",
+        "libraries": [
+          "Python shuffle",
+          "NumPy RandomState permutation",
+          "NumPy default_rng permutation"
+        ],
+        "orientations": 2,
+        "targets": 2,
+        "pipeline_comparisons": 799584,
+        "exact_hits": 0,
+        "summary": "write-order-summary.json",
+        "script": "probe_write_order.py"
+      }
+    ],
+    "total_formal_categorical_and_write_fingerprint_comparisons": 5291988,
+    "total_triplet_comparisons": 320886,
+    "total_exact_hits": 0,
+    "comparison_note": "These are formal template comparisons, not independent candidates or statistical experiments. Some prior histories have identical RNG effect; maxima are heavily selected and cannot be treated as leakage.",
+    "old_conclusion_correction": {
+      "old": "Packaging time only reflects sequential generation in anonymous numeric order",
+      "corrected": "ZIP and UT modification-time buckets are interleaved throughout anonymous numeric order for both Query and Gallery; not monotonic. Public package times cannot be treated as acquisition times. Finite attempts to recover a sorted-write permutation found no exact fingerprint."
+    },
+    "new_reproducible_observation": {
+      "gallery_exact_duplicate_groups": 10,
+      "by_modality": {
+        "sar": 6,
+        "optical": 4
+      },
+      "all_nonconstant": true,
+      "any_connected_to_query_source": false,
+      "any_v3_O2O_top1_in_duplicate_group": false,
+      "public_pixel_counts": {
+        "gallery": {
+          "optical": {
+            "files": 900,
+            "unique_pixels": 896
+          },
+          "sar": {
+            "files": 900,
+            "unique_pixels": 894
+          }
+        },
+        "query": {
+          "optical": {
+            "files": 147,
+            "unique_pixels": 120
+          },
+          "sar": {
+            "files": 120,
+            "unique_pixels": 120
+          }
+        },
+        "public_combined": {
+          "optical": {
+            "files": 1047,
+            "unique_pixels": 923
+          },
+          "sar": {
+            "files": 1020,
+            "unique_pixels": 894
+          }
+        }
+      }
+    },
+    "packaging_relation": {
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "feature_sha256": "d729f0842801eec08041bb01766c68132eaca0bff6354e3755fe42970ffc5947",
+      "script_sha256": "dc5b675605b30a61073f3fafc0043665df0f913eefff4d9d1eecd4c0dc7708b4",
+      "query_packaging_relation": {
+        "nonconstant_pairs": 119,
+        "current_assignment_same_write_bucket": 77,
+        "query_nearest_neighbor_same_write_bucket": 74,
+        "random_injective_assignment": {
+          "count": 10000,
+          "mean": 78.3459,
+          "max": 94,
+          "q025_q975": [
+            71.0,
+            86.0
+          ]
+        }
+      },
+      "gallery_packaging_relation": {
+        "O2S_nearest_same_write_bucket": 294,
+        "S2O_nearest_same_write_bucket": 295,
+        "random_SAR_bucket_permutation": {
+          "count": 10000,
+          "mean": 287.0237,
+          "max": 343,
+          "q025_q975": [
+            258.975,
+            315.0
+          ]
+        },
+        "random_optical_bucket_permutation": {
+          "count": 10000,
+          "mean": 287.1375,
+          "max": 337,
+          "q025_q975": [
+            259.0,
+            315.0
+          ]
+        },
+        "within_bucket_cosine_mean": 0.3464720845222473,
+        "outside_bucket_cosine_mean": 0.34705978631973267
+      },
+      "known_O2O_O2S_pixel_pairs": {
+        "same_bucket": 17,
+        "pairs": 27,
+        "random_pairing": {
+          "count": 10000,
+          "mean": 18.1872,
+          "max": 21,
+          "q025_q975": [
+            17.0,
+            21.0
+          ]
+        }
+      },
+      "conclusion": "No useful identity or source-correspondence enrichment in package modification-time buckets. Visual query assignment 77/119 equals random expectation; known pixel copies also do not enrich. Do not use write-time buckets as identity gates.",
+      "scope": "Public package filesystem timestamps only; not acquisition metadata, not hidden labels. Exact query/galleries source copies are verified pixels; other matches are model guesses.",
+      "gpu_used": false,
+      "uploads": 0
+    },
+    "strongest_remaining_hypothesis": "900 latent identities, one SAR Gallery and one optical Gallery per identity; 27 additional optical observations become O2O and O2S Query, with 93 additional query identities. This is compatible with file counts but not established by pixels.",
+    "hypothesis_limit": "Extra optical observations can include multiple images of the same latent identity. Gallery exact pixel duplicates can be same identity observations or different-identity label conflicts; public files do not resolve this."
+  },
+  "pixels": {
+    "exact-crop-summary.json": {
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "scope": "All images, no hidden identity labels; exact RGB crop after support threshold bbox and D4; discarded exterior not matched",
+      "support_thresholds": [
+        0,
+        2,
+        8
+      ],
+      "results": {
+        "0": {
+          "fresh_pairs": 0,
+          "old_full_pixel_pairs": 255,
+          "roles": {},
+          "training_pairs": 0,
+          "training_pairs_equal_identity": 0,
+          "public_cross_modal_pairs": 0
+        },
+        "2": {
+          "fresh_pairs": 0,
+          "old_full_pixel_pairs": 255,
+          "roles": {},
+          "training_pairs": 0,
+          "training_pairs_equal_identity": 0,
+          "public_cross_modal_pairs": 0
+        },
+        "8": {
+          "fresh_pairs": 0,
+          "old_full_pixel_pairs": 255,
+          "roles": {},
+          "training_pairs": 0,
+          "training_pairs_equal_identity": 0,
+          "public_cross_modal_pairs": 0
+        }
+      },
+      "seconds": 121.54700000000594,
+      "gpu": false,
+      "uploads": 0
+    },
+    "exact-pair-breakdown.json": {
+      "nonconstant_exact_pairs": 255,
+      "roles": {
+        "train+train": 6,
+        "gallery+query": 212,
+        "query+query": 27,
+        "gallery+gallery": 10
+      },
+      "modalities": {
+        "optical+optical": 130,
+        "sar+sar": 125
+      },
+      "training_label_same": 0,
+      "training_label_conflict": 6
+    },
+    "partial-crop-min1-summary.json": {
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "scope": "All public and training images; axis-aligned exact local RGB texture only, no hidden test labels",
+      "block": [
+        32,
+        32
+      ],
+      "stride": 16,
+      "minimum_shared_blocks": 1,
+      "filters": {
+        "nonzero_fraction_min": 0.5,
+        "std_min": 8,
+        "quantized_intensity_bins_min": 16
+      },
+      "blocks": 406640,
+      "matching_texture_hash_groups": 10989,
+      "generic_groups_discarded": 0,
+      "hash_collision_candidates_rejected": 0,
+      "partial_source_pairs": 37,
+      "fresh_pairs": 0,
+      "fresh_roles": {},
+      "fresh_training_pairs": 0,
+      "fresh_training_same_identity_pairs": 0,
+      "public_cross_modal_pairs": 0,
+      "limitations": "Only translations aligned to 16-pixel grid and exact pixels; no proof of identity, no exclusion of interpolation/exposure overlap",
+      "seconds": 0.9070000000065193,
+      "gpu": false,
+      "uploads": 0
+    },
+    "alias-closure.json": {
+      "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+      "scope": "transitive strict source similarity then public training correspondence only, not hidden identities",
+      "strict_near_mae_max": 2.5,
+      "source_alias_train_components": 45,
+      "source_alias_train_identities": 93,
+      "public_query_source_overlap": 12,
+      "cross_modal_query_components": 0,
+      "cross_modal_query_connections": [],
+      "caution": "Source aliases contradict published IDs and never prove test identity. No output predictions or label assignments."
+    },
+    "registration-summary.json": {
+      "scope": "Fixed image registration and predetermined fusion weights, same previously model-selected holdout; no hidden labels",
+      "crop_shape": [
+        128,
+        32
+      ],
+      "shifts": {
+        "dx": [
+          -1,
+          0,
+          1
+        ],
+        "dy": [
+          -4,
+          0,
+          4
+        ]
+      },
+      "resize_shapes": {
+        "height": [
+          124,
+          128,
+          132
+        ],
+        "width": [
+          30,
+          32,
+          34
+        ]
+      },
+      "candidate_pool": "union top5 native/foreground/fullgray, two best coarse D4 transforms",
+      "partial_fit_is_not_identity": true,
+      "results": {
+        "validation_O2O": {
+          "native": {
+            "R@1": 0.8863636363636364,
+            "mAP@10": 0.9147727272727273,
+            "score": 0.9005681818181819
+          },
+          "foreground": {
+            "R@1": 0.8636363636363636,
+            "mAP@10": 0.8844696969696971,
+            "score": 0.8740530303030304
+          },
+          "refined": {
+            "R@1": 0.8863636363636364,
+            "mAP@10": 0.913888888888889,
+            "score": 0.9001262626262627
+          },
+          "native_plus_foreground_0.1": {
+            "R@1": 0.8636363636363636,
+            "mAP@10": 0.9079545454545456,
+            "score": 0.8857954545454546
+          },
+          "native_plus_refined_0.1": {
+            "R@1": 0.8636363636363636,
+            "mAP@10": 0.9071969696969698,
+            "score": 0.8854166666666667
+          },
+          "native_plus_foreground_0.25": {
+            "R@1": 0.8863636363636364,
+            "mAP@10": 0.9293831168831168,
+            "score": 0.9078733766233766
+          },
+          "native_plus_refined_0.25": {
+            "R@1": 0.8636363636363636,
+            "mAP@10": 0.9180194805194805,
+            "score": 0.890827922077922
+          },
+          "native_plus_foreground_0.5": {
+            "R@1": 0.9090909090909091,
+            "mAP@10": 0.9469696969696969,
+            "score": 0.928030303030303
+          },
+          "native_plus_refined_0.5": {
+            "R@1": 0.9090909090909091,
+            "mAP@10": 0.9545454545454546,
+            "score": 0.9318181818181819
+          }
+        },
+        "public_O2O": {
+          "native": {
+            "changes_v3_top1": 0
+          },
+          "foreground": {
+            "changes_v3_top1": 3
+          },
+          "refined": {
+            "changes_v3_top1": 3
+          },
+          "native_plus_foreground_0.1": {
+            "changes_v3_top1": 1
+          },
+          "native_plus_refined_0.1": {
+            "changes_v3_top1": 0
+          },
+          "native_plus_foreground_0.25": {
+            "changes_v3_top1": 1
+          },
+          "native_plus_refined_0.25": {
+            "changes_v3_top1": 0
+          },
+          "native_plus_foreground_0.5": {
+            "changes_v3_top1": 1
+          },
+          "native_plus_refined_0.5": {
+            "changes_v3_top1": 0
+          }
+        }
+      },
+      "seconds": 13.328999999997905,
+      "gpu": false,
+      "uploads": 0
+    }
+  },
+  "pair_structure": {
+    "error_concentration": {
+      "native": {
+        "all_query_pair_accuracy": 0.769375,
+        "missing_query_pair_accuracy": 0.4296296296296296,
+        "known_source_pair_accuracy": 0.8680107526881721,
+        "mean_wrong_pairs": 27.675,
+        "mean_wrong_missing_pairs": 15.400000000000002,
+        "missing_query_share": 0.225,
+        "missing_share_of_wrong_pairs": 0.5564588979223126,
+        "mean_OO_proxy_top1_accuracy": 0.8194444444444444,
+        "mean_correct_pair_wrong_bridge": 1.15,
+        "mean_wrong_pair_wrong_bridge": 3.725
+      },
+      "joint": {
+        "all_query_pair_accuracy": 0.775625,
+        "missing_query_pair_accuracy": 0.4407407407407409,
+        "known_source_pair_accuracy": 0.8728494623655914,
+        "mean_wrong_pairs": 26.925,
+        "mean_wrong_missing_pairs": 15.099999999999996,
+        "missing_query_share": 0.225,
+        "missing_share_of_wrong_pairs": 0.5608170844939645,
+        "mean_OO_proxy_top1_accuracy": 0.8009259259259259,
+        "mean_correct_pair_wrong_bridge": 1.325,
+        "mean_wrong_pair_wrong_bridge": 4.05
+      }
+    },
+    "oracle_definitions": {
+      "bridge": "Keep original Query pairing; replace missing optical query's inferred Gallery target with its own real same-ID optical Gallery observation chosen by best optical similarity; O2O unchanged. This is not an upper bound for all S2O target corrections because originally wrong Query pairs remain wrong.",
+      "pair": "Use labelled correct Query one-to-one pairing, retain original optical target bridge and O2O rankings.",
+      "pair_and_bridge": "Both above oracle changes, O2O unchanged. Diagnostic only, never a submitted algorithm."
+    },
+    "mechanism_diagnostics_native": {
+      "complete_original": {
+        "mean_score": 0.7910318293926368,
+        "mean_delta_vs_v4": 0.0
+      },
+      "oracle_bridge_diagnostic": {
+        "mean_score": 0.7927513792438272,
+        "mean_delta_vs_v4": 0.001719549851190466
+      },
+      "oracle_pair_diagnostic": {
+        "mean_score": 0.9582993362130733,
+        "mean_delta_vs_v4": 0.1672675068204365
+      },
+      "oracle_pair_and_bridge_diagnostic": {
+        "mean_score": 0.9753378127755733,
+        "mean_delta_vs_v4": 0.18430598338293652
+      }
+    },
+    "unique_gallery": {
+      "native": {
+        "query_complete": {
+          "mean_score": 0.8024383825231481,
+          "mean_gain_vs_query": 0.0,
+          "positive_trials": 0,
+          "negative_trials": 0
+        },
+        "full_gallery_complete": {
+          "mean_score": 0.5840827463624338,
+          "mean_gain_vs_query": -0.21835563616071427,
+          "positive_trials": 0,
+          "negative_trials": 40
+        }
+      },
+      "joint": {
+        "query_complete": {
+          "mean_score": 0.803830491255144,
+          "mean_gain_vs_query": 0.0,
+          "positive_trials": 0,
+          "negative_trials": 0
+        },
+        "full_gallery_complete": {
+          "mean_score": 0.5771872992908584,
+          "mean_gain_vs_query": -0.22664319196428567,
+          "positive_trials": 0,
+          "negative_trials": 40
+        }
+      }
+    },
+    "limitations": [
+      "All simulations reuse the same 703 validation identities already involved in model selection; seed0-19 and20-39 resample queries, not independent identities.",
+      "Native local and joint cloud caches are two checkpoints, not independent validation datasets.",
+      "Public ambiguity statistics use no hidden labels and do not estimate public accuracy or prove identity overlap.",
+      "Two-cycle/unused-column replacement loss is a label-free feasible alternative loss, not exact global edge-forbidding regret or calibrated identity confidence.",
+      "No proposed single-model control shows a large enough conditional net gain to explain a 0.67-to-0.9 jump.",
+      "Initial 8-seed outputs are screening snapshots; authoritative summaries are 40-seed outputs."
+    ]
+  },
+  "root_fixed_baseline_cost_controls": {
+    "cloud": {
+      "0": {
+        "native/cosine": {
+          "mean": 0.7913871400325176,
+          "mean_gain": 0.0,
+          "paired_seeds_improved_equal_worse": [
+            0,
+            40,
+            0
+          ],
+          "pair_accuracy": 0.7695833333333333,
+          "seed_halves_gain": [
+            0.0,
+            0.0
+          ]
+        },
+        "native/negative_euclidean": {
+          "mean": 0.7954902278301367,
+          "mean_gain": 0.004103087797619048,
+          "paired_seeds_improved_equal_worse": [
+            15,
+            15,
+            10
+          ],
+          "pair_accuracy": 0.775,
+          "seed_halves_gain": [
+            0.005249813988095253,
+            0.002956361607142843
+          ]
+        },
+        "native/exp_temperature_0.1": {
+          "mean": 0.7874349109898588,
+          "mean_gain": -0.003952229042658734,
+          "paired_seeds_improved_equal_worse": [
+            17,
+            0,
+            23
+          ],
+          "pair_accuracy": 0.7666666666666667,
+          "seed_halves_gain": [
+            0.0007773623511904582,
+            -0.008681820436507925
+          ]
+        },
+        "joint/cosine": {
+          "mean": 0.7965374934551367,
+          "mean_gain": 0.005150353422619066,
+          "paired_seeds_improved_equal_worse": [
+            20,
+            0,
+            20
+          ],
+          "pair_accuracy": 0.775625,
+          "seed_halves_gain": [
+            0.004572488839285726,
+            0.005728218005952407
+          ]
+        },
+        "joint/negative_euclidean": {
+          "mean": 0.798733633708113,
+          "mean_gain": 0.007346493675595251,
+          "paired_seeds_improved_equal_worse": [
+            23,
+            0,
+            17
+          ],
+          "pair_accuracy": 0.7791666666666667,
+          "seed_halves_gain": [
+            0.004355859374999998,
+            0.010337127976190501
+          ]
+        },
+        "joint/exp_temperature_0.1": {
+          "mean": 0.7836965832368827,
+          "mean_gain": -0.007690556795634909,
+          "paired_seeds_improved_equal_worse": [
+            19,
+            0,
+            21
+          ],
+          "pair_accuracy": 0.760625,
+          "seed_halves_gain": [
+            -0.008570089285714283,
+            -0.0068110243055555355
+          ]
+        },
+        "ensemble/cosine": {
+          "mean": 0.8006012862378749,
+          "mean_gain": 0.009214146205357137,
+          "paired_seeds_improved_equal_worse": [
+            23,
+            2,
+            15
+          ],
+          "pair_accuracy": 0.7808333333333334,
+          "seed_halves_gain": [
+            0.008241257440476185,
+            0.01018703497023809
+          ]
+        },
+        "ensemble/negative_euclidean": {
+          "mean": 0.8032715336337081,
+          "mean_gain": 0.01188439360119047,
+          "paired_seeds_improved_equal_worse": [
+            27,
+            1,
+            12
+          ],
+          "pair_accuracy": 0.7845833333333333,
+          "seed_halves_gain": [
+            0.0117120163690476,
+            0.012056770833333341
+          ]
+        },
+        "ensemble/exp_temperature_0.1": {
+          "mean": 0.793478465677359,
+          "mean_gain": 0.002091325644841263,
+          "paired_seeds_improved_equal_worse": [
+            23,
+            0,
+            17
+          ],
+          "pair_accuracy": 0.7741666666666667,
+          "seed_halves_gain": [
+            0.003655133928571419,
+            0.0005275173611111073
+          ]
+        }
+      },
+      "24": {
+        "native/cosine": {
+          "mean": 0.6115115881972002,
+          "mean_gain": 0.0,
+          "paired_seeds_improved_equal_worse": [
+            0,
+            40,
+            0
+          ],
+          "pair_accuracy": 0.5308333333333334,
+          "seed_halves_gain": [
+            0.0,
+            0.0
+          ]
+        },
+        "native/negative_euclidean": {
+          "mean": 0.617490537849978,
+          "mean_gain": 0.00597894965277779,
+          "paired_seeds_improved_equal_worse": [
+            21,
+            7,
+            12
+          ],
+          "pair_accuracy": 0.5391666666666667,
+          "seed_halves_gain": [
+            0.006136098710317467,
+            0.005821800595238113
+          ]
+        },
+        "native/exp_temperature_0.1": {
+          "mean": 0.6276102551118827,
+          "mean_gain": 0.016098666914682543,
+          "paired_seeds_improved_equal_worse": [
+            32,
+            0,
+            8
+          ],
+          "pair_accuracy": 0.55375,
+          "seed_halves_gain": [
+            0.013619450644841264,
+            0.01857788318452382
+          ]
+        },
+        "joint/cosine": {
+          "mean": 0.6105752507716049,
+          "mean_gain": -0.0009363374255952378,
+          "paired_seeds_improved_equal_worse": [
+            18,
+            0,
+            22
+          ],
+          "pair_accuracy": 0.5283333333333333,
+          "seed_halves_gain": [
+            0.0009274615575396716,
+            -0.0028001364087301473
+          ]
+        },
+        "joint/negative_euclidean": {
+          "mean": 0.619468324928351,
+          "mean_gain": 0.007956736731150802,
+          "paired_seeds_improved_equal_worse": [
+            20,
+            0,
+            20
+          ],
+          "pair_accuracy": 0.5410416666666666,
+          "seed_halves_gain": [
+            0.010581913442460322,
+            0.0053315600198412805
+          ]
+        },
+        "joint/exp_temperature_0.1": {
+          "mean": 0.6284171747547399,
+          "mean_gain": 0.016905586557539685,
+          "paired_seeds_improved_equal_worse": [
+            27,
+            0,
+            13
+          ],
+          "pair_accuracy": 0.55375,
+          "seed_halves_gain": [
+            0.01632791418650792,
+            0.01748325892857145
+          ]
+        },
+        "ensemble/cosine": {
+          "mean": 0.6145315813767638,
+          "mean_gain": 0.003019993179563499,
+          "paired_seeds_improved_equal_worse": [
+            20,
+            0,
+            20
+          ],
+          "pair_accuracy": 0.5333333333333333,
+          "seed_halves_gain": [
+            0.004304904513888879,
+            0.0017350818452381179
+          ]
+        },
+        "ensemble/negative_euclidean": {
+          "mean": 0.6219413842041448,
+          "mean_gain": 0.010429796006944447,
+          "paired_seeds_improved_equal_worse": [
+            27,
+            0,
+            13
+          ],
+          "pair_accuracy": 0.54375,
+          "seed_halves_gain": [
+            0.012005350942460313,
+            0.00885424107142858
+          ]
+        },
+        "ensemble/exp_temperature_0.1": {
+          "mean": 0.6335891241595017,
+          "mean_gain": 0.022077535962301578,
+          "paired_seeds_improved_equal_worse": [
+            33,
+            0,
+            7
+          ],
+          "pair_accuracy": 0.5602083333333333,
+          "seed_halves_gain": [
+            0.021018483382936493,
+            0.023136588541666663
+          ]
+        }
+      },
+      "60": {
+        "native/cosine": {
+          "mean": 0.44411756227954147,
+          "mean_gain": 0.0,
+          "paired_seeds_improved_equal_worse": [
+            0,
+            40,
+            0
+          ],
+          "pair_accuracy": 0.2997916666666667,
+          "seed_halves_gain": [
+            0.0,
+            0.0
+          ]
+        },
+        "native/negative_euclidean": {
+          "mean": 0.44745510568231933,
+          "mean_gain": 0.0033375434027777748,
+          "paired_seeds_improved_equal_worse": [
+            21,
+            2,
+            17
+          ],
+          "pair_accuracy": 0.3047916666666667,
+          "seed_halves_gain": [
+            0.005645089285714272,
+            0.0010299975198412776
+          ]
+        },
+        "native/exp_temperature_0.1": {
+          "mean": 0.46079028053350973,
+          "mean_gain": 0.01667271825396826,
+          "paired_seeds_improved_equal_worse": [
+            29,
+            0,
+            11
+          ],
+          "pair_accuracy": 0.32416666666666666,
+          "seed_halves_gain": [
+            0.021900303819444446,
+            0.01144513268849208
+          ]
+        },
+        "joint/cosine": {
+          "mean": 0.4467016272597002,
+          "mean_gain": 0.0025840649801587246,
+          "paired_seeds_improved_equal_worse": [
+            21,
+            0,
+            19
+          ],
+          "pair_accuracy": 0.3025,
+          "seed_halves_gain": [
+            0.006868415178571402,
+            -0.0017002852182539524
+          ]
+        },
+        "joint/negative_euclidean": {
+          "mean": 0.45362955384700177,
+          "mean_gain": 0.00951199156746031,
+          "paired_seeds_improved_equal_worse": [
+            26,
+            0,
+            14
+          ],
+          "pair_accuracy": 0.3120833333333333,
+          "seed_halves_gain": [
+            0.01443636532738094,
+            0.004587617807539681
+          ]
+        },
+        "joint/exp_temperature_0.1": {
+          "mean": 0.4665936287477955,
+          "mean_gain": 0.022476066468253963,
+          "paired_seeds_improved_equal_worse": [
+            34,
+            0,
+            6
+          ],
+          "pair_accuracy": 0.3304166666666667,
+          "seed_halves_gain": [
+            0.026255884176587287,
+            0.01869624875992064
+          ]
+        },
+        "ensemble/cosine": {
+          "mean": 0.44547847187775585,
+          "mean_gain": 0.001360909598214302,
+          "paired_seeds_improved_equal_worse": [
+            22,
+            0,
+            18
+          ],
+          "pair_accuracy": 0.30041666666666667,
+          "seed_halves_gain": [
+            0.0030396577380952445,
+            -0.00031783854166664017
+          ]
+        },
+        "ensemble/negative_euclidean": {
+          "mean": 0.4530945402061288,
+          "mean_gain": 0.008976977926587307,
+          "paired_seeds_improved_equal_worse": [
+            29,
+            0,
+            11
+          ],
+          "pair_accuracy": 0.31125,
+          "seed_halves_gain": [
+            0.014023549107142857,
+            0.003930406746031759
+          ]
+        },
+        "ensemble/exp_temperature_0.1": {
+          "mean": 0.46624016892636694,
+          "mean_gain": 0.02212260664682539,
+          "paired_seeds_improved_equal_worse": [
+            32,
+            0,
+            8
+          ],
+          "pair_accuracy": 0.3308333333333333,
+          "seed_halves_gain": [
+            0.026554210069444424,
+            0.01769100322420636
+          ]
+        }
+      }
+    },
+    "local": {
+      "0": {
+        "native/cosine": {
+          "mean": 0.7910318293926368,
+          "mean_gain": 0.0,
+          "paired_seeds_improved_equal_worse": [
+            0,
+            40,
+            0
+          ],
+          "pair_accuracy": 0.769375,
+          "seed_halves_gain": [
+            0.0,
+            0.0
+          ]
+        },
+        "native/negative_euclidean": {
+          "mean": 0.7957904603450177,
+          "mean_gain": 0.004758630952380954,
+          "paired_seeds_improved_equal_worse": [
+            17,
+            13,
+            10
+          ],
+          "pair_accuracy": 0.775625,
+          "seed_halves_gain": [
+            0.0072017857142857074,
+            0.002315476190476201
+          ]
+        },
+        "native/exp_temperature_0.1": {
+          "mean": 0.7882767264660495,
+          "mean_gain": -0.002755102926587277,
+          "paired_seeds_improved_equal_worse": [
+            16,
+            0,
+            24
+          ],
+          "pair_accuracy": 0.7683333333333333,
+          "seed_halves_gain": [
+            0.0041806175595238025,
+            -0.009690823412698358
+          ]
+        },
+        "joint/cosine": {
+          "mean": 0.7949300994819224,
+          "mean_gain": 0.0038982700892857326,
+          "paired_seeds_improved_equal_worse": [
+            21,
+            0,
+            19
+          ],
+          "pair_accuracy": 0.7739583333333333,
+          "seed_halves_gain": [
+            0.0017448288690476543,
+            0.006051711309523811
+          ]
+        },
+        "joint/negative_euclidean": {
+          "mean": 0.7984786857914463,
+          "mean_gain": 0.007446856398809548,
+          "paired_seeds_improved_equal_worse": [
+            22,
+            0,
+            18
+          ],
+          "pair_accuracy": 0.7791666666666667,
+          "seed_halves_gain": [
+            0.0047033110119048035,
+            0.010190401785714292
+          ]
+        },
+        "joint/exp_temperature_0.1": {
+          "mean": 0.7832746524333113,
+          "mean_gain": -0.007757176959325374,
+          "paired_seeds_improved_equal_worse": [
+            19,
+            0,
+            21
+          ],
+          "pair_accuracy": 0.7604166666666666,
+          "seed_halves_gain": [
+            -0.00920515252976189,
+            -0.006309201388888857
+          ]
+        },
+        "ensemble/cosine": {
+          "mean": 0.8011351311039462,
+          "mean_gain": 0.01010330171130953,
+          "paired_seeds_improved_equal_worse": [
+            24,
+            3,
+            13
+          ],
+          "pair_accuracy": 0.781875,
+          "seed_halves_gain": [
+            0.00893223586309524,
+            0.011274367559523824
+          ]
+        },
+        "ensemble/negative_euclidean": {
+          "mean": 0.8033692828896605,
+          "mean_gain": 0.012337453497023828,
+          "paired_seeds_improved_equal_worse": [
+            27,
+            1,
+            12
+          ],
+          "pair_accuracy": 0.785,
+          "seed_halves_gain": [
+            0.012497916666666675,
+            0.012176990327380982
+          ]
+        },
+        "ensemble/exp_temperature_0.1": {
+          "mean": 0.7939144310791446,
+          "mean_gain": 0.00288260168650796,
+          "paired_seeds_improved_equal_worse": [
+            23,
+            0,
+            17
+          ],
+          "pair_accuracy": 0.775,
+          "seed_halves_gain": [
+            0.005061346726190491,
+            0.0007038566468254293
+          ]
+        }
+      },
+      "24": {
+        "native/cosine": {
+          "mean": 0.6115494447200177,
+          "mean_gain": 0.0,
+          "paired_seeds_improved_equal_worse": [
+            0,
+            40,
+            0
+          ],
+          "pair_accuracy": 0.5310416666666666,
+          "seed_halves_gain": [
+            0.0,
+            0.0
+          ]
+        },
+        "native/negative_euclidean": {
+          "mean": 0.6194135134204145,
+          "mean_gain": 0.007864068700396834,
+          "paired_seeds_improved_equal_worse": [
+            24,
+            6,
+            10
+          ],
+          "pair_accuracy": 0.541875,
+          "seed_halves_gain": [
+            0.010647036210317467,
+            0.0050811011904762
+          ]
+        },
+        "native/exp_temperature_0.1": {
+          "mean": 0.6271306916198192,
+          "mean_gain": 0.015581246899801596,
+          "paired_seeds_improved_equal_worse": [
+            30,
+            0,
+            10
+          ],
+          "pair_accuracy": 0.5533333333333333,
+          "seed_halves_gain": [
+            0.01454891493055555,
+            0.01661357886904764
+          ]
+        },
+        "joint/cosine": {
+          "mean": 0.6087288904045415,
+          "mean_gain": -0.002820554315476176,
+          "paired_seeds_improved_equal_worse": [
+            16,
+            0,
+            24
+          ],
+          "pair_accuracy": 0.5260416666666666,
+          "seed_halves_gain": [
+            0.0009029451884920603,
+            -0.006544053819444412
+          ]
+        },
+        "joint/negative_euclidean": {
+          "mean": 0.619416356302359,
+          "mean_gain": 0.0078669115823413,
+          "paired_seeds_improved_equal_worse": [
+            21,
+            0,
+            19
+          ],
+          "pair_accuracy": 0.54125,
+          "seed_halves_gain": [
+            0.011798431299603184,
+            0.0039353918650794125
+          ]
+        },
+        "joint/exp_temperature_0.1": {
+          "mean": 0.6290982139412479,
+          "mean_gain": 0.017548769221230165,
+          "paired_seeds_improved_equal_worse": [
+            28,
+            0,
+            12
+          ],
+          "pair_accuracy": 0.555,
+          "seed_halves_gain": [
+            0.018779755704365082,
+            0.016317782738095248
+          ]
+        },
+        "ensemble/cosine": {
+          "mean": 0.6147219211585098,
+          "mean_gain": 0.0031724764384920947,
+          "paired_seeds_improved_equal_worse": [
+            20,
+            0,
+            20
+          ],
+          "pair_accuracy": 0.53375,
+          "seed_halves_gain": [
+            0.005280332341269856,
+            0.0010646205357143334
+          ]
+        },
+        "ensemble/negative_euclidean": {
+          "mean": 0.6215338724233908,
+          "mean_gain": 0.009984427703373011,
+          "paired_seeds_improved_equal_worse": [
+            26,
+            0,
+            14
+          ],
+          "pair_accuracy": 0.54375,
+          "seed_halves_gain": [
+            0.013096645585317429,
+            0.006872209821428593
+          ]
+        },
+        "ensemble/exp_temperature_0.1": {
+          "mean": 0.6331181079144621,
+          "mean_gain": 0.021568663194444452,
+          "paired_seeds_improved_equal_worse": [
+            33,
+            0,
+            7
+          ],
+          "pair_accuracy": 0.56,
+          "seed_halves_gain": [
+            0.02201498635912697,
+            0.021122340029761932
+          ]
+        }
+      },
+      "60": {
+        "native/cosine": {
+          "mean": 0.4426800467785495,
+          "mean_gain": 0.0,
+          "paired_seeds_improved_equal_worse": [
+            0,
+            40,
+            0
+          ],
+          "pair_accuracy": 0.29791666666666666,
+          "seed_halves_gain": [
+            0.0,
+            0.0
+          ]
+        },
+        "native/negative_euclidean": {
+          "mean": 0.4473281742587082,
+          "mean_gain": 0.004648127480158722,
+          "paired_seeds_improved_equal_worse": [
+            26,
+            2,
+            12
+          ],
+          "pair_accuracy": 0.305,
+          "seed_halves_gain": [
+            0.0065187499999999985,
+            0.002777504960317445
+          ]
+        },
+        "native/exp_temperature_0.1": {
+          "mean": 0.4599174568727955,
+          "mean_gain": 0.017237410094246026,
+          "paired_seeds_improved_equal_worse": [
+            31,
+            0,
+            9
+          ],
+          "pair_accuracy": 0.323125,
+          "seed_halves_gain": [
+            0.023263324652777778,
+            0.011211495535714272
+          ]
+        },
+        "joint/cosine": {
+          "mean": 0.4460132933063273,
+          "mean_gain": 0.003333246527777779,
+          "paired_seeds_improved_equal_worse": [
+            20,
+            0,
+            20
+          ],
+          "pair_accuracy": 0.301875,
+          "seed_halves_gain": [
+            0.009332496279761907,
+            -0.002666003224206348
+          ]
+        },
+        "joint/negative_euclidean": {
+          "mean": 0.4541317859898589,
+          "mean_gain": 0.01145173921130951,
+          "paired_seeds_improved_equal_worse": [
+            29,
+            0,
+            11
+          ],
+          "pair_accuracy": 0.3129166666666667,
+          "seed_halves_gain": [
+            0.016710323660714285,
+            0.006193154761904737
+          ]
+        },
+        "joint/exp_temperature_0.1": {
+          "mean": 0.4667079237626764,
+          "mean_gain": 0.02402787698412698,
+          "paired_seeds_improved_equal_worse": [
+            36,
+            0,
+            4
+          ],
+          "pair_accuracy": 0.3308333333333333,
+          "seed_halves_gain": [
+            0.027873592509920643,
+            0.020182161458333323
+          ]
+        },
+        "ensemble/cosine": {
+          "mean": 0.4456388916446209,
+          "mean_gain": 0.0029588448660714237,
+          "paired_seeds_improved_equal_worse": [
+            22,
+            0,
+            18
+          ],
+          "pair_accuracy": 0.30104166666666665,
+          "seed_halves_gain": [
+            0.004463913690476199,
+            0.001453776041666649
+          ]
+        },
+        "ensemble/negative_euclidean": {
+          "mean": 0.45304328462577176,
+          "mean_gain": 0.010363237847222219,
+          "paired_seeds_improved_equal_worse": [
+            30,
+            0,
+            10
+          ],
+          "pair_accuracy": 0.31145833333333334,
+          "seed_halves_gain": [
+            0.015202864583333331,
+            0.005523611111111107
+          ]
+        },
+        "ensemble/exp_temperature_0.1": {
+          "mean": 0.4666471722745812,
+          "mean_gain": 0.02396712549603174,
+          "paired_seeds_improved_equal_worse": [
+            35,
+            0,
+            5
+          ],
+          "pair_accuracy": 0.33166666666666667,
+          "seed_halves_gain": [
+            0.028683748759920635,
+            0.019250502232142835
+          ]
+        }
+      }
+    }
+  },
+  "root_second_observation_controls": {
+    "cloud": {
+      "0": {
+        "native/cosine": {
+          "mean": 0.7913871400325176,
+          "mean_gain": 0.0,
+          "paired_seeds_improved_equal_worse": [
+            0,
+            40,
+            0
+          ],
+          "pair_accuracy": 0.7695833333333333,
+          "seed_halves_gain": [
+            0.0,
+            0.0
+          ]
+        },
+        "ensemble/negative_euclidean": {
+          "mean": 0.8032715336337081,
+          "mean_gain": 0.01188439360119047,
+          "paired_seeds_improved_equal_worse": [
+            27,
+            1,
+            12
+          ],
+          "pair_accuracy": 0.7845833333333333,
+          "seed_halves_gain": [
+            0.0117120163690476,
+            0.012056770833333341
+          ]
+        },
+        "ensemble_proxy_top1/negative_euclidean": {
+          "mean": 0.8134153580384702,
+          "mean_gain": 0.022028218005952373,
+          "paired_seeds_improved_equal_worse": [
+            30,
+            0,
+            10
+          ],
+          "pair_accuracy": 0.7991666666666667,
+          "seed_halves_gain": [
+            0.018724330357142865,
+            0.025332105654761877
+          ]
+        },
+        "ensemble_proxy_top2/negative_euclidean": {
+          "mean": 0.8120645674878748,
+          "mean_gain": 0.020677427455357146,
+          "paired_seeds_improved_equal_worse": [
+            29,
+            0,
+            11
+          ],
+          "pair_accuracy": 0.7966666666666666,
+          "seed_halves_gain": [
+            0.01931564360119048,
+            0.02203921130952381
+          ]
+        }
+      },
+      "24": {
+        "native/cosine": {
+          "mean": 0.6115115881972002,
+          "mean_gain": 0.0,
+          "paired_seeds_improved_equal_worse": [
+            0,
+            40,
+            0
+          ],
+          "pair_accuracy": 0.5308333333333334,
+          "seed_halves_gain": [
+            0.0,
+            0.0
+          ]
+        },
+        "ensemble/negative_euclidean": {
+          "mean": 0.6219413842041448,
+          "mean_gain": 0.010429796006944447,
+          "paired_seeds_improved_equal_worse": [
+            27,
+            0,
+            13
+          ],
+          "pair_accuracy": 0.54375,
+          "seed_halves_gain": [
+            0.012005350942460313,
+            0.00885424107142858
+          ]
+        },
+        "ensemble_proxy_top1/negative_euclidean": {
+          "mean": 0.6286490013916447,
+          "mean_gain": 0.017137413194444458,
+          "paired_seeds_improved_equal_worse": [
+            30,
+            0,
+            10
+          ],
+          "pair_accuracy": 0.5539583333333333,
+          "seed_halves_gain": [
+            0.01853784722222223,
+            0.015736979166666686
+          ]
+        },
+        "ensemble_proxy_top2/negative_euclidean": {
+          "mean": 0.6251167562279543,
+          "mean_gain": 0.013605168030753966,
+          "paired_seeds_improved_equal_worse": [
+            30,
+            0,
+            10
+          ],
+          "pair_accuracy": 0.5489583333333333,
+          "seed_halves_gain": [
+            0.01385163070436506,
+            0.013358705357142875
+          ]
+        }
+      },
+      "60": {
+        "native/cosine": {
+          "mean": 0.44411756227954147,
+          "mean_gain": 0.0,
+          "paired_seeds_improved_equal_worse": [
+            0,
+            40,
+            0
+          ],
+          "pair_accuracy": 0.2997916666666667,
+          "seed_halves_gain": [
+            0.0,
+            0.0
+          ]
+        },
+        "ensemble/negative_euclidean": {
+          "mean": 0.4530945402061288,
+          "mean_gain": 0.008976977926587307,
+          "paired_seeds_improved_equal_worse": [
+            29,
+            0,
+            11
+          ],
+          "pair_accuracy": 0.31125,
+          "seed_halves_gain": [
+            0.014023549107142857,
+            0.003930406746031759
+          ]
+        },
+        "ensemble_proxy_top1/negative_euclidean": {
+          "mean": 0.45877360766644626,
+          "mean_gain": 0.014656045386904765,
+          "paired_seeds_improved_equal_worse": [
+            32,
+            0,
+            8
+          ],
+          "pair_accuracy": 0.32,
+          "seed_halves_gain": [
+            0.01734615575396825,
+            0.011965935019841282
+          ]
+        },
+        "ensemble_proxy_top2/negative_euclidean": {
+          "mean": 0.4566498663470019,
+          "mean_gain": 0.012532304067460318,
+          "paired_seeds_improved_equal_worse": [
+            33,
+            0,
+            7
+          ],
+          "pair_accuracy": 0.316875,
+          "seed_halves_gain": [
+            0.01539745783730157,
+            0.009667150297619064
+          ]
+        }
+      }
+    },
+    "local": {
+      "0": {
+        "native/cosine": {
+          "mean": 0.7910318293926368,
+          "mean_gain": 0.0,
+          "paired_seeds_improved_equal_worse": [
+            0,
+            40,
+            0
+          ],
+          "pair_accuracy": 0.769375,
+          "seed_halves_gain": [
+            0.0,
+            0.0
+          ]
+        },
+        "ensemble/negative_euclidean": {
+          "mean": 0.8033692828896605,
+          "mean_gain": 0.012337453497023828,
+          "paired_seeds_improved_equal_worse": [
+            27,
+            1,
+            12
+          ],
+          "pair_accuracy": 0.785,
+          "seed_halves_gain": [
+            0.012497916666666675,
+            0.012176990327380982
+          ]
+        },
+        "ensemble_proxy_top1/negative_euclidean": {
+          "mean": 0.8124365044918431,
+          "mean_gain": 0.021404675099206356,
+          "paired_seeds_improved_equal_worse": [
+            31,
+            0,
+            9
+          ],
+          "pair_accuracy": 0.798125,
+          "seed_halves_gain": [
+            0.017919903273809528,
+            0.02488944692460318
+          ]
+        },
+        "ensemble_proxy_top2/negative_euclidean": {
+          "mean": 0.8115124376515652,
+          "mean_gain": 0.020480608258928577,
+          "paired_seeds_improved_equal_worse": [
+            31,
+            0,
+            9
+          ],
+          "pair_accuracy": 0.79625,
+          "seed_halves_gain": [
+            0.01879293154761903,
+            0.022168284970238122
+          ]
+        }
+      },
+      "24": {
+        "native/cosine": {
+          "mean": 0.6115494447200177,
+          "mean_gain": 0.0,
+          "paired_seeds_improved_equal_worse": [
+            0,
+            40,
+            0
+          ],
+          "pair_accuracy": 0.5310416666666666,
+          "seed_halves_gain": [
+            0.0,
+            0.0
+          ]
+        },
+        "ensemble/negative_euclidean": {
+          "mean": 0.6215338724233908,
+          "mean_gain": 0.009984427703373011,
+          "paired_seeds_improved_equal_worse": [
+            26,
+            0,
+            14
+          ],
+          "pair_accuracy": 0.54375,
+          "seed_halves_gain": [
+            0.013096645585317429,
+            0.006872209821428593
+          ]
+        },
+        "ensemble_proxy_top1/negative_euclidean": {
+          "mean": 0.6280606767388669,
+          "mean_gain": 0.016511232018849218,
+          "paired_seeds_improved_equal_worse": [
+            30,
+            0,
+            10
+          ],
+          "pair_accuracy": 0.5535416666666667,
+          "seed_halves_gain": [
+            0.02108741939484126,
+            0.011935044642857173
+          ]
+        },
+        "ensemble_proxy_top2/negative_euclidean": {
+          "mean": 0.625798102334105,
+          "mean_gain": 0.014248657614087301,
+          "paired_seeds_improved_equal_worse": [
+            29,
+            0,
+            11
+          ],
+          "pair_accuracy": 0.55,
+          "seed_halves_gain": [
+            0.01656576760912697,
+            0.011931547619047633
+          ]
+        }
+      },
+      "60": {
+        "native/cosine": {
+          "mean": 0.4426800467785495,
+          "mean_gain": 0.0,
+          "paired_seeds_improved_equal_worse": [
+            0,
+            40,
+            0
+          ],
+          "pair_accuracy": 0.29791666666666666,
+          "seed_halves_gain": [
+            0.0,
+            0.0
+          ]
+        },
+        "ensemble/negative_euclidean": {
+          "mean": 0.45304328462577176,
+          "mean_gain": 0.010363237847222219,
+          "paired_seeds_improved_equal_worse": [
+            30,
+            0,
+            10
+          ],
+          "pair_accuracy": 0.31145833333333334,
+          "seed_halves_gain": [
+            0.015202864583333331,
+            0.005523611111111107
+          ]
+        },
+        "ensemble_proxy_top1/negative_euclidean": {
+          "mean": 0.4584022379987875,
+          "mean_gain": 0.015722191220238085,
+          "paired_seeds_improved_equal_worse": [
+            33,
+            0,
+            7
+          ],
+          "pair_accuracy": 0.31979166666666664,
+          "seed_halves_gain": [
+            0.018521155753968246,
+            0.012923226686507925
+          ]
+        },
+        "ensemble_proxy_top2/negative_euclidean": {
+          "mean": 0.45655618145116855,
+          "mean_gain": 0.013876134672619039,
+          "paired_seeds_improved_equal_worse": [
+            32,
+            0,
+            8
+          ],
+          "pair_accuracy": 0.316875,
+          "seed_halves_gain": [
+            0.016933060515873014,
+            0.010819208829365068
+          ]
+        }
+      }
+    }
+  },
+  "research_cases": {
+    "seeds": [
+      20261007,
+      20261008,
+      20261009,
+      20261010,
+      20261011,
+      20261012,
+      20261013,
+      20261014,
+      20261015,
+      20261016,
+      20261017,
+      20261018,
+      20261019,
+      20261020,
+      20261021,
+      20261022,
+      20261023,
+      20261024,
+      20261025,
+      20261026,
+      20261027,
+      20261028,
+      20261029,
+      20261030,
+      20261031,
+      20261032,
+      20261033,
+      20261034,
+      20261035,
+      20261036,
+      20261037,
+      20261038,
+      20261039,
+      20261040,
+      20261041,
+      20261042,
+      20261043,
+      20261044,
+      20261045,
+      20261046
+    ],
+    "unrelated_SAR_queries": [
+      0,
+      24,
+      60
+    ],
+    "hardware_feature_environments": [
+      "original cloud",
+      "local diagnostic replay"
+    ],
+    "shared_cohort_given_only_by_simulation": true,
+    "independent_holdout_confirmation": false,
+    "native_baseline_controls_exactly_reproduced": 240,
+    "original_fused_distance_controls_exactly_reproduced": 240
+  },
+  "local_gpu_inference": {
+    "checkpoint_sha256": "fdefc7945e7ba74ad2848501965bca58d1880ac302a3fa0fdc7b6d5bfde17950",
+    "features_sha256": "653e4a8c4e1a8fb93937c35695abac1cadfca3f906b513cceeb64f8872295148",
+    "expected_validation_score": 0.5732931024682602,
+    "measured_validation_score": 0.5705147775019098,
+    "delta": -0.0027783249663503318,
+    "checkpoint_replay_verified": false,
+    "seconds": 27.98399999999674,
+    "peak_allocated_mib": 757.0859375,
+    "optimizer_steps": 0,
+    "gpu": "NVIDIA GeForce RTX 4060 Ti"
+  },
+  "candidate_report": {
+    "scope": "Unsubmitted research candidates; public pixels and checkpoint features only",
+    "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+    "input_reports": [
+      {
+        "features_sha256": "d729f0842801eec08041bb01766c68132eaca0bff6354e3755fe42970ffc5947",
+        "checkpoint_sha256": "f7c8886d1bb904360fea877f130c7fcddccb2ef8fb34300933bebab0bbdbf6ed",
+        "checkpoint_replay_verified": false
+      },
+      {
+        "features_sha256": "653e4a8c4e1a8fb93937c35695abac1cadfca3f906b513cceeb64f8872295148",
+        "checkpoint_sha256": "fdefc7945e7ba74ad2848501965bca58d1880ac302a3fa0fdc7b6d5bfde17950",
+        "checkpoint_replay_verified": false
+      }
+    ],
+    "reference_v3_sha256": "0020ec05521b2cede6dd6856d1a943f96a95b803749300dfb2f450398ca27e8f",
+    "reference_v4_sha256": "43b2b753c29084fdbb6ed3adc214cfcf703bb80ddfc961ef6273f0280c3bf838",
+    "ensemble_weights": [
+      0.5,
+      0.5
+    ],
+    "proxy_weights": [
+      0.5,
+      0.5
+    ],
+    "proxy_selection": "original v3 O2O top1 or normalized mean top2; missing source copy queries only",
+    "only_query_assignment_changed": true,
+    "O2O_and_constant_SAR_preserved": true,
+    "baseline_tail_preserved": true,
+    "implementation_sha256": "1f2880ce95a4ef0e54cfb265b0a91fe274f56a053c8af5f4481ad07f6b9b7aca",
+    "assignment_implementation_sha256": "164b48e52655a231d43a5e2267e0908ba51be57b8c1127b66590c0e599d958a7",
+    "test_identity_labels_used": false,
+    "shared_identity_assumption_verified": false,
+    "no_independent_score_confirmation": true,
+    "uploaded": false,
+    "outputs": {
+      "native_cosine_replay": {
+        "prediction_sha256": "43b2b753c29084fdbb6ed3adc214cfcf703bb80ddfc961ef6273f0280c3bf838",
+        "accepted_pairs": 119,
+        "mapping_changed_from_native": null,
+        "top1_changed_from_v4": {
+          "O2S": 0,
+          "S2O": 0,
+          "O2O": 0
+        },
+        "format_validation": {
+          "passed": true,
+          "queries": 267,
+          "gallery": 1800,
+          "directions": {
+            "O2S": 120,
+            "S2O": 120,
+            "O2O": 27
+          },
+          "candidates_per_query": 10,
+          "metrics_validated": false,
+          "scope": "structure only; hidden identities are unavailable"
+        },
+        "uploaded": false,
+        "official_score": null
+      },
+      "ensemble_cosine": {
+        "prediction_sha256": "9fce9e89094b36291200126b9f1bcd398e79f008b055276abff15cded43607a5",
+        "accepted_pairs": 119,
+        "mapping_changed_from_native": 15,
+        "top1_changed_from_v4": {
+          "O2S": 15,
+          "S2O": 15,
+          "O2O": 0
+        },
+        "format_validation": {
+          "passed": true,
+          "queries": 267,
+          "gallery": 1800,
+          "directions": {
+            "O2S": 120,
+            "S2O": 120,
+            "O2O": 27
+          },
+          "candidates_per_query": 10,
+          "metrics_validated": false,
+          "scope": "structure only; hidden identities are unavailable"
+        },
+        "uploaded": false,
+        "official_score": null
+      },
+      "ensemble_negative_euclidean": {
+        "prediction_sha256": "841abdeb7576e5028a4e230257fcc5c252e10e317b13b42d372d1d0c2296d150",
+        "accepted_pairs": 119,
+        "mapping_changed_from_native": 29,
+        "top1_changed_from_v4": {
+          "O2S": 29,
+          "S2O": 28,
+          "O2O": 0
+        },
+        "format_validation": {
+          "passed": true,
+          "queries": 267,
+          "gallery": 1800,
+          "directions": {
+            "O2S": 120,
+            "S2O": 120,
+            "O2O": 27
+          },
+          "candidates_per_query": 10,
+          "metrics_validated": false,
+          "scope": "structure only; hidden identities are unavailable"
+        },
+        "uploaded": false,
+        "official_score": null
+      },
+      "ensemble_proxy_top1_negative_euclidean": {
+        "prediction_sha256": "c6244277f25545225b951104af505230472ae2012f0d73018ff5c5c8b0664e2f",
+        "accepted_pairs": 119,
+        "mapping_changed_from_native": 17,
+        "top1_changed_from_v4": {
+          "O2S": 17,
+          "S2O": 17,
+          "O2O": 0
+        },
+        "format_validation": {
+          "passed": true,
+          "queries": 267,
+          "gallery": 1800,
+          "directions": {
+            "O2S": 120,
+            "S2O": 120,
+            "O2O": 27
+          },
+          "candidates_per_query": 10,
+          "metrics_validated": false,
+          "scope": "structure only; hidden identities are unavailable"
+        },
+        "uploaded": false,
+        "official_score": null
+      },
+      "ensemble_proxy_top2_negative_euclidean": {
+        "prediction_sha256": "2b642b8382d90ebed5bafc045181c8cf0fa4119a71f4a02a1f3cab6eab068ebe",
+        "accepted_pairs": 119,
+        "mapping_changed_from_native": 20,
+        "top1_changed_from_v4": {
+          "O2S": 20,
+          "S2O": 20,
+          "O2O": 0
+        },
+        "format_validation": {
+          "passed": true,
+          "queries": 267,
+          "gallery": 1800,
+          "directions": {
+            "O2S": 120,
+            "S2O": 120,
+            "O2O": 27
+          },
+          "candidates_per_query": 10,
+          "metrics_validated": false,
+          "scope": "structure only; hidden identities are unavailable"
+        },
+        "uploaded": false,
+        "official_score": null
+      }
+    }
+  },
+  "recommended_research_candidate": "local/investigation-root/final-candidates/ensemble_proxy_top1_negative_euclidean/prediction.json",
+  "verification": {
+    "declared_agent_artifact_checksums_verified": 27,
+    "all_five_candidates_identical_in_four_generations": true,
+    "original_four_submission_hashes_unchanged": true,
+    "source_and_feature_checksums_bound": true,
+    "candidate_format_tail_OO_and_constant_checks": true,
+    "root_scripts_ruff_check_passed": true,
+    "new_production_behavior_or_guard_change": false
+  },
+  "artifact_sha256": {
+    "local/investigation-generation/investigation-summary.json": "dc35ae888205884925c976d641f4f7642b5a5540099263e3ef5d6af2a6e11b32",
+    "local/investigation-pixels/summary.json": "d9d852e270478d4bf13d2b400f88b381b3e69e78417c1be37a854e13d24240d0",
+    "local/investigation-pairs/summary.json": "84056c00c378f62a89b4ff40919ad858f29133201e9870fad75a58f38a217397",
+    "local/investigation-root/study_ensemble.py": "476f56edece4b477c177aeb620290093f5c9dfeee3bc28370f68a82e46fd57f1",
+    "local/investigation-root/study_costs.py": "0b602f1323298ab972e15c9140c1b113f10eb578e772b0989020915271044838",
+    "local/investigation-root/study_proxy_ensemble.py": "c07714998653ae70014928b0efd635e16855a154f24ab4af427381de01144f20",
+    "local/investigation-root/build_proxy_candidates.py": "1f2880ce95a4ef0e54cfb265b0a91fe274f56a053c8af5f4481ad07f6b9b7aca",
+    "local/investigation-root/extract_joint.py": "ba3131806e17e1ceb903a1add910d2ea94bfc8bdaf0b06ecd2ab7c581a27a66d",
+    "local/investigation-root/record_evidence.py": "f5ea3dc06c6fcab83aa65f6f7a4205f80cbecaafe20af925545791d150fc9fca",
+    "local/investigation-root/cost-study.json": "b7056be3f5d05863463b0a934eb80f801baea92fe23c0519ff42e7d3b9dd3973",
+    "local/investigation-root/proxy-ensemble-study.json": "c1d3709cdd96bfad584bfbea00e282b5f1be2f184a27eb538608fb2e59942c15",
+    "local/investigation-root/joint-feature-diagnostic/report.json": "019a558fe622d660857bc8e2c4cc6ee1bfbfd6b77bb4db2ca436213808c8ae15",
+    "local/investigation-root/final-candidates/report.json": "2dd42b41e2fd2638c8e3a5ddeb27b2aedd4a7728257b1f841b78ba2ffb8a44ea"
+  },
+  "new_training": false,
+  "paid_gpu_cost_yuan": 0,
+  "external_hidden_labels_downloaded": false,
+  "submission_uploaded": false,
+  "test_identity_labels_used": false
+}

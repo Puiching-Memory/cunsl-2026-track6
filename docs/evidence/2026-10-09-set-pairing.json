@@ -1,0 +1,171 @@
+{
+  "recorded_at": "2026-10-09T19:35:40.067169+08:00",
+  "scope": "Matched dual CE versus deterministic Sinkhorn, frozen TransOSS/global head; reused validation; all cohort scores conditional",
+  "current_best_official_version": 5,
+  "current_best_official_score": 0.7185908013668432,
+  "official_result_source": "User-provided screenshot, separate fifth-submission record",
+  "protocol": {
+    "epochs": 24,
+    "set_size": 32,
+    "local_aux_weight": 0.5,
+    "set_sampling": "Training identities only; frozen mean CLS symmetric affinity, random anchor plus nearest remaining identities, once per epoch; shuffled SAR columns",
+    "selection": "development weighted retrieval only, every 2 epochs",
+    "confirmation_limitation": "Both halves used in preceding research; reporting half is not new independent confirmation"
+  },
+  "sinkhorn_iterations": 10,
+  "comparison_with_fixed_head_changes_sampling_and_candidate_count": true,
+  "protocol_addendum": "Original protocol inherited loss/mining_scope descriptions from frozen CLS-head training. Explicit set_objective/set_sampling and executed source establish effective local set training; per-run addenda clarify without changing original protocol SHA.",
+  "conclusion": "Dual CE gives small conditional gains, reused reporting changes sign across seeds; Sinkhorn is worse under this matched protocol. Keep official fifth model; no new submission.",
+  "runs": [
+    {
+      "objective": "dual",
+      "seed": 20261008,
+      "selected_epoch": 22,
+      "selected_development": 0.6361780043708885,
+      "full_validation": 0.6502760725502321,
+      "full_gain_over_own_fixed_head": 0.006997636554621711,
+      "reused_reporting": 0.6626872886650792,
+      "reporting_gain_over_own_fixed_head": 0.006957215666365535,
+      "cohort_conditional_mean": 0.8380330105682319,
+      "cohort_gain_over_own_fixed_head": 0.002170551215277777,
+      "cohort_improved_equal_worse_over_own_fixed_head": [
+        21,
+        1,
+        18
+      ],
+      "cohort_gain_min_max": [
+        -0.06715625000000003,
+        0.08196316964285721
+      ],
+      "cohort_pair_accuracy": 0.8302083333333333,
+      "final_training_bidirectional_R1": 0.9784058988764045,
+      "final_local_only_training_bidirectional_R1": 0.7816011235955056,
+      "optimizer_steps": 2136,
+      "checkpoint_sha256": "75359205538ffb2cc2319d22e80eaaedfcf0cd4d6725764e4445c9b3428bc90e",
+      "saved_model_replay_exact": true,
+      "training_sampling_matches_other_arm_all_24_epochs": true
+    },
+    {
+      "objective": "dual",
+      "seed": 20261009,
+      "selected_epoch": 24,
+      "selected_development": 0.6436525649124323,
+      "full_validation": 0.6469862149405216,
+      "full_gain_over_own_fixed_head": 0.0016035080698945103,
+      "reused_reporting": 0.6487552175775912,
+      "reporting_gain_over_own_fixed_head": -0.004391216599608061,
+      "cohort_conditional_mean": 0.8406558342289461,
+      "cohort_gain_over_own_fixed_head": 0.005855617559523807,
+      "cohort_improved_equal_worse_over_own_fixed_head": [
+        25,
+        0,
+        15
+      ],
+      "cohort_gain_min_max": [
+        -0.049099702380952404,
+        0.05167224702380968
+      ],
+      "cohort_pair_accuracy": 0.8325,
+      "final_training_bidirectional_R1": 0.9734901685393258,
+      "final_local_only_training_bidirectional_R1": 0.7713600189498301,
+      "optimizer_steps": 2136,
+      "checkpoint_sha256": "7b6ae5e4964705bb91b2b6077867631aa82d3abe1d20205562630949370e70e7",
+      "saved_model_replay_exact": true,
+      "training_sampling_matches_other_arm_all_24_epochs": true
+    },
+    {
+      "objective": "sinkhorn",
+      "seed": 20261008,
+      "selected_epoch": 6,
+      "selected_development": 0.5870479761394845,
+      "full_validation": 0.5958054176215941,
+      "full_gain_over_own_fixed_head": -0.047473018374016296,
+      "reused_reporting": 0.6027608170318577,
+      "reporting_gain_over_own_fixed_head": -0.05296925596685598,
+      "cohort_conditional_mean": 0.8326122826416448,
+      "cohort_gain_over_own_fixed_head": -0.003250176711309527,
+      "cohort_improved_equal_worse_over_own_fixed_head": [
+        18,
+        1,
+        21
+      ],
+      "cohort_gain_min_max": [
+        -0.051238839285714266,
+        0.0458035714285715
+      ],
+      "cohort_pair_accuracy": 0.8229166666666666,
+      "final_training_bidirectional_R1": 0.8858848314606742,
+      "final_local_only_training_bidirectional_R1": 0.6095505617977528,
+      "optimizer_steps": 2136,
+      "checkpoint_sha256": "6da2c4289062d30c3d14ff9586fcb6d6005747ab989ba232791ba05c223f4913",
+      "saved_model_replay_exact": true,
+      "training_sampling_matches_other_arm_all_24_epochs": true
+    },
+    {
+      "objective": "sinkhorn",
+      "seed": 20261009,
+      "selected_epoch": 2,
+      "selected_development": 0.5886631932821337,
+      "full_validation": 0.6041710680484315,
+      "full_gain_over_own_fixed_head": -0.041211638822195584,
+      "reused_reporting": 0.6179462976385232,
+      "reporting_gain_over_own_fixed_head": -0.03520013653867615,
+      "cohort_conditional_mean": 0.8166515652557319,
+      "cohort_gain_over_own_fixed_head": -0.018148651413690493,
+      "cohort_improved_equal_worse_over_own_fixed_head": [
+        9,
+        1,
+        30
+      ],
+      "cohort_gain_min_max": [
+        -0.07510714285714282,
+        0.07546912202380951
+      ],
+      "cohort_pair_accuracy": 0.8033333333333333,
+      "final_training_bidirectional_R1": 0.8718398876404494,
+      "final_local_only_training_bidirectional_R1": 0.5893609550561798,
+      "optimizer_steps": 2136,
+      "checkpoint_sha256": "d93df6fd9627afe4aa1f7fe6490845a8a711b2f84642b5f00aa5ee1b6c8d8f66",
+      "saved_model_replay_exact": true,
+      "training_sampling_matches_other_arm_all_24_epochs": true
+    }
+  ],
+  "checks": {
+    "same_training_code_and_architecture": true,
+    "all_seed_epoch_sampling_and_update_counts_match": true,
+    "four_saved_models_replay_dense_validation_exact": true,
+    "five_fixed_control_matrices_rankings_and_cohort_results_match_previous": true,
+    "fourteen_rankings_independently_scalar_checked": true,
+    "both_40_native_cohort_baselines_exact": true,
+    "related_cpu_tests_passed": 13
+  },
+  "training_jobs": {
+    "dual": {
+      "seconds": 163.64100000000326,
+      "peak_allocated_mib": 369.3173828125,
+      "gpu": "NVIDIA GeForce RTX 4060 Ti",
+      "torch": "2.12.1+cu130",
+      "script_sha256": "2a946a524386709479f2c647fd8bfd366e5bed8a3c1b0e72f257dc8ed83874e1",
+      "module_sha256": "c8396d2fd1d650c50b2ea9934ce0d002f53510d73ab57c9b0cf06c9f705d82ca",
+      "set_pairing_module_sha256": "a2c1083fef898410aaebaa42dff99e560b687896543e7246d5675dad7dd2901e",
+      "protocol_sha256": "844d64879c3eedf24382e97c6fe40c74067b1e888dbc56b03d4941d548fa36ec"
+    },
+    "sinkhorn": {
+      "seconds": 324.0320000000065,
+      "peak_allocated_mib": 369.392578125,
+      "gpu": "NVIDIA GeForce RTX 4060 Ti",
+      "torch": "2.12.1+cu130",
+      "script_sha256": "2a946a524386709479f2c647fd8bfd366e5bed8a3c1b0e72f257dc8ed83874e1",
+      "module_sha256": "c8396d2fd1d650c50b2ea9934ce0d002f53510d73ab57c9b0cf06c9f705d82ca",
+      "set_pairing_module_sha256": "a2c1083fef898410aaebaa42dff99e560b687896543e7246d5675dad7dd2901e",
+      "protocol_sha256": "010c911bb2c041004f821b0d296e592975aeac5a822bed3d6ee2d154244a0e29"
+    }
+  },
+  "total_training_seconds": 487.6730000000098,
+  "paid_gpu_cost_yuan": 0,
+  "test_images_scored": false,
+  "submission_generated": false,
+  "leaderboard_submitted": false,
+  "literature": "https://arxiv.org/abs/1802.08665",
+  "summary_script_sha256": "8e1b83ac6dbad6a900235e42395cdafeb16424d30f7571682c3236ee7efdbe68"
+}

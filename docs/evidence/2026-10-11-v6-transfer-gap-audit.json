@@ -1,0 +1,60 @@
+{
+  "scope": "Post-score diagnostic; scores reused, synthetic stress cases not new holdout confirmation. Aggregate/source/order checks only, no new independent metric implementation",
+  "postscore_report_sha256": "aed0c9260111c02efe25a4b88fe832c45cae1828ea8f6c43131fab98b6f86830",
+  "analyzer_sha256": "7154c8dd85ec1ffca47396054e6e67c385622d96633997cb5df8f22d78460631",
+  "shuffled_vs_sorted_scores_equal_within_1e12": true,
+  "aggregate_and_all_input_hashes_passed": true,
+  "reporting_extra_gain": 0.04166666666666652,
+  "reporting_source_gain": -0.011290322580645107,
+  "official_delta": -0.0008928571428572507,
+  "local_delta": {
+    "full": 0.006956453414699193,
+    "development20_joint": 0.019125316220238275,
+    "reporting20_joint": 0.0007101841517856977,
+    "original40_joint": 0.02938306981646832,
+    "hard27_accuracy": 0.15092592592592596,
+    "source93_accuracy": 0.009946236559139732
+  },
+  "original40_mean_gate_fraction": 0.3227083333333333,
+  "full_validation_gate_fraction": 0.2169934640522876,
+  "public_gate_fraction": 0.7,
+  "stress_summary": {
+    "70pct_gate_all_observations": {
+      "v5-control": 0.6422005166997355,
+      "native-overlap-mean": 0.7040801049933861,
+      "overlap-control": 0.7226407882771164,
+      "v6_minus_v5": 0.06187958829365078,
+      "improved_equal_worse": [
+        20,
+        0,
+        0
+      ]
+    },
+    "70pct_gate_one_observation": {
+      "v5-control": 0.6523689406047913,
+      "native-overlap-mean": 0.7151392531047913,
+      "overlap-control": 0.7338292456643152,
+      "v6_minus_v5": 0.06277031250000002,
+      "improved_equal_worse": [
+        20,
+        0,
+        0
+      ]
+    },
+    "70pct_gate_one_observation_10pct_unshared": {
+      "v5-control": 0.5928835239381247,
+      "native-overlap-mean": 0.6328084495333628,
+      "overlap-control": 0.6503800269143152,
+      "v6_minus_v5": 0.03992492559523811,
+      "improved_equal_worse": [
+        20,
+        0,
+        0
+      ]
+    }
+  },
+  "specialist_finetune_identities": 462,
+  "full_paired_training_identities": 2819,
+  "representation_direction": "Prospective all-TRAIN end-to-end pair-trained specialist vs matched fresh control with a newly sealed evaluation protocol; not a proven gain",
+  "limits": "Coarse gate matching and one-image galleries fail to explain official gap in these scenarios. Identity/source/content transfer and adaptive validation reuse remain plausible, not isolated causal findings. Official total gives no query truth or component attribution."
+}

@@ -1,0 +1,73 @@
+{
+  "scope": "Local original-scale full expert, fixed development-only early stopping; reused validation, not official",
+  "first_eight_epochs_bit_exact": true,
+  "early_stopping_independently_replayed": true,
+  "selected_checkpoint_replay_exact": true,
+  "selected_dense_bank_equals_old_eight_epoch_model": true,
+  "independent_scalar_scores_verified": true,
+  "completed_epochs": 18,
+  "selected_epoch": 8,
+  "optimizer_steps": 1044,
+  "stop_reason": "development_joint_plateau",
+  "metrics": {
+    "v5": {
+      "full": 0.645382706870627,
+      "development_joint": 0.854387572973901,
+      "reporting_joint": 0.8595548580109128,
+      "original40_joint": 0.8348002166694224,
+      "extra27_pair_accuracy": 0.4759259259259259,
+      "source93_pair_accuracy": 0.9266129032258065
+    },
+    "eight_epochs": {
+      "full": 0.6411772371827519,
+      "development_joint": 0.8704555789262821,
+      "reporting_joint": 0.8551016772073414,
+      "original40_joint": 0.8526030657517637,
+      "extra27_pair_accuracy": 0.5703703703703704,
+      "source93_pair_accuracy": 0.9311827956989247
+    },
+    "earlystop": {
+      "full": 0.6411772371827519,
+      "development_joint": 0.8704555789262821,
+      "reporting_joint": 0.8551016772073414,
+      "original40_joint": 0.8526030657517637,
+      "extra27_pair_accuracy": 0.5703703703703704,
+      "source93_pair_accuracy": 0.9311827956989247
+    }
+  },
+  "deltas_vs": {
+    "v5": {
+      "full": -0.004205469687875163,
+      "development_joint": 0.016068005952381115,
+      "reporting_joint": -0.004453180803571377,
+      "original40_joint": 0.01780284908234131,
+      "extra27_pair_accuracy": 0.0944444444444445,
+      "source93_pair_accuracy": 0.004569892473118231
+    },
+    "eight_epochs": {
+      "full": 0.0,
+      "development_joint": 0.0,
+      "reporting_joint": 0.0,
+      "original40_joint": 0.0,
+      "extra27_pair_accuracy": 0.0,
+      "source93_pair_accuracy": 0.0
+    }
+  },
+  "original40_improved_equal_worse_vs_v5": [
+    30,
+    0,
+    10
+  ],
+  "clears_prior_significant_gate": false,
+  "seconds": 744.5779999999795,
+  "peak_allocated_mib": 1942.17333984375,
+  "test_images_used": false,
+  "submission_generated": false,
+  "bindings": {
+    "report.json": "6d5067d103f32a6d8116f14528aeead47a4e442da5dd8f7e7bc19cf036258cf3",
+    "history.json": "7a6609ea138c70a40a94bc9361e980421902d92aac9104016b41210ac9161414",
+    "protocol.json": "1afc787288be3bfffcb3bde56ba52b1dbbc1cd854dd33b9f6d109686fceef9e9",
+    "verification.json": "6b8909988c6d6e4d2eb7fb637c66b988ca76e68e6e7746b5fef89d59e1d318fc",
+    "expert.pt": "b0b3d808d09900d8fa0d8dcce2d4ad5a6254d67a27d0702ef4bc51980673f444"
+  }
+}

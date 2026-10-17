@@ -1,0 +1,32 @@
+{
+  "version": 3,
+  "model": "author TransOSS contest adaptation, best checkpoint epoch 53",
+  "checkpoint_sha256": "f7c8886d1bb904360fea877f130c7fcddccb2ef8fb34300933bebab0bbdbf6ed",
+  "prediction_sha256": "0020ec05521b2cede6dd6856d1a943f96a95b803749300dfb2f450398ca27e8f",
+  "local_weighted_score": 0.5604962981404683,
+  "local_metric_verification_passed": true,
+  "queries": 267,
+  "candidates_per_query": 10,
+  "training_repeated": false,
+  "submission_url": "https://www.heywhale.com/org/cunsl/competition/area/6aba33ce6e5beff2fca53add/submit",
+  "submitted_at_displayed": "2026/10/07 17:30",
+  "today_submission_count": 3,
+  "today_submission_limit": 3,
+  "official_status": "已评审",
+  "official_public_score": 0.5144077656525573,
+  "leaderboard_submitted": true,
+  "billing": {
+    "prediction_only_cost_yuan": 0.28,
+    "today_total_cost_yuan": 8.4,
+    "today_budget_yuan": 10,
+    "started_at": "2026-10-07T17:26:28+08:00",
+    "stopped_at": "2026-10-07T17:28:51+08:00",
+    "shutdown_confirmed": true
+  },
+  "previous_best_public_score": 0.43929340277777784,
+  "official_absolute_gain": 0.07511436287477946,
+  "official_relative_gain": 0.1709890528740241,
+  "current_best_version": 3,
+  "official_result_recorded_at": "2026-10-07T17:36:09+08:00",
+  "quota_display_note": "Submission receipt and first scored reload showed 3/3. Later page display changed to 0/3, 0 total, while all three accepted records remained. No further submission was made; availability is not inferred from the inconsistent counter."
+}

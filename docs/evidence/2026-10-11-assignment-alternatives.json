@@ -1,0 +1,68 @@
+{
+  "scope": "40 old reused shared-identity cohorts; pairing counts only, no AP or official forecast",
+  "training": false,
+  "gpu_used": false,
+  "test_pixels_used": false,
+  "new_submission": false,
+  "candidate_diagnostics": {
+    "cohorts": 40,
+    "repeated_pair_occurrences": 4800,
+    "distinct_multiview_identity_pool": 44,
+    "baseline_correct": 3961,
+    "baseline_extra_correct": 514,
+    "baseline_source_correct": 3447,
+    "candidate_count_min_max": [
+      87,
+      100
+    ],
+    "sets": {
+      "5": {
+        "best_single_oracle_correct": 4041,
+        "best_single_oracle_extra_correct": 549,
+        "edge_union_oracle_correct": 4107,
+        "edge_union_oracle_extra_correct": 587,
+        "edge_union_oracle_source_correct": 3520,
+        "uniform_consensus_correct": 3961,
+        "uniform_consensus_rescued": 0,
+        "uniform_consensus_harmed": 0
+      },
+      "20": {
+        "best_single_oracle_correct": 4076,
+        "best_single_oracle_extra_correct": 579,
+        "edge_union_oracle_correct": 4344,
+        "edge_union_oracle_extra_correct": 745,
+        "edge_union_oracle_source_correct": 3599,
+        "uniform_consensus_correct": 3961,
+        "uniform_consensus_rescued": 0,
+        "uniform_consensus_harmed": 0
+      },
+      "all": {
+        "best_single_oracle_correct": 4090,
+        "best_single_oracle_extra_correct": 588,
+        "edge_union_oracle_correct": 4480,
+        "edge_union_oracle_extra_correct": 822,
+        "edge_union_oracle_source_correct": 3658,
+        "uniform_consensus_correct": 3961,
+        "uniform_consensus_rescued": 0,
+        "uniform_consensus_harmed": 0
+      }
+    }
+  },
+  "coherent_union_oracle_correct": {
+    "5": 4086,
+    "20": 4260,
+    "all": 4357
+  },
+  "coherent_oracle_warning": "Uses true identity edges as the optimization objective; only a bound over this finite edge set, not a deployable method or a global upper bound",
+  "audit": {
+    "all_trial_baseline_counts": true,
+    "all_best_single_counts": true,
+    "coherent_oracle_edge_membership": true,
+    "coherent_oracle_bounds": true
+  },
+  "bindings": {
+    "report_sha256": "1582e2f02c1cb6d1fef5358592e1de4be2b5a6ff1614fe0664009dc8b0b4733b",
+    "analysis_script_sha256": "365a97331c7f8fb007d01496b748579b3980084b8a05cf86e4f1cbb4d033f40a",
+    "candidate_source_snapshot_sha256": "0a2bdf8c4f7e6110c1a2cfebd3ef2dee14e623b6778276b7adc6bd57d5126720"
+  }
+}

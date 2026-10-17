@@ -1,0 +1,93 @@
+{
+  "scope": "Exploratory reused validation; no official forecast",
+  "pearson": {
+    "training": 0.7979858486612298,
+    "validation": 0.8549140311294048
+  },
+  "identities": {
+    "training": 421,
+    "validation": 90
+  },
+  "fusion_names": [
+    "fusion-procrustes",
+    "fusion-ridge",
+    "fusion-posterior",
+    "geometry-fixed"
+  ],
+  "deltas_vs_v5": [
+    [
+      -0.005457595538215232,
+      0.00398864397321419
+    ],
+    [
+      0.002760812658396672,
+      0.0038958333333333206
+    ],
+    [
+      0.004124991663332023,
+      0.012452873883928683
+    ],
+    [
+      0.0014611678004534667,
+      -0.00328047495039685
+    ]
+  ],
+  "conditional_retrieval": [
+    {
+      "optical_r1": 0.04477611940298507,
+      "sar_r1": 0.031578947368421054
+    },
+    {
+      "optical_r1": 0.04477611940298507,
+      "sar_r1": 0.10526315789473684,
+      "auc": 0.7010284217657788
+    },
+    {
+      "optical_r1": 0.39552238805970147,
+      "sar_r1": 0.3263157894736842,
+      "auc": 0.9929324713094376
+    }
+  ],
+  "training_reference_full": [
+    {
+      "method": "procrustes",
+      "score": 0.5668612149405217
+    },
+    {
+      "method": "ridge",
+      "score": 0.5757781275388943
+    },
+    {
+      "method": "posterior",
+      "score": 0.46004837313713365
+    },
+    {
+      "method": "fusion-procrustes",
+      "score": 0.6399251113324118
+    },
+    {
+      "method": "fusion-ridge",
+      "score": 0.6481435195290237
+    },
+    {
+      "method": "fusion-posterior",
+      "score": 0.6495076985339591
+    },
+    {
+      "method": "v5-control",
+      "score": 0.645382706870627
+    }
+  ],
+  "inputs_sha256": {
+    "local\\axial-domain\\regions-v1\\private-regions.json": "5aaedf2511af611718bc643f9a6a604700f57fc6723adccd34b304ce04f0cf55",
+    "local\\training-reference\\screen-v2\\report.json": "061848ff58f1425812299c1c3577d9d4f733a3b8ff19caff426c0d31e2eb62c3",
+    "local\\training-reference\\screen-v2\\verification.json": "30661429b9f98fd7a276a7a86a6789765dd68c05d28b7f934e100f80a27cf80d",
+    "local\\geometry-likelihood\\screen-v1\\report.json": "71464f16a74c329fce789502e063f33677cd98fd690391dc12f8a1e55514b51a",
+    "local\\geometry-likelihood\\screen-v1\\verification.json": "9ada8eb79528440e7a1f1cb2a201985902530f45dba430dc634ddfb5b6fe8d8e",
+    "local\\pixel-profile\\screen-v1\\report.json": "94412caae241bd3f2479bb0784d9407e0bd2e0651138dbc1f9cdad2990d386bc"
+  },
+  "script_sha256": "1e79bdc37e9966695b06b31b4433802c694478b750aeea0849aede23f12cedd0",
+  "public_figure_sha256": "4f57ff92a8fddbbdadf9a247ba1167f85ecd60e9790f0658bb1c54faa063a550",
+  "test_images_read": false,
+  "submission_generated": false
+}

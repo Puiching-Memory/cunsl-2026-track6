@@ -1,0 +1,87 @@
+{
+  "scope": "TRAIN-only frozen initial native/V5 features; fixed two SAR views per identity and 100 random TRAIN identities with two optical queries",
+  "population_identities": 462,
+  "sampled_query_identities": 100,
+  "optical_queries": 200,
+  "models": {
+    "native_cls": {
+      "distinct_identity_competitors_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        11.0
+      ],
+      "fraction_with_any_outranker": 0.44,
+      "expected_top1_by_random_identity_cohort": {
+        "8": 0.9862821573150065,
+        "16": 0.9712880124930132,
+        "32": 0.9432550717185384,
+        "64": 0.8936435526015072,
+        "120": 0.8217725756978622,
+        "462": 0.56
+      },
+      "weakest_positive_distinct_competitors_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        19.0
+      ],
+      "expected_all_positives_outrank_negatives_by_cohort": {
+        "8": 0.9831035813376694,
+        "16": 0.9650724268653766,
+        "32": 0.9323991308567412,
+        "64": 0.8771131017728793,
+        "120": 0.80097007504859,
+        "462": 0.55
+      }
+    },
+    "v5_local_head": {
+      "distinct_identity_competitors_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        6.0
+      ],
+      "fraction_with_any_outranker": 0.14,
+      "expected_top1_by_random_identity_cohort": {
+        "8": 0.9968416461549913,
+        "16": 0.9933162480299393,
+        "32": 0.9865169967761008,
+        "64": 0.9738077360890478,
+        "120": 0.9538303765826851,
+        "462": 0.86
+      },
+      "weakest_positive_distinct_competitors_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        10.0
+      ],
+      "expected_all_positives_outrank_negatives_by_cohort": {
+        "8": 0.995252346683445,
+        "16": 0.9901251687618394,
+        "32": 0.9807019176393978,
+        "64": 0.9644471028827474,
+        "120": 0.941294789537309,
+        "462": 0.84
+      }
+    }
+  },
+  "method": "Exact chance that a uniformly sampled distinct-identity cohort contains no identity with a higher max-of-two SAR score than the true identity; strict epsilon1e-6 comparison",
+  "limitations": "Seen TRAIN identities, initial frozen representations, fixed sampled views, independent row top1 rather than joint assignment; not actual trained-model performance or evidence that larger batches improve validation",
+  "seconds": 28.796999999991385,
+  "gpu_used": false,
+  "validation_images_read": false,
+  "test_images_read": false,
+  "bindings": {
+    "features": "4218be7abc247bed22735e2b5a0b5a1a30d3b324469eaca8069dcb0a38e1c161",
+    "head": "ae510bf0de7fd111e44223a5aae5e9e7d5c1a87a71c9b5450016851d234d5d77",
+    "script": "5333b53e02f6c253e2191bb00284d3040d76f6540613c43e028f13a832a73130"
+  },
+  "report_sha256": "ef276ad4a5db5ccaff15ef89f10d55e87cc37e3c90e6de2209a6d80b242b0bb7",
+  "analysis_script_sha256": "59e633c2aabbfba0fcebb851bc50bfddfcc00ea0e4819956205f966856f788f2"
+}

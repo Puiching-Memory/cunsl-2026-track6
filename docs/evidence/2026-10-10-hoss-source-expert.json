@@ -1,0 +1,139 @@
+{
+  "scope": "Matched fully trainable source-like specialists and development-only query-set selection; reused validation",
+  "results": {
+    "original": {
+      "selected_epoch": 8,
+      "full_score": 0.6411772371827519,
+      "full_delta": -0.004205469687875163,
+      "development_joint": 0.8704555789262821,
+      "development_joint_delta": 0.016068005952381115,
+      "reporting_joint": 0.8551016772073414,
+      "reporting_joint_delta": -0.004453180803571377,
+      "original40_joint": 0.8526030657517637,
+      "original40_joint_delta": 0.017802849082341244,
+      "original40_improved_equal_worse_vs_v5": [
+        30,
+        0,
+        10
+      ],
+      "extra27_pair_accuracy": 0.5703703703703704,
+      "extra27_delta": 0.0944444444444445,
+      "source93_pair_accuracy": 0.9311827956989247,
+      "source93_delta": 0.004569892473118231,
+      "clears_significant_gate": false,
+      "seconds": 330.3279999999795,
+      "peak_allocated_mib": 1940.400390625,
+      "bindings": {
+        "report": "a78fe264fba362de3bbc0efb9fe5f05b018e9c892e074f697f9f21a6f2859251",
+        "verification": "07ea902ba8f20fcab166405a3e569812c206ac28cbeb6c18d15c5cce698a6dac",
+        "history": "710e61fa0e3342ff0d4933d71f6e688110eb0257e18853e5b9cda0ebb63331a7",
+        "protocol": "de85d22c5783a4fe5721d43e1c2e7e23fdec47794084e644cc1864d068b2798d",
+        "checkpoint": "8f6b2b5b89e6a970c5b1e4e4e58221e39b930f569f6d61335d69990f979bea0b"
+      }
+    },
+    "packed": {
+      "selected_epoch": 3,
+      "full_score": 0.6218491184352529,
+      "full_delta": -0.02353358843537412,
+      "development_joint": 0.8421246079441392,
+      "development_joint_delta": -0.012262965029761763,
+      "reporting_joint": 0.870689874751984,
+      "reporting_joint_delta": 0.011135016741071202,
+      "original40_joint": 0.834351912477954,
+      "original40_joint_delta": -0.00044830419146827674,
+      "original40_improved_equal_worse_vs_v5": [
+        19,
+        0,
+        21
+      ],
+      "extra27_pair_accuracy": 0.48518518518518516,
+      "extra27_delta": 0.009259259259259245,
+      "source93_pair_accuracy": 0.9233870967741935,
+      "source93_delta": -0.003225806451612967,
+      "clears_significant_gate": false,
+      "seconds": 339.81299999999464,
+      "peak_allocated_mib": 1940.400390625,
+      "bindings": {
+        "report": "75211097e442b9208f6b99c0dc26f019d1ced232219872f4c47cc1efed698961",
+        "verification": "42c02531a48b7c1f4f9d375698327023d969b6b039eb66f405f1f6122c852a24",
+        "history": "f0203ea3ef9b54a6e0f82eba85b95c0fb1b258f17581485e712be0360495bc70",
+        "protocol": "7f93cedf927842cdcc9fe71307d5c45332a36f3d58a4421c1442d61620f02f53",
+        "checkpoint": "b50e0b8a1bff93995bc53dccf997037e43d324f02b29cbe239d15c464476e616"
+      }
+    }
+  },
+  "matched_sampling_and_updates": true,
+  "original_training_replayed_bit_exact": true,
+  "source_snapshot_shared": true,
+  "baseline_full_score": 0.645382706870627,
+  "baseline_original40_joint": 0.8348002166694224,
+  "native_seen_training_fit": {
+    "scope": "Seen training identities; full training SAR gallery, descriptive fit only",
+    "groups": {
+      "other": {
+        "identities": 2351,
+        "images": 2351,
+        "identity_macro_r1": 0.8570820927264994,
+        "image_r1": 0.8570820927264994
+      },
+      "black_single": {
+        "identities": 308,
+        "images": 308,
+        "identity_macro_r1": 0.6233766233766234,
+        "image_r1": 0.6233766233766234
+      },
+      "black_multiple": {
+        "identities": 160,
+        "images": 393,
+        "identity_macro_r1": 0.5947916666666666,
+        "image_r1": 0.5928753180661578
+      }
+    }
+  },
+  "illustrative_metric_gauge": {
+    "scope": "Illustrative fixed gauge check, reused validation; not a trained candidate or proposed submission",
+    "transformation": "Add fixed +/-0.25 score (=+/-5 logit) to each pixel-gated optical row, preserving within-row ordering",
+    "results": [
+      {
+        "row_offset": -0.25,
+        "full_score": 0.6452999237573818,
+        "s2o_score": 0.6144760682050598,
+        "development_joint": 0.854387572973901,
+        "all_20_assignments_exactly_unchanged": true
+      },
+      {
+        "row_offset": 0,
+        "full_score": 0.645382706870627,
+        "s2o_score": 0.6146600306789383,
+        "development_joint": 0.854387572973901,
+        "all_20_assignments_exactly_unchanged": true
+      },
+      {
+        "row_offset": 0.25,
+        "full_score": 0.6441467124728679,
+        "s2o_score": 0.6119133764616957,
+        "development_joint": 0.854387572973901,
+        "all_20_assignments_exactly_unchanged": true
+      }
+    ],
+    "mechanism": "All rows are used exactly once in square query assignment: row constants add the same objective offset to every permutation. Independent S2O ranks compare optical rows and can change.",
+    "limitation": "Shows complete retrieval can disagree with assignment objective; does not show any discarded checkpoint had better joint score",
+    "script_sha256": "93509a1a7fa4b4f53c57bd6827264d5f5d35d411a3558705023888d21c90ad39",
+    "input_scores_sha256": "d35dc817c415075af3f8fcac54241090e3c7eb7bfa2f1df3753067a6d09c53a6",
+    "query_identity_scope": "Development only for joint cohorts; reporting query labels unused in joint demo",
+    "optimizer_steps": 0,
+    "test_images_used": false,
+    "submission_generated": false
+  },
+  "script_sha256": "cc4e5dbd62c78037250b352ea5f6855e59f337bc5e732d79561a0c32c49d982e",
+  "figure_sha256": "62b2d4d71b579785fc8d5fc8898b10846e3a7b5b5cda5e26cf16c6edf29d79d4",
+  "test_images_used": false,
+  "submission_generated": false,
+  "limitations": [
+    "Pixel gate is a content-domain proxy, not known HOSS identity membership",
+    "Query selection halves and all source/expert choices have been used in previous research",
+    "Development120/26, reporting80/18 and original40x120/27 have different cardinality/difficulty; compare only to own V5 control",
+    "A full-vs-joint metric counterexample does not establish a major missed model",
+    "Only one training seed; expand only if predefined gate is met"
+  ]
+}

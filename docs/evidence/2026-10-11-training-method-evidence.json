@@ -1,0 +1,42 @@
+{
+  "scope": "Published component ablations; not local experiments or official contest forecasts",
+  "MOS": {
+    "source": "https://arxiv.org/html/2512.03404v1#S4.T3",
+    "version": "arXiv v1, 2025-12-03; Table3",
+    "rows": [
+      {
+        "method": "TransOSS",
+        "O2S_R1": 33.8,
+        "S2O_R1": 29.9
+      },
+      {
+        "method": "MCRL only",
+        "O2S_R1": 38.5,
+        "S2O_R1": 40.3
+      },
+      {
+        "method": "CDGF only",
+        "O2S_R1": 36.9,
+        "S2O_R1": 32.8
+      },
+      {
+        "method": "MCRL + CDGF",
+        "O2S_R1": 40.0,
+        "S2O_R1": 46.3
+      }
+    ],
+    "author_correction": "https://github.com/yjzhao1019/MOS: fusion tau0.02, paper0.2 is a typo",
+    "limitation": "HOSS native retrieval; not competition joint matching. MCRL contains both SAR denoising and class-wise alignment, so its independent subcomponents are not isolated by this table."
+  },
+  "TransReID": {
+    "source": "https://arxiv.org/html/2102.04378v2#S4.T2",
+    "version": "arXiv v2, Table2, MSMT17",
+    "stride16_mAP": 61.0,
+    "stride12_mAP": 64.4,
+    "stride16_R1": 81.8,
+    "stride12_R1": 83.5,
+    "limitation": "Person retrieval with ImageNet initialization; not an Optical-SAR effect estimate. Current pilot uses stride8 and its own fixed original-pixel protocol."
+  },
+  "decision": "Published full-model improvements cannot be attributed wholly to a small added module. Results here justify hypotheses and controls, not a prediction of a large contest gain.",
+  "plot_script_sha256": "ad428ecdf218fa95cc47fdf39a124214ee6e40163e916abb2b7e4e42f1e9a29e"
+}

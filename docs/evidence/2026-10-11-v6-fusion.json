@@ -1,0 +1,96 @@
+{
+  "scope": "Exploratory fixed expert fusion for user-requested practical V6; one seed per specialist and extensively reused validation, not official scores",
+  "models": {
+    "v5-control": {
+      "full": 0.645382706870627,
+      "development20_joint": 0.854387572973901,
+      "reporting20_joint": 0.8595548580109128,
+      "original40_joint": 0.8348002166694224,
+      "hard27_accuracy": 0.4759259259259259,
+      "source93_accuracy": 0.9266129032258065
+    },
+    "native-control": {
+      "full": 0.6411772371827519,
+      "development20_joint": 0.8704555789262821,
+      "reporting20_joint": 0.8551016772073414,
+      "original40_joint": 0.8526030657517637,
+      "hard27_accuracy": 0.5703703703703704,
+      "source93_accuracy": 0.9311827956989247
+    },
+    "overlap-control": {
+      "full": 0.6542988691688796,
+      "development20_joint": 0.8878020819024725,
+      "reporting20_joint": 0.8601658513144841,
+      "original40_joint": 0.8611677513916446,
+      "hard27_accuracy": 0.6157407407407407,
+      "source93_accuracy": 0.9362903225806452
+    },
+    "native-overlap-mean": {
+      "full": 0.6523391602853262,
+      "development20_joint": 0.8735128891941393,
+      "reporting20_joint": 0.8602650421626985,
+      "original40_joint": 0.8641832864858907,
+      "hard27_accuracy": 0.6268518518518519,
+      "source93_accuracy": 0.9365591397849462
+    },
+    "v5-overlap-mean": {
+      "full": 0.6549120977936629,
+      "development20_joint": 0.8692562113667582,
+      "reporting20_joint": 0.8659781001984127,
+      "original40_joint": 0.8560638823440258,
+      "hard27_accuracy": 0.5824074074074074,
+      "source93_accuracy": 0.9352150537634408
+    },
+    "v5-native-overlap-mean": {
+      "full": 0.6543574801132575,
+      "development20_joint": 0.8657002217834249,
+      "reporting20_joint": 0.8704290488591269,
+      "original40_joint": 0.8583518194720018,
+      "hard27_accuracy": 0.5907407407407408,
+      "source93_accuracy": 0.9362903225806452
+    }
+  },
+  "selected_blend": "native-overlap-mean",
+  "selected_minus_v5": {
+    "full": 0.006956453414699193,
+    "development20_joint": 0.019125316220238275,
+    "reporting20_joint": 0.0007101841517856977,
+    "original40_joint": 0.02938306981646832,
+    "hard27_accuracy": 0.15092592592592596,
+    "source93_accuracy": 0.009946236559139732
+  },
+  "selected_minus_single_overlap": {
+    "full": -0.001959708883553346,
+    "development20_joint": -0.014289192708333176,
+    "reporting20_joint": 9.919084821441437e-05,
+    "original40_joint": 0.0030155350942461245,
+    "hard27_accuracy": 0.011111111111111183,
+    "source93_accuracy": 0.0002688172043010528
+  },
+  "selection": "Maximum development20 joint of the three predeclared blends; all specialist epochs already frozen. Full/report20/original40 do not select weights or epochs. Single overlap has higher development/full than this selected blend, which is explicitly retained in the table.",
+  "old_large_gain_gate": {
+    "required_full_or_original40_gain": 0.03,
+    "passed": false,
+    "shortfall_if_original40": 0.0006169301835316776
+  },
+  "paired40_vs_v5": {
+    "improved": 34,
+    "equal": 0,
+    "worse": 6,
+    "median": 0.02956882440476194,
+    "scope": "Overlapping reused scenes, descriptive only"
+  },
+  "all_banks_reconstructed_exactly": true,
+  "fallback_599_optical_rows_exact": true,
+  "independent_scalar_scoring_verified": true,
+  "optimizer_steps": 0,
+  "test_images_used": false,
+  "submission_generated": false,
+  "limitations": "Local gains are not additive and do not forecast official gain. Three blends proposed after many studies; reused reporting is not independent confirmation. No coefficient sweep or additional training. Does not clear former+.03 large-gain threshold; generation of a practical V6 is a new user request, not a claim of a large breakthrough. Native Top50, V5 nongated rows and O2O fixed in this validation screen.",
+  "bindings": {
+    "report": "530976a4c355db639a66cbf0a27a749c43cb71ddbfd0716dc87758686b34f627",
+    "protocol": "b459a310bc5958310359c5a9a5e541a33ca010517207faeb19d4745459765a8a",
+    "verification": "2f5159689c6daa0282e03d2da4da841f87abfe3d7fa7bd34cbdb1e202823be24",
+    "script": "645cf519f4c97433b48960b058360205d79ddd267657d0c13602d567195e98ed"
+  }
+}

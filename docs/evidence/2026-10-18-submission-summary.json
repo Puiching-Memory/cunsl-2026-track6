@@ -1,0 +1,50 @@
+{
+  "prepared_at": "2026-10-18",
+  "scope": "Six recorded official Public scores, not final standings",
+  "best_version": 5,
+  "best_public_score": 0.7185908013668432,
+  "rows": [
+    {
+      "version": 1,
+      "method": "DINOv3 baseline",
+      "public_score": 0.43929340277777784,
+      "receipt": "2026-10-07-first-submission.json"
+    },
+    {
+      "version": 2,
+      "method": "Gallery reranking",
+      "public_score": 0.4350858134920635,
+      "receipt": "2026-10-07-score-research.json"
+    },
+    {
+      "version": 3,
+      "method": "TransOSS",
+      "public_score": 0.5144077656525573,
+      "receipt": "2026-10-07-third-submission.json"
+    },
+    {
+      "version": 4,
+      "method": "Query-cohort matching",
+      "public_score": 0.6699152061287479,
+      "receipt": "2026-10-08-fourth-submission.json"
+    },
+    {
+      "version": 5,
+      "method": "Learned local pairing",
+      "public_score": 0.7185908013668432,
+      "receipt": "2026-10-08-fifth-submission.json"
+    },
+    {
+      "version": 6,
+      "method": "Two-scale experts",
+      "public_score": 0.7176979442239859,
+      "receipt": "2026-10-11-sixth-score.json"
+    }
+  ],
+  "V3_to_V4_gain": 0.15550744047619058,
+  "V4_to_V5_gain": 0.04867559523809528,
+  "V5_to_V6_gain": -0.0008928571428572507,
+  "final_rank_verified": false,
+  "readme_reference": "https://github.com/Puiching-Memory/TAAC_2026",
+  "reference_scope": "Centered title, status callout, navigation, feature summary, experiment entry points; no copied community or rank claims"
+}

@@ -1,0 +1,525 @@
+{
+  "date": "2026-10-07",
+  "scope": "TransOSS optimization research and CPU holdout diagnostics",
+  "new_training": false,
+  "gpu_started": false,
+  "test_used": false,
+  "leaderboard_submitted": false,
+  "official_baseline": 0.5144077656525573,
+  "bindings": {
+    "source_sha256": "68aaa274e11e81ab65a3e199449595ff9efa7d73f7a5927cfab469e7513e1513",
+    "split_sha256": "b33cbea7e9d9771f12ee4f507ef13a868fe0f3be0d1a4c77bbbc1290402e5bd5",
+    "feature_cache_sha256": "c8a844f2e95e368adab03210072504e2df1ba20a36c47973999e198ca9ed9e67"
+  },
+  "checkpoint_sha256": "f7c8886d1bb904360fea877f130c7fcddccb2ef8fb34300933bebab0bbdbf6ed",
+  "validation_rankings_reproduced": true,
+  "actual_metrics_recomputed": true,
+  "directions": {
+    "O2S": {
+      "queries": 765,
+      "gallery": 718,
+      "actual": {
+        "R@1": 0.46013071895424834,
+        "mAP@10": 0.5914104160182592,
+        "score": 0.5257705674862537
+      },
+      "candidate_recall": {
+        "10": 0.8627450980392157,
+        "50": 0.9856209150326798,
+        "100": 0.9921568627450981
+      },
+      "error_counts": {
+        "top1_correct": 352,
+        "rank2_to10": 308,
+        "beyond10": 105
+      },
+      "query_foreground_bins": [
+        {
+          "threshold8_fraction_interval": [
+            0,
+            0.01
+          ],
+          "queries": 0,
+          "R@1": null,
+          "R@10": null
+        },
+        {
+          "threshold8_fraction_interval": [
+            0.01,
+            0.03
+          ],
+          "queries": 0,
+          "R@1": null,
+          "R@10": null
+        },
+        {
+          "threshold8_fraction_interval": [
+            0.03,
+            0.06
+          ],
+          "queries": 0,
+          "R@1": null,
+          "R@10": null
+        },
+        {
+          "threshold8_fraction_interval": [
+            0.06,
+            0.12
+          ],
+          "queries": 21,
+          "R@1": 0.38095238095238093,
+          "R@10": 1.0
+        },
+        {
+          "threshold8_fraction_interval": [
+            0.12,
+            0.3
+          ],
+          "queries": 143,
+          "R@1": 0.32167832167832167,
+          "R@10": 0.8321678321678322
+        },
+        {
+          "threshold8_fraction_interval": [
+            0.3,
+            0.9
+          ],
+          "queries": 8,
+          "R@1": 0.25,
+          "R@10": 0.5
+        },
+        {
+          "threshold8_fraction_interval": [
+            0.9,
+            1.0
+          ],
+          "queries": 593,
+          "R@1": 0.4991568296795953,
+          "R@10": 0.8701517706576728
+        }
+      ]
+    },
+    "S2O": {
+      "queries": 714,
+      "gallery": 765,
+      "actual": {
+        "R@1": 0.46078431372549017,
+        "mAP@10": 0.5785166844515585,
+        "score": 0.5196504990885243
+      },
+      "candidate_recall": {
+        "10": 0.8599439775910365,
+        "50": 0.9831932773109243,
+        "100": 0.9929971988795518
+      },
+      "error_counts": {
+        "top1_correct": 329,
+        "rank2_to10": 285,
+        "beyond10": 100
+      },
+      "query_foreground_bins": [
+        {
+          "threshold8_fraction_interval": [
+            0,
+            0.01
+          ],
+          "queries": 0,
+          "R@1": null,
+          "R@10": null
+        },
+        {
+          "threshold8_fraction_interval": [
+            0.01,
+            0.03
+          ],
+          "queries": 124,
+          "R@1": 0.3951612903225806,
+          "R@10": 0.8145161290322581
+        },
+        {
+          "threshold8_fraction_interval": [
+            0.03,
+            0.06
+          ],
+          "queries": 367,
+          "R@1": 0.49591280653950953,
+          "R@10": 0.8828337874659401
+        },
+        {
+          "threshold8_fraction_interval": [
+            0.06,
+            0.12
+          ],
+          "queries": 149,
+          "R@1": 0.47651006711409394,
+          "R@10": 0.8859060402684564
+        },
+        {
+          "threshold8_fraction_interval": [
+            0.12,
+            0.3
+          ],
+          "queries": 70,
+          "R@1": 0.37142857142857144,
+          "R@10": 0.7571428571428571
+        },
+        {
+          "threshold8_fraction_interval": [
+            0.3,
+            0.9
+          ],
+          "queries": 4,
+          "R@1": 0.25,
+          "R@10": 1.0
+        },
+        {
+          "threshold8_fraction_interval": [
+            0.9,
+            1.0
+          ],
+          "queries": 0,
+          "R@1": null,
+          "R@10": null
+        }
+      ]
+    },
+    "O2O": {
+      "queries": 44,
+      "gallery": 721,
+      "actual": {
+        "R@1": 0.8863636363636364,
+        "mAP@10": 0.9147727272727273,
+        "score": 0.9005681818181819
+      },
+      "candidate_recall": {
+        "10": 0.9772727272727273,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "error_counts": {
+        "top1_correct": 39,
+        "rank2_to10": 4,
+        "beyond10": 1
+      },
+      "query_foreground_bins": [
+        {
+          "threshold8_fraction_interval": [
+            0,
+            0.01
+          ],
+          "queries": 0,
+          "R@1": null,
+          "R@10": null
+        },
+        {
+          "threshold8_fraction_interval": [
+            0.01,
+            0.03
+          ],
+          "queries": 0,
+          "R@1": null,
+          "R@10": null
+        },
+        {
+          "threshold8_fraction_interval": [
+            0.03,
+            0.06
+          ],
+          "queries": 0,
+          "R@1": null,
+          "R@10": null
+        },
+        {
+          "threshold8_fraction_interval": [
+            0.06,
+            0.12
+          ],
+          "queries": 4,
+          "R@1": 1.0,
+          "R@10": 1.0
+        },
+        {
+          "threshold8_fraction_interval": [
+            0.12,
+            0.3
+          ],
+          "queries": 40,
+          "R@1": 0.875,
+          "R@10": 0.975
+        },
+        {
+          "threshold8_fraction_interval": [
+            0.3,
+            0.9
+          ],
+          "queries": 0,
+          "R@1": null,
+          "R@10": null
+        },
+        {
+          "threshold8_fraction_interval": [
+            0.9,
+            1.0
+          ],
+          "queries": 0,
+          "R@1": null,
+          "R@10": null
+        }
+      ]
+    }
+  },
+  "shortlist_scope": "Label-aided coverage diagnostic, not an achievable model or official score.",
+  "pixel_mask_scope": "Threshold-eight image statistic, not ship segmentation or causal evidence.",
+  "neck_probe": {
+    "scope": "exploratory validation comparison of five predefined representations; no independent confirmation",
+    "feature_cache_sha256": "c8a844f2e95e368adab03210072504e2df1ba20a36c47973999e198ca9ed9e67",
+    "checkpoint_sha256": "f7c8886d1bb904360fea877f130c7fcddccb2ef8fb34300933bebab0bbdbf6ed",
+    "baseline_rankings_reproduced": true,
+    "independent_scalar_metrics_verified": true,
+    "normalization_statistics_source": "BN running statistics and affine parameters from training checkpoint",
+    "statistics_fitted_on_validation": false,
+    "validation_used_to_compare_variants": true,
+    "new_training": false,
+    "test_used": false,
+    "gpu_started": false,
+    "leaderboard_submitted": false,
+    "variants": {
+      "raw_cls": {
+        "directions": {
+          "O2S": {
+            "queries": 765,
+            "R@1": 0.46013071895424834,
+            "mAP@10": 0.5914104160182592,
+            "score": 0.5257705674862537,
+            "max_relevant_in_gallery": 2
+          },
+          "S2O": {
+            "queries": 714,
+            "R@1": 0.46078431372549017,
+            "mAP@10": 0.5785166844515585,
+            "score": 0.5196504990885243,
+            "max_relevant_in_gallery": 3
+          },
+          "O2O": {
+            "queries": 44,
+            "R@1": 0.8863636363636364,
+            "mAP@10": 0.9147727272727273,
+            "score": 0.9005681818181819,
+            "max_relevant_in_gallery": 2
+          }
+        },
+        "weighted_score": 0.5604962981404683,
+        "ap_denominator": "min_relevant_k",
+        "official_scorer_confirmed": false,
+        "scope": "local identity-disjoint holdout; not a leaderboard result"
+      },
+      "training_bn_center_only": {
+        "directions": {
+          "O2S": {
+            "queries": 765,
+            "R@1": 0.4666666666666667,
+            "mAP@10": 0.5976289034132171,
+            "score": 0.5321477850399419,
+            "max_relevant_in_gallery": 2
+          },
+          "S2O": {
+            "queries": 714,
+            "R@1": 0.4635854341736695,
+            "mAP@10": 0.5903757799416063,
+            "score": 0.5269806070576379,
+            "max_relevant_in_gallery": 3
+          },
+          "O2O": {
+            "queries": 44,
+            "R@1": 0.8636363636363636,
+            "mAP@10": 0.9085497835497836,
+            "score": 0.8860930735930737,
+            "max_relevant_in_gallery": 2
+          }
+        },
+        "weighted_score": 0.5652170838032183,
+        "ap_denominator": "min_relevant_k",
+        "official_scorer_confirmed": false,
+        "scope": "local identity-disjoint holdout; not a leaderboard result"
+      },
+      "training_bn_scale_only": {
+        "directions": {
+          "O2S": {
+            "queries": 765,
+            "R@1": 0.4627450980392157,
+            "mAP@10": 0.593549123353045,
+            "score": 0.5281471106961304,
+            "max_relevant_in_gallery": 2
+          },
+          "S2O": {
+            "queries": 714,
+            "R@1": 0.4677871148459384,
+            "mAP@10": 0.5895723104056437,
+            "score": 0.528679712625791,
+            "max_relevant_in_gallery": 3
+          },
+          "O2O": {
+            "queries": 44,
+            "R@1": 0.8863636363636364,
+            "mAP@10": 0.915530303030303,
+            "score": 0.9009469696969696,
+            "max_relevant_in_gallery": 2
+          }
+        },
+        "weighted_score": 0.5656667674645617,
+        "ap_denominator": "min_relevant_k",
+        "official_scorer_confirmed": false,
+        "scope": "local identity-disjoint holdout; not a leaderboard result"
+      },
+      "training_bn_neck": {
+        "directions": {
+          "O2S": {
+            "queries": 765,
+            "R@1": 0.46013071895424834,
+            "mAP@10": 0.5941850814399835,
+            "score": 0.527157900197116,
+            "max_relevant_in_gallery": 2
+          },
+          "S2O": {
+            "queries": 714,
+            "R@1": 0.4635854341736695,
+            "mAP@10": 0.5924208572317817,
+            "score": 0.5280031457027257,
+            "max_relevant_in_gallery": 3
+          },
+          "O2O": {
+            "queries": 44,
+            "R@1": 0.8636363636363636,
+            "mAP@10": 0.9034090909090909,
+            "score": 0.8835227272727273,
+            "max_relevant_in_gallery": 2
+          }
+        },
+        "weighted_score": 0.5631747433822014,
+        "ap_denominator": "min_relevant_k",
+        "official_scorer_confirmed": false,
+        "scope": "local identity-disjoint holdout; not a leaderboard result"
+      },
+      "raw_neck_equal_cosine_fusion": {
+        "directions": {
+          "O2S": {
+            "queries": 765,
+            "R@1": 0.4666666666666667,
+            "mAP@10": 0.5972419338105612,
+            "score": 0.531954300238614,
+            "max_relevant_in_gallery": 2
+          },
+          "S2O": {
+            "queries": 714,
+            "R@1": 0.46638655462184875,
+            "mAP@10": 0.5915855230981281,
+            "score": 0.5289860388599884,
+            "max_relevant_in_gallery": 3
+          },
+          "O2O": {
+            "queries": 44,
+            "R@1": 0.8863636363636364,
+            "mAP@10": 0.9147727272727273,
+            "score": 0.9005681818181819,
+            "max_relevant_in_gallery": 2
+          }
+        },
+        "weighted_score": 0.5674799707761893,
+        "ap_denominator": "min_relevant_k",
+        "official_scorer_confirmed": false,
+        "scope": "local identity-disjoint holdout; not a leaderboard result"
+      }
+    }
+  },
+  "schedule_observation": {
+    "initial_learning_rate": 0.0005,
+    "cosine_horizon_epochs": 200,
+    "selected": {
+      "epoch": 53,
+      "mean_loss": 2.8991922833825234,
+      "steps": 177,
+      "components": {
+        "classification": 2.8636529445648193,
+        "triplet": 0.03553933673709376
+      },
+      "learning_rate": 0.00042834857629811757,
+      "seconds": 12.860473737120628
+    },
+    "last": {
+      "epoch": 73,
+      "mean_loss": 1.5892411914922424,
+      "steps": 177,
+      "components": {
+        "classification": 1.5731604523577933,
+        "triplet": 0.016080736544413693
+      },
+      "learning_rate": 0.0003696417622881015,
+      "seconds": 12.854560486972332
+    },
+    "causal_claim": false,
+    "optimizer_rng_resume_state_saved": false
+  },
+  "sources": {
+    "DSMCL": {
+      "paper": "https://arxiv.org/html/2608.06943v1",
+      "submitted": "2026-08-07",
+      "author_code_verified": false,
+      "benchmark": "HOSS-ReID",
+      "transoss_reproduced_R1_percent": {
+        "O2S": 35.4,
+        "S2O": 31.3
+      },
+      "transoss_plus_dsmcl_R1_percent": {
+        "O2S": 40.0,
+        "S2O": 38.8
+      }
+    },
+    "SDF-Net": {
+      "paper": "https://arxiv.org/html/2603.12588v2",
+      "code": "https://github.com/cfrfree/SDF-Net"
+    },
+    "FD-GA": {
+      "paper": "https://doi.org/10.1109/JSTARS.2026.3708907",
+      "paper_full_text_read": false,
+      "code": "https://github.com/drickzsy/FD-GA",
+      "commit": "a8f43545337aa710b7557097e7e375b615fdec40",
+      "read_only_source_sha256": {
+        "loss__fdga_loss.py": "7c38d5130689199ca9de1780a87975e0ca5e8b94dc601353b5a1eb7bfd32a3ba",
+        "model__modules__faam.py": "6a8399e3e3efd36fc60069fe193233c99916e5a7652d4aee2b229fdd4931fb73",
+        "model__modules__tgam.py": "67926a683351cf539c4b1f033e803441a1adfe1e65292b9812650bfdb978aa37",
+        "README.md": "aa39e372748b2384adf0395732e17c87b5ca8927714217af6968c8704ccb443e"
+      }
+    }
+  },
+  "repository_dates": {
+    "drickzsy/FD-GA": {
+      "repository": "drickzsy/FD-GA",
+      "created_at": "2026-05-26T05:35:02Z",
+      "license_spdx": "MIT",
+      "latest_commit_predating_cutoff": {
+        "sha": "a8f43545337aa710b7557097e7e375b615fdec40",
+        "author_date": "2026-07-31T10:21:42Z",
+        "committer_date": "2026-07-31T10:21:42Z"
+      },
+      "date_scope": "GitHub creation and commit metadata; not proof of exact historical public accessibility"
+    },
+    "yjzhao1019/MOS": {
+      "repository": "yjzhao1019/MOS",
+      "created_at": "2026-02-28T07:13:29Z",
+      "license_spdx": "MIT",
+      "latest_commit_predating_cutoff": {
+        "sha": "793dc39ef828bbd77c59570aa081389620345e06",
+        "author_date": "2026-05-30T12:16:31Z",
+        "committer_date": "2026-05-30T12:16:31Z"
+      },
+      "date_scope": "GitHub creation and commit metadata; not proof of exact historical public accessibility"
+    }
+  },
+  "next_experiments": [
+    "Training-BN/raw fusion independent confirmation",
+    "Lower-LR refinement before early stopping",
+    "Cosine cross-modal hard-negative objective",
+    "DSMCL components with single-pair identity adaptation",
+    "Final all-usable-training-identity retraining after method selection"
+  ]
+}
